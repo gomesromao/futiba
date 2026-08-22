@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FUTIBA — futebol 16-bit, do jeito que era bom</title>
+<meta name="description" content="FUTIBA é uma carta de amor ao futebol raiz dos videogames. Pixel art 320×240, 32 equipes, copa, campeonato e disputa de pênaltis. Demo grátis para PC e Android.">
+<meta name="theme-color" content="#14100D">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="FUTIBA — futebol 16-bit, do jeito que era bom">
+<meta property="og:description" content="Carta de amor ao futebol raiz dos videogames. Demo grátis para PC e Android.">
+<meta property="og:image" content="/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Semi+Condensed:wght@500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#capa">Pular para o conteúdo</a>
+
+<!-- ======= PLACAR / NAV ======= -->
+<header class="scoreboard">
+  <div class="scoreboard__in">
+    <a class="mark" href="#capa">
+      <span class="mark__ball" aria-hidden="true"></span>
+      <span class="mark__word">FUTIBA</span>
+    </a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#historia">História</a>
+      <a href="#campo">Em campo</a>
+      <a href="#equipes">Equipes</a>
+      <a href="#video">Gameplay</a>
+      <a href="#bolso">No bolso</a>
+      <a class="nav__cta" href="#baixar">Baixar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ======= CAPA ======= -->
+<section class="cover" id="capa">
+  <div class="cover__grid">
+
+    <div class="cover__art panel">
+      <img src="/assets/title-screen.png" width="1288" height="952"
+           alt="Tela de título do FUTIBA: dois jogadores em pixel art disputando a bola num estádio lotado, com o logotipo FUTIBA em cima." fetchpriority="high">
+      <span class="flash" aria-hidden="true">
+        <b>DEMO</b><i>GRÁTIS</i>
+      </span>
+    </div>
+
+    <div class="cover__talk">
+      <p class="eyebrow">Almanaque FUTIBA · Edição nº 1 · Versão demo</p>
+      <h1 class="title">Futebol 16-bit,<br>do jeito que<br>era bom</h1>
+      <p class="lede">Uma carta de amor ao futebol raiz dos videogames. Câmera lateral, chute de fora da área,
+        grito de gol de tubo. <strong>320×240 pixels</strong> e nenhuma vergonha na cara.</p>
+
+      <div class="cover__btns">
+        <a class="btn btn--gold" href="#baixar">Baixar a demo</a>
+        <a class="btn btn--ghost" href="#video">Ver gameplay</a>
+      </div>
+
+      <ul class="ticker" aria-label="Resumo do jogo">
+        <li>32 equipes</li>
+        <li>Copa</li>
+        <li>Campeonato</li>
+        <li>Pênaltis</li>
+        <li>Teclado &amp; controle</li>
+      </ul>
+    </div>
+
+  </div>
+  <span class="pagenum" aria-hidden="true">Pág. 1</span>
+</section>
+
+<!-- ======= HISTÓRIA / INSPIRAÇÃO ======= -->
+<section class="sec sec--red" id="historia">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light">A história por trás</p>
+    <h2 class="head">Por que o FUTIBA existe</h2>
+
+    <div class="story">
+      <div class="balloon balloon--big">
+        <p>O FUTIBA é uma <strong>carta de amor ao futebol raiz dos games</strong>.
+          Não espere grandes gráficos: aqui é o tempo da diversão.</p>
+      </div>
+
+      <div class="balloon balloon--alt">
+        <p>Ainda está em desenvolvimento. Essa é a <strong>demo</strong>, feita pra você brincar e espalhar
+          por aí. Em breve sai a versão final, com tudo tunado.</p>
+      </div>
+
+      <div class="panel panel--tint refs">
+        <h3 class="sub">De onde veio a ideia</h3>
+        <dl>
+          <dt>International Superstar Soccer</dt>
+          <dd>O jeito de jogar: câmera de cima, leitura de campo, ritmo. A referência-mãe.</dd>
+          <dt>Super Sidekicks</dt>
+          <dd>O exagero arcade. Apresentação, personalidade, impacto na hora do gol.</dd>
+          <dt>Almanaques e álbuns de figurinhas</dt>
+          <dd>Escalação em retrato, foto oficial do time, tabela de classificação. A revista virou menu.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true">Pág. 2</span>
+</section>
+
+<!-- ======= EM CAMPO ======= -->
+<section class="sec" id="campo">
+  <div class="wrap">
+    <p class="eyebrow">Apita o juiz</p>
+    <h2 class="head">O que rola em campo</h2>
+    <p class="deck">Motor de partida próprio, feito em Godot, com as manias do futebol de videogame antigo —
+      e algumas que os antigos não tinham.</p>
+
+    <div class="cards">
+      <article class="card panel">
+        <span class="card__tag">Partida</span>
+        <h3>Pixel-perfect de verdade</h3>
+        <p>Resolução interna de 320×240, escala inteira, sem borrão. Roda em janela ou tela cheia, no teclado
+          ou no controle.</p>
+      </article>
+
+      <article class="card panel">
+        <span class="card__tag">Copa</span>
+        <h3>Mata-mata de 8 ou 16</h3>
+        <p>Chaveamento, jogo único e decisão nos pênaltis quando dá empate. Perdeu, acabou.</p>
+      </article>
+
+      <article class="card panel">
+        <span class="card__tag">Campeonato</span>
+        <h3>Pontos corridos, 15 rodadas</h3>
+        <p>Tabela completa com pontos, vitórias, empates, saldo e cartões. Cada equipe tem o próprio jogo salvo.</p>
+      </article>
+
+      <article class="card panel">
+        <span class="card__tag">Juiz</span>
+        <h3>Cartão vem andando</h3>
+        <p>O árbitro caminha até a falta antes de mostrar o cartão. Entrada dura demais e o maqueiro entra
+          com a maca.</p>
+      </article>
+
+      <article class="card panel">
+        <span class="card__tag">Pênaltis</span>
+        <h3>Disputa jogável</h3>
+        <p>Cobrador e goleiro com o uniforme do seu time, torcida reagindo a cada cobrança e voo de goleiro
+          na hora certa.</p>
+      </article>
+
+      <article class="card panel">
+        <span class="card__tag">Clima</span>
+        <h3>Sol, noite e chuva</h3>
+        <p>Horário e tempo mudam a cara do estádio. O mesmo campo não parece o mesmo jogo.</p>
+      </article>
+    </div>
+
+    <figure class="shot panel">
+      <img src="/assets/gameplay.png" width="1288" height="952" loading="lazy"
+           alt="Partida do FUTIBA em andamento: placar CRU 1 x 0 VRFC aos 35:42, jogadores em pixel art no gramado e minimapa no canto superior direito." class="zoomable">
+      <figcaption>Segundo tempo, 35:42, e o time de amarelo precisando de um empate.</figcaption>
+    </figure>
+  </div>
+  <span class="pagenum" aria-hidden="true">Pág. 3</span>
+</section>
+
+<!-- ======= EQUIPES ======= -->
+<section class="sec sec--green" id="equipes">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light">Escala o time</p>
+    <h2 class="head">As equipes</h2>
+    <p class="deck deck--light">São 32 equipes jogáveis, cada uma com elenco completo, formação, estilo de jogo
+      e um retrato desenhado pra cada jogador. Nada de silhueta genérica.</p>
+
+    <div class="teams">
+      <figure class="shot panel">
+        <img src="/assets/team-select.png" width="1092" height="1092" loading="lazy"
+             alt="Tela de seleção de equipe do FUTIBA, com o técnico à esquerda, os 11 titulares em retratos numerados, atributos do time e formação 4-3-3." class="zoomable">
+        <figcaption>Seleção de equipe: técnico, os onze, atributos e esquema tático.</figcaption>
+      </figure>
+
+      <figure class="shot panel">
+        <img src="/assets/squad-photo.png" width="1092" height="1092" loading="lazy"
+             alt="Foto oficial do time no FUTIBA: onze jogadores em pixel art perfilados no gramado antes da partida, com placas de publicidade ao fundo." class="zoomable">
+        <figcaption>Foto oficial antes de rolar a bola, do jeito que saía na revista.</figcaption>
+      </figure>
+
+      <div class="panel panel--tint teams__facts">
+        <h3 class="sub">O que cada equipe carrega</h3>
+        <ul class="checks">
+          <li>Elenco completo, com titulares e reservas</li>
+          <li>Retrato individual de cada jogador e do técnico</li>
+          <li>Atributos de velocidade, defesa e ataque</li>
+          <li>Formação e estilo próprios, do 4-4-2 ao 4-3-3</li>
+          <li>Uniforme aplicado nos jogadores e no goleiro em tempo real</li>
+        </ul>
+        <p class="secret">
+          <span class="secret__tag">Segredo</span>
+          Ganhe a Copa ou o Campeonato e duas equipes escondidas aparecem na lista.
+          Quem jogava videogame nos anos 90 sabe que sempre tem um código.
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true">Pág. 4</span>
+</section>
+
+<!-- ======= VÍDEO ======= -->
+<section class="sec" id="video">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow">Na telinha</p>
+    <h2 class="head">Gameplay</h2>
+
+    <div class="video panel" id="video-slot" data-state="pending">
+      <div class="video__frame" id="video-frame"></div>
+      <div class="video__soon" id="video-soon">
+        <span class="video__soon-title">Em breve</span>
+        <p>O vídeo de gameplay está sendo gravado. Enquanto isso, baixe a demo e faça o seu.</p>
+        <a class="btn btn--gold" href="#baixar">Baixar a demo</a>
+      </div>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true">Pág. 5</span>
+</section>
+
+<!-- ======= NO BOLSO / R36T ======= -->
+<section class="sec sec--blue" id="bolso">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light">Fora de casa</p>
+    <h2 class="head">FUTIBA no bolso</h2>
+    <p class="deck deck--light">Além do PC e do Android, o FUTIBA foi feito pra rodar em portátil retrô barato,
+      daqueles de tela de 640×480 e processador ARM.</p>
+
+    <div class="handheld">
+      <figure class="handheld__fig panel">
+        <img id="r36t-photo" src="/assets/r36t.jpg" alt="FUTIBA rodando num console portátil retrô, com a tela de seleção de equipe visível." loading="lazy" hidden>
+        <div class="device" id="r36t-mock" aria-hidden="true">
+          <div class="device__screen">
+            <img src="/assets/team-select.png" alt="" loading="lazy">
+          </div>
+          <div class="device__controls">
+            <span class="device__stick"></span>
+            <span class="device__pad"><i></i><i></i><i></i><i></i></span>
+          </div>
+        </div>
+        <figcaption id="r36t-cap">FUTIBA rodando num portátil retrô de 640×480, com a escalação na tela.</figcaption>
+      </figure>
+
+      <div class="panel panel--tint handheld__facts">
+        <h3 class="sub">Feito pra caber</h3>
+        <ul class="checks">
+          <li>Versão dedicada para portáteis ARM, em 640×480</li>
+          <li>Modo desempenho para segurar o quadro sem engasgo</li>
+          <li>Sprites pré-processados: carrega em milissegundos, não em minutos</li>
+          <li>Mesmo jogo, mesmos modos, sem cortar conteúdo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true">Pág. 6</span>
+</section>
+
+<!-- ======= BAIXAR ======= -->
+<section class="sec sec--gold" id="baixar">
+  <div class="wrap">
+    <p class="eyebrow">Sem custo, sem cadastro</p>
+    <h2 class="head head--ink">Baixar a demo</h2>
+    <p class="deck">Versão em desenvolvimento. Coisa vai mudar, bug vai aparecer, e é justamente por isso
+      que ela está aqui.</p>
+
+    <div class="downloads">
+      <a class="dl panel" href="https://drive.google.com/file/d/1kI9XN9A6NRivjPe8GPwgDmwct8zvQmGI/view?usp=sharing" target="_blank" rel="noopener">
+        <span class="dl__plat">PC</span>
+        <strong class="dl__name">Windows</strong>
+        <span class="dl__meta">Arquivo .zip · descompacte e abra o executável</span>
+        <span class="dl__go">Baixar →</span>
+      </a>
+
+      <a class="dl panel" href="https://drive.google.com/file/d/1_I_4Rqp8sRp41GqjHMWGdkJlKgj25eug/view?usp=sharing" target="_blank" rel="noopener">
+        <span class="dl__plat">Android</span>
+        <strong class="dl__name">Celular e tablet</strong>
+        <span class="dl__meta">Arquivo .apk · libere a instalação de fontes desconhecidas</span>
+        <span class="dl__go">Baixar →</span>
+      </a>
+    </div>
+
+    <p class="fineprint">Os dois arquivos ficam no Google Drive. Nada de conta, nada de anúncio, nada de cobrança.</p>
+  </div>
+  <span class="pagenum pagenum--ink" aria-hidden="true">Pág. 7</span>
+</section>
+
+<!-- ======= CONTATO ======= -->
+<section class="sec sec--ink" id="contato">
+  <div class="wrap wrap--narrow contact">
+    <p class="eyebrow eyebrow--light">Reclamação, elogio e ideia</p>
+    <h2 class="head">Fale com o técnico</h2>
+    <p class="deck deck--light">Achou um bug, quer uma equipe no jogo, tem uma ideia boa demais pra guardar?
+      Manda um e-mail. Responde a mesma pessoa que faz o jogo.</p>
+    <a class="btn btn--gold btn--big" href="mailto:gomesromao@gmail.com?subject=FUTIBA%20-%20feedback">gomesromao@gmail.com</a>
+  </div>
+  <span class="pagenum" aria-hidden="true">Pág. 8</span>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div class="foot__mark">
+      <span class="mark__ball" aria-hidden="true"></span>
+      <span>FUTIBA</span>
+    </div>
+    <p class="foot__note">Feito no Brasil, na raça, em Godot. Demo em desenvolvimento — a versão final vem aí.</p>
+    <div class="barcode" aria-hidden="true"></div>
+    <p class="foot__copy">© FUTIBA 2026</p>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" id="lightbox-close" aria-label="Fechar imagem">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="/script.js" defer></script>
+</body>
+</html>
