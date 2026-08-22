@@ -73,7 +73,7 @@ Tudo o que muda com frequência está em um lugar só:
 | O quê | Onde |
 |---|---|
 | Textos das seções | `index.html` |
-| Links de download (PC e Android) | `index.html`, seção `id="baixar"` |
+| Links de download (PC, portátil Android, celular touch) | `index.html`, seção `id="baixar"` |
 | E-mail de contato | `index.html`, seção `id="contato"` |
 | Screenshots | `assets/` |
 | Cores, tamanhos, espaçamentos | `styles.css`, bloco `:root` no topo |
@@ -83,6 +83,7 @@ As screenshots já incluídas:
 - `title-screen.png` — tela de título (também é a capa da página)
 - `gameplay.png` — partida em andamento
 - `team-select.png` — seleção de equipe
+- `team-select-botafogo.png` — seleção de equipe que aparece dentro do portátil desenhado
 - `squad-photo.png` — foto oficial do time
 - `og-cover.jpg` — imagem que aparece quando o link é compartilhado no WhatsApp, X, Discord etc.
 
