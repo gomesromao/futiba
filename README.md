@@ -81,9 +81,10 @@ Tudo o que muda com frequência está em um lugar só:
 As screenshots já incluídas:
 
 - `title-screen.png` — tela de título (também é a capa da página)
-- `gameplay.png` — partida em andamento
-- `team-select.png` — seleção de equipe
-- `team-select-botafogo.png` — seleção de equipe que aparece dentro do portátil desenhado
+- `shots/` — capturas REAIS do jogo (gameplay, seleção, pênaltis; modo
+  normal, filtro TV raiz e molduras), usadas no corpo da página, na seção
+  do álbum e dentro do portátil desenhado. `r36t.jpg` (foto real do
+  aparelho) continua opcional: sem ela, o site mantém o console em CSS.
 - `squad-photo.png` — foto oficial do time
 - `og-cover.jpg` — imagem que aparece quando o link é compartilhado no WhatsApp, X, Discord etc.
 

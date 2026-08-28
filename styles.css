@@ -492,3 +492,14 @@ a{color:inherit}
   .refs,.teams__facts,.handheld__facts,.card,.dl{padding:20px}
   .pagenum{font-size:8px;right:10px}
 }
+
+/* ======= ÁLBUM DE FIGURINHAS (capturas reais) ======= */
+.sec--gold{background:repeating-linear-gradient(135deg,#f2c526 0 26px,#eebd14 26px 52px)}
+.album{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px}
+.album__card{padding:8px 8px 4px;background:#fffef6;transform:rotate(-1.1deg)}
+.album__card:nth-child(2n){transform:rotate(1.2deg)}
+.album__card:nth-child(3n){transform:rotate(-0.6deg)}
+.album__card img{display:block;width:100%;height:auto;image-rendering:auto;border:2px solid #14120c}
+.album__card figcaption{font:600 13px/1.35 "Barlow Semi Condensed",sans-serif;color:#2a2313;padding:7px 2px 4px;text-transform:uppercase;letter-spacing:.02em}
+@media (max-width:980px){.album{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.album{grid-template-columns:1fr}}
