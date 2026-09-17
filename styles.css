@@ -411,7 +411,17 @@ a{color:inherit}
 }
 .dl__meta{display:block;font-size:.94em;margin-bottom:16px}
 .dl__go{margin-top:auto;font-family:"Bangers",Impact,"Haettenschweiler","Arial Narrow Bold",sans-serif;font-size:24px;letter-spacing:.05em;color:var(--red)}
-.fineprint{margin:28px 0 0;font-size:.94em}
+.platnote{
+  margin:28px 0 0;
+  background:var(--ink);color:var(--paper-lt);
+  border-left:var(--line) solid var(--gold);
+  padding:14px 18px;
+  font-size:.86em;line-height:1.45;
+  max-width:72ch;
+}
+.platnote strong{color:var(--gold);font-weight:700}
+
+.fineprint{margin:22px 0 0;font-size:.94em}
 
 /* ============================================================
    CONTATO / RODAPÉ
