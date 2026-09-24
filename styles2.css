@@ -1,0 +1,65 @@
+/* ============================================================
+   FUTIBA — edição 2 (index2): idiomas, estádios, indoor, manual.
+   Só acrescenta; o styles.css original continua valendo.
+   ============================================================ */
+
+/* ---------- seletor de idioma ---------- */
+.lang{display:flex;gap:2px;flex:0 0 auto;margin-left:4px}
+.lang button{
+  font-family:"Press Start 2P",ui-monospace,"Courier New",monospace;font-size:9px;
+  background:transparent;color:var(--paper-lt);
+  border:2px solid transparent;padding:7px 6px 6px;cursor:pointer;line-height:1;
+}
+.lang button:hover{color:var(--gold-lt)}
+.lang button[aria-pressed="true"]{border-color:var(--gold);color:var(--gold)}
+
+/* ---------- pixel nítido nas telas nativas 320x240 ---------- */
+img[width="320"]{image-rendering:pixelated}
+
+.btn--paper{background:var(--paper-lt)}
+
+/* ---------- duas capturas lado a lado ---------- */
+.duo{display:grid;gap:26px;grid-template-columns:repeat(2,1fr);margin-top:34px}
+
+/* ---------- estádios ---------- */
+.stadia{display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
+.stadia__card{padding:0;overflow:hidden;background:var(--ink)}
+.stadia__card img{width:100%;cursor:zoom-in;border-bottom:var(--line) solid var(--ink)}
+.stadia__card figcaption{
+  font-family:"Press Start 2P",ui-monospace,"Courier New",monospace;font-size:10px;
+  color:var(--gold);padding:10px 12px 9px;background:var(--ink);
+}
+.stadia__more{
+  margin:22px 0 0;color:var(--paper-lt);
+  font-family:"Press Start 2P",ui-monospace,"Courier New",monospace;font-size:11px;line-height:1.7;
+}
+
+/* ---------- futsal & paredão ---------- */
+.indoor{display:grid;gap:26px;grid-template-columns:repeat(2,1fr);align-items:start}
+.indoor__mode{padding:0;overflow:hidden}
+.indoor__mode img{width:100%;cursor:zoom-in;border-bottom:var(--line) solid var(--ink)}
+.indoor__txt{padding:22px 24px 8px}
+.indoor__txt h3{
+  font-family:"Bangers",Impact,"Haettenschweiler","Arial Narrow Bold",sans-serif;
+  font-size:clamp(26px,2.6vw,34px);letter-spacing:.03em;margin:10px 0 14px;line-height:1;
+}
+.indoor .card__tag{background:var(--red)}
+.indoor__mode:nth-child(2) .card__tag{background:var(--blue)}
+
+/* ---------- manual ---------- */
+.manual{display:grid;gap:34px;grid-template-columns:1.1fr .9fr;align-items:center}
+.manual__fig{padding:0;overflow:hidden;transform:rotate(1.2deg)}
+.manual__fig img{width:100%}
+
+@media (max-width:900px){
+  .duo,.indoor,.manual{grid-template-columns:1fr}
+  .stadia{grid-template-columns:repeat(2,1fr)}
+  .manual__fig{transform:none}
+}
+@media (max-width:640px){
+  .lang button{font-size:8px;padding:6px 4px 5px}
+  .scoreboard__in{flex-wrap:wrap;row-gap:0}
+  .lang{order:2;margin-left:auto}
+  .nav{order:3;width:100%;margin-left:0}
+  .indoor__txt{padding:18px 18px 4px}
+}
