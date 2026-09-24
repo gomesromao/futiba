@@ -553,7 +553,7 @@ def build(lang):
 <link rel="stylesheet" href="manual.css">
 </head>
 <body>
-<div class="topbar"><div class="topbar__in"><a href="/index2?lang={lang}" style="border:0;padding:0"><img src="img/logo.png" alt="FUTIBA"></a>
+<div class="topbar"><div class="topbar__in"><a href="/?lang={lang}" style="border:0;padding:0"><img src="img/logo.png" alt="FUTIBA"></a>
 <nav>{nav}{langs}<a class="pdf" href="FUTIBA_MANUAL_{t["code"]}.pdf" download>{t["pdf"]}</a></nav></div></div>
 {"".join(out)}
 </body>
