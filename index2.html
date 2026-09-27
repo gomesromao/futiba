@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FUTIBA — futebol 16-bit, do jeito que era bom</title>
-<meta name="description" content="FUTIBA é uma carta de amor ao futebol raiz dos videogames. Pixel art 320×240, 32 equipes, 12 estádios, copa, campeonato, pênaltis, futsal e paredão. Demo grátis para PC e Android.">
+<meta name="description" content="FUTIBA é uma carta de amor ao futebol raiz dos videogames. Pixel art 320×240, 32 equipes, 12 estádios, copa, campeonato, pênaltis, futsal, paredão, Desafio e Copa Brazuca. Demo grátis para PC e Android.">
 <meta name="theme-color" content="#14100D">
+<meta name="robots" content="noindex">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="FUTIBA — futebol 16-bit, do jeito que era bom">
 <meta property="og:description" content="Carta de amor ao futebol raiz dos videogames. Demo grátis para PC e Android.">
-<meta property="og:image" content="/assets/og-cover.jpg">
+<meta property="og:image" content="https://futiba.vercel.app/assets/v3/og-edicao3-pt.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -19,6 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Semi+Condensed:wght@500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/styles2.css">
+<link rel="stylesheet" href="/styles3.css">
 </head>
 <body>
 
@@ -32,6 +34,8 @@
       <span class="mark__word">FUTIBA</span>
     </a>
     <nav class="nav" aria-label="Seções">
+      <a href="#desafio" data-i18n="nav.desafio">Desafio</a>
+      <a href="#brazuca" data-i18n="nav.brazuca">Copa Brazuca</a>
       <a href="#campo" data-i18n="nav.campo">Em campo</a>
       <a href="#estadios" data-i18n="nav.estadios">Estádios</a>
       <a href="#indoor" data-i18n="nav.indoor">Futsal &amp; Paredão</a>
@@ -64,7 +68,7 @@
     </div>
 
     <div class="cover__talk">
-      <p class="eyebrow" data-i18n="cover.eyebrow">Almanaque FUTIBA · Edição nº 2 · Versão demo</p>
+      <p class="eyebrow" data-i18n="cover.eyebrow">Almanaque FUTIBA · Edição nº 3 · Versão demo</p>
       <h1 class="title" data-i18n="cover.title">Futebol 16-bit,<br>do jeito que<br>era bom</h1>
       <p class="lede" data-i18n="cover.lede">Uma carta de amor ao futebol raiz dos videogames. Câmera de cima, chute de fora da área,
         grito de gol de tubo. <strong>320×240 pixels</strong> e nenhuma vergonha na cara.</p>
@@ -82,6 +86,8 @@
         <li data-i18n="tk.5">Pênaltis</li>
         <li data-i18n="tk.6">Futsal</li>
         <li data-i18n="tk.7">Paredão</li>
+        <li data-i18n="tk.8">Desafio</li>
+        <li data-i18n="tk.9">Copa Brazuca</li>
         <li>PT · EN · ES</li>
       </ul>
     </div>
@@ -143,6 +149,115 @@
     </div>
   </div>
   <span class="pagenum" aria-hidden="true" data-i18n="pg.1b">Pág. 1½</span>
+</section>
+
+<!-- ======= DESAFIO (edição 3) ======= -->
+<section class="sec sec--ink" id="desafio">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light" data-i18n="dz.eyebrow">Modo novo · Menu principal</p>
+    <h2 class="head" data-i18n="dz.head">Desafio</h2>
+    <p class="deck deck--light" data-i18n="dz.deck">Um super time te espera no estádio SPECIAL. A CPU joga no máximo, sem dó.
+      Ganhou, o time é seu.</p>
+
+    <div class="dz">
+      <figure class="shot panel dz__big">
+        <img src="/assets/v3/desafio1-cut-pt.png" data-src-lang="/assets/v3/desafio1-cut-{lang}.png" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="dz.s1.alt" alt="Cutscene do Desafio em pixel art: quadro desenhado no alto e texto datilografado embaixo.">
+        <figcaption data-i18n="dz.s1">Antes do jogo, a cutscene conta quem é o rival.</figcaption>
+      </figure>
+      <figure class="shot panel">
+        <img src="/assets/v3/special.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="dz.s2.alt" alt="Captura real do FUTIBA no estádio SPECIAL, com as torcidas dos dois super times e as placas do Desafio.">
+        <figcaption data-i18n="dz.s2">Estádio SPECIAL: só abre nesse modo.</figcaption>
+      </figure>
+      <figure class="shot panel">
+        <img src="/assets/v3/liberado-cnd-pt.png" data-src-lang="/assets/v3/liberado-cnd-{lang}.png" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="dz.s3.alt" alt="Tela TIME LIBERADO do FUTIBA com o escudo dos Cóndores e os cinco craques.">
+        <figcaption data-i18n="dz.s3">Venceu: TIME LIBERADO, em todos os modos.</figcaption>
+      </figure>
+      <div class="panel panel--tint dz__facts">
+        <h3 class="sub" data-i18n="dz.facts">Como funciona</h3>
+        <ul class="checks">
+          <li data-i18n="dz.f1">O super time é o mandante; você escolhe só o seu</li>
+          <li data-i18n="dz.f2">Dificuldade no máximo, qualquer que seja a opção</li>
+          <li data-i18n="dz.f3">Perdeu? Tem revanche. E um aviso: não desista</li>
+          <li data-i18n="dz.f4">São dois super times. O segundo só aparece depois do primeiro</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true" data-i18n="pg.x1">Encarte A</span>
+</section>
+
+<!-- ======= COPA BRAZUCA (edição 3) ======= -->
+<section class="sec sec--purple" id="brazuca">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light" data-i18n="bz.eyebrow">Modo novo · Indoor</p>
+    <h2 class="head" data-i18n="bz.head">Copa Brazuca</h2>
+    <p class="deck deck--light" data-i18n="bz.deck">Mata-mata de futsal com os clubes de quadra que todo mundo conhece.
+      Quadra roxa, ginásio cheio e pênalti na própria quadra.</p>
+
+    <div class="dz">
+      <figure class="shot panel dz__big">
+        <img src="/assets/v3/brazuca-quadra.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="bz.s1.alt" alt="Captura real da Copa Brazuca: quadra roxa de futsal, ginásio lotado e placas nas laterais.">
+        <figcaption data-i18n="bz.s1">A quadra roxa da copa.</figcaption>
+      </figure>
+      <figure class="shot panel">
+        <img src="/assets/v3/brazuca-intro-pt.png" data-src-lang="/assets/v3/brazuca-intro-{lang}.png" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="bz.s2.alt" alt="Cutscene de abertura da Copa Brazuca em pixel art.">
+        <figcaption data-i18n="bz.s2">Abre com cutscene e música do Indoor.</figcaption>
+      </figure>
+      <figure class="shot panel">
+        <img src="/assets/v3/brazuca-penaltis.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="bz.s3.alt" alt="Disputa de pênaltis na quadra da Copa Brazuca, com o placar dos pênaltis no alto.">
+        <figcaption data-i18n="bz.s3">Empatou? Pênalti ali mesmo, uma batida de cada vez.</figcaption>
+      </figure>
+      <div class="panel panel--tint dz__facts">
+        <h3 class="sub" data-i18n="bz.facts">Na chave</h3>
+        <ul class="checks">
+          <li data-i18n="bz.f1">8 times sorteados entre 12 clubes de quadra</li>
+          <li data-i18n="bz.f2">Cada time com 16 jogadores, técnico e escudo</li>
+          <li data-i18n="bz.f3">Você monta o seu time antes de cada jogo</li>
+          <li data-i18n="bz.f4">Cada título libera o campeão para todos os modos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true" data-i18n="pg.x2">Encarte B</span>
+</section>
+
+<!-- ======= CENAS (edição 3) ======= -->
+<section class="sec sec--gold" id="cenas">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="cn.eyebrow">Sessão da tarde</p>
+    <h2 class="head" data-i18n="cn.head">Tem cutscene</h2>
+    <p class="deck" data-i18n="cn.deck">Quadro desenhado, texto batido à máquina, música subindo. Copa e Campeonato abrem com a sua,
+      e perder também tem a dela.</p>
+    <div class="album">
+      <figure class="album__card panel">
+        <img src="/assets/v3/copa-intro-pt.png" data-src-lang="/assets/v3/copa-intro-{lang}.png" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="cn.1.alt" alt="Cutscene de abertura da Copa no FUTIBA.">
+        <figcaption data-i18n="cn.1">Copa: o caminho até a taça.</figcaption>
+      </figure>
+      <figure class="album__card panel">
+        <img src="/assets/v3/campeonato-intro-pt.png" data-src-lang="/assets/v3/campeonato-intro-{lang}.png" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="cn.2.alt" alt="Cutscene de abertura do Campeonato no FUTIBA.">
+        <figcaption data-i18n="cn.2">Campeonato: 15 rodadas pela frente.</figcaption>
+      </figure>
+      <figure class="album__card panel">
+        <img src="/assets/v3/desafio2-cut-pt.png" data-src-lang="/assets/v3/desafio2-cut-{lang}.png" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="cn.3.alt" alt="Cutscene do segundo super time do Desafio.">
+        <figcaption data-i18n="cn.3">O segundo super time. Chega quem vencer o primeiro.</figcaption>
+      </figure>
+      <figure class="album__card panel">
+        <img src="/assets/v3/copa-eliminado-pt.png" data-src-lang="/assets/v3/copa-eliminado-{lang}.png" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="cn.4.alt" alt="Cutscene de eliminação na Copa do FUTIBA.">
+        <figcaption data-i18n="cn.4">Hoje não deu. Não se renda.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <span class="pagenum pagenum--ink" aria-hidden="true" data-i18n="pg.x3">Encarte C</span>
 </section>
 
 <!-- ======= HISTÓRIA / INSPIRAÇÃO ======= -->
@@ -217,6 +332,21 @@
         <h3 data-i18n="cam.c6h">Dia, tarde, noite e chuva</h3>
         <p data-i18n="cam.c6">Horário e tempo mudam a cara do estádio. O mesmo campo não parece o mesmo jogo.</p>
       </article>
+      <article class="card panel">
+        <span class="card__tag" data-i18n="cam.c7t">Chute</span>
+        <h3 data-i18n="cam.c7h">Cavadinha e cobertura</h3>
+        <p data-i18n="cam.c7">Segure o correr e chute: toque rápido encobre de perto, segurado a bola sobe e cai. Tem que mirar e dosar.</p>
+      </article>
+      <article class="card panel">
+        <span class="card__tag" data-i18n="cam.c8t">Goleiro</span>
+        <h3 data-i18n="cam.c8h">Sai no pé, amortece no peito</h3>
+        <p data-i18n="cam.c8">Cara a cara ele vem raspar. Bola no corpo ele segura. E de vez em quando sai um escorpião.</p>
+      </article>
+      <article class="card panel">
+        <span class="card__tag" data-i18n="cam.c9t">Craque</span>
+        <h3 data-i18n="cam.c9h">Bomba só pra quem tem canhão</h3>
+        <p data-i18n="cam.c9">Do meio de campo quase todo mundo chuta quicando. Poucos craques mandam a bomba rasteira.</p>
+      </article>
     </div>
 
     <div class="duo">
@@ -252,7 +382,7 @@
       <figure class="stadia__card panel"><img src="/assets/v2/est-mocabonita.jpg" width="960" height="720" loading="lazy" class="zoomable" alt="Moça Bonita no FUTIBA, no fim de tarde."><figcaption>Moça Bonita</figcaption></figure>
       <figure class="stadia__card panel"><img src="/assets/v2/est-terrao.jpg" width="960" height="720" loading="lazy" class="zoomable" alt="O Terrão no FUTIBA."><figcaption data-i18n="est.terrao">Terrão</figcaption></figure>
     </div>
-    <p class="stadia__more" data-i18n="est.more">E ainda Olímpico, Mooca, Milão e África.</p>
+    <p class="stadia__more" data-i18n="est.more">E ainda Olímpico, Mooca, Milão e África. O SPECIAL só abre no Desafio.</p>
   </div>
   <span class="pagenum" aria-hidden="true" data-i18n="pg.4">Pág. 4</span>
 </section>
@@ -329,6 +459,7 @@
         <p class="secret">
           <span class="secret__tag" data-i18n="eq.secret_tag">Segredo</span>
           <span data-i18n="eq.secret">Ganhe a Copa ou o Campeonato e duas equipes escondidas aparecem na lista.
+          Vença o Desafio e leve o super time. Cada Copa Brazuca libera um clube de quadra.
           Quem jogava videogame nos anos 90 sabe que sempre tem um código.</span>
         </p>
       </div>
@@ -399,14 +530,14 @@
       <p class="eyebrow eyebrow--light" data-i18n="man.eyebrow">Leia antes do apito</p>
       <h2 class="head" data-i18n="man.head">Manual do jogo</h2>
       <p class="deck deck--light" data-i18n="man.deck">Todos os comandos, tela por tela: teclado e controle no PC, toque e controle no Android.
-        Os modos, as regras do futsal e do paredão, e o que cada botão faz.</p>
+        Os modos, o Desafio, a Copa Brazuca, as regras do futsal e do paredão, e o que cada botão faz.</p>
       <div class="cover__btns">
-        <a class="btn btn--gold" href="/manual/pt" data-href-lang="/manual/{lang}" data-i18n="man.read">Ler o manual</a>
-        <a class="btn btn--paper" href="/manual/FUTIBA_MANUAL_PT.pdf" data-href-lang="/manual/FUTIBA_MANUAL_{LANG}.pdf" download data-i18n="man.pdf">Baixar PDF</a>
+        <a class="btn btn--gold" href="/manual2/pt" data-href-lang="/manual2/{lang}" data-i18n="man.read">Ler o manual</a>
+        <a class="btn btn--paper" href="/manual2/FUTIBA_MANUAL_PT.pdf" data-href-lang="/manual2/FUTIBA_MANUAL_{LANG}.pdf" download data-i18n="man.pdf">Baixar PDF</a>
       </div>
     </div>
     <figure class="manual__fig panel">
-      <img src="/assets/v2/menu/menu-pt.png" data-src-lang="/assets/v2/menu/menu-{lang}.png" width="320" height="240" loading="lazy"
+      <img src="/assets/v3/menu-pt.png" data-src-lang="/assets/v3/menu-{lang}.png" width="320" height="240" loading="lazy"
            data-i18n-alt="man.alt" alt="Menu principal do FUTIBA com os modos de jogo.">
     </figure>
   </div>
@@ -422,21 +553,21 @@
       que ela está aqui.</p>
 
     <div class="downloads">
-      <a class="dl panel" href="https://drive.google.com/file/d/1P6TARAC_R08vAwBw10Z3V650jQ-P9RoS/view?usp=sharing" target="_blank" rel="noopener">
+      <a class="dl panel" href="https://drive.google.com/file/d/1SisBhjxuIWqW1tQmEr1gdFHSI6BWsk9r/view?usp=sharing" target="_blank" rel="noopener">
         <span class="dl__plat">PC</span>
         <strong class="dl__name">Windows</strong>
-        <span class="dl__meta" data-i18n="dl.pc">Arquivo .zip · descompacte e abra o executável. Teclado ou controle.</span>
+        <span class="dl__meta" data-i18n="dl.pc">Arquivo .exe · baixe e abra. Teclado ou controle.</span>
         <span class="dl__go" data-i18n="dl.go">Baixar →</span>
       </a>
 
-   <a class="dl panel" href="https://drive.google.com/file/d/1rXJTLw-8J6EOyxzzMZ8SEbbKWEH19ZMX/view?usp=sharing" target="_blank" rel="noopener">
+   <a class="dl panel" href="https://drive.google.com/file/d/141_rG45giTSpW9pTAP5W3jUdXSKFAx3O/view?usp=sharing" target="_blank" rel="noopener">
         <span class="dl__plat" data-i18n="dl.phone">Celular</span>
         <strong class="dl__name" data-i18n="dl.touch">Android por toque</strong>
         <span class="dl__meta" data-i18n="dl.touch_meta">Arquivo .apk · controles na tela, sem precisar de controle.</span>
         <span class="dl__go" data-i18n="dl.go">Baixar →</span>
       </a>
 
-      <a class="dl panel" href="https://drive.google.com/file/d/1gopjhmk_55JuVHaIZVwbZjn6jsjy59Ax/view?usp=sharing" target="_blank" rel="noopener">
+      <a class="dl panel" href="https://drive.google.com/file/d/1SYCXey7FRHoujz2ES1YA-73A3W-iVZK8/view?usp=sharing" target="_blank" rel="noopener">
         <span class="dl__plat" data-i18n="dl.handheld">Portátil</span>
         <strong class="dl__name" data-i18n="dl.pad">Android com controle</strong>
         <span class="dl__meta" data-i18n="dl.pad_meta">Arquivo .apk · para portáteis retrô com botão físico, tipo R36S, Anbernic, Retroid...</span>
@@ -487,7 +618,7 @@
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<script src="/i18n2.js"></script>
+<script src="/i18n3.js"></script>
 <script src="/script.js" defer></script>
 </body>
 </html>

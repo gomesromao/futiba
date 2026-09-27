@@ -9,7 +9,8 @@ Referência de comandos: build 52.9 (levantada no código do jogo).
 import os, sys, subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "manual")
+OUT_NAME = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else "manual"
+OUT = os.path.join(ROOT, OUT_NAME)
 
 # ---------------------------------------------------------------- botões
 def k(*keys):
@@ -57,12 +58,12 @@ L = {}
 
 L["pt"] = dict(
     html="pt-BR", code="PT", title="FUTIBA — Manual de jogo",
-    nav=[("#comece", "Começo"), ("#partida", "Partida"), ("#modos", "Modos"), ("#teclado", "PC"), ("#toque", "Android")],
+    nav=[("#comece", "Começo"), ("#partida", "Partida"), ("#modos", "Modos"), ("#novos", "Novos"), ("#teclado", "PC"), ("#toque", "Android")],
     pdf="Baixar PDF", site="← Site",
     foot="FUTIBA 2026 • MANUAL DE JOGO",
     cover=dict(h1="MANUAL DE JOGO", sub="FUTEBOL DO NOSSO JEITO",
-               modes="AMISTOSO • CAMPEONATO • COPA • PÊNALTIS • FUTSAL • PAREDÃO",
-               ref="PC (teclado e controle) • Android (toque e controle) • referência: build 52.9"),
+               modes="AMISTOSO • CAMPEONATO • COPA • PÊNALTIS • FUTSAL • PAREDÃO • DESAFIO • COPA BRAZUCA",
+               ref="PC (teclado e controle) • Android (toque e controle) • referência: versão de 26/09/2026"),
     p2=dict(hd="COMECE A JOGAR", big="BOLA ROLANDO.",
             lead="FUTIBA é futebol de videogame do jeito antigo: passe rápido, carrinho que pesa, goleiro que decide. Menos botão, mais leitura de jogo: <strong>o mesmo botão muda de função com e sem a bola.</strong>",
             steps=[("ESCOLHA O MODO", "Amistoso para ir direto ao jogo, Campeonato e Copa para campanha, Pênaltis para duelo, Indoor para futsal e paredão."),
@@ -74,7 +75,8 @@ L["pt"] = dict(
                   ("CAMPEONATO", "16 clubes, 15 rodadas, pontos corridos."),
                   ("COPA", "mata-mata de 8 ou 16 clubes."),
                   ("PÊNALTIS", "direto para a marca da cal."),
-                  ("INDOOR", "futsal e paredão."),
+                  ("INDOOR", "futsal, paredão e COPA BRAZUCA."),
+                  ("DESAFIO", "você contra um super time. Venceu, ele passa a jogar com você."),
                   ("CONQUISTAS", "12 conquistas e o álbum de figurinhas."),
                   ("OPÇÕES", "idioma, volume, filtro, duração do tempo e dificuldade.")]),
     p3=dict(hd="ANTES DO APITO", big="DO MENU AO CÍRCULO CENTRAL.",
@@ -111,7 +113,7 @@ L["pt"] = dict(
             fut_h="FUTSAL", fut_tag="4 NA LINHA + 1 NO GOL",
             fut=["Dois tempos de 3 minutos reais (o relógio mostra 30 minutos cada). Não depende da opção de duração.",
                  "Lateral cobrado com o pé.",
-                 "Faltas se acumulam: a 6ª do time (e a 12ª, a 18ª…) é pênalti direto.",
+                 "Faltas se acumulam. Da 6ª do time em diante, toda falta é tiro livre direto da segunda marca, sem barreira (dentro da área, pênalti). Zera no intervalo.",
                  "O goleiro pode passar do meio da quadra.",
                  "Troca de jogadores livre, com a bola rolando.",
                  "Expulso não volta. Time reduzido a goleiro + 1 perde por W.O."],
@@ -121,12 +123,30 @@ L["pt"] = dict(
                  "Sem juiz, sem falta, sem cartão.",
                  "O goleiro não pode passar do meio: se passar, a bola vai para o rival. O GL pode.",
                  "Troca de linha livre, com a bola rolando (pausa → TÁTICAS / TROCAS)."]),
+    p6b=dict(hd="MODOS NOVOS", big="DESAFIO E COPA BRAZUCA.",
+             dz_h="DESAFIO", dz_tag="VOCÊ CONTRA UM SUPER TIME",
+             dz=["Menu principal > DESAFIO. Uma cutscene conta quem é o rival; <b>START</b> pula, confirmar acelera.",
+                 "O super time é o mandante. Você escolhe só o seu time e joga de visitante no estádio SPECIAL.",
+                 "A CPU joga no nível máximo, qualquer que seja a dificuldade.",
+                 "Perdeu? Revanche. Venceu? TIME LIBERADO: o super time passa a jogar com você em todos os modos.",
+                 "São dois super times. Vencer o primeiro abre o caminho para o segundo."],
+             bz_h="COPA BRAZUCA", bz_tag="MATA-MATA NA QUADRA",
+             bz=["Indoor > COPA BRAZUCA. Mata-mata de 8 no futsal, sorteado entre 12 times de quadra.",
+                 "Antes de cada jogo você monta só o seu time, com goleiro-linha.",
+                 "Empate vai para os pênaltis na própria quadra, uma batida de cada vez.",
+                 "Cada título libera o time campeão para todos os modos."],
+             tips_h="DICAS DE CAMPO",
+             tips=["<b>Cavadinha e cobertura:</b> segure o botão de correr e chute. Toque rápido encobre de perto; segurado, a bola sobe e cai rápido. Tem que mirar e dosar.",
+                   "<b>Goleiro saindo no pé:</b> cara a cara, ele vem raspar. Drible, cave por cima ou toque antes.",
+                   "<b>Chute do meio de campo:</b> quase todo mundo chuta fraco e quicando. Só os craques de canhão mandam a bomba rasteira.",
+                   "<b>Cutscenes:</b> Copa e Campeonato também abrem com a sua, e a eliminação tem a dela."]),
     p7=dict(hd="COMANDOS · PC · TECLADO", big="TECLADO.",
             lead="Na partida o jogador anda <b>só com as setas</b>. WASD funciona nos menus.",
             th=("TECLA", "COM A BOLA", "SEM A BOLA"),
             rows=[(k("←", "↑", "↓", "→"), "Mover e dar direção ao passe, ao cruzamento e à mira do chute", "Mover"),
                   (k("Z"), "Passe (vai para o companheiro na direção)", "Desarme em pé. <b>Segure</b> para correr atrás da bola"),
                   (k("X"), "Chute. <b>Segure</b> para mais força (↑/↓ mudam a altura na boca do gol)", "Disputa pelo alto (cabeçada, peixinho) ou troca de jogador"),
+                  (k("SHIFT") + " + " + k("X"), "Chute por baixo da bola. <b>Toque rápido</b>: cavadinha. <b>Segure</b>: cobertura, que sobe e cai rápido", "—"),
                   (k("A"), "Cruzamento ou lançamento. <b>Segure</b> para mais força", "Carrinho"),
                   (k("SHIFT"), "Segure para correr. Um toque: drible (rolinho ou corte). Dois toques rápidos: pedalada", "Correr"),
                   (k("ESPAÇO"), "Lambreta (meias e atacantes). Durante ela, <kbd>X</kbd> é bicicleta", "—"),
@@ -136,7 +156,7 @@ L["pt"] = dict(
             sets=["<b>Falta:</b> <kbd>←</kbd>/<kbd>→</kbd> escolhem o batedor, <kbd>Z</kbd> confirma. Setas miram. <kbd>Z</kbd> passe curto, <kbd>X</kbd> chute, <kbd>A</kbd> cruzamento.",
                   "<b>Escanteio e tiro de meta:</b> setas miram, <kbd>Z</kbd> ou <kbd>X</kbd> cobra.",
                   "<b>Lateral:</b> <kbd>←</kbd>/<kbd>→</kbd> escolhem o lado, <kbd>Z</kbd> ou <kbd>X</kbd> cobra.",
-                  "<b>Pênalti no jogo:</b> segure <kbd>↑</kbd> ou <kbd>↓</kbd> para escolher o canto (mais tempo = mais alto) e bata com <kbd>Z</kbd> ou <kbd>X</kbd>. O goleiro pula sozinho."],
+                  "<b>Pênalti no jogo:</b> as setas escolhem o lado (sem seta, no meio). <kbd>Z</kbd> bate rasteiro, <kbd>X</kbd> bate alto, no ângulo quando tem lado. O goleiro pula sozinho."],
             menu_h="MENUS",
             menu="Setas ou WASD navegam · <kbd>Z</kbd> ou <kbd>ENTER</kbd> confirmam · <kbd>ESC</kbd> ou <kbd>X</kbd> voltam · <kbd>←</kbd>/<kbd>→</kbd> ajustam valores · <kbd>L</kbd> abre o álbum nas conquistas."),
     p8=dict(hd="COMANDOS · PC · CONTROLE", big="CONTROLE.",
@@ -145,12 +165,13 @@ L["pt"] = dict(
             rows=[("D-PAD / ANALÓGICO", "Mover e dar direção", "Mover"),
                   (A, "Passe", "Desarme em pé. <b>Segure</b> para correr atrás da bola"),
                   (X, "Chute. <b>Segure</b> para mais força", "Disputa pelo alto ou troca de jogador"),
+                  (LB + " + " + X, "Chute por baixo da bola. <b>Toque rápido</b>: cavadinha. <b>Segure</b>: cobertura", "—"),
                   (Y, "Cruzamento ou lançamento. <b>Segure</b> para mais força", "Carrinho"),
                   (RB, "Segure para correr. Toque: drible. Dois toques: pedalada", "Correr"),
                   (LB + " + " + Y, "Lambreta (meias e atacantes). Durante ela, " + X + " é bicicleta", "—"),
                   (START, "Pausa · pula a abertura · encurta o replay", "Pausa")],
             futsal="<b>Futsal:</b> " + LB + " + " + A + " = toque em profundidade.",
-            extra="Na bola parada vale a mesma lógica do teclado: " + A + " passe curto, " + X + " chute, " + Y + " cruzamento. " + B + " não faz nada no jogo: ele só volta nos menus.",
+            extra="Na bola parada vale a mesma lógica do teclado: " + A + " passe curto, " + X + " chute, " + Y + " cruzamento. Pênalti no jogo: direcional escolhe o lado, " + A + " rasteiro, " + X + " alto. " + B + " não faz nada no jogo: ele só volta nos menus.",
             menu_h="MENUS",
             menu="D-pad ou analógico navegam · " + A + " confirma · " + B + " volta · " + LB + " abre o álbum nas conquistas."),
     p9=dict(hd="ANDROID · TOQUE", big="CONTROLES NA TELA.",
@@ -159,7 +180,7 @@ L["pt"] = dict(
             th=("BOTÃO", "NA PARTIDA", "NOS MENUS"),
             rows=[("DIRECIONAL", "Mover (vale diagonal). Arraste o dedo sem soltar", "Navegar"),
                   (TA, "Passe · sem bola, desarme (segure para correr atrás da bola)", "Confirmar"),
-                  (TB, "Chute (segure para mais força) · sem bola, disputa pelo alto ou troca", "Voltar"),
+                  (TB, "Chute (segure para mais força) · " + TL1 + " + " + TB + ": toque rápido = cavadinha, segurado = cobertura · sem bola, disputa pelo alto ou troca", "Voltar"),
                   (TC, "Cruzamento (segure para mais força) · sem bola, carrinho", "—"),
                   (TL1, "Segure para correr · dois toques: pedalada · " + TL1 + " + " + TC + " lambreta · futsal: " + TL1 + " + " + TA + " toque em profundidade", "Álbum nas conquistas"),
                   (TST, "Pausa · pula a abertura · encurta o replay", "Avança na montagem do futsal e do paredão")],
@@ -168,30 +189,31 @@ L["pt"] = dict(
             tips_h="DICAS",
             tips=["Vale apertar vários botões ao mesmo tempo: direcional + L1 + chute, por exemplo.",
                   "Para cruzar correndo, solte o L1 antes: com L1 segurado, o C vira lambreta.",
-                  "No futsal, com L1 segurado, o passe sempre sai em profundidade."]),
+                  "No futsal, com L1 segurado, o passe sempre sai em profundidade.",
+                  "Pênalti no jogo: direcional escolhe o lado, A bate rasteiro, B bate alto."]),
     p10=dict(hd="ANDROID · CONTROLE · OPÇÕES", big="COM CONTROLE.",
-             pad="A versão Android com controle é para portáteis com botões físicos (R36S, Anbernic, Retroid…) ou celular com controle pareado. Não aparece nada na tela: o jogo fica em 4:3 no meio e os botões são os mesmos do controle no PC (página 8).",
+             pad="A versão Android com controle é para portáteis com botões físicos (R36S, Anbernic, Retroid…) ou celular com controle pareado. Não aparece nada na tela: o jogo fica em 4:3 no meio e os botões são os mesmos do controle no PC (página 9).",
              opt_h="OPÇÕES",
              opt=[("IDIOMA", "português, inglês ou espanhol."),
                   ("VOLUME", "geral, música e efeitos."),
                   ("MOLDURA", "só no PC: TV, álbum, pôster, gibi ou FUTIBA nas laterais."),
                   ("FILTRO", "NORMAL ou TV RAIZ (tubo)."),
                   ("DURAÇÃO DO TEMPO", "3, 5 ou 7 minutos reais por tempo (campo)."),
-                  ("DIFICULDADE", "fácil, normal ou difícil (muda a CPU).")],
+                  ("DIFICULDADE", "fácil, normal ou difícil (muda a CPU). Nas copas, da semifinal em diante a CPU sobe um nível.")],
              sec_h="SEGREDOS",
-             sec="Ganhe a Copa ou o Campeonato e aparecem duas equipes escondidas. E quem jogava videogame nos anos 90 sabe: na tela de abertura sempre tem um código.",
+             sec="Ganhe a Copa ou o Campeonato e aparecem duas equipes escondidas. Vença o DESAFIO e o super time passa a jogar com você. Cada título da COPA BRAZUCA libera o time campeão. E quem jogava videogame nos anos 90 sabe: na tela de abertura sempre tem um código.",
              ach_h="CONQUISTAS",
              ach="12 conquistas liberam figurinhas no álbum do FUTIBA: primeira vitória, virada, goleada, hat-trick, gol contra, jogar com um a menos…"),
 )
 
 L["en"] = dict(
     html="en", code="EN", title="FUTIBA — Game manual",
-    nav=[("#comece", "Start"), ("#partida", "Match"), ("#modos", "Modes"), ("#teclado", "PC"), ("#toque", "Android")],
+    nav=[("#comece", "Start"), ("#partida", "Match"), ("#modos", "Modes"), ("#novos", "New"), ("#teclado", "PC"), ("#toque", "Android")],
     pdf="Download PDF", site="← Site",
     foot="FUTIBA 2026 • GAME MANUAL",
     cover=dict(h1="GAME MANUAL", sub="FOOTBALL OUR WAY",
-               modes="FRIENDLY • CHAMPIONSHIP • CUP • PENALTIES • FUTSAL • WALL MODE",
-               ref="PC (keyboard and controller) • Android (touch and controller) • reference: build 52.9"),
+               modes="FRIENDLY • CHAMPIONSHIP • CUP • PENALTIES • FUTSAL • WALL MODE • CHALLENGE • COPA BRAZUCA",
+               ref="PC (keyboard and controller) • Android (touch and controller) • reference: version of 26/09/2026"),
     p2=dict(hd="START PLAYING", big="KICK-OFF.",
             lead="FUTIBA is videogame football the old way: quick passes, slide tackles that hurt, goalkeepers who decide. Fewer buttons, more reading of the game: <strong>the same button does different things with and without the ball.</strong>",
             steps=[("PICK A MODE", "Friendly to go straight to a match, Championship and Cup for a campaign, Penalties for a duel, Indoor for futsal and wall mode."),
@@ -203,7 +225,8 @@ L["en"] = dict(
                   ("CHAMPIONSHIP", "16 clubs, 15 rounds, round robin."),
                   ("CUP", "knockout of 8 or 16 clubs."),
                   ("PENALTIES", "straight to the spot."),
-                  ("INDOOR", "futsal and wall mode."),
+                  ("INDOOR", "futsal, wall mode and COPA BRAZUCA."),
+                  ("CHALLENGE", "you against a super team. Beat them and they play for you."),
                   ("ACHIEVEMENTS", "12 achievements and the sticker album."),
                   ("OPTIONS", "language, volume, filter, half length and difficulty.")]),
     p3=dict(hd="BEFORE THE WHISTLE", big="FROM THE MENU TO THE CENTRE CIRCLE.",
@@ -240,7 +263,7 @@ L["en"] = dict(
             fut_h="FUTSAL", fut_tag="4 OUTFIELD + 1 IN GOAL",
             fut=["Two halves of 3 real minutes (the clock shows 30 minutes each). The half-length option does not apply.",
                  "Kick-ins taken with the foot.",
-                 "Fouls add up: the team's 6th (and 12th, 18th…) is a direct penalty.",
+                 "Fouls add up. From the team's 6th on, every foul is a direct free kick from the second mark, with no wall (inside the box, a penalty). They reset at half-time.",
                  "The goalkeeper may cross the halfway line.",
                  "Free substitutions, with the ball in play.",
                  "A sent-off player does not return. A team down to goalkeeper + 1 loses by forfeit."],
@@ -250,12 +273,30 @@ L["en"] = dict(
                  "No referee, no fouls, no cards.",
                  "The goalkeeper may not cross the halfway line: if he does, the ball goes to the rival. The sweeper may.",
                  "Free outfield substitutions, with the ball in play (pause → TACTICS / SUBS)."]),
+    p6b=dict(hd="NEW MODES", big="CHALLENGE AND COPA BRAZUCA.",
+             dz_h="CHALLENGE", dz_tag="YOU AGAINST A SUPER TEAM",
+             dz=["Main menu > CHALLENGE. A cutscene introduces the rival; <b>START</b> skips it, confirm speeds it up.",
+                 "The super team plays at home. You pick only your team and play away at the SPECIAL stadium.",
+                 "The CPU plays at the top level, whatever the difficulty.",
+                 "Lost? Rematch. Won? TEAM UNLOCKED: the super team plays for you in every mode.",
+                 "There are two super teams. Beating the first opens the way to the second."],
+             bz_h="COPA BRAZUCA", bz_tag="KNOCKOUT ON THE COURT",
+             bz=["Indoor > COPA BRAZUCA. Futsal knockout of 8, drawn from 12 court teams.",
+                 "Before each match you set up only your team, sweeper included.",
+                 "A draw goes to penalties on the court itself, one kick at a time.",
+                 "Every title unlocks the champion for every mode."],
+             tips_h="PITCH TIPS",
+             tips=["<b>Chip and lob:</b> hold the sprint button and shoot. A quick tap chips from close; held, the ball rises and drops fast. Aim it and dose it.",
+                   "<b>Goalkeeper rushing out:</b> one on one, he comes for the ball. Dribble, chip or pass first.",
+                   "<b>Shot from halfway:</b> almost everyone hits it weak and bouncing. Only the cannon-footed stars fire the low rocket.",
+                   "<b>Cutscenes:</b> Cup and Championship open with their own, and getting knocked out has one too."]),
     p7=dict(hd="CONTROLS · PC · KEYBOARD", big="KEYBOARD.",
             lead="In the match the player moves <b>with the arrow keys only</b>. WASD works in the menus.",
             th=("KEY", "WITH THE BALL", "WITHOUT THE BALL"),
             rows=[(k("←", "↑", "↓", "→"), "Move and aim passes, crosses and shots", "Move"),
                   (k("Z"), "Pass (to the teammate in that direction)", "Standing tackle. <b>Hold</b> to chase the ball"),
                   (k("X"), "Shoot. <b>Hold</b> for more power (↑/↓ change the height at the goal)", "Aerial duel (header, diving header) or switch player"),
+                  (k("SHIFT") + " + " + k("X"), "Shot under the ball. <b>Quick tap</b>: chip. <b>Hold</b>: lob that rises and drops fast", "—"),
                   (k("A"), "Cross or long ball. <b>Hold</b> for more power", "Slide tackle"),
                   (k("SHIFT"), "Hold to sprint. One tap: dribble (roll or cut). Two quick taps: step-over", "Sprint"),
                   (k("SPACE"), "Rainbow flick (midfielders and forwards). During it, <kbd>X</kbd> is a bicycle kick", "—"),
@@ -265,7 +306,7 @@ L["en"] = dict(
             sets=["<b>Free kick:</b> <kbd>←</kbd>/<kbd>→</kbd> pick the taker, <kbd>Z</kbd> confirms. Arrows aim. <kbd>Z</kbd> short pass, <kbd>X</kbd> shot, <kbd>A</kbd> cross.",
                   "<b>Corner and goal kick:</b> arrows aim, <kbd>Z</kbd> or <kbd>X</kbd> takes it.",
                   "<b>Throw-in:</b> <kbd>←</kbd>/<kbd>→</kbd> pick the side, <kbd>Z</kbd> or <kbd>X</kbd> throws.",
-                  "<b>Penalty in a match:</b> hold <kbd>↑</kbd> or <kbd>↓</kbd> to pick the corner (longer = higher) and shoot with <kbd>Z</kbd> or <kbd>X</kbd>. The goalkeeper dives on his own."],
+                  "<b>Penalty in a match:</b> the arrows pick the side (no arrow, down the middle). <kbd>Z</kbd> shoots low, <kbd>X</kbd> shoots high, into the corner when there is a side. The goalkeeper dives on his own."],
             menu_h="MENUS",
             menu="Arrows or WASD navigate · <kbd>Z</kbd> or <kbd>ENTER</kbd> confirm · <kbd>ESC</kbd> or <kbd>X</kbd> go back · <kbd>←</kbd>/<kbd>→</kbd> change values · <kbd>L</kbd> opens the album in achievements."),
     p8=dict(hd="CONTROLS · PC · CONTROLLER", big="CONTROLLER.",
@@ -274,12 +315,13 @@ L["en"] = dict(
             rows=[("D-PAD / STICK", "Move and aim", "Move"),
                   (A, "Pass", "Standing tackle. <b>Hold</b> to chase the ball"),
                   (X, "Shoot. <b>Hold</b> for more power", "Aerial duel or switch player"),
+                  (LB + " + " + X, "Shot under the ball. <b>Quick tap</b>: chip. <b>Hold</b>: lob", "—"),
                   (Y, "Cross or long ball. <b>Hold</b> for more power", "Slide tackle"),
                   (RB, "Hold to sprint. Tap: dribble. Two taps: step-over", "Sprint"),
                   (LB + " + " + Y, "Rainbow flick (midfielders and forwards). During it, " + X + " is a bicycle kick", "—"),
                   (START, "Pause · skip the opening · shorten the replay", "Pause")],
             futsal="<b>Futsal:</b> " + LB + " + " + A + " = through ball.",
-            extra="Set pieces follow the keyboard logic: " + A + " short pass, " + X + " shot, " + Y + " cross. " + B + " does nothing in the match: it only goes back in menus.",
+            extra="Set pieces follow the keyboard logic: " + A + " short pass, " + X + " shot, " + Y + " cross. Penalty in a match: d-pad picks the side, " + A + " low, " + X + " high. " + B + " does nothing in the match: it only goes back in menus.",
             menu_h="MENUS",
             menu="D-pad or stick navigate · " + A + " confirms · " + B + " goes back · " + LB + " opens the album in achievements."),
     p9=dict(hd="ANDROID · TOUCH", big="ON-SCREEN CONTROLS.",
@@ -288,7 +330,7 @@ L["en"] = dict(
             th=("BUTTON", "IN THE MATCH", "IN MENUS"),
             rows=[("D-PAD", "Move (diagonals work). Slide your finger without lifting it", "Navigate"),
                   (TA, "Pass · without the ball, tackle (hold to chase the ball)", "Confirm"),
-                  (TB, "Shoot (hold for more power) · without the ball, aerial duel or switch", "Back"),
+                  (TB, "Shoot (hold for more power) · " + TL1 + " + " + TB + ": quick tap = chip, held = lob · without the ball, aerial duel or switch", "Back"),
                   (TC, "Cross (hold for more power) · without the ball, slide tackle", "—"),
                   (TL1, "Hold to sprint · two taps: step-over · " + TL1 + " + " + TC + " rainbow flick · futsal: " + TL1 + " + " + TA + " through ball", "Album in achievements"),
                   (TST, "Pause · skip the opening · shorten the replay", "Moves on in the futsal and wall set-up")],
@@ -297,30 +339,31 @@ L["en"] = dict(
             tips_h="TIPS",
             tips=["You can press several buttons at once: d-pad + L1 + shoot, for example.",
                   "To cross while sprinting, release L1 first: with L1 held, C becomes the rainbow flick.",
-                  "In futsal, with L1 held, the pass always goes in behind."]),
+                  "In futsal, with L1 held, the pass always goes in behind.",
+                  "Penalty in a match: d-pad picks the side, A shoots low, B shoots high."]),
     p10=dict(hd="ANDROID · CONTROLLER · OPTIONS", big="WITH A CONTROLLER.",
-             pad="The Android controller version is for handhelds with physical buttons (R36S, Anbernic, Retroid…) or a phone with a paired controller. Nothing shows on screen: the game sits in 4:3 in the middle and the buttons are the same as the controller on PC (page 8).",
+             pad="The Android controller version is for handhelds with physical buttons (R36S, Anbernic, Retroid…) or a phone with a paired controller. Nothing shows on screen: the game sits in 4:3 in the middle and the buttons are the same as the controller on PC (page 9).",
              opt_h="OPTIONS",
              opt=[("LANGUAGE", "Portuguese, English or Spanish."),
                   ("VOLUME", "master, music and effects."),
                   ("FRAME", "PC only: TV, album, poster, comic or FUTIBA art on the sides."),
                   ("FILTER", "NORMAL or TUBE TV."),
                   ("HALF LENGTH", "3, 5 or 7 real minutes per half (pitch)."),
-                  ("DIFFICULTY", "easy, normal or hard (changes the CPU).")],
+                  ("DIFFICULTY", "easy, normal or hard (changes the CPU). In cups, from the semi-final on the CPU goes up a level.")],
              sec_h="SECRETS",
-             sec="Win the Cup or the Championship and two hidden teams show up. And anyone who played videogames in the 90s knows: the opening screen always has a code.",
+             sec="Win the Cup or the Championship and two hidden teams show up. Beat the CHALLENGE and the super team plays for you. Every COPA BRAZUCA title unlocks the champion. And anyone who played videogames in the 90s knows: the opening screen always has a code.",
              ach_h="ACHIEVEMENTS",
              ach="12 achievements unlock stickers in the FUTIBA album: first win, comeback, thrashing, hat-trick, own goal, playing a man down…"),
 )
 
 L["es"] = dict(
     html="es", code="ES", title="FUTIBA — Manual del juego",
-    nav=[("#comece", "Inicio"), ("#partida", "Partido"), ("#modos", "Modos"), ("#teclado", "PC"), ("#toque", "Android")],
+    nav=[("#comece", "Inicio"), ("#partida", "Partido"), ("#modos", "Modos"), ("#novos", "Nuevos"), ("#teclado", "PC"), ("#toque", "Android")],
     pdf="Descargar PDF", site="← Sitio",
     foot="FUTIBA 2026 • MANUAL DEL JUEGO",
     cover=dict(h1="MANUAL DEL JUEGO", sub="FÚTBOL A NUESTRA MANERA",
-               modes="AMISTOSO • CAMPEONATO • COPA • PENALES • FÚTSAL • PAREDÓN",
-               ref="PC (teclado y control) • Android (táctil y control) • referencia: build 52.9"),
+               modes="AMISTOSO • CAMPEONATO • COPA • PENALES • FÚTSAL • PAREDÓN • DESAFÍO • COPA BRAZUCA",
+               ref="PC (teclado y control) • Android (táctil y control) • referencia: versión del 26/09/2026"),
     p2=dict(hd="EMPEZÁ A JUGAR", big="RUEDA LA PELOTA.",
             lead="FUTIBA es fútbol de videojuego a la antigua: pase rápido, barrida que pesa, arquero que decide. Menos botones, más lectura de juego: <strong>el mismo botón cambia de función con y sin la pelota.</strong>",
             steps=[("ELEGÍ EL MODO", "Amistoso para ir directo al partido, Campeonato y Copa para campaña, Penales para duelo, Indoor para fútsal y paredón."),
@@ -332,7 +375,8 @@ L["es"] = dict(
                   ("CAMPEONATO", "16 clubes, 15 fechas, todos contra todos."),
                   ("COPA", "eliminación de 8 o 16 clubes."),
                   ("PENALES", "directo al punto del penal."),
-                  ("INDOOR", "fútsal y paredón."),
+                  ("INDOOR", "fútsal, paredón y COPA BRAZUCA."),
+                  ("DESAFÍO", "vos contra un súper equipo. Si lo vencés, pasa a jugar con vos."),
                   ("LOGROS", "12 logros y el álbum de figuritas."),
                   ("OPCIONES", "idioma, volumen, filtro, duración del tiempo y dificultad.")]),
     p3=dict(hd="ANTES DEL PITAZO", big="DEL MENÚ AL CÍRCULO CENTRAL.",
@@ -369,7 +413,7 @@ L["es"] = dict(
             fut_h="FÚTSAL", fut_tag="4 DE CAMPO + 1 PORTERO",
             fut=["Dos tiempos de 3 minutos reales (el reloj muestra 30 minutos cada uno). No depende de la opción de duración.",
                  "Saque de banda con el pie.",
-                 "Las faltas se acumulan: la 6.ª del equipo (y la 12.ª, la 18.ª…) es penal directo.",
+                 "Las faltas se acumulan. Desde la 6.ª del equipo, toda falta es tiro libre directo desde la segunda marca, sin barrera (dentro del área, penal). Se reinician en el entretiempo.",
                  "El arquero puede pasar la mitad de la cancha.",
                  "Cambios libres, con la pelota en juego.",
                  "El expulsado no vuelve. Un equipo reducido a arquero + 1 pierde por W.O."],
@@ -379,12 +423,30 @@ L["es"] = dict(
                  "Sin árbitro, sin faltas, sin tarjetas.",
                  "El arquero no puede pasar la mitad: si pasa, la pelota va para el rival. El portero-líbero sí puede.",
                  "Cambios de campo libres, con la pelota en juego (pausa → TÁCTICAS / CAMBIOS)."]),
+    p6b=dict(hd="MODOS NUEVOS", big="DESAFÍO Y COPA BRAZUCA.",
+             dz_h="DESAFÍO", dz_tag="VOS CONTRA UN SÚPER EQUIPO",
+             dz=["Menú principal > DESAFÍO. Una cinemática presenta al rival; <b>START</b> la saltea, confirmar la acelera.",
+                 "El súper equipo es local. Vos elegís solo tu equipo y jugás de visitante en el estadio SPECIAL.",
+                 "La CPU juega al máximo, sea cual sea la dificultad.",
+                 "¿Perdiste? Revancha. ¿Ganaste? EQUIPO LIBERADO: el súper equipo pasa a jugar con vos en todos los modos.",
+                 "Son dos súper equipos. Vencer al primero abre el camino al segundo."],
+             bz_h="COPA BRAZUCA", bz_tag="ELIMINACIÓN EN LA CANCHA",
+             bz=["Indoor > COPA BRAZUCA. Eliminación de 8 en fútsal, sorteada entre 12 equipos de cancha.",
+                 "Antes de cada partido armás solo tu equipo, con portero-líbero.",
+                 "El empate se define por penales en la misma cancha, un remate por vez.",
+                 "Cada título libera al campeón para todos los modos."],
+             tips_h="CONSEJOS DE CANCHA",
+             tips=["<b>Vaselina y globo:</b> mantené el botón de correr y rematá. Toque rápido: vaselina de cerca; mantenido, la pelota sube y cae rápido. Hay que apuntar y medir.",
+                   "<b>Arquero saliendo a los pies:</b> mano a mano, sale a barrer. Gambeteá, picala o tocá antes.",
+                   "<b>Remate desde la mitad:</b> casi todos le pegan flojo y picando. Solo los cracks de cañón sacan el misil rasante.",
+                   "<b>Cinemáticas:</b> Copa y Campeonato también arrancan con la suya, y la eliminación tiene la propia."]),
     p7=dict(hd="CONTROLES · PC · TECLADO", big="TECLADO.",
             lead="En el partido el jugador se mueve <b>solo con las flechas</b>. WASD funciona en los menús.",
             th=("TECLA", "CON LA PELOTA", "SIN LA PELOTA"),
             rows=[(k("←", "↑", "↓", "→"), "Moverse y dar dirección al pase, al centro y al remate", "Moverse"),
                   (k("Z"), "Pase (al compañero en esa dirección)", "Quite de pie. <b>Mantené</b> para correr detrás de la pelota"),
                   (k("X"), "Remate. <b>Mantené</b> para más fuerza (↑/↓ cambian la altura en el arco)", "Pelota aérea (cabezazo, palomita) o cambiar de jugador"),
+                  (k("SHIFT") + " + " + k("X"), "Remate por debajo de la pelota. <b>Toque rápido</b>: vaselina. <b>Mantené</b>: globo que sube y cae rápido", "—"),
                   (k("A"), "Centro o pelotazo. <b>Mantené</b> para más fuerza", "Barrida"),
                   (k("SHIFT"), "Mantené para correr. Un toque: gambeta (rulo o enganche). Dos toques rápidos: bicicleta de pies", "Correr"),
                   (k("ESPACIO"), "Lambretta (volantes y delanteros). Durante ella, <kbd>X</kbd> es chilena", "—"),
@@ -394,7 +456,7 @@ L["es"] = dict(
             sets=["<b>Tiro libre:</b> <kbd>←</kbd>/<kbd>→</kbd> eligen el pateador, <kbd>Z</kbd> confirma. Las flechas apuntan. <kbd>Z</kbd> pase corto, <kbd>X</kbd> remate, <kbd>A</kbd> centro.",
                   "<b>Córner y saque de arco:</b> las flechas apuntan, <kbd>Z</kbd> o <kbd>X</kbd> ejecuta.",
                   "<b>Lateral:</b> <kbd>←</kbd>/<kbd>→</kbd> eligen el lado, <kbd>Z</kbd> o <kbd>X</kbd> saca.",
-                  "<b>Penal en el partido:</b> mantené <kbd>↑</kbd> o <kbd>↓</kbd> para elegir la esquina (más tiempo = más alto) y pateá con <kbd>Z</kbd> o <kbd>X</kbd>. El arquero se tira solo."],
+                  "<b>Penal en el partido:</b> las flechas eligen el lado (sin flecha, al medio). <kbd>Z</kbd> patea rasante, <kbd>X</kbd> patea alto, al ángulo cuando hay lado. El arquero se tira solo."],
             menu_h="MENÚS",
             menu="Flechas o WASD navegan · <kbd>Z</kbd> o <kbd>ENTER</kbd> confirman · <kbd>ESC</kbd> o <kbd>X</kbd> vuelven · <kbd>←</kbd>/<kbd>→</kbd> cambian valores · <kbd>L</kbd> abre el álbum en logros."),
     p8=dict(hd="CONTROLES · PC · CONTROL", big="CONTROL.",
@@ -403,12 +465,13 @@ L["es"] = dict(
             rows=[("D-PAD / ANALÓGICO", "Moverse y dar dirección", "Moverse"),
                   (A, "Pase", "Quite de pie. <b>Mantené</b> para correr detrás de la pelota"),
                   (X, "Remate. <b>Mantené</b> para más fuerza", "Pelota aérea o cambiar de jugador"),
+                  (LB + " + " + X, "Remate por debajo de la pelota. <b>Toque rápido</b>: vaselina. <b>Mantené</b>: globo", "—"),
                   (Y, "Centro o pelotazo. <b>Mantené</b> para más fuerza", "Barrida"),
                   (RB, "Mantené para correr. Toque: gambeta. Dos toques: bicicleta de pies", "Correr"),
                   (LB + " + " + Y, "Lambretta (volantes y delanteros). Durante ella, " + X + " es chilena", "—"),
                   (START, "Pausa · saltea la apertura · acorta la repetición", "Pausa")],
             futsal="<b>Fútsal:</b> " + LB + " + " + A + " = pase en profundidad.",
-            extra="En pelota parada vale la misma lógica del teclado: " + A + " pase corto, " + X + " remate, " + Y + " centro. " + B + " no hace nada en el partido: solo vuelve en los menús.",
+            extra="En pelota parada vale la misma lógica del teclado: " + A + " pase corto, " + X + " remate, " + Y + " centro. Penal en el partido: la cruceta elige el lado, " + A + " rasante, " + X + " alto. " + B + " no hace nada en el partido: solo vuelve en los menús.",
             menu_h="MENÚS",
             menu="D-pad o analógico navegan · " + A + " confirma · " + B + " vuelve · " + LB + " abre el álbum en logros."),
     p9=dict(hd="ANDROID · TÁCTIL", big="CONTROLES EN PANTALLA.",
@@ -417,7 +480,7 @@ L["es"] = dict(
             th=("BOTÓN", "EN EL PARTIDO", "EN LOS MENÚS"),
             rows=[("CRUCETA", "Moverse (vale diagonal). Deslizá el dedo sin soltar", "Navegar"),
                   (TA, "Pase · sin la pelota, quite (mantené para correr detrás de la pelota)", "Confirmar"),
-                  (TB, "Remate (mantené para más fuerza) · sin la pelota, pelota aérea o cambio", "Volver"),
+                  (TB, "Remate (mantené para más fuerza) · " + TL1 + " + " + TB + ": toque rápido = vaselina, mantenido = globo · sin la pelota, pelota aérea o cambio", "Volver"),
                   (TC, "Centro (mantené para más fuerza) · sin la pelota, barrida", "—"),
                   (TL1, "Mantené para correr · dos toques: bicicleta de pies · " + TL1 + " + " + TC + " lambretta · fútsal: " + TL1 + " + " + TA + " pase en profundidad", "Álbum en logros"),
                   (TST, "Pausa · saltea la apertura · acorta la repetición", "Avanza en el armado de fútsal y paredón")],
@@ -426,18 +489,19 @@ L["es"] = dict(
             tips_h="CONSEJOS",
             tips=["Podés apretar varios botones a la vez: cruceta + L1 + remate, por ejemplo.",
                   "Para centrar corriendo, soltá el L1 antes: con L1 apretado, el C se vuelve lambretta.",
-                  "En fútsal, con L1 apretado, el pase siempre sale en profundidad."]),
+                  "En fútsal, con L1 apretado, el pase siempre sale en profundidad.",
+                  "Penal en el partido: la cruceta elige el lado, A patea rasante, B patea alto."]),
     p10=dict(hd="ANDROID · CONTROL · OPCIONES", big="CON CONTROL.",
-             pad="La versión Android con control es para portátiles con botones físicos (R36S, Anbernic, Retroid…) o celular con control emparejado. No aparece nada en pantalla: el juego queda en 4:3 en el medio y los botones son los mismos del control en PC (página 8).",
+             pad="La versión Android con control es para portátiles con botones físicos (R36S, Anbernic, Retroid…) o celular con control emparejado. No aparece nada en pantalla: el juego queda en 4:3 en el medio y los botones son los mismos del control en PC (página 9).",
              opt_h="OPCIONES",
              opt=[("IDIOMA", "portugués, inglés o español."),
                   ("VOLUMEN", "general, música y efectos."),
                   ("MARCO", "solo en PC: TV, álbum, póster, cómic o FUTIBA a los costados."),
                   ("FILTRO", "NORMAL o TV DE TUBO."),
                   ("DURACIÓN DEL TIEMPO", "3, 5 o 7 minutos reales por tiempo (cancha)."),
-                  ("DIFICULTAD", "fácil, normal o difícil (cambia la CPU).")],
+                  ("DIFICULTAD", "fácil, normal o difícil (cambia la CPU). En las copas, desde la semifinal la CPU sube un nivel.")],
              sec_h="SECRETOS",
-             sec="Ganá la Copa o el Campeonato y aparecen dos equipos escondidos. Y quien jugaba videojuegos en los 90 sabe: en la pantalla de apertura siempre hay un código.",
+             sec="Ganá la Copa o el Campeonato y aparecen dos equipos escondidos. Vencé el DESAFÍO y el súper equipo pasa a jugar con vos. Cada título de la COPA BRAZUCA libera al campeón. Y quien jugaba videojuegos en los 90 sabe: en la pantalla de apertura siempre hay un código.",
              ach_h="LOGROS",
              ach="12 logros liberan figuritas en el álbum de FUTIBA: primera victoria, remontada, goleada, triplete, gol en contra, jugar con uno menos…"),
 )
@@ -478,7 +542,7 @@ def build(lang):
     menu = "".join(f"<li><b>{a}</b>: {d}</li>" for a, d in p["menu"])
     out.append(page(t, "comece", p["hd"], 2, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
   <div class="grid g2">{steps}</div>
-  <div class="grid g2" style="margin-top:16px;align-items:center">{shot(m("menu"), "Menu", True)}<div class="box box--gold"><h3>{p["menu_h"]}</h3><ul>{menu}</ul></div></div>'''))
+  <div class="grid g2" style="margin-top:16px;align-items:center">{shot(f"../assets/v3/menu-{lang}.png", "Menu", True)}<div class="box box--gold"><h3>{p["menu_h"]}</h3><ul>{menu}</ul></div></div>'''))
 
     p = t["p3"]
     imgs = [m("times"), None, m("escalacao"), v("est-maracana"), v("moeda"), v("lado")]
@@ -511,34 +575,47 @@ def build(lang):
     <div class="box"><span class="tag blue">{p["par_tag"]}</span><h3>{p["par_h"]}</h3>{shot(v("paredao-1"), p["par_h"])}<ul style="margin-top:10px">{par}</ul></div>
   </div>'''))
 
+    p = t["p6b"]
+    dz = "".join(f"<li>{x}</li>" for x in p["dz"])
+    bz = "".join(f"<li>{x}</li>" for x in p["bz"])
+    tips = "".join(f"<li>{x}</li>" for x in p["tips"])
+    n3 = lambda name: f"../assets/v3/{name}-{lang}.png"
+    j3 = lambda name: f"../assets/v3/{name}.jpg"
+    out.append(page(t, "novos", p["hd"], 7, f'''<p class="big">{p["big"]}</p>
+  <div class="grid g2">
+    <div class="box"><span class="tag red">{p["dz_tag"]}</span><h3>{p["dz_h"]}</h3>{shot(n3("desafio1-cut"), p["dz_h"], True)}<ul style="margin-top:10px">{dz}</ul></div>
+    <div class="box"><span class="tag purple">{p["bz_tag"]}</span><h3>{p["bz_h"]}</h3>{shot(j3("brazuca-quadra"), p["bz_h"])}<ul style="margin-top:10px">{bz}</ul></div>
+  </div>
+  <div class="box box--gold" style="margin-top:16px"><h3>{p["tips_h"]}</h3><ul>{tips}</ul></div>'''))
+
     p = t["p7"]
     sets = "".join(f"<li>{x}</li>" for x in p["sets"])
-    out.append(page(t, "teclado", p["hd"], 7, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
+    out.append(page(t, "teclado", p["hd"], 8, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
   {keys_table(p["th"], p["rows"])}
   <p class="box box--gold" style="margin-top:10px">{p["futsal"]}</p>
   <div class="grid g2" style="margin-top:12px"><div class="box"><h3>{p["set_h"]}</h3><ul>{sets}</ul></div><div class="box"><h3>{p["menu_h"]}</h3><p>{p["menu"]}</p></div></div>'''))
 
     p = t["p8"]
-    out.append(page(t, "controle", p["hd"], 8, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
+    out.append(page(t, "controle", p["hd"], 9, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
   {keys_table(p["th"], p["rows"])}
   <p class="box box--gold" style="margin-top:10px">{p["futsal"]}</p>
   <div class="grid g2" style="margin-top:12px"><div class="box"><p>{p["extra"]}</p></div><div class="box"><h3>{p["menu_h"]}</h3><p>{p["menu"]}</p></div></div>'''))
 
     p = t["p9"]
     tips = "".join(f"<li>{x}</li>" for x in p["tips"])
-    out.append(page(t, "toque", p["hd"], 9, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
+    out.append(page(t, "toque", p["hd"], 10, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
   <div class="grid g2" style="align-items:center">{phone_svg(p["svg"])}<div class="box box--gold"><h3>{p["glow_h"]}</h3><p>{p["glow"]}</p></div></div>
   {keys_table(p["th"], p["rows"])}
   <div class="box" style="margin-top:10px"><h3>{p["tips_h"]}</h3><ul>{tips}</ul></div>'''))
 
     p = t["p10"]
     opt = "".join(f"<li><b>{a}</b>: {d}</li>" for a, d in p["opt"])
-    out.append(page(t, "gamepad", p["hd"], 10, f'''<p class="big">{p["big"]}</p><p class="lead">{p["pad"]}</p>
+    out.append(page(t, "gamepad", p["hd"], 11, f'''<p class="big">{p["big"]}</p><p class="lead">{p["pad"]}</p>
   <div class="grid g2" style="align-items:start">{shot(m("opcoes"), p["opt_h"], True)}<div class="box"><h3>{p["opt_h"]}</h3><ul>{opt}</ul></div></div>
   <div class="grid g2" style="margin-top:16px"><div class="box box--gold"><h3>{p["sec_h"]}</h3><p>{p["sec"]}</p></div><div class="box"><h3>{p["ach_h"]}</h3><p>{p["ach"]}</p></div></div>'''))
 
     nav = "".join(f'<a href="{h}">{n}</a>' for h, n in t["nav"])
-    langs = "".join(f'<a href="/manual/{x}"{" aria-current=page" if x == lang else ""}>{x.upper()}</a>' for x in ("pt", "en", "es"))
+    langs = "".join(f'<a href="/{OUT_NAME}/{x}"{" aria-current=page" if x == lang else ""}>{x.upper()}</a>' for x in ("pt", "en", "es"))
     return f'''<!DOCTYPE html>
 <html lang="{t["html"]}">
 <head>
@@ -565,7 +642,7 @@ def main():
     for lang in ("pt", "en", "es"):
         with open(os.path.join(OUT, lang + ".html"), "w", encoding="utf-8", newline="\n") as f:
             f.write(build(lang))
-        print("manual/%s.html" % lang)
+        print("%s/%s.html" % (OUT_NAME, lang))
     if "--pdf" in sys.argv:
         edge = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
         port = sys.argv[sys.argv.index("--pdf") + 1] if len(sys.argv) > sys.argv.index("--pdf") + 1 else "8765"
@@ -573,7 +650,7 @@ def main():
             pdf = os.path.join(OUT, "FUTIBA_MANUAL_%s.pdf" % lang.upper())
             subprocess.run([edge, "--headless=new", "--disable-gpu", "--no-pdf-header-footer",
                             "--virtual-time-budget=15000", "--run-all-compositor-stages-before-draw",
-                            "--print-to-pdf=" + pdf, "http://localhost:%s/manual/%s.html" % (port, lang)], check=True)
+                            "--print-to-pdf=" + pdf, "http://localhost:%s/%s/%s.html" % (port, OUT_NAME, lang)], check=True)
             print(pdf, os.path.getsize(pdf))
 
 

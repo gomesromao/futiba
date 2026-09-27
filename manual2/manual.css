@@ -1,0 +1,105 @@
+/* FUTIBA — manual de jogo (PT/EN/ES). Tela: páginas empilhadas; impressão/PDF: 1 página por folha 4:3. */
+:root{
+  --bg:#070b16;--card:#0b1222;--card2:#101a30;--line:#2a3550;
+  --ink:#f3ecd6;--dim:#aeb6c8;--gold:#f5c518;--red:#d62828;--blue:#1f63c6;--green:#1a9a50;--purple:#9b59d0;--orange:#e67e22;
+}
+*{box-sizing:border-box}
+html{background:#03050b}
+body{margin:0;color:var(--ink);font:500 16px/1.5 "Barlow Semi Condensed",system-ui,sans-serif}
+img{max-width:100%;display:block}
+.px{image-rendering:pixelated}
+a{color:var(--gold)}
+
+.topbar{position:sticky;top:0;z-index:5;background:#000c;backdrop-filter:blur(4px);border-bottom:3px solid var(--gold)}
+.topbar__in{max-width:1180px;margin:auto;display:flex;align-items:center;gap:14px;padding:8px 16px}
+.topbar img{height:34px;width:auto}
+.topbar nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.topbar a{font:10px "Press Start 2P",monospace;color:var(--ink);text-decoration:none;padding:8px 8px 7px;border:2px solid transparent}
+.topbar a[aria-current]{border-color:var(--gold);color:var(--gold)}
+.topbar .pdf{background:var(--gold);color:#000}
+
+.page{max-width:1180px;margin:22px auto;background:var(--bg);border:2px solid var(--line);position:relative;overflow:hidden}
+.page__hd{display:flex;align-items:center;justify-content:space-between;background:#05070d;border-bottom:4px solid var(--gold);padding:10px 26px}
+.page__hd img{height:46px;width:auto}
+.page__hd h2{margin:0;font:400 clamp(13px,1.6vw,20px) "Press Start 2P",monospace;letter-spacing:.04em}
+.page__bd{padding:28px 30px 34px;position:relative;z-index:1}
+.page__ft{display:flex;justify-content:space-between;padding:8px 26px 12px;font-size:12px;color:var(--dim);border-top:1px solid var(--line)}
+.page__ft b{color:var(--gold);font:10px "Press Start 2P",monospace}
+
+h1,h3,.big{font-family:"Press Start 2P",monospace;font-weight:400}
+.big{color:var(--gold);font-size:clamp(20px,3vw,36px);line-height:1.25;margin:0 0 14px}
+.kicker{font:11px "Press Start 2P",monospace;color:var(--dim);letter-spacing:.06em;margin:0 0 10px}
+.lead{font-size:1.14em;font-weight:700;max-width:78ch;margin:0 0 22px}
+h3{font-size:12px;color:var(--gold);margin:0 0 10px;line-height:1.5}
+p{margin:0 0 10px}
+ul{margin:0;padding-left:18px}
+li{margin:0 0 6px}
+li::marker{color:var(--gold)}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.box--gold{border-color:var(--gold);background:#161204}
+.tag{display:inline-block;font:10px "Press Start 2P",monospace;padding:7px 10px 6px;border-radius:4px;color:#05070d;background:var(--gold);margin-bottom:10px}
+.tag.red{background:var(--red);color:#fff}.tag.blue{background:var(--blue);color:#fff}.tag.green{background:var(--green);color:#fff}.tag.purple{background:var(--purple);color:#fff}.tag.orange{background:var(--orange);color:#fff}
+
+.step{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}
+.step__n{width:44px;height:44px;border-radius:50%;background:var(--gold);color:#05070d;display:grid;place-items:center;font:14px "Press Start 2P",monospace}
+
+.shot{border:3px solid #000;border-radius:6px;overflow:hidden;background:#000}
+.shot img{width:100%}
+figure{margin:0}
+figcaption{font-size:13px;color:var(--dim);margin-top:6px}
+
+kbd,.btn{display:inline-block;min-width:26px;text-align:center;font:700 13px/1 "Barlow Semi Condensed",system-ui,sans-serif;letter-spacing:.03em;padding:5px 7px 4px;margin:1px 2px;border-radius:5px;border:2px solid #000;background:#e8e2cf;color:#111;box-shadow:0 3px 0 #000;white-space:nowrap;vertical-align:1px}
+.btn{border-radius:999px;color:#fff}
+.b-a{background:var(--green)}.b-b{background:var(--red)}.b-x{background:var(--blue)}.b-y{background:var(--gold);color:#111}
+.b-c{background:var(--blue)}.b-l1{background:var(--purple)}.b-start{background:#333}.b-sh{background:#555}
+
+table.keys{width:100%;border-collapse:separate;border-spacing:0 6px}
+table.keys td{background:var(--card);padding:9px 12px;vertical-align:top}
+table.keys td:first-child{border-radius:8px 0 0 8px;width:34%;white-space:nowrap}
+table.keys td:last-child{border-radius:0 8px 8px 0}
+table.keys th{text-align:left;font:10px "Press Start 2P",monospace;color:var(--gold);padding:6px 12px}
+.note{font-size:13px;color:var(--dim)}
+
+/* capa */
+.cover{min-height:760px;background:#050914 url(img/bg-night.png) center/cover no-repeat;image-rendering:pixelated;display:grid;place-items:center;text-align:center}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(#0000 40%,#000a)}
+.cover__in{position:relative;z-index:1;padding:40px 20px;image-rendering:auto}
+.cover__logo{width:min(560px,80%);margin:0 auto 10px;image-rendering:auto}
+.cover h1{font-size:clamp(26px,4.4vw,52px);margin:10px 0 12px;color:var(--ink);text-shadow:4px 4px 0 #000}
+.cover .sub{font:14px "Press Start 2P",monospace;color:var(--gold);text-shadow:2px 2px 0 #000;margin:0 0 30px}
+.cover .modes{font-weight:700;font-size:1.15em;letter-spacing:.04em;text-shadow:2px 2px 0 #000}
+.cover .ref{color:var(--dim);font-size:.95em;margin-top:6px;text-shadow:1px 1px 0 #000}
+
+/* celular (touchpad) */
+.phone{width:100%;height:auto}
+
+@media screen and (max-width:860px){
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .page{margin:14px 8px}
+  .page__bd{padding:20px 16px 24px}
+  .topbar nav a:not(.pdf):not([aria-current]){display:none}
+  table.keys td:first-child{white-space:normal;width:40%}
+}
+
+@media print{
+  @page{size:338mm 254mm;margin:0}
+  html,body{background:#070b16;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .topbar{display:none}
+  .page{margin:0;border:0;max-width:none;width:338mm;height:254mm;page-break-after:always;break-after:page;display:flex;flex-direction:column}
+  .page__bd{flex:1;padding:22px 30px 18px}
+  .cover{min-height:0}
+  body{font-size:15px}
+  .page__bd > .grid > .shot img{max-height:250px;object-fit:contain}
+  .box .shot img{max-height:150px;object-fit:contain}
+  .shot{background:#000}
+  .phone{max-height:250px}
+  table.keys td{padding:6px 12px}
+  table.keys{border-spacing:0 4px}
+  .lead{margin-bottom:14px}
+  .big{margin-bottom:10px}
+}
