@@ -8,14 +8,13 @@
 
 /* ---------- Desafio / Brazuca: uma grande, duas menores e a ficha ---------- */
 .dz{display:grid;gap:22px;grid-template-columns:1.35fr 1fr;margin-top:30px;align-items:start}
-.dz__big{grid-row:span 2}
+.dz__col{display:grid;gap:22px;align-content:start}
 .dz .shot{margin:0}
 .dz .shot img{display:block;width:100%;height:auto;image-rendering:pixelated}
 .dz .shot figcaption{padding:10px 14px 12px;font:600 15px/1.35 "Barlow Semi Condensed",sans-serif}
-.dz__facts{grid-column:1 / -1;padding:22px 26px}
+.dz__facts{padding:22px 26px}
 .dz__facts,.dz__facts .sub,.dz__facts li{color:var(--ink)}
 
 @media (max-width:900px){
   .dz{grid-template-columns:1fr}
-  .dz__big{grid-row:auto}
 }
