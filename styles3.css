@@ -13,7 +13,7 @@
 .dz .shot img{display:block;width:100%;height:auto;image-rendering:pixelated}
 .dz .shot figcaption{padding:10px 14px 12px;font:600 15px/1.35 "Barlow Semi Condensed",sans-serif}
 .dz__facts{grid-column:1 / -1;padding:22px 26px}
-#desafio .dz__facts .sub{color:var(--gold)}
+.dz__facts,.dz__facts .sub,.dz__facts li{color:var(--ink)}
 
 @media (max-width:900px){
   .dz{grid-template-columns:1fr}
