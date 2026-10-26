@@ -1,0 +1,214 @@
+/* FUTIBA MOD STUDIO: a extensão do FUTIBA no navegador.
+   Mesma cara dos menus do jogo: fundo da sala de uniformes, painéis
+   pretos translúcidos, Press Start 2P, cursor amarelo. */
+:root{
+  --bg:#06070c;
+  --panel:rgba(0,0,0,.72);
+  --panel-solid:#0b0d16;
+  --line:#ffe000;
+  --line-dim:#7d6e10;
+  --ink:#ffffff;
+  --ink-dim:#a9b0c2;
+  --yellow:#ffe000;
+  --cyan:#3ee6ff;
+  --red:#ff4a4a;
+  --green:#36d66b;
+  --field:#1f7a34;
+  --px:"Press Start 2P",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;min-height:100vh;background:var(--bg);color:var(--ink);
+  font:10px/1.7 var(--px);letter-spacing:.02em;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:url(/mod/bg.png) center/cover no-repeat;image-rendering:pixelated;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px),
+    rgba(4,6,14,.55);
+}
+img{image-rendering:pixelated}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--yellow)}
+
+/* ---------- topo: logo + idioma ---------- */
+.top{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding:10px 16px;background:rgba(0,0,0,.86);border-bottom:3px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand img{height:44px;width:auto;image-rendering:auto}
+.brand b{font-size:12px;color:var(--yellow);text-shadow:2px 2px 0 #7a1010;white-space:nowrap}
+.lang{display:flex;gap:6px}
+.lang button{
+  display:flex;align-items:center;gap:8px;padding:8px 10px;min-height:40px;cursor:pointer;
+  background:#111523;border:2px solid #39405a;font-size:11px;
+}
+.lang button svg{width:24px;height:16px;display:block;image-rendering:pixelated;box-shadow:0 0 0 1px #000}
+.lang button[aria-pressed="true"]{border-color:var(--yellow);color:var(--yellow);background:#221e05}
+.lang button:hover{border-color:var(--yellow)}
+
+/* ---------- moldura de tela ---------- */
+.wrap{max-width:1100px;margin:0 auto;padding:18px 16px 110px}
+.screen{
+  background:var(--panel);border:3px solid #000;outline:2px solid var(--line-dim);
+  box-shadow:0 0 0 5px rgba(0,0,0,.5),0 12px 40px rgba(0,0,0,.6);
+  padding:18px;margin-bottom:18px;
+}
+.banner{
+  margin:-18px -18px 16px;padding:10px 14px;text-align:center;
+  font-size:14px;color:#fff;background:linear-gradient(#202020,#000);
+  border-bottom:2px solid var(--line);text-shadow:2px 2px 0 #000;
+}
+.banner small{display:block;font-size:8px;color:var(--ink-dim);margin-top:6px}
+
+/* ---------- menu principal estilo jogo ---------- */
+.menu{list-style:none;margin:0 auto;padding:12px 18px;display:grid;gap:4px;max-width:420px;
+  background:rgba(0,0,0,.6);border:2px solid #30364c}
+.menu button{
+  display:block;width:100%;text-align:left;padding:7px 8px 7px 26px;cursor:pointer;
+  background:none;border:0;font-size:12px;position:relative;color:#fff;
+}
+.menu button::before{content:"";position:absolute;left:6px;top:50%;margin-top:-6px;
+  border:6px solid transparent;border-left:9px solid var(--yellow);opacity:0}
+.menu button[aria-current="true"],.menu button:hover,.menu button:focus-visible{color:var(--yellow);outline:none}
+.menu button[aria-current="true"]::before{opacity:1}
+.hint{margin:14px 0 0;text-align:center;font-size:8px;color:var(--ink-dim)}
+
+/* ---------- textos / botões ---------- */
+h2{font-size:12px;color:var(--yellow);margin:0 0 12px;font-weight:400}
+h3{font-size:10px;color:var(--cyan);margin:18px 0 10px;font-weight:400}
+p{margin:0 0 12px;color:#e8ecf5}
+.dim{color:var(--ink-dim)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:10px 14px;min-height:40px;cursor:pointer;text-decoration:none;
+  background:#141a2c;border:2px solid #4b5578;color:#fff;font-size:10px;
+}
+.btn:hover,.btn:focus-visible{border-color:var(--yellow);color:var(--yellow);outline:none}
+.btn--gold{background:var(--yellow);border-color:#fff4a0;color:#1a1400;box-shadow:3px 3px 0 #7a5a00}
+.btn--gold:hover,.btn--gold:focus-visible{background:#fff07a;color:#1a1400}
+.btn--red{border-color:#7a2020;color:#ff8a8a}
+.btn--small{min-height:32px;padding:6px 10px;font-size:8px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:rgba(10,12,22,.85);border:2px solid #2c3350;padding:14px}
+.card p{font-size:9px}
+.steps{margin:0;padding-left:22px;display:grid;gap:10px;font-size:9px}
+.steps code,.mono{font-family:var(--px);color:var(--yellow);word-break:break-all}
+
+/* ---------- campos ---------- */
+label.f{display:grid;gap:6px;font-size:8px;color:var(--ink-dim)}
+label.f span.c{float:right;color:#59607a}
+input[type=text],input[type=number],select,textarea{
+  width:100%;background:#05060b;border:2px solid #39405a;padding:8px;font-size:10px;
+  text-transform:uppercase;border-radius:0;min-height:36px;
+}
+textarea{text-transform:none;font-size:9px;line-height:1.6;min-height:140px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--yellow)}
+input[type=color]{width:44px;height:36px;padding:0;border:2px solid #39405a;background:#000;cursor:pointer}
+.grid2{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.grid3{display:grid;gap:10px;grid-template-columns:repeat(3,1fr)}
+
+/* ---------- estúdio ---------- */
+.bar{display:grid;gap:10px;grid-template-columns:1fr auto auto auto;align-items:end}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chip{display:flex;align-items:center;gap:6px;padding:4px 6px;background:#0a0d18;border:2px solid #2c3350;cursor:pointer;font-size:8px}
+.chip img{width:24px;height:24px}
+.chip[aria-current="true"]{border-color:var(--yellow);color:var(--yellow)}
+.chip .x{background:none;border:0;color:#ff8a8a;cursor:pointer;padding:2px 4px;font-size:10px}
+.empty{padding:26px 10px;text-align:center;color:var(--ink-dim);font-size:9px;border:2px dashed #2c3350}
+
+.team{display:grid;gap:16px;grid-template-columns:230px 1fr;margin-top:16px}
+.side{display:grid;gap:12px;align-content:start}
+.namebar{
+  grid-column:1/-1;text-align:center;padding:8px;font-size:16px;
+  background:linear-gradient(#262626,#000);border:2px solid var(--line);text-shadow:2px 2px 0 #000;
+}
+.pic{
+  position:relative;display:grid;place-items:center;cursor:pointer;
+  background:repeating-conic-gradient(#1a1e2c 0 25%,#121522 0 50%) 0 0/12px 12px;
+  border:2px solid #4b5578;
+}
+.pic:hover{border-color:var(--yellow)}
+.pic img{width:100%;height:100%;object-fit:contain}
+.pic .up{position:absolute;bottom:2px;right:2px;font-size:7px;background:#000;padding:2px 4px;color:var(--yellow)}
+.pic--crest{width:96px;height:96px}
+.pic--coach{width:144px;height:192px;
+  background:radial-gradient(circle,#f5c400 0 30%,#b86b00 31% 34%,#f5c400 35% 60%,#b86b00 61%);}
+.pic--player{width:96px;height:96px}
+.crestline{display:flex;gap:12px;align-items:center}
+.kit{width:64px;height:64px;image-rendering:pixelated;background:#0a0d18;border:2px solid #2c3350}
+
+.squad{display:grid;gap:8px;grid-template-columns:repeat(4,1fr)}
+.squad h4{grid-column:1/-1;margin:6px 0 0;font-size:8px;color:var(--ink-dim);font-weight:400}
+.pc{
+  position:relative;display:grid;justify-items:center;gap:4px;padding:6px 4px 4px;cursor:pointer;
+  background:linear-gradient(#1b2136,#0c0f1a);border:2px solid #39405a;text-align:center;
+}
+.pc img{width:64px;height:64px;background:#2a3a6a}
+.pc .n{position:absolute;left:4px;top:3px;font-size:10px;color:var(--yellow);text-shadow:1px 1px 0 #000}
+.pc .pos{font-size:8px;background:#fff;color:#000;width:100%;padding:2px 0}
+.pc .nm{font-size:7px;line-height:1.3;min-height:18px;overflow:hidden;word-break:break-word}
+.pc[aria-current="true"]{border-color:var(--yellow);box-shadow:0 0 0 2px var(--yellow)}
+
+.ped{margin-top:16px;display:grid;gap:14px;grid-template-columns:auto 1fr;
+  background:rgba(10,12,22,.9);border:2px solid var(--yellow);padding:14px}
+.ped .look{display:grid;gap:10px;align-content:start;justify-items:center}
+.attrs{display:grid;gap:6px}
+.attr{display:grid;grid-template-columns:110px 1fr 34px;gap:8px;align-items:center;font-size:8px}
+.attr input[type=range]{width:100%;accent-color:var(--yellow);height:24px}
+.attr b{color:var(--yellow);text-align:right;font-weight:400}
+.sw{display:flex;gap:6px;flex-wrap:wrap}
+.sw button{width:28px;height:28px;border:2px solid #000;outline:2px solid transparent;cursor:pointer;padding:0}
+.sw button[aria-pressed="true"]{outline-color:var(--yellow)}
+
+.status{position:sticky;bottom:0;z-index:15;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 16px;background:rgba(0,0,0,.9);border-top:3px solid var(--line)}
+.status .msg{font-size:8px;color:var(--ink-dim)}
+.status .msg.ok{color:var(--green)}
+.status .msg.err{color:var(--red)}
+
+.prompt{position:relative}
+.prompt textarea{min-height:170px;background:#05060b;color:#cfe8ff}
+.toast{position:fixed;left:50%;top:76px;transform:translateX(-50%);z-index:50;padding:10px 16px;
+  background:var(--yellow);color:#1a1400;border:2px solid #fff;font-size:10px;display:none}
+.toast.on{display:block}
+
+.limits{width:100%;border-collapse:collapse;font-size:8px}
+.limits td{padding:6px 4px;border-bottom:1px solid #2c3350}
+.limits td:last-child{color:var(--yellow);text-align:right;white-space:nowrap}
+
+[hidden]{display:none!important}
+
+@media (max-width:860px){
+  .team{grid-template-columns:1fr}
+  .side{grid-template-columns:auto 1fr;align-items:start}
+  .side .pic--coach{grid-row:span 3}
+  .bar{grid-template-columns:1fr 1fr}
+  .bar label.f{grid-column:1/-1}
+}
+@media (max-width:560px){
+  body{font-size:9px}
+  .brand img{height:34px}
+  .brand b{font-size:10px}
+  .lang{width:100%;justify-content:space-between}
+  .lang button{flex:1;justify-content:center}
+  .screen{padding:12px}
+  .banner{margin:-12px -12px 12px;font-size:11px}
+  .side{grid-template-columns:1fr}
+  .pic--coach{width:120px;height:160px}
+  .squad{grid-template-columns:repeat(4,1fr);gap:5px}
+  .pc img{width:48px;height:48px}
+  .pc .nm{font-size:6px}
+  .ped{grid-template-columns:1fr}
+  .attr{grid-template-columns:86px 1fr 28px}
+  .grid3{grid-template-columns:1fr 1fr}
+  .bar{grid-template-columns:1fr}
+}

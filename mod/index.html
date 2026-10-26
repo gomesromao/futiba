@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FUTIBA MOD STUDIO</title>
+<meta name="description" content="Crie mods para o FUTIBA: times, técnicos, jogadores, fotos e atributos. Baixe o pacote original com os nomes de verdade.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/mod/mod.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="/"><img src="/mod/logo.png" alt="FUTIBA" width="66" height="44"><b>MOD STUDIO</b></a>
+  <div class="lang" role="group" aria-label="Idioma / Language / Idioma">
+    <button type="button" data-lang="pt" aria-pressed="true">
+      <svg viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#1f9d3a"/><path d="M12 2 22 8 12 14 2 8z" fill="#ffd400"/><circle cx="12" cy="8" r="3.6" fill="#1a3a9a"/><path d="M8.6 7.4q3.4-1 6.8 1" stroke="#fff" stroke-width=".8" fill="none"/></svg>PT</button>
+    <button type="button" data-lang="es" aria-pressed="false">
+      <svg viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#c60b1e"/><rect y="4" width="24" height="8" fill="#ffc400"/><rect x="5" y="6" width="3" height="4" fill="#a8261c"/></svg>ES</button>
+    <button type="button" data-lang="en" aria-pressed="false">
+      <svg viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#123a8c"/><path d="M0 0 24 16M24 0 0 16" stroke="#fff" stroke-width="3"/><path d="M0 0 24 16M24 0 0 16" stroke="#c8102e" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#c8102e" stroke-width="2.6"/></svg>EN</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- MENU ------------------------------------------------------ -->
+  <section class="screen" id="s-menu">
+    <div class="banner" data-t="menu.title">MOD STUDIO<small>CRIE, BAIXE E IMPORTE MODS NO FUTIBA</small></div>
+    <ul class="menu" id="menu">
+      <li><button type="button" data-go="get" aria-current="true" data-t="menu.get">PACOTE ORIGINAL</button></li>
+      <li><button type="button" data-go="studio" data-t="menu.studio">CRIAR MOD</button></li>
+      <li><button type="button" data-go="ai" data-t="menu.ai">PROMPTS PARA IA</button></li>
+      <li><button type="button" data-go="install" data-t="menu.install">COMO CRIAR E INSTALAR</button></li>
+      <li><button type="button" data-go="limits" data-t="menu.limits">LIMITES</button></li>
+    </ul>
+    <p class="hint" data-t="menu.hint">TUDO FICA NO SEU NAVEGADOR. NADA É ENVIADO PARA O SERVIDOR.</p>
+  </section>
+
+  <!-- PACOTE ORIGINAL ------------------------------------------- -->
+  <section class="screen" id="s-get" data-screen>
+    <div class="banner" data-t="get.title">PACOTE ORIGINAL</div>
+    <div class="cards">
+      <div class="card">
+        <h2 data-t="get.h">FUTIBA ORIGINAL</h2>
+        <p data-t="get.p"></p>
+        <p class="dim" id="get-count"></p>
+        <div class="row">
+          <a class="btn btn--gold" href="/mod/base/FUTIBA_ORIGINAL.json" download="FUTIBA_ORIGINAL.json" data-t="get.json">BAIXAR FUTIBA_ORIGINAL.JSON</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2 data-t="get.h2">CONTINUAR UM MOD</h2>
+        <p data-t="get.p2">ABRA UM ZIP DE MOD (SEU OU DE OUTRA PESSOA) PARA EDITAR NO ESTÚDIO.</p>
+        <label class="btn"><span data-t="get.open">ABRIR ZIP OU JSON</span><input type="file" id="open-mod" accept=".zip,.json,application/zip,application/json" hidden></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTÚDIO --------------------------------------------------- -->
+  <section class="screen" id="s-studio" data-screen>
+    <div class="banner" data-t="st.title">CRIAR MOD</div>
+
+    <div class="grid3">
+      <label class="f"><span><span data-t="st.modname">NOME DO MOD</span> <span class="c" data-count="modname"></span></span><input type="text" id="mod-name" maxlength="24" autocomplete="off"></label>
+      <label class="f"><span><span data-t="st.author">AUTOR</span> <span class="c" data-count="author"></span></span><input type="text" id="mod-author" maxlength="24" autocomplete="off"></label>
+      <label class="f"><span data-t="st.modid">PASTA DO MOD</span><input type="text" id="mod-id" maxlength="24" autocomplete="off"></label>
+    </div>
+
+    <h3 data-t="st.add">ADICIONAR TIMES</h3>
+    <div class="bar">
+      <label class="f"><span data-t="st.pick">TIME DO JOGO</span><select id="pick-team"></select></label>
+      <button type="button" class="btn" id="add-base" data-t="st.edit">EDITAR ESTE</button>
+      <button type="button" class="btn" id="add-new" data-t="st.new">+ TIME NOVO</button>
+      <button type="button" class="btn" id="paste-open" data-t="st.paste">COLAR JSON DA IA</button>
+    </div>
+
+    <div id="paste-box" class="card" hidden style="margin-top:12px">
+      <p data-t="st.pastep">COLE O JSON QUE A SUA IA GEROU (UM TIME OU VÁRIOS). PEGUE O PROMPT EM "PROMPTS PARA IA".</p>
+      <textarea id="paste-text" spellcheck="false"></textarea>
+      <div class="row" style="margin-top:10px">
+        <button type="button" class="btn btn--gold" id="paste-go" data-t="st.pastego">ADICIONAR</button>
+        <button type="button" class="btn" id="paste-cancel" data-t="st.cancel">CANCELAR</button>
+      </div>
+    </div>
+
+    <div class="chips" id="chips"></div>
+    <div id="team-ed"></div>
+  </section>
+
+  <!-- PROMPTS --------------------------------------------------- -->
+  <section class="screen" id="s-ai" data-screen>
+    <div class="banner" data-t="ai.title">PROMPTS PARA IA</div>
+    <p data-t="ai.p">COPIE, COLE NA SUA IA PREFERIDA E TROQUE O QUE ESTÁ ENTRE [COLCHETES]. TIMES EM MASSA: A IA DEVOLVE UM JSON, VOCÊ COLA EM "CRIAR MOD". FOTOS: ENVIE A FOTO JUNTO COM O PROMPT E SUBA A IMAGEM QUE ELA DEVOLVER. O ESTÚDIO REDUZ PARA O TAMANHO CERTO.</p>
+    <div class="cards" id="prompts"></div>
+  </section>
+
+  <!-- INSTALAR -------------------------------------------------- -->
+  <section class="screen" id="s-install" data-screen>
+    <div class="banner" data-t="in.title">COMO CRIAR E INSTALAR</div>
+    <div class="cards">
+      <div class="card">
+        <h2 data-t="in.create">CRIAR</h2>
+        <ol class="steps">
+          <li data-t="in.c1"></li>
+          <li data-t="in.c2"></li>
+          <li data-t="in.c3"></li>
+          <li data-t="in.c4"></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h2 data-t="in.kinds">DOIS TIPOS DE MOD</h2>
+        <p data-t="in.k1"></p>
+        <p data-t="in.k2"></p>
+      </div>
+    </div>
+    <h3 data-t="in.install">INSTALAR</h3>
+    <ol class="steps">
+      <li data-t="in.1"></li>
+      <li data-t="in.2"></li>
+      <li data-t="in.3">NO JOGO: MENU PRINCIPAL, EDITOR, IMPORTAR MOD. ESCOLHA O MOD E CONFIRME. O FUTIBA REINICIA COM O MOD.</li>
+      <li data-t="in.4">PARA VOLTAR AO JOGO DE FÁBRICA: IMPORTAR MOD, SEM MOD.</li>
+    </ol>
+    <h3 data-t="in.tree">ESTRUTURA</h3>
+    <pre class="card mono" style="font-size:8px;overflow:auto;margin:0">FUTIBA.exe
+mod/
+  FUTIBA_ORIGINAL.json           .json
+  MEU_MOD/                       .zip
+    mod.json
+    img/crests/mod_vila.png      24x24
+    img/crests/mod_vila_hd.png   48x48
+    img/coaches/mod_vila.png     48x64
+    img/players/mod_vila_p01.png 32x32</pre>
+  </section>
+
+  <!-- LIMITES --------------------------------------------------- -->
+  <section class="screen" id="s-limits" data-screen>
+    <div class="banner" data-t="lim.title">LIMITES</div>
+    <table class="limits" id="limits"></table>
+  </section>
+
+</main>
+
+<div class="status" id="status" hidden>
+  <span class="msg" id="msg"></span>
+  <div class="row">
+    <button type="button" class="btn btn--red btn--small" id="clear" data-t="st.clear">LIMPAR RASCUNHO</button>
+    <button type="button" class="btn btn--gold" id="download" data-t="st.download">BAIXAR MOD</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<input type="file" id="img-in" accept="image/*" hidden>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="/mod/mod.js"></script>
+</body>
+</html>
