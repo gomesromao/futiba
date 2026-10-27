@@ -60,7 +60,7 @@
       "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "PRAIA",
       "g.secret": "SECRETOS", "g.desafio": "DESAFIO",
       "ai.title": "PROMPTS PARA IA",
-      "ai.p": "COPIE, COLE NA SUA IA PREFERIDA E TROQUE O QUE ESTÁ ENTRE [COLCHETES]. TIMES EM MASSA: A IA DEVOLVE UM JSON, VOCÊ COLA EM \"CRIAR MOD\". FOTOS: ENVIE A FOTO JUNTO COM O PROMPT E SUBA A IMAGEM QUE ELA DEVOLVER. O ESTÚDIO REDUZ PARA O TAMANHO CERTO.",
+      "ai.p": "COPIE, COLE NA SUA IA PREFERIDA E TROQUE O QUE ESTÁ ENTRE [COLCHETES]. TIMES EM MASSA: A IA DEVOLVE UM JSON, VOCÊ COLA EM \"CRIAR MOD\". FOTOS E ESCUDOS: ENVIE A FOTO (OU O ESCUDO REAL DO CLUBE) JUNTO COM O PROMPT E SUBA A IMAGEM QUE ELA DEVOLVER. O ESTÚDIO REDUZ PARA O TAMANHO CERTO.",
       "ai.note": "O PROMPT É EM INGLÊS DE PROPÓSITO: FUNCIONA EM QUALQUER IA.",
       "ai.teams": "TIMES EM MASSA (JSON)", "ai.player": "FOTO DE JOGADOR", "ai.coach": "FOTO DE TÉCNICO (3X4)", "ai.crest": "ESCUDO",
       "ai.copy": "COPIAR",
@@ -126,7 +126,7 @@
       "g.field": "FIELD", "g.ml": "MASTER LEAGUE", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "BEACH",
       "g.secret": "SECRET", "g.desafio": "CHALLENGE",
       "ai.title": "AI PROMPTS",
-      "ai.p": "COPY, PASTE INTO YOUR FAVORITE AI AND REPLACE WHAT IS IN [BRACKETS]. TEAMS IN BULK: THE AI RETURNS A JSON THAT YOU PASTE IN \"CREATE MOD\". PHOTOS: SEND THE PHOTO WITH THE PROMPT AND UPLOAD WHAT IT RETURNS. THE STUDIO SHRINKS IT TO THE RIGHT SIZE.",
+      "ai.p": "COPY, PASTE INTO YOUR FAVORITE AI AND REPLACE WHAT IS IN [BRACKETS]. TEAMS IN BULK: THE AI RETURNS A JSON THAT YOU PASTE IN \"CREATE MOD\". PHOTOS AND CRESTS: SEND THE PHOTO (OR THE REAL CLUB CREST) WITH THE PROMPT AND UPLOAD WHAT IT RETURNS. THE STUDIO SHRINKS IT TO THE RIGHT SIZE.",
       "ai.note": "THE PROMPT IS IN ENGLISH ON PURPOSE: IT WORKS WITH ANY AI.",
       "ai.teams": "TEAMS IN BULK (JSON)", "ai.player": "PLAYER PHOTO", "ai.coach": "COACH PHOTO (3X4)", "ai.crest": "CREST",
       "ai.copy": "COPY",
@@ -192,7 +192,7 @@
       "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FÚTSAL (BRAZUCA)", "g.beach": "PLAYA",
       "g.secret": "SECRETOS", "g.desafio": "DESAFÍO",
       "ai.title": "PROMPTS PARA IA",
-      "ai.p": "COPIA, PEGA EN TU IA FAVORITA Y CAMBIA LO QUE ESTÁ ENTRE [CORCHETES]. EQUIPOS EN MASA: LA IA DEVUELVE UN JSON QUE PEGAS EN \"CREAR MOD\". FOTOS: ENVÍA LA FOTO CON EL PROMPT Y SUBE LA IMAGEN QUE DEVUELVA. EL ESTUDIO LA REDUCE AL TAMAÑO CORRECTO.",
+      "ai.p": "COPIA, PEGA EN TU IA FAVORITA Y CAMBIA LO QUE ESTÁ ENTRE [CORCHETES]. EQUIPOS EN MASA: LA IA DEVUELVE UN JSON QUE PEGAS EN \"CREAR MOD\". FOTOS Y ESCUDOS: ENVÍA LA FOTO (O EL ESCUDO REAL DEL CLUB) CON EL PROMPT Y SUBE LA IMAGEN QUE DEVUELVA. EL ESTUDIO LA REDUCE AL TAMAÑO CORRECTO.",
       "ai.note": "EL PROMPT ESTÁ EN INGLÉS A PROPÓSITO: FUNCIONA EN CUALQUIER IA.",
       "ai.teams": "EQUIPOS EN MASA (JSON)", "ai.player": "FOTO DE JUGADOR", "ai.coach": "FOTO DE TÉCNICO (3X4)", "ai.crest": "ESCUDO",
       "ai.copy": "COPIAR",
@@ -836,10 +836,20 @@
       "chest-up bust, facing forward slightly turned, serious confident expression, wearing a zip-up tracksuit jacket in the colors " + c[0] + " and " + c[1] + ". " +
       "Keep the real hair, beard, glasses and skin tone. Detailed shaded pixels, warm lighting, limited palette, crisp edges, no text, no logo, " +
       "plain white background, vertical 3:4 framing (head near the top, shoulders at the bottom). It will be shrunk to 48x64 pixels.";
-    if (kind === "crest") return "Create a football (soccer) club crest in 16-bit retro pixel art for a club called [CLUB NAME], " +
-      "using the colors " + c[0] + " and " + c[1] + ". Simple bold shield shape, at most 3 letters, thick dark outline, flat colors, " +
-      "limited palette (6 colors max), centered, filling the frame, plain white background, square 1:1. " +
-      "It will be shrunk to 24x24 pixels, so avoid small details and thin lines.";
+    // 27/out: o escudo nasce do escudo REAL anexado (formato de fora, cores e
+    // identidade), não de uma forma de escudo genérica com as cores do time
+    if (kind === "crest") return "Use the attached crest of [CLUB NAME] as the reference. " +
+      "Create a football (soccer) club crest in 16-bit retro arcade pixel art, like Neo Geo and Super Sidekicks. " +
+      "Outer shape: find the main geometric shape of the reference emblem and keep its overall silhouette, whether it is circular, oval, " +
+      "square, rectangular, triangular, a five-pointed star, a diamond or a traditional shield. Do not turn every emblem into a standard shield. " +
+      "Colors: use the club's traditional colors from the reference. " +
+      "Inside: a simplified, original composition with one strong central symbol and at most 3 letters from the real club name; " +
+      "do not copy the exact placement of the symbols, mascots or figures of the official crest. " +
+      "Style: square, well-defined pixels, thick black or very dark outline, solid colors with block shading, " +
+      "6 colors max including the outline, no gradients, no 3D, no glow, no realistic textures. " +
+      "Centered, filling most of the frame, plain white background, square 1:1. " +
+      "It will be shrunk to 24x24 pixels: keep it readable, with no tiny details, thin lines or long text. " +
+      "No reference image? Use the colors " + c[0] + " and " + c[1] + " and a simple bold shape.";
     // times em massa
     return "You are creating teams for FUTIBA, a 16-bit retro football game. Reply with ONLY valid JSON, no comments, no markdown.\n\n" +
       "Teams to create: [DESCRIBE YOUR TEAMS HERE, FOR EXAMPLE: 4 AMATEUR TEAMS FROM MY NEIGHBORHOOD, OR THE 2026 SQUAD OF MY LOCAL CLUB]\n\n" +
