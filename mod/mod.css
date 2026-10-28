@@ -96,6 +96,7 @@ p{margin:0 0 12px;color:#e8ecf5}
 .btn--gold:hover,.btn--gold:focus-visible{background:#fff07a;color:#1a1400}
 .btn--red{border-color:#7a2020;color:#ff8a8a}
 .btn--small{min-height:32px;padding:6px 10px;font-size:8px}
+.btn--team{width:100%;margin-top:8px;justify-content:center}
 .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .card{background:rgba(10,12,22,.85);border:2px solid #2c3350;padding:14px}

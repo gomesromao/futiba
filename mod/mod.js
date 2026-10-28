@@ -33,13 +33,13 @@
       "get.p": "OS NOMES DE TODOS OS TIMES, TÉCNICOS E JOGADORES COMO ESTÃO HOJE NO FUTIBA. COLOQUE O ARQUIVO NA PASTA mod, IMPORTE NO JOGO E OS TIMES VOLTAM A TER OS NOMES DE VERDADE.",
       "get.count": "{t} TIMES · {p} JOGADORES · UM .JSON, SEM PASTA",
       "get.zip": "BAIXAR ZIP", "get.json": "BAIXAR FUTIBA_ORIGINAL.JSON", "get.h2": "CONTINUAR UM MOD",
-      "get.p2": "ABRA UM ZIP DE MOD (SEU OU DE OUTRA PESSOA) PARA EDITAR NO ESTÚDIO.", "get.open": "ABRIR ZIP OU JSON",
+      "get.p2": "ABRA UM MOD (ZIP OU JSON) OU UM TIME EXPORTADO DO JOGO, SEU OU DE OUTRA PESSOA, PARA EDITAR NO ESTÚDIO.", "get.open": "ABRIR ZIP OU JSON",
       "st.title": "CRIAR MOD", "st.modname": "NOME DO MOD", "st.author": "AUTOR", "st.modid": "PASTA DO MOD",
       "st.add": "ADICIONAR TIMES", "st.pick": "TIME DO JOGO", "st.edit": "EDITAR ESTE", "st.new": "+ TIME NOVO",
       "st.paste": "COLAR JSON DA IA",
       "st.pastep": "COLE O JSON QUE A SUA IA GEROU (UM TIME OU VÁRIOS). PEGUE O PROMPT EM \"PROMPTS PARA IA\".",
       "st.pastego": "ADICIONAR", "st.cancel": "CANCELAR", "st.clear": "LIMPAR RASCUNHO", "st.sure": "APAGAR TUDO?",
-      "st.download": "BAIXAR MOD",
+      "st.download": "BAIXAR MOD", "st.teamdl": "EXPORTAR SÓ ESTE TIME", "msg.teamdl": "TIME EXPORTADO: {f}",
       "st.empty": "NENHUM TIME NO MOD AINDA. ESCOLHA UM TIME DO JOGO E APERTE EDITAR, OU CRIE UM TIME NOVO.",
       "st.base": "TIME DO JOGO", "st.newtag": "TIME NOVO", "st.remove": "TIRAR DO MOD",
       "st.copyprompt": "COPIAR PROMPT", "st.change": "TROCAR",
@@ -74,7 +74,9 @@
       "in.1": "NA PASTA DO FUTIBA (ONDE ESTÁ O FUTIBA.EXE), CRIE UMA PASTA CHAMADA <code>mod</code>.",
       "in.2": "MOD .JSON: COLOQUE O ARQUIVO DENTRO DE <code>mod</code>. MOD .ZIP: EXTRAIA NA PASTA DO FUTIBA (ELE JÁ TRAZ A PASTA <code>mod</code>).",
       "in.3": "NO JOGO: MENU PRINCIPAL, EDITOR, IMPORTAR MOD. ESCOLHA O MOD E CONFIRME. O FUTIBA REINICIA COM O MOD.",
-      "in.4": "PARA VOLTAR AO JOGO DE FÁBRICA: IMPORTAR MOD, SEM MOD.", "in.tree": "ESTRUTURA",
+      "in.4": "PARA VOLTAR AO JOGO DE FÁBRICA: IMPORTAR MOD, SEM MOD.",
+      "in.team": "TIME AVULSO", "in.t1": "UM TIME SÓ, PARA MANDAR A UM AMIGO: NO JOGO, EDITOR, PERSONALIZAR, ESCOLHA O TIME E APERTE EXPORTAR. AQUI NO ESTÚDIO, ABRA O TIME E APERTE EXPORTAR SÓ ESTE TIME.",
+      "in.t2": "QUEM RECEBE COLOCA O ARQUIVO NA PASTA <code>times</code> AO LADO DO FUTIBA.EXE (NO ANDROID, EM DOWNLOAD/FUTIBA) E ENTRA EM EDITOR, IMPORTAR TIME. O TIME ENTRA NO SAVE DELE NO LUGAR DO TIME DO JOGO. MOD É PACOTE DE VÁRIOS TIMES; TIME AVULSO É UM SÓ.", "in.tree": "ESTRUTURA",
       "lim.title": "LIMITES",
       "lim.team": "NOME DO TIME", "lim.short": "SIGLA (LETRAS E NÚMEROS)", "lim.coach": "NOME DO TÉCNICO",
       "lim.pname": "NOME DO JOGADOR", "lim.pshort": "NOME CURTO DO JOGADOR", "lim.mod": "NOME DO MOD E AUTOR",
@@ -99,13 +101,13 @@
       "get.p": "THE NAMES OF EVERY TEAM, COACH AND PLAYER AS THEY ARE IN FUTIBA TODAY. PUT THE FILE IN THE mod FOLDER, IMPORT IT IN THE GAME AND THE TEAMS GET THEIR REAL NAMES BACK.",
       "get.count": "{t} TEAMS · {p} PLAYERS · ONE .JSON, NO FOLDER",
       "get.zip": "DOWNLOAD ZIP", "get.json": "DOWNLOAD FUTIBA_ORIGINAL.JSON", "get.h2": "CONTINUE A MOD",
-      "get.p2": "OPEN A MOD ZIP (YOURS OR SOMEONE ELSE'S) TO EDIT IT IN THE STUDIO.", "get.open": "OPEN ZIP OR JSON",
+      "get.p2": "OPEN A MOD (ZIP OR JSON) OR A TEAM EXPORTED FROM THE GAME, YOURS OR SOMEONE ELSE'S, TO EDIT IT IN THE STUDIO.", "get.open": "OPEN ZIP OR JSON",
       "st.title": "CREATE MOD", "st.modname": "MOD NAME", "st.author": "AUTHOR", "st.modid": "MOD FOLDER",
       "st.add": "ADD TEAMS", "st.pick": "GAME TEAM", "st.edit": "EDIT THIS ONE", "st.new": "+ NEW TEAM",
       "st.paste": "PASTE AI JSON",
       "st.pastep": "PASTE THE JSON YOUR AI MADE (ONE TEAM OR MANY). GET THE PROMPT IN \"AI PROMPTS\".",
       "st.pastego": "ADD", "st.cancel": "CANCEL", "st.clear": "CLEAR DRAFT", "st.sure": "ERASE ALL?",
-      "st.download": "DOWNLOAD MOD",
+      "st.download": "DOWNLOAD MOD", "st.teamdl": "EXPORT ONLY THIS TEAM", "msg.teamdl": "TEAM EXPORTED: {f}",
       "st.empty": "NO TEAMS IN THE MOD YET. PICK A GAME TEAM AND PRESS EDIT, OR CREATE A NEW TEAM.",
       "st.base": "GAME TEAM", "st.newtag": "NEW TEAM", "st.remove": "REMOVE FROM MOD",
       "st.copyprompt": "COPY PROMPT", "st.change": "CHANGE",
@@ -140,7 +142,9 @@
       "in.1": "IN THE FUTIBA FOLDER (WHERE FUTIBA.EXE IS), CREATE A FOLDER CALLED <code>mod</code>.",
       "in.2": ".JSON MOD: PUT THE FILE INSIDE <code>mod</code>. .ZIP MOD: EXTRACT IT IN THE FUTIBA FOLDER (IT ALREADY BRINGS THE <code>mod</code> FOLDER).",
       "in.3": "IN THE GAME: MAIN MENU, EDITOR, IMPORT MOD. PICK THE MOD AND CONFIRM. FUTIBA RESTARTS WITH THE MOD.",
-      "in.4": "TO GO BACK TO THE FACTORY GAME: IMPORT MOD, NO MOD.", "in.tree": "STRUCTURE",
+      "in.4": "TO GO BACK TO THE FACTORY GAME: IMPORT MOD, NO MOD.",
+      "in.team": "SINGLE TEAM", "in.t1": "ONE TEAM, TO SEND TO A FRIEND: IN THE GAME, EDITOR, CUSTOMIZE, PICK THE TEAM AND PRESS EXPORT. HERE IN THE STUDIO, OPEN THE TEAM AND PRESS EXPORT ONLY THIS TEAM.",
+      "in.t2": "WHOEVER GETS IT PUTS THE FILE IN THE <code>times</code> FOLDER NEXT TO FUTIBA.EXE (ON ANDROID, IN DOWNLOAD/FUTIBA) AND GOES TO EDITOR, IMPORT TEAM. THE TEAM ENTERS THEIR SAVE IN PLACE OF THE GAME TEAM. A MOD IS A PACK OF MANY TEAMS; A SINGLE TEAM IS JUST ONE.", "in.tree": "STRUCTURE",
       "lim.title": "LIMITS",
       "lim.team": "TEAM NAME", "lim.short": "SHORT NAME (LETTERS AND NUMBERS)", "lim.coach": "COACH NAME",
       "lim.pname": "PLAYER NAME", "lim.pshort": "PLAYER SHORT NAME", "lim.mod": "MOD NAME AND AUTHOR",
@@ -165,13 +169,13 @@
       "get.p": "LOS NOMBRES DE TODOS LOS EQUIPOS, TÉCNICOS Y JUGADORES COMO ESTÁN HOY EN FUTIBA. PON EL ARCHIVO EN LA CARPETA mod, IMPÓRTALO EN EL JUEGO Y LOS EQUIPOS VUELVEN A TENER SUS NOMBRES DE VERDAD.",
       "get.count": "{t} EQUIPOS · {p} JUGADORES · UN .JSON, SIN CARPETA",
       "get.zip": "DESCARGAR ZIP", "get.json": "DESCARGAR FUTIBA_ORIGINAL.JSON", "get.h2": "SEGUIR UN MOD",
-      "get.p2": "ABRE UN ZIP DE MOD (TUYO O DE OTRA PERSONA) PARA EDITARLO EN EL ESTUDIO.", "get.open": "ABRIR ZIP O JSON",
+      "get.p2": "ABRE UN MOD (ZIP O JSON) O UN EQUIPO EXPORTADO DEL JUEGO, TUYO O DE OTRA PERSONA, PARA EDITARLO EN EL ESTUDIO.", "get.open": "ABRIR ZIP O JSON",
       "st.title": "CREAR MOD", "st.modname": "NOMBRE DEL MOD", "st.author": "AUTOR", "st.modid": "CARPETA DEL MOD",
       "st.add": "AGREGAR EQUIPOS", "st.pick": "EQUIPO DEL JUEGO", "st.edit": "EDITAR ESTE", "st.new": "+ EQUIPO NUEVO",
       "st.paste": "PEGAR JSON DE LA IA",
       "st.pastep": "PEGA EL JSON QUE GENERÓ TU IA (UN EQUIPO O VARIOS). EL PROMPT ESTÁ EN \"PROMPTS PARA IA\".",
       "st.pastego": "AGREGAR", "st.cancel": "CANCELAR", "st.clear": "BORRAR BORRADOR", "st.sure": "¿BORRAR TODO?",
-      "st.download": "DESCARGAR MOD",
+      "st.download": "DESCARGAR MOD", "st.teamdl": "EXPORTAR SOLO ESTE EQUIPO", "msg.teamdl": "EQUIPO EXPORTADO: {f}",
       "st.empty": "TODAVÍA NO HAY EQUIPOS EN EL MOD. ELIGE UN EQUIPO DEL JUEGO Y PULSA EDITAR, O CREA UNO NUEVO.",
       "st.base": "EQUIPO DEL JUEGO", "st.newtag": "EQUIPO NUEVO", "st.remove": "SACAR DEL MOD",
       "st.copyprompt": "COPIAR PROMPT", "st.change": "CAMBIAR",
@@ -206,7 +210,9 @@
       "in.1": "EN LA CARPETA DE FUTIBA (DONDE ESTÁ FUTIBA.EXE), CREA UNA CARPETA LLAMADA <code>mod</code>.",
       "in.2": "MOD .JSON: PON EL ARCHIVO DENTRO DE <code>mod</code>. MOD .ZIP: EXTRÁELO EN LA CARPETA DE FUTIBA (YA TRAE LA CARPETA <code>mod</code>).",
       "in.3": "EN EL JUEGO: MENÚ PRINCIPAL, EDITOR, IMPORTAR MOD. ELIGE EL MOD Y CONFIRMA. FUTIBA SE REINICIA CON EL MOD.",
-      "in.4": "PARA VOLVER AL JUEGO DE FÁBRICA: IMPORTAR MOD, SIN MOD.", "in.tree": "ESTRUCTURA",
+      "in.4": "PARA VOLVER AL JUEGO DE FÁBRICA: IMPORTAR MOD, SIN MOD.",
+      "in.team": "EQUIPO SUELTO", "in.t1": "UN SOLO EQUIPO, PARA MANDAR A UN AMIGO: EN EL JUEGO, EDITOR, PERSONALIZAR, ELIGE EL EQUIPO Y PULSA EXPORTAR. AQUÍ EN EL ESTUDIO, ABRE EL EQUIPO Y PULSA EXPORTAR SOLO ESTE EQUIPO.",
+      "in.t2": "QUIEN LO RECIBE PONE EL ARCHIVO EN LA CARPETA <code>times</code> JUNTO A FUTIBA.EXE (EN ANDROID, EN DOWNLOAD/FUTIBA) Y ENTRA EN EDITOR, IMPORTAR EQUIPO. EL EQUIPO ENTRA EN SU PARTIDA GUARDADA EN LUGAR DEL EQUIPO DEL JUEGO. UN MOD ES UN PAQUETE DE MUCHOS EQUIPOS; UN EQUIPO SUELTO ES UNO SOLO.", "in.tree": "ESTRUCTURA",
       "lim.title": "LÍMITES",
       "lim.team": "NOMBRE DEL EQUIPO", "lim.short": "SIGLA (LETRAS Y NÚMEROS)", "lim.coach": "NOMBRE DEL TÉCNICO",
       "lim.pname": "NOMBRE DEL JUGADOR", "lim.pshort": "NOMBRE CORTO DEL JUGADOR", "lim.mod": "NOMBRE DEL MOD Y AUTOR",
@@ -310,6 +316,7 @@
       kit_pattern: pickLower(raw.kit_pattern || fb.kit_pattern, PATTERNS, "solid"),
       crest: isPng(raw.crest) ? raw.crest : "",
       crest_hd: isPng(raw.crest_hd) ? raw.crest_hd : "",
+      away_kit: cleanAway(raw.away_kit),
       coach: {
         name: clean(coach.name != null ? coach.name : fcoach.name, LIM.COACH) || "TÉCNICO",
         nationality: cleanCountry(coach.nationality != null ? coach.nationality : fcoach.nationality) || "BR",
@@ -328,6 +335,13 @@
       for (var i = 0; i < LIM.SQUAD; i++) tm.players.push(normPlayer(rawPlayers[i], null, i, id));
     }
     return tm;
+  }
+  // 28/out: uniforme 2 que vem de um time exportado do jogo; o estúdio não edita,
+  // só devolve igual no EXPORTAR SÓ ESTE TIME.
+  function cleanAway(a) {
+    if (!a || typeof a !== "object" || !a.custom) return null;
+    return { custom: true, c1: cleanColor(a.c1, "#ffffff"), c2: cleanColor(a.c2, "#141416"),
+      pattern: pickLower(a.pattern, PATTERNS, "solid"), c3: cleanColor(a.c3, "#141416") };
   }
   function isPng(s) { return typeof s === "string" && s.indexOf("data:image/png") === 0; }
 
@@ -567,6 +581,7 @@
         '<div class="grid2">' + field("f.nat", "coach.nationality", tm.coach.nationality, 2) +
         '<label class="f"><span>&nbsp;</span><button type="button" class="btn btn--small" data-prompt="coach">' + esc(t("st.copyprompt")) + "</button></label></div>" +
         '<p class="dim" style="font-size:7px;margin:0">ID: ' + esc(tm.id) + " · " + esc(tm.base ? t("st.base") : t("st.newtag")) + "</p>" +
+        '<button type="button" class="btn btn--small btn--team" data-teamdl>' + esc(t("st.teamdl")) + "</button>" +
       "</div>" +
       "<div>" +
         '<div class="grid3">' + field("f.name", "name", tm.name, LIM.TEAM) + field("f.short", "short_name", tm.short_name, LIM.SHORT) + field("f.country", "country", tm.country, 2) + "</div>" +
@@ -777,6 +792,41 @@
     });
   }
 
+  // 28/out: TIME AVULSO. Um time só, imagens dentro do JSON (data:image/png), no
+  // mesmo formato do EXPORTAR do jogo (kind "team"): vai para a pasta times e
+  // entra pelo EDITOR > IMPORTAR TIME. Time do jogo leva só o que mudou.
+  function exportTeam() {
+    var tm = S.teams[cur]; if (!tm) return;
+    var big = false;
+    function img(d) { if (!d) return ""; if ((d.split(",")[1] || "").length * 0.75 > LIM.PNG) { big = true; return ""; } return d; }
+    var full = {
+      id: tm.id, name: clean(tm.name, LIM.TEAM), short_name: cleanShort(tm.short_name), country: tm.country,
+      primary_color: tm.primary_color, secondary_color: tm.secondary_color, kit_color3: tm.kit_color3,
+      kit_pattern: tm.kit_pattern, crest: img(tm.crest),
+      coach: { name: clean(tm.coach.name, LIM.COACH), nationality: tm.coach.nationality, photo: img(tm.coach.photo) },
+      players: tm.players.map(function (p) {
+        return { id: p.id, name: clean(p.name, LIM.PNAME), short_name: clean(p.short_name, LIM.PSHORT),
+          shirt_number: p.shirt_number, position: p.position, foot: p.foot, trait: p.trait,
+          attributes: p.attributes, appearance: p.appearance, photo: img(p.photo) };
+      })
+    };
+    var team = tm.base ? onlyChanged(full, BASE_BY_ID[tm.id]) : full;
+    if (tm.crest_hd) team.crest_hd = img(tm.crest_hd);
+    if (tm.away_kit) team.away_kit = tm.away_kit;
+    var file = { format: "futiba-mod", version: 1, kind: "team", id: cleanId("TIME_" + tm.id.toUpperCase()),
+      name: clean(tm.name, LIM.MOD), author: clean(S.mod.author, LIM.MOD),
+      created: new Date().toISOString().slice(0, 10), teams: [team] };
+    var json = JSON.stringify(file, null, 1);
+    if (json.length > LIM.JSON || big) { msg(t("msg.big"), "err"); return; }
+    var slug = clean(tm.name, LIM.TEAM).normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Z0-9]+/g, "_").replace(/^_|_$/g, "") || "TIME";
+    var fname = "FUTIBA_TIME_" + slug + ".json";
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([json], { type: "application/json" })); a.download = fname;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+    msg(t("msg.teamdl", { f: fname }), "ok");
+  }
+
   function openMod(file) {
     ensureBase().then(function () {
       if (/\.json$/i.test(file.name)) {
@@ -959,6 +1009,7 @@
       var pc = e.target.closest("[data-p]");
       if (pc) { curP = +pc.dataset.p; renderStudio(); var ped = $(".ped"); if (ped && window.innerWidth < 860) ped.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
       var im = e.target.closest("[data-img]"); if (im) { askImage(im.dataset.img, cur, curP); return; }
+      if (e.target.closest("[data-teamdl]")) { exportTeam(); return; }
       var sw = e.target.closest("[data-sw]");
       if (sw) { S.teams[cur].players[curP].appearance[sw.dataset.sw] = +sw.dataset.v; renderStudio(); saveDraft(); return; }
     });
