@@ -31,6 +31,8 @@ def jload(rel):
 
 
 def group_of(t):
+    if t.get("wc_only"):
+        return "wc"
     if t.get("ml_only"):
         return "ml"
     if t.get("brazuca"):
@@ -63,6 +65,9 @@ def copy_img(res_path, kind, name, files):
 
 def main():
     index = jload("data/teams/_index.json") + jload("data/teams/_ml_index.json")
+    # 29/out: as 40 seleções da COPA DO MUNDO (só existem nesse modo do jogo)
+    if os.path.isfile(os.path.join(GAME, "data/teams/_wc_index.json")):
+        index += jload("data/teams/_wc_index.json")
     files = {}
     teams = []
     for tid in index:

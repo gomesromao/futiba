@@ -19,7 +19,7 @@
     "MATADOR", "MESTRE", "MURALHA", "REI", "SAMURAI", "VELOCISTA", "XERIFE"];
   var SKINS = ["#f1c27d", "#e0ac69", "#c68642", "#8d5524", "#5c3a1e"];
   var HAIRS = ["#17110b", "#3a2415", "#7a4a1e", "#c9a227", "#6e6e6e"];
-  var GROUPS = ["field", "ml", "futsal", "beach", "secret", "desafio"];
+  var GROUPS = ["field", "ml", "wc", "futsal", "beach", "secret", "desafio"];
   var NEW_POS = ["GK", "DF", "DF", "DF", "DF", "MF", "MF", "MF", "MF", "FW", "FW", "GK", "DF", "MF", "MF", "FW"];
 
   // ---------- textos ----------
@@ -59,6 +59,7 @@
       "a.defense": "DEFESA", "a.heading": "CABECEIO", "a.goalkeeping": "GOLEIRO", "a.stamina": "FÔLEGO", "a.strength": "FORÇA",
       "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "PRAIA",
       "g.secret": "SECRETOS", "g.desafio": "DESAFIO",
+      "g.wc": "COPA DO MUNDO", "ai.ids": "MAPA DE IDS (EDIÇÃO EM MASSA)",
       "ai.title": "PROMPTS PARA IA",
       "ai.p": "COPIE, COLE NA SUA IA PREFERIDA E TROQUE O QUE ESTÁ ENTRE [COLCHETES]. TIMES EM MASSA: A IA DEVOLVE UM JSON, VOCÊ COLA EM \"CRIAR MOD\". FOTOS E ESCUDOS: ENVIE A FOTO (OU O ESCUDO REAL DO CLUBE) JUNTO COM O PROMPT E SUBA A IMAGEM QUE ELA DEVOLVER. O ESTÚDIO REDUZ PARA O TAMANHO CERTO.",
       "ai.note": "O PROMPT É EM INGLÊS DE PROPÓSITO: FUNCIONA EM QUALQUER IA.",
@@ -128,6 +129,7 @@
       "a.defense": "DEFENSE", "a.heading": "HEADING", "a.goalkeeping": "KEEPER", "a.stamina": "STAMINA", "a.strength": "STRENGTH",
       "g.field": "FIELD", "g.ml": "MASTER LEAGUE", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "BEACH",
       "g.secret": "SECRET", "g.desafio": "CHALLENGE",
+      "g.wc": "WORLD CUP", "ai.ids": "ID MAP (BULK EDITING)",
       "ai.title": "AI PROMPTS",
       "ai.p": "COPY, PASTE INTO YOUR FAVORITE AI AND REPLACE WHAT IS IN [BRACKETS]. TEAMS IN BULK: THE AI RETURNS A JSON THAT YOU PASTE IN \"CREATE MOD\". PHOTOS AND CRESTS: SEND THE PHOTO (OR THE REAL CLUB CREST) WITH THE PROMPT AND UPLOAD WHAT IT RETURNS. THE STUDIO SHRINKS IT TO THE RIGHT SIZE.",
       "ai.note": "THE PROMPT IS IN ENGLISH ON PURPOSE: IT WORKS WITH ANY AI.",
@@ -197,6 +199,7 @@
       "a.defense": "DEFENSA", "a.heading": "CABEZAZO", "a.goalkeeping": "PORTERO", "a.stamina": "RESISTENCIA", "a.strength": "FUERZA",
       "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FÚTSAL (BRAZUCA)", "g.beach": "PLAYA",
       "g.secret": "SECRETOS", "g.desafio": "DESAFÍO",
+      "g.wc": "COPA DEL MUNDO", "ai.ids": "MAPA DE IDS (EDICIÓN EN MASA)",
       "ai.title": "PROMPTS PARA IA",
       "ai.p": "COPIA, PEGA EN TU IA FAVORITA Y CAMBIA LO QUE ESTÁ ENTRE [CORCHETES]. EQUIPOS EN MASA: LA IA DEVUELVE UN JSON QUE PEGAS EN \"CREAR MOD\". FOTOS Y ESCUDOS: ENVÍA LA FOTO (O EL ESCUDO REAL DEL CLUB) CON EL PROMPT Y SUBE LA IMAGEN QUE DEVUELVA. EL ESTUDIO LA REDUCE AL TAMAÑO CORRECTO.",
       "ai.note": "EL PROMPT ESTÁ EN INGLÉS A PROPÓSITO: FUNCIONA EN CUALQUIER IA.",
@@ -427,6 +430,7 @@
     $$("[data-screen]").forEach(function (s) { s.hidden = s.id !== "s-" + name; });
     $("#status").hidden = name !== "studio";
     if (name === "studio") ensureBase().then(renderStudio);
+    if (name === "ai") ensureBase();   // 29/out: o mapa de IDs vem da base
     if (scroll) $("#s-" + name).scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
@@ -436,7 +440,7 @@
       basePromise = fetch("/mod/base/base.json").then(function (r) { return r.json(); }).then(function (j) {
         BASE = j; BASE_BY_ID = {};
         j.teams.forEach(function (tm) { BASE_BY_ID[tm.id] = tm; });
-        renderCount(); renderPick();
+        renderCount(); renderPick(); renderPrompts();
         return j;
       }).catch(function () { BASE = { teams: [] }; return BASE; });
     }
@@ -881,7 +885,8 @@
     var c = teamColors();
     if (kind === "player") return "Use the attached photo as the reference for the face. " +
       "Turn this person into a football (soccer) player portrait in 16-bit retro pixel art, like a 1990s SNES/Mega Drive soccer game: " +
-      "head and shoulders, facing forward, neutral confident expression, wearing a football jersey in the colors " + c[0] + " and " + c[1] + ". " +
+      "head and shoulders, head turned three-quarters to the viewer's right (like the FUTIBA portraits), neutral confident expression, " +
+      "warm shading and a strong dark outline, wearing a football jersey in the colors " + c[0] + " and " + c[1] + ". " +
       "Keep the real hair, beard and skin tone. The head fills most of the picture. Square 1:1 framing, plain white background, " +
       "crisp pixels, limited palette, strong outline, no text, no logo, no number. It will be shrunk to 32x32 pixels, so keep shapes big and readable.";
     if (kind === "coach") return "Use the attached 3x4 photo as the reference for the face. " +
@@ -903,15 +908,18 @@
       "Centered, filling most of the frame, plain white background, square 1:1. " +
       "It will be shrunk to 24x24 pixels: keep it readable, with no tiny details, thin lines or long text. " +
       "No reference image? Use the colors " + c[0] + " and " + c[1] + " and a simple bold shape.";
+    if (kind === "ids") return idMap();
     // times em massa
     return "You are creating teams for FUTIBA, a 16-bit retro football game. Reply with ONLY valid JSON, no comments, no markdown.\n\n" +
       "Teams to create: [DESCRIBE YOUR TEAMS HERE, FOR EXAMPLE: 4 AMATEUR TEAMS FROM MY NEIGHBORHOOD, OR THE 2026 SQUAD OF MY LOCAL CLUB]\n\n" +
       "Format:\n" +
-      '{"teams":[{"name":"","short_name":"","country":"BR","primary_color":"#rrggbb","secondary_color":"#rrggbb","kit_color3":"#rrggbb",' +
+      '{"teams":[{"id":"","name":"","short_name":"","country":"BR","primary_color":"#rrggbb","secondary_color":"#rrggbb","kit_color3":"#rrggbb",' +
       '"kit_pattern":"solid","coach":{"name":"","nationality":"BR"},"players":[{"name":"","short_name":"","shirt_number":1,"position":"GK",' +
       '"foot":"R","trait":"","attributes":{"pace":60,"shooting":60,"passing":60,"dribbling":60,"defense":60,"heading":60,"goalkeeping":60,"stamina":60,"strength":60},' +
       '"appearance":{"skin":2,"hair_style":1,"hair_color":0,"facial":0,"body_type":"standard"}}]}]}\n\n' +
       "Rules (follow all of them):\n" +
+      "- id: leave it EMPTY to create a new team. To EDIT a team that already exists in the game, use its exact id from the FUTIBA ID MAP " +
+      "(for example \"fla\"); then each player also needs \"id\": \"<team id>_p01\" to \"<team id>_p16\", in the same lineup order.\n" +
       "- Every text in UPPERCASE. Allowed characters: A-Z, 0-9, space, . - ' and ÁÀÂÃÉÊÍÓÔÕÚÇÜÑ. No emoji.\n" +
       "- name: max " + LIM.TEAM + " characters. short_name of the team: max " + LIM.SHORT + " letters or digits.\n" +
       "- coach.name: max " + LIM.COACH + " characters. country and nationality: 2 letter code (BR, AR, ES, US...).\n" +
@@ -924,9 +932,24 @@
       "- body_type: standard, short, tall, slim or robust.\n" +
       "- kit_pattern: solid, vertical, hoops, chestband, chestband3 or band. Colors as #rrggbb.";
   }
+  // 29/out: mapa geral de IDs (todos os times editáveis), para edição em massa
+  function idMap() {
+    if (!BASE) return "...";
+    var lines = ["FUTIBA ID MAP. Every team below can be edited in a mod: keep its id.",
+      "Players of a team: <team id>_p01 to <team id>_p16, in lineup order (01-11 starters, 12-16 substitutes).",
+      "The 5 teams exported from the MASTER LEAGUE (ML1 to ML5) are not editable here: they live only in the player's save.", ""];
+    GROUPS.forEach(function (g) {
+      var list = BASE.teams.filter(function (x) { return x.group === g; });
+      if (!list.length) return;
+      lines.push("[" + t("g." + g) + "]");
+      list.forEach(function (x) { lines.push(x.id + " = " + x.name + " (" + x.short_name + ")"); });
+      lines.push("");
+    });
+    return lines.join("\n");
+  }
   function renderPrompts() {
     var box = $("#prompts"); if (!box) return;
-    box.innerHTML = [["teams", "ai.teams"], ["player", "ai.player"], ["coach", "ai.coach"], ["crest", "ai.crest"]].map(function (x) {
+    box.innerHTML = [["teams", "ai.teams"], ["ids", "ai.ids"], ["player", "ai.player"], ["coach", "ai.coach"], ["crest", "ai.crest"]].map(function (x) {
       return '<div class="card prompt"><h2>' + esc(t(x[1])) + '</h2><textarea readonly spellcheck="false">' + esc(promptText(x[0])) +
         '</textarea><div class="row" style="margin-top:10px"><button type="button" class="btn btn--gold" data-prompt="' + x[0] + '">' + esc(t("ai.copy")) + "</button></div></div>";
     }).join("") + '<p class="dim" style="grid-column:1/-1;font-size:8px">' + esc(t("ai.note")) + "</p>";

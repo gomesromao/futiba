@@ -11813,6 +11813,3846 @@
      "short_name": "SILVA"
     }
    ]
+  },
+  {
+   "id": "wc_ger",
+   "name": "ALEMANHA",
+   "short_name": "ALE",
+   "country": "DE",
+   "primary_color": "#f4f4f4",
+   "secondary_color": "#111111",
+   "kit_color3": "#d00000",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "KLINSMANNI",
+    "nationality": "DE"
+   },
+   "players": [
+    {
+     "id": "wc_ger_p01",
+     "name": "JENS LEHMANNO",
+     "short_name": "LEHMANNO"
+    },
+    {
+     "id": "wc_ger_p02",
+     "name": "LAHMINHO",
+     "short_name": "LAHMINHO"
+    },
+    {
+     "id": "wc_ger_p03",
+     "name": "MERTESACKER",
+     "short_name": "MERTESACKER"
+    },
+    {
+     "id": "wc_ger_p04",
+     "name": "METZELDERI",
+     "short_name": "METZELDERI"
+    },
+    {
+     "id": "wc_ger_p05",
+     "name": "ARNE FRIEDRICH",
+     "short_name": "FRIEDRICH"
+    },
+    {
+     "id": "wc_ger_p06",
+     "name": "SCHNEIDERO",
+     "short_name": "SCHNEIDERO"
+    },
+    {
+     "id": "wc_ger_p07",
+     "name": "BALLAKO",
+     "short_name": "BALLAKO"
+    },
+    {
+     "id": "wc_ger_p08",
+     "name": "FRINGSÃO",
+     "short_name": "FRINGSÃO"
+    },
+    {
+     "id": "wc_ger_p09",
+     "name": "SCHWEINSTAIGO",
+     "short_name": "SCHWEINSTA"
+    },
+    {
+     "id": "wc_ger_p10",
+     "name": "MIROSLAV KLOSÃO",
+     "short_name": "KLOSÃO"
+    },
+    {
+     "id": "wc_ger_p11",
+     "name": "PODOLSKINHO",
+     "short_name": "PODOLSKI"
+    },
+    {
+     "id": "wc_ger_p12",
+     "name": "OLIVER KAHNÃO",
+     "short_name": "KAHNÃO"
+    },
+    {
+     "id": "wc_ger_p13",
+     "name": "JANSENZINHO",
+     "short_name": "JANSEN"
+    },
+    {
+     "id": "wc_ger_p14",
+     "name": "HUTHÃO",
+     "short_name": "HUTHÃO"
+    },
+    {
+     "id": "wc_ger_p15",
+     "name": "BOROWSKIO",
+     "short_name": "BOROWSKIO"
+    },
+    {
+     "id": "wc_ger_p16",
+     "name": "NEUVILLO",
+     "short_name": "NEUVILLO"
+    }
+   ]
+  },
+  {
+   "id": "wc_crc",
+   "name": "COSTA RICA",
+   "short_name": "CRC",
+   "country": "CR",
+   "primary_color": "#d4202a",
+   "secondary_color": "#1d3f8f",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "GUIMARÃOS",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "wc_crc_p01",
+     "name": "PORRASITO",
+     "short_name": "PORRASITO"
+    },
+    {
+     "id": "wc_crc_p02",
+     "name": "MARÍN",
+     "short_name": "MARÍN"
+    },
+    {
+     "id": "wc_crc_p03",
+     "name": "SEQUEIRITA",
+     "short_name": "SEQUEIRA"
+    },
+    {
+     "id": "wc_crc_p04",
+     "name": "UMAÑITO",
+     "short_name": "UMAÑA"
+    },
+    {
+     "id": "wc_crc_p05",
+     "name": "DRUMMONDE",
+     "short_name": "DRUMMONDE"
+    },
+    {
+     "id": "wc_crc_p06",
+     "name": "SOLÍS",
+     "short_name": "SOLÍS"
+    },
+    {
+     "id": "wc_crc_p07",
+     "name": "CENTENITO",
+     "short_name": "CENTENO"
+    },
+    {
+     "id": "wc_crc_p08",
+     "name": "FONSEQUITA",
+     "short_name": "FONSECA"
+    },
+    {
+     "id": "wc_crc_p09",
+     "name": "WALLACEO",
+     "short_name": "WALLACEO"
+    },
+    {
+     "id": "wc_crc_p10",
+     "name": "PAULO WANCHOPÃO",
+     "short_name": "WANCHOPÃO"
+    },
+    {
+     "id": "wc_crc_p11",
+     "name": "GÓMEZITO",
+     "short_name": "GÓMEZITO"
+    },
+    {
+     "id": "wc_crc_p12",
+     "name": "MESITA",
+     "short_name": "MESITA"
+    },
+    {
+     "id": "wc_crc_p13",
+     "name": "WRIGHTZINHO",
+     "short_name": "WRIGHT"
+    },
+    {
+     "id": "wc_crc_p14",
+     "name": "BADILLA",
+     "short_name": "BADILLA"
+    },
+    {
+     "id": "wc_crc_p15",
+     "name": "BOLAÑOS",
+     "short_name": "BOLAÑOS"
+    },
+    {
+     "id": "wc_crc_p16",
+     "name": "SABORÍO",
+     "short_name": "SABORÍO"
+    }
+   ]
+  },
+  {
+   "id": "wc_pol",
+   "name": "POLÔNIA",
+   "short_name": "POL",
+   "country": "PL",
+   "primary_color": "#f4f4f4",
+   "secondary_color": "#d4213d",
+   "kit_color3": "#f4f4f4",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "JANASKI",
+    "nationality": "PL"
+   },
+   "players": [
+    {
+     "id": "wc_pol_p01",
+     "name": "BORUCÃO",
+     "short_name": "BORUCÃO"
+    },
+    {
+     "id": "wc_pol_p02",
+     "name": "BAKOWSKI",
+     "short_name": "BAKOWSKI"
+    },
+    {
+     "id": "wc_pol_p03",
+     "name": "BAKONIO",
+     "short_name": "BAKONIO"
+    },
+    {
+     "id": "wc_pol_p04",
+     "name": "JOPEKI",
+     "short_name": "JOPEKI"
+    },
+    {
+     "id": "wc_pol_p05",
+     "name": "ZEWLAKOVI",
+     "short_name": "ZEWLAKOV"
+    },
+    {
+     "id": "wc_pol_p06",
+     "name": "SOBOLEWSKI",
+     "short_name": "SOBOLEWSKI"
+    },
+    {
+     "id": "wc_pol_p07",
+     "name": "RADOMSKI",
+     "short_name": "RADOMSKI"
+    },
+    {
+     "id": "wc_pol_p08",
+     "name": "SMOLAREK",
+     "short_name": "SMOLAREK"
+    },
+    {
+     "id": "wc_pol_p09",
+     "name": "KRZYNÓWEK",
+     "short_name": "KRZYNOWEK"
+    },
+    {
+     "id": "wc_pol_p10",
+     "name": "ZURAWSKI",
+     "short_name": "ZURAWSKI"
+    },
+    {
+     "id": "wc_pol_p11",
+     "name": "FRANKOWSKI",
+     "short_name": "FRANKOWSKI"
+    },
+    {
+     "id": "wc_pol_p12",
+     "name": "DUDEKÃO",
+     "short_name": "DUDEKÃO"
+    },
+    {
+     "id": "wc_pol_p13",
+     "name": "BOSACKI",
+     "short_name": "BOSACKI"
+    },
+    {
+     "id": "wc_pol_p14",
+     "name": "DUDKAZINHO",
+     "short_name": "DUDKA"
+    },
+    {
+     "id": "wc_pol_p15",
+     "name": "SZYMKOWIAK",
+     "short_name": "SZYMKOWIAK"
+    },
+    {
+     "id": "wc_pol_p16",
+     "name": "JELENÃO",
+     "short_name": "JELENÃO"
+    }
+   ]
+  },
+  {
+   "id": "wc_ecu",
+   "name": "EQUADOR",
+   "short_name": "EQU",
+   "country": "EC",
+   "primary_color": "#ffd700",
+   "secondary_color": "#1a3e8c",
+   "kit_color3": "#d0102a",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "SUAREZITO",
+    "nationality": "CO"
+   },
+   "players": [
+    {
+     "id": "wc_ecu_p01",
+     "name": "MORAZITO",
+     "short_name": "MORAZITO"
+    },
+    {
+     "id": "wc_ecu_p02",
+     "name": "DE LA CRUZ",
+     "short_name": "DE LA CRUZ"
+    },
+    {
+     "id": "wc_ecu_p03",
+     "name": "HURTADÃO",
+     "short_name": "HURTADÃO"
+    },
+    {
+     "id": "wc_ecu_p04",
+     "name": "ESPINOZITA",
+     "short_name": "ESPINOZA"
+    },
+    {
+     "id": "wc_ecu_p05",
+     "name": "REASCO",
+     "short_name": "REASCO"
+    },
+    {
+     "id": "wc_ecu_p06",
+     "name": "VALENCIA",
+     "short_name": "VALENCIA"
+    },
+    {
+     "id": "wc_ecu_p07",
+     "name": "CASTILLITO",
+     "short_name": "CASTILLO"
+    },
+    {
+     "id": "wc_ecu_p08",
+     "name": "AYOVÍ",
+     "short_name": "AYOVÍ"
+    },
+    {
+     "id": "wc_ecu_p09",
+     "name": "MÉNDEZ",
+     "short_name": "MÉNDEZ"
+    },
+    {
+     "id": "wc_ecu_p10",
+     "name": "AGUSTÍN DELGADO",
+     "short_name": "DELGADÃO"
+    },
+    {
+     "id": "wc_ecu_p11",
+     "name": "TENÓRIO",
+     "short_name": "TENÓRIO"
+    },
+    {
+     "id": "wc_ecu_p12",
+     "name": "VILLAFUERTE",
+     "short_name": "VILLAFUERTE"
+    },
+    {
+     "id": "wc_ecu_p13",
+     "name": "AMBROSI",
+     "short_name": "AMBROSI"
+    },
+    {
+     "id": "wc_ecu_p14",
+     "name": "PERLAZITA",
+     "short_name": "PERLAZA"
+    },
+    {
+     "id": "wc_ecu_p15",
+     "name": "EDISON MÉNDEZ",
+     "short_name": "E. MÉNDEZ"
+    },
+    {
+     "id": "wc_ecu_p16",
+     "name": "KAVIEDES",
+     "short_name": "KAVIEDES"
+    }
+   ]
+  },
+  {
+   "id": "wc_eng",
+   "name": "INGLATERRA",
+   "short_name": "ING",
+   "country": "EN",
+   "primary_color": "#f4f4f4",
+   "secondary_color": "#1b2a5a",
+   "kit_color3": "#d00027",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "ERIKSSONI",
+    "nationality": "SE"
+   },
+   "players": [
+    {
+     "id": "wc_eng_p01",
+     "name": "PAUL ROBINSONO",
+     "short_name": "ROBINSONO"
+    },
+    {
+     "id": "wc_eng_p02",
+     "name": "GARY NEVILLO",
+     "short_name": "NEVILLO"
+    },
+    {
+     "id": "wc_eng_p03",
+     "name": "RIO FERDINANDO",
+     "short_name": "FERDINANDO"
+    },
+    {
+     "id": "wc_eng_p04",
+     "name": "JOHN TERRÃO",
+     "short_name": "TERRÃO"
+    },
+    {
+     "id": "wc_eng_p05",
+     "name": "ASHLEY COLLE",
+     "short_name": "A. COLLE"
+    },
+    {
+     "id": "wc_eng_p06",
+     "name": "BECKHAMZINHO",
+     "short_name": "BECKHAM"
+    },
+    {
+     "id": "wc_eng_p07",
+     "name": "LAMPARDÃO",
+     "short_name": "LAMPARD"
+    },
+    {
+     "id": "wc_eng_p08",
+     "name": "GERRARDÃO",
+     "short_name": "GERRARD"
+    },
+    {
+     "id": "wc_eng_p09",
+     "name": "JOE COLLE",
+     "short_name": "J. COLLE"
+    },
+    {
+     "id": "wc_eng_p10",
+     "name": "OWENZINHO",
+     "short_name": "OWENZINHO"
+    },
+    {
+     "id": "wc_eng_p11",
+     "name": "ROONEYZÃO",
+     "short_name": "ROONEY"
+    },
+    {
+     "id": "wc_eng_p12",
+     "name": "DAVID JAMESI",
+     "short_name": "JAMESI"
+    },
+    {
+     "id": "wc_eng_p13",
+     "name": "SOL CAMPBELLO",
+     "short_name": "CAMPBELLO"
+    },
+    {
+     "id": "wc_eng_p14",
+     "name": "CARRAGHERO",
+     "short_name": "CARRAGHERO"
+    },
+    {
+     "id": "wc_eng_p15",
+     "name": "HARGREAVINHO",
+     "short_name": "HARGREAVES"
+    },
+    {
+     "id": "wc_eng_p16",
+     "name": "PETER CROUCHÃO",
+     "short_name": "CROUCHÃO"
+    }
+   ]
+  },
+  {
+   "id": "wc_par",
+   "name": "PARAGUAI",
+   "short_name": "PAR",
+   "country": "PY",
+   "primary_color": "#d52b1e",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#0038a8",
+   "kit_pattern": "vertical",
+   "coach": {
+    "name": "RUIZÃO",
+    "nationality": "UY"
+   },
+   "players": [
+    {
+     "id": "wc_par_p01",
+     "name": "VILLARZÃO",
+     "short_name": "VILLAR"
+    },
+    {
+     "id": "wc_par_p02",
+     "name": "CARLOS GAMARRÃO",
+     "short_name": "GAMARRÃO"
+    },
+    {
+     "id": "wc_par_p03",
+     "name": "CÁCERES",
+     "short_name": "CÁCERES"
+    },
+    {
+     "id": "wc_par_p04",
+     "name": "ALVARENGUITA",
+     "short_name": "ALVARENGA"
+    },
+    {
+     "id": "wc_par_p05",
+     "name": "NÚÑEZITO",
+     "short_name": "NÚÑEZ"
+    },
+    {
+     "id": "wc_par_p06",
+     "name": "BARRETITO",
+     "short_name": "BARRETO"
+    },
+    {
+     "id": "wc_par_p07",
+     "name": "ACUÑÃO",
+     "short_name": "ACUÑÃO"
+    },
+    {
+     "id": "wc_par_p08",
+     "name": "BONETITO",
+     "short_name": "BONET"
+    },
+    {
+     "id": "wc_par_p09",
+     "name": "PAREDÃOZITO",
+     "short_name": "PAREDES"
+    },
+    {
+     "id": "wc_par_p10",
+     "name": "SANTA CRUZ",
+     "short_name": "SANTA CRUZ"
+    },
+    {
+     "id": "wc_par_p11",
+     "name": "VALDEZITO",
+     "short_name": "VALDEZ"
+    },
+    {
+     "id": "wc_par_p12",
+     "name": "BOBADILLA",
+     "short_name": "BOBADILLA"
+    },
+    {
+     "id": "wc_par_p13",
+     "name": "MANZURITO",
+     "short_name": "MANZUR"
+    },
+    {
+     "id": "wc_par_p14",
+     "name": "DA SILVINHA",
+     "short_name": "DA SILVA"
+    },
+    {
+     "id": "wc_par_p15",
+     "name": "DOS SANTOS",
+     "short_name": "DOS SANTOS"
+    },
+    {
+     "id": "wc_par_p16",
+     "name": "CUEVAZITO",
+     "short_name": "CUEVAS"
+    }
+   ]
+  },
+  {
+   "id": "wc_tri",
+   "name": "TRINIDAD E TOBAGO",
+   "short_name": "TRI",
+   "country": "TT",
+   "primary_color": "#ce1126",
+   "secondary_color": "#111111",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "BEENHAKKERT",
+    "nationality": "NL"
+   },
+   "players": [
+    {
+     "id": "wc_tri_p01",
+     "name": "SHAKA HISLOPI",
+     "short_name": "HISLOPI"
+    },
+    {
+     "id": "wc_tri_p02",
+     "name": "ANDREWS",
+     "short_name": "ANDREWS"
+    },
+    {
+     "id": "wc_tri_p03",
+     "name": "SANCHO",
+     "short_name": "SANCHO"
+    },
+    {
+     "id": "wc_tri_p04",
+     "name": "DENNIS LAWRENCI",
+     "short_name": "LAWRENCI"
+    },
+    {
+     "id": "wc_tri_p05",
+     "name": "COXZINHO",
+     "short_name": "COX"
+    },
+    {
+     "id": "wc_tri_p06",
+     "name": "BIRCHALLI",
+     "short_name": "BIRCHALLI"
+    },
+    {
+     "id": "wc_tri_p07",
+     "name": "EDWARDS",
+     "short_name": "EDWARDS"
+    },
+    {
+     "id": "wc_tri_p08",
+     "name": "WHITLEYZINHO",
+     "short_name": "WHITLEY"
+    },
+    {
+     "id": "wc_tri_p09",
+     "name": "LATAPYZÃO",
+     "short_name": "LATAPY"
+    },
+    {
+     "id": "wc_tri_p10",
+     "name": "DWIGHT YORKÃO",
+     "short_name": "YORKÃO"
+    },
+    {
+     "id": "wc_tri_p11",
+     "name": "STERN JOHN",
+     "short_name": "S. JOHN"
+    },
+    {
+     "id": "wc_tri_p12",
+     "name": "JACKZINHO",
+     "short_name": "JACK"
+    },
+    {
+     "id": "wc_tri_p13",
+     "name": "GRAY",
+     "short_name": "GRAY"
+    },
+    {
+     "id": "wc_tri_p14",
+     "name": "AVERY",
+     "short_name": "AVERY"
+    },
+    {
+     "id": "wc_tri_p15",
+     "name": "THEOBALDO",
+     "short_name": "THEOBALDO"
+    },
+    {
+     "id": "wc_tri_p16",
+     "name": "KENWYNE JONESI",
+     "short_name": "K. JONESI"
+    }
+   ]
+  },
+  {
+   "id": "wc_swe",
+   "name": "SUÉCIA",
+   "short_name": "SUE",
+   "country": "SE",
+   "primary_color": "#fecc02",
+   "secondary_color": "#005b99",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "LAGERBACKEN",
+    "nationality": "SE"
+   },
+   "players": [
+    {
+     "id": "wc_swe_p01",
+     "name": "ISAKSSONI",
+     "short_name": "ISAKSSON"
+    },
+    {
+     "id": "wc_swe_p02",
+     "name": "ALEXANDERSSONI",
+     "short_name": "ALEXANDERS"
+    },
+    {
+     "id": "wc_swe_p03",
+     "name": "MELLBERGUI",
+     "short_name": "MELLBERG"
+    },
+    {
+     "id": "wc_swe_p04",
+     "name": "LUCICZINHO",
+     "short_name": "LUCIC"
+    },
+    {
+     "id": "wc_swe_p05",
+     "name": "EDMANZINHO",
+     "short_name": "EDMAN"
+    },
+    {
+     "id": "wc_swe_p06",
+     "name": "LINDEROTH",
+     "short_name": "LINDEROTH"
+    },
+    {
+     "id": "wc_swe_p07",
+     "name": "KALLSTROMO",
+     "short_name": "KALLSTROM"
+    },
+    {
+     "id": "wc_swe_p08",
+     "name": "LJUNGBERGUE",
+     "short_name": "LJUNGBERG"
+    },
+    {
+     "id": "wc_swe_p09",
+     "name": "WILHELMSSONI",
+     "short_name": "WILHELMSSO"
+    },
+    {
+     "id": "wc_swe_p10",
+     "name": "IBRA",
+     "short_name": "IBRA"
+    },
+    {
+     "id": "wc_swe_p11",
+     "name": "LARSSINHO",
+     "short_name": "LARSSINHO"
+    },
+    {
+     "id": "wc_swe_p12",
+     "name": "SHAABAN",
+     "short_name": "SHAABAN"
+    },
+    {
+     "id": "wc_swe_p13",
+     "name": "HANSSONI",
+     "short_name": "HANSSONI"
+    },
+    {
+     "id": "wc_swe_p14",
+     "name": "NILSSONI",
+     "short_name": "NILSSONI"
+    },
+    {
+     "id": "wc_swe_p15",
+     "name": "SVENSSONI",
+     "short_name": "SVENSSONI"
+    },
+    {
+     "id": "wc_swe_p16",
+     "name": "ALLBACKO",
+     "short_name": "ALLBACK"
+    }
+   ]
+  },
+  {
+   "id": "wc_arg",
+   "name": "ARGENTINA",
+   "short_name": "ARG",
+   "country": "AR",
+   "primary_color": "#75aadb",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#111111",
+   "kit_pattern": "vertical",
+   "coach": {
+    "name": "PEKERMÁN",
+    "nationality": "AR"
+   },
+   "players": [
+    {
+     "id": "wc_arg_p01",
+     "name": "ABBONDANZIERO",
+     "short_name": "ABBONDANZ"
+    },
+    {
+     "id": "wc_arg_p02",
+     "name": "COLOCCINO",
+     "short_name": "COLOCCINI"
+    },
+    {
+     "id": "wc_arg_p03",
+     "name": "AYALÃO",
+     "short_name": "AYALA"
+    },
+    {
+     "id": "wc_arg_p04",
+     "name": "HEINZEZÃO",
+     "short_name": "HEINZE"
+    },
+    {
+     "id": "wc_arg_p05",
+     "name": "SORÍNZINHO",
+     "short_name": "SORÍN"
+    },
+    {
+     "id": "wc_arg_p06",
+     "name": "MASCHERANITO",
+     "short_name": "MASCHERANO"
+    },
+    {
+     "id": "wc_arg_p07",
+     "name": "CAMBIASSITO",
+     "short_name": "CAMBIASSO"
+    },
+    {
+     "id": "wc_arg_p08",
+     "name": "ROMÁN RIQUELMÃO",
+     "short_name": "RIQUELMÃO"
+    },
+    {
+     "id": "wc_arg_p09",
+     "name": "MAXI RODRÍGUEZ",
+     "short_name": "MAXI"
+    },
+    {
+     "id": "wc_arg_p10",
+     "name": "HERNÁN CRESPÃO",
+     "short_name": "CRESPÃO"
+    },
+    {
+     "id": "wc_arg_p11",
+     "name": "CARLITOS TEVÉZ",
+     "short_name": "TEVÉZ"
+    },
+    {
+     "id": "wc_arg_p12",
+     "name": "FRANCO",
+     "short_name": "FRANCO"
+    },
+    {
+     "id": "wc_arg_p13",
+     "name": "MILITITO",
+     "short_name": "MILITO"
+    },
+    {
+     "id": "wc_arg_p14",
+     "name": "SCALONITO",
+     "short_name": "SCALONI"
+    },
+    {
+     "id": "wc_arg_p15",
+     "name": "MESSINHO",
+     "short_name": "MESSINHO"
+    },
+    {
+     "id": "wc_arg_p16",
+     "name": "SAVIOLITA",
+     "short_name": "SAVIOLA"
+    }
+   ]
+  },
+  {
+   "id": "wc_civ",
+   "name": "COSTA DO MARFIM",
+   "short_name": "CMF",
+   "country": "CI",
+   "primary_color": "#f77f00",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#009a44",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "HENRI MICHÉL",
+    "nationality": "FR"
+   },
+   "players": [
+    {
+     "id": "wc_civ_p01",
+     "name": "TIZIÉ",
+     "short_name": "TIZIÉ"
+    },
+    {
+     "id": "wc_civ_p02",
+     "name": "EBOUÉZINHO",
+     "short_name": "EBOUÉ"
+    },
+    {
+     "id": "wc_civ_p03",
+     "name": "KOLO TOURÉ",
+     "short_name": "KOLO"
+    },
+    {
+     "id": "wc_civ_p04",
+     "name": "MEITÉ",
+     "short_name": "MEITÉ"
+    },
+    {
+     "id": "wc_civ_p05",
+     "name": "BOKAZINHO",
+     "short_name": "BOKA"
+    },
+    {
+     "id": "wc_civ_p06",
+     "name": "YAYA TOURÉ",
+     "short_name": "YAYA"
+    },
+    {
+     "id": "wc_civ_p07",
+     "name": "ZOKORA",
+     "short_name": "ZOKORA"
+    },
+    {
+     "id": "wc_civ_p08",
+     "name": "ROMARIC",
+     "short_name": "ROMARIC"
+    },
+    {
+     "id": "wc_civ_p09",
+     "name": "YAPI YAPO",
+     "short_name": "YAPI YAPO"
+    },
+    {
+     "id": "wc_civ_p10",
+     "name": "DIDIER DROGBÃO",
+     "short_name": "DROGBÃO"
+    },
+    {
+     "id": "wc_civ_p11",
+     "name": "KALOUZINHO",
+     "short_name": "KALOU"
+    },
+    {
+     "id": "wc_civ_p12",
+     "name": "BARRY",
+     "short_name": "BARRY"
+    },
+    {
+     "id": "wc_civ_p13",
+     "name": "DOMOR'AUD",
+     "short_name": "DOMORAUD"
+    },
+    {
+     "id": "wc_civ_p14",
+     "name": "AKALÉ",
+     "short_name": "AKALÉ"
+    },
+    {
+     "id": "wc_civ_p15",
+     "name": "KONÉ",
+     "short_name": "KONÉ"
+    },
+    {
+     "id": "wc_civ_p16",
+     "name": "DINDANE",
+     "short_name": "DINDANE"
+    }
+   ]
+  },
+  {
+   "id": "wc_scg",
+   "name": "SÉRVIA-MONTENEGRO",
+   "short_name": "SER",
+   "country": "RS",
+   "primary_color": "#1c3f94",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#d00000",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "PETKOVITZ",
+    "nationality": "RS"
+   },
+   "players": [
+    {
+     "id": "wc_scg_p01",
+     "name": "JEVRIC",
+     "short_name": "JEVRIC"
+    },
+    {
+     "id": "wc_scg_p02",
+     "name": "DULJAJ",
+     "short_name": "DULJAJ"
+    },
+    {
+     "id": "wc_scg_p03",
+     "name": "NEMANJA VIDIC",
+     "short_name": "VIDIC"
+    },
+    {
+     "id": "wc_scg_p04",
+     "name": "GAVRANCIC",
+     "short_name": "GAVRANCIC"
+    },
+    {
+     "id": "wc_scg_p05",
+     "name": "KRSTAJIC",
+     "short_name": "KRSTAJIC"
+    },
+    {
+     "id": "wc_scg_p06",
+     "name": "STANKOVICO",
+     "short_name": "STANKOVIC"
+    },
+    {
+     "id": "wc_scg_p07",
+     "name": "NADJ",
+     "short_name": "NADJ"
+    },
+    {
+     "id": "wc_scg_p08",
+     "name": "DJORDJEVIC",
+     "short_name": "DJORDJEVIC"
+    },
+    {
+     "id": "wc_scg_p09",
+     "name": "KONEVIC",
+     "short_name": "KONEVIC"
+    },
+    {
+     "id": "wc_scg_p10",
+     "name": "MATEJA KEZMÃO",
+     "short_name": "KEZMÃO"
+    },
+    {
+     "id": "wc_scg_p11",
+     "name": "MILOSEVIC",
+     "short_name": "MILOSEVIC"
+    },
+    {
+     "id": "wc_scg_p12",
+     "name": "BABIC",
+     "short_name": "BABIC"
+    },
+    {
+     "id": "wc_scg_p13",
+     "name": "DRAGUTINOVIC",
+     "short_name": "DRAGUTINOV"
+    },
+    {
+     "id": "wc_scg_p14",
+     "name": "LUKOVIC",
+     "short_name": "LUKOVIC"
+    },
+    {
+     "id": "wc_scg_p15",
+     "name": "KOROMAN",
+     "short_name": "KOROMAN"
+    },
+    {
+     "id": "wc_scg_p16",
+     "name": "ZIGICÃO",
+     "short_name": "ZIGIC"
+    }
+   ]
+  },
+  {
+   "id": "wc_ned",
+   "name": "HOLANDA",
+   "short_name": "HOL",
+   "country": "NL",
+   "primary_color": "#f36c21",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#1e3d8f",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "VAN BASTÃO",
+    "nationality": "NL"
+   },
+   "players": [
+    {
+     "id": "wc_ned_p01",
+     "name": "VAN DER SARZÃO",
+     "short_name": "V.D. SARZÃO"
+    },
+    {
+     "id": "wc_ned_p02",
+     "name": "HEITINGÃO",
+     "short_name": "HEITINGA"
+    },
+    {
+     "id": "wc_ned_p03",
+     "name": "OOIJERZINHO",
+     "short_name": "OOIJER"
+    },
+    {
+     "id": "wc_ned_p04",
+     "name": "MATHIJSSEN",
+     "short_name": "MATHIJSSEN"
+    },
+    {
+     "id": "wc_ned_p05",
+     "name": "V. BRONCKH",
+     "short_name": "V. BRONCKH"
+    },
+    {
+     "id": "wc_ned_p06",
+     "name": "V. BOMMEL",
+     "short_name": "V. BOMMEL"
+    },
+    {
+     "id": "wc_ned_p07",
+     "name": "COCUZINHO",
+     "short_name": "COCU"
+    },
+    {
+     "id": "wc_ned_p08",
+     "name": "VAN DER VAARTE",
+     "short_name": "V.D. VAART"
+    },
+    {
+     "id": "wc_ned_p09",
+     "name": "ROBBENZINHO",
+     "short_name": "ROBBEN"
+    },
+    {
+     "id": "wc_ned_p10",
+     "name": "VAN NISTELROÃO",
+     "short_name": "V. NISTEL"
+    },
+    {
+     "id": "wc_ned_p11",
+     "name": "VAN PERSIE",
+     "short_name": "VAN PERSIE"
+    },
+    {
+     "id": "wc_ned_p12",
+     "name": "STEKELENBURGUE",
+     "short_name": "STEKELENB"
+    },
+    {
+     "id": "wc_ned_p13",
+     "name": "BOULAHROUZ",
+     "short_name": "BOULAHROUZ"
+    },
+    {
+     "id": "wc_ned_p14",
+     "name": "DE CLEEREZINHO",
+     "short_name": "DE CLEER"
+    },
+    {
+     "id": "wc_ned_p15",
+     "name": "SNEIJDERZINHO",
+     "short_name": "SNEIJDER"
+    },
+    {
+     "id": "wc_ned_p16",
+     "name": "KUYTZÃO",
+     "short_name": "KUYT"
+    }
+   ]
+  },
+  {
+   "id": "wc_mex",
+   "name": "MÉXICO",
+   "short_name": "MEX",
+   "country": "MX",
+   "primary_color": "#006847",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#ce1126",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "LA VOLPPE",
+    "nationality": "AR"
+   },
+   "players": [
+    {
+     "id": "wc_mex_p01",
+     "name": "OSWALDO SÁNCHEZ",
+     "short_name": "SÁNCHEZ"
+    },
+    {
+     "id": "wc_mex_p02",
+     "name": "SALCIDÃO",
+     "short_name": "SALCIDO"
+    },
+    {
+     "id": "wc_mex_p03",
+     "name": "RAFAEL MÁRQUEZ",
+     "short_name": "MÁRQUEZ"
+    },
+    {
+     "id": "wc_mex_p04",
+     "name": "OSORNIO",
+     "short_name": "OSORNIO"
+    },
+    {
+     "id": "wc_mex_p05",
+     "name": "PINEDITA",
+     "short_name": "PINEDA"
+    },
+    {
+     "id": "wc_mex_p06",
+     "name": "TORRADO",
+     "short_name": "TORRADO"
+    },
+    {
+     "id": "wc_mex_p07",
+     "name": "GUARDADO",
+     "short_name": "GUARDADO"
+    },
+    {
+     "id": "wc_mex_p08",
+     "name": "MÉNDEZITO",
+     "short_name": "MÉNDEZ"
+    },
+    {
+     "id": "wc_mex_p09",
+     "name": "ZINHA",
+     "short_name": "ZINHA"
+    },
+    {
+     "id": "wc_mex_p10",
+     "name": "JARED BORGETTI",
+     "short_name": "BORGETTI"
+    },
+    {
+     "id": "wc_mex_p11",
+     "name": "BRAVÃO",
+     "short_name": "BRAVO"
+    },
+    {
+     "id": "wc_mex_p12",
+     "name": "CORONITA",
+     "short_name": "CORONA"
+    },
+    {
+     "id": "wc_mex_p13",
+     "name": "CASTRO",
+     "short_name": "CASTRO"
+    },
+    {
+     "id": "wc_mex_p14",
+     "name": "PÉREZITO",
+     "short_name": "PÉREZ"
+    },
+    {
+     "id": "wc_mex_p15",
+     "name": "PARDOZÃO",
+     "short_name": "PARDO"
+    },
+    {
+     "id": "wc_mex_p16",
+     "name": "FRANCOZINHO",
+     "short_name": "FRANCO"
+    }
+   ]
+  },
+  {
+   "id": "wc_irn",
+   "name": "IRÃ",
+   "short_name": "IRA",
+   "country": "IR",
+   "primary_color": "#f4f4f4",
+   "secondary_color": "#239f40",
+   "kit_color3": "#da0000",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "IVANKOVITZ",
+    "nationality": "HR"
+   },
+   "players": [
+    {
+     "id": "wc_irn_p01",
+     "name": "MIRZAPOURI",
+     "short_name": "MIRZAPOUR"
+    },
+    {
+     "id": "wc_irn_p02",
+     "name": "NOSRATI",
+     "short_name": "NOSRATI"
+    },
+    {
+     "id": "wc_irn_p03",
+     "name": "REZAEI",
+     "short_name": "REZAEI"
+    },
+    {
+     "id": "wc_irn_p04",
+     "name": "GOLMOHAMMADI",
+     "short_name": "GOLMOHAMMA"
+    },
+    {
+     "id": "wc_irn_p05",
+     "name": "KAABI",
+     "short_name": "KAABI"
+    },
+    {
+     "id": "wc_irn_p06",
+     "name": "MAHDAVIKIA",
+     "short_name": "MAHDAVIKIA"
+    },
+    {
+     "id": "wc_irn_p07",
+     "name": "NEKOUNAM",
+     "short_name": "NEKOUNAM"
+    },
+    {
+     "id": "wc_irn_p08",
+     "name": "KARIMI",
+     "short_name": "KARIMI"
+    },
+    {
+     "id": "wc_irn_p09",
+     "name": "TEYMOURIAN",
+     "short_name": "TEYMOURIAN"
+    },
+    {
+     "id": "wc_irn_p10",
+     "name": "ALI DAEIZÃO",
+     "short_name": "DAEIZÃO"
+    },
+    {
+     "id": "wc_irn_p11",
+     "name": "HASHEMIAN",
+     "short_name": "HASHEMIAN"
+    },
+    {
+     "id": "wc_irn_p12",
+     "name": "NAVIDKIA",
+     "short_name": "NAVIDKIA"
+    },
+    {
+     "id": "wc_irn_p13",
+     "name": "BAKHTIARIZADEH",
+     "short_name": "BAKHTIARI"
+    },
+    {
+     "id": "wc_irn_p14",
+     "name": "BORHANI",
+     "short_name": "BORHANI"
+    },
+    {
+     "id": "wc_irn_p15",
+     "name": "ZANDI",
+     "short_name": "ZANDI"
+    },
+    {
+     "id": "wc_irn_p16",
+     "name": "KHATIBI",
+     "short_name": "KHATIBI"
+    }
+   ]
+  },
+  {
+   "id": "wc_ang",
+   "name": "ANGOLA",
+   "short_name": "ANG",
+   "country": "AO",
+   "primary_color": "#cc092f",
+   "secondary_color": "#111111",
+   "kit_color3": "#ffcb00",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "OLIVEIRA GONÇA",
+    "nationality": "AO"
+   },
+   "players": [
+    {
+     "id": "wc_ang_p01",
+     "name": "JOÃO RICARDO",
+     "short_name": "J. RICARDO"
+    },
+    {
+     "id": "wc_ang_p02",
+     "name": "LOCOZINHO",
+     "short_name": "LOCO"
+    },
+    {
+     "id": "wc_ang_p03",
+     "name": "KALIZINHO",
+     "short_name": "KALI"
+    },
+    {
+     "id": "wc_ang_p04",
+     "name": "JAMBAZÃO",
+     "short_name": "JAMBA"
+    },
+    {
+     "id": "wc_ang_p05",
+     "name": "DELGADINHO",
+     "short_name": "DELGADO"
+    },
+    {
+     "id": "wc_ang_p06",
+     "name": "FIGUEIREDINHO",
+     "short_name": "FIGUEIRED"
+    },
+    {
+     "id": "wc_ang_p07",
+     "name": "MATEUSZINHO",
+     "short_name": "MATEUS"
+    },
+    {
+     "id": "wc_ang_p08",
+     "name": "ZÉ KALANGA",
+     "short_name": "KALANGA"
+    },
+    {
+     "id": "wc_ang_p09",
+     "name": "ANDRÉ MACANGA",
+     "short_name": "MACANGA"
+    },
+    {
+     "id": "wc_ang_p10",
+     "name": "MANTORRAS",
+     "short_name": "MANTORRAS"
+    },
+    {
+     "id": "wc_ang_p11",
+     "name": "AKWÁZINHO",
+     "short_name": "AKWÁ"
+    },
+    {
+     "id": "wc_ang_p12",
+     "name": "LAMÁ",
+     "short_name": "LAMÁ"
+    },
+    {
+     "id": "wc_ang_p13",
+     "name": "LEBO LEBO",
+     "short_name": "LEBO LEBO"
+    },
+    {
+     "id": "wc_ang_p14",
+     "name": "YAMBA ASHA",
+     "short_name": "YAMBA ASHA"
+    },
+    {
+     "id": "wc_ang_p15",
+     "name": "MENDONÇA",
+     "short_name": "MENDONÇA"
+    },
+    {
+     "id": "wc_ang_p16",
+     "name": "LOVE",
+     "short_name": "LOVE"
+    }
+   ]
+  },
+  {
+   "id": "wc_por",
+   "name": "PORTUGAL",
+   "short_name": "POR",
+   "country": "PT",
+   "primary_color": "#9e1b32",
+   "secondary_color": "#046a38",
+   "kit_color3": "#ffd200",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "SCOLARINHO",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "wc_por_p01",
+     "name": "RICARDÃO",
+     "short_name": "RICARDO"
+    },
+    {
+     "id": "wc_por_p02",
+     "name": "MIGUELITO",
+     "short_name": "MIGUEL"
+    },
+    {
+     "id": "wc_por_p03",
+     "name": "R. CARVALHO",
+     "short_name": "R. CARVALHO"
+    },
+    {
+     "id": "wc_por_p04",
+     "name": "FERNANDO MEIRA",
+     "short_name": "MEIRA"
+    },
+    {
+     "id": "wc_por_p05",
+     "name": "NUNO VALENTE",
+     "short_name": "VALENTE"
+    },
+    {
+     "id": "wc_por_p06",
+     "name": "COSTINHÃO",
+     "short_name": "COSTINHA"
+    },
+    {
+     "id": "wc_por_p07",
+     "name": "MANICHE",
+     "short_name": "MANICHE"
+    },
+    {
+     "id": "wc_por_p08",
+     "name": "DECÃO",
+     "short_name": "DECO"
+    },
+    {
+     "id": "wc_por_p09",
+     "name": "LUÍS FIGÃO",
+     "short_name": "FIGÃO"
+    },
+    {
+     "id": "wc_por_p10",
+     "name": "PAULETINHA",
+     "short_name": "PAULETA"
+    },
+    {
+     "id": "wc_por_p11",
+     "name": "CRISTIANINHO",
+     "short_name": "CRISTIANO"
+    },
+    {
+     "id": "wc_por_p12",
+     "name": "QUIM",
+     "short_name": "QUIM"
+    },
+    {
+     "id": "wc_por_p13",
+     "name": "PAULO FERREIRÃO",
+     "short_name": "P. FERREIRA"
+    },
+    {
+     "id": "wc_por_p14",
+     "name": "RICARDO COSTA",
+     "short_name": "R. COSTA"
+    },
+    {
+     "id": "wc_por_p15",
+     "name": "PETITZÃO",
+     "short_name": "PETIT"
+    },
+    {
+     "id": "wc_por_p16",
+     "name": "NUNO GOMESZINHO",
+     "short_name": "N. GOMES"
+    }
+   ]
+  },
+  {
+   "id": "wc_ita",
+   "name": "ITÁLIA",
+   "short_name": "ITA",
+   "country": "IT",
+   "primary_color": "#0b4ea2",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "MARCELLO LIPPO",
+    "nationality": "IT"
+   },
+   "players": [
+    {
+     "id": "wc_ita_p01",
+     "name": "GIGI BUFFÃO",
+     "short_name": "BUFFÃO"
+    },
+    {
+     "id": "wc_ita_p02",
+     "name": "ZAMBROTTÃO",
+     "short_name": "ZAMBROTTA"
+    },
+    {
+     "id": "wc_ita_p03",
+     "name": "CANNAVARÃO",
+     "short_name": "CANNAVARO"
+    },
+    {
+     "id": "wc_ita_p04",
+     "name": "MATERAZZÃO",
+     "short_name": "MATERAZZI"
+    },
+    {
+     "id": "wc_ita_p05",
+     "name": "GROSSINHO",
+     "short_name": "GROSSO"
+    },
+    {
+     "id": "wc_ita_p06",
+     "name": "CAMORANESIO",
+     "short_name": "CAMORANESI"
+    },
+    {
+     "id": "wc_ita_p07",
+     "name": "PIRLÃO",
+     "short_name": "PIRLO"
+    },
+    {
+     "id": "wc_ita_p08",
+     "name": "GATTUSÃO",
+     "short_name": "GATTUSO"
+    },
+    {
+     "id": "wc_ita_p09",
+     "name": "PERROTTINHA",
+     "short_name": "PERROTTA"
+    },
+    {
+     "id": "wc_ita_p10",
+     "name": "TOTTIZÃO",
+     "short_name": "TOTTI"
+    },
+    {
+     "id": "wc_ita_p11",
+     "name": "LUCA TONIÃO",
+     "short_name": "TONI"
+    },
+    {
+     "id": "wc_ita_p12",
+     "name": "PERUZZINHO",
+     "short_name": "PERUZZI"
+    },
+    {
+     "id": "wc_ita_p13",
+     "name": "NESTÃO",
+     "short_name": "NESTA"
+    },
+    {
+     "id": "wc_ita_p14",
+     "name": "ZACCARDÃO",
+     "short_name": "ZACCARDO"
+    },
+    {
+     "id": "wc_ita_p15",
+     "name": "DEL PIERÃO",
+     "short_name": "DEL PIERO"
+    },
+    {
+     "id": "wc_ita_p16",
+     "name": "GILARDINHO",
+     "short_name": "GILARDINO"
+    }
+   ]
+  },
+  {
+   "id": "wc_gha",
+   "name": "GANA",
+   "short_name": "GAN",
+   "country": "GH",
+   "primary_color": "#f4f4f4",
+   "secondary_color": "#111111",
+   "kit_color3": "#ce1126",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "DUJKOVITZ",
+    "nationality": "RS"
+   },
+   "players": [
+    {
+     "id": "wc_gha_p01",
+     "name": "KINGSTONZINHO",
+     "short_name": "KINGSTON"
+    },
+    {
+     "id": "wc_gha_p02",
+     "name": "PAPPOE",
+     "short_name": "PAPPOE"
+    },
+    {
+     "id": "wc_gha_p03",
+     "name": "MENSAHZÃO",
+     "short_name": "MENSAH"
+    },
+    {
+     "id": "wc_gha_p04",
+     "name": "KUFFOUR",
+     "short_name": "KUFFOUR"
+    },
+    {
+     "id": "wc_gha_p05",
+     "name": "SHILLAH",
+     "short_name": "SHILLAH"
+    },
+    {
+     "id": "wc_gha_p06",
+     "name": "ESSIENZÃO",
+     "short_name": "ESSIEN"
+    },
+    {
+     "id": "wc_gha_p07",
+     "name": "APPIAHZINHO",
+     "short_name": "APPIAH"
+    },
+    {
+     "id": "wc_gha_p08",
+     "name": "MUNTARI",
+     "short_name": "MUNTARI"
+    },
+    {
+     "id": "wc_gha_p09",
+     "name": "PIMPONG",
+     "short_name": "PIMPONG"
+    },
+    {
+     "id": "wc_gha_p10",
+     "name": "ASAMOAH GYANZÃO",
+     "short_name": "GYAN"
+    },
+    {
+     "id": "wc_gha_p11",
+     "name": "AMOAH",
+     "short_name": "AMOAH"
+    },
+    {
+     "id": "wc_gha_p12",
+     "name": "ADJEI",
+     "short_name": "ADJEI"
+    },
+    {
+     "id": "wc_gha_p13",
+     "name": "DRAMANI",
+     "short_name": "DRAMANI"
+    },
+    {
+     "id": "wc_gha_p14",
+     "name": "BOATENGUE",
+     "short_name": "BOATENG"
+    },
+    {
+     "id": "wc_gha_p15",
+     "name": "ADDO",
+     "short_name": "ADDO"
+    },
+    {
+     "id": "wc_gha_p16",
+     "name": "TACHIE-MENSAH",
+     "short_name": "TACHIE"
+    }
+   ]
+  },
+  {
+   "id": "wc_usa",
+   "name": "ESTADOS UNIDOS",
+   "short_name": "EUA",
+   "country": "US",
+   "primary_color": "#f4f4f4",
+   "secondary_color": "#1c2a5e",
+   "kit_color3": "#bf0a30",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "BRUCE ARENNA",
+    "nationality": "US"
+   },
+   "players": [
+    {
+     "id": "wc_usa_p01",
+     "name": "KASEY KELLERZÃO",
+     "short_name": "KELLER"
+    },
+    {
+     "id": "wc_usa_p02",
+     "name": "CHERUNDOLO",
+     "short_name": "CHERUNDOLO"
+    },
+    {
+     "id": "wc_usa_p03",
+     "name": "ONYEWU",
+     "short_name": "ONYEWU"
+    },
+    {
+     "id": "wc_usa_p04",
+     "name": "POPE",
+     "short_name": "POPE"
+    },
+    {
+     "id": "wc_usa_p05",
+     "name": "STEVE CHERRY",
+     "short_name": "CHERRY"
+    },
+    {
+     "id": "wc_usa_p06",
+     "name": "MASTROENI",
+     "short_name": "MASTROENI"
+    },
+    {
+     "id": "wc_usa_p07",
+     "name": "CLAUDIO REYNÃO",
+     "short_name": "REYNA"
+    },
+    {
+     "id": "wc_usa_p08",
+     "name": "DEMPSEYZINHO",
+     "short_name": "DEMPSEY"
+    },
+    {
+     "id": "wc_usa_p09",
+     "name": "BEASLEY",
+     "short_name": "BEASLEY"
+    },
+    {
+     "id": "wc_usa_p10",
+     "name": "BRIAN MCBRIDE",
+     "short_name": "MCBRIDE"
+    },
+    {
+     "id": "wc_usa_p11",
+     "name": "LANDON DONOVÃO",
+     "short_name": "DONOVÃO"
+    },
+    {
+     "id": "wc_usa_p12",
+     "name": "HOWARDZINHO",
+     "short_name": "HOWARD"
+    },
+    {
+     "id": "wc_usa_p13",
+     "name": "O'BRIEN",
+     "short_name": "O'BRIEN"
+    },
+    {
+     "id": "wc_usa_p14",
+     "name": "CONRAD",
+     "short_name": "CONRAD"
+    },
+    {
+     "id": "wc_usa_p15",
+     "name": "CONVEYZINHO",
+     "short_name": "CONVEY"
+    },
+    {
+     "id": "wc_usa_p16",
+     "name": "JOHNSONZINHO",
+     "short_name": "JOHNSON"
+    }
+   ]
+  },
+  {
+   "id": "wc_cze",
+   "name": "REPÚBLICA TCHECA",
+   "short_name": "TCH",
+   "country": "CZ",
+   "primary_color": "#d7141a",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#11457e",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "BRUCKNERO",
+    "nationality": "CZ"
+   },
+   "players": [
+    {
+     "id": "wc_cze_p01",
+     "name": "PETR CECHÃO",
+     "short_name": "CECHÃO"
+    },
+    {
+     "id": "wc_cze_p02",
+     "name": "GRYGERA",
+     "short_name": "GRYGERA"
+    },
+    {
+     "id": "wc_cze_p03",
+     "name": "UJFALUSI",
+     "short_name": "UJFALUSI"
+    },
+    {
+     "id": "wc_cze_p04",
+     "name": "ROZEHNAL",
+     "short_name": "ROZEHNAL"
+    },
+    {
+     "id": "wc_cze_p05",
+     "name": "JANKULOVSKI",
+     "short_name": "JANKULOVS"
+    },
+    {
+     "id": "wc_cze_p06",
+     "name": "GALÁSEK",
+     "short_name": "GALÁSEK"
+    },
+    {
+     "id": "wc_cze_p07",
+     "name": "ROSICKY",
+     "short_name": "ROSICKY"
+    },
+    {
+     "id": "wc_cze_p08",
+     "name": "PAVEL NEDVEDÃO",
+     "short_name": "NEDVEDÃO"
+    },
+    {
+     "id": "wc_cze_p09",
+     "name": "POBORSKY",
+     "short_name": "POBORSKY"
+    },
+    {
+     "id": "wc_cze_p10",
+     "name": "JAN KOLLERÃO",
+     "short_name": "KOLLER"
+    },
+    {
+     "id": "wc_cze_p11",
+     "name": "MILAN BAROS",
+     "short_name": "BAROS"
+    },
+    {
+     "id": "wc_cze_p12",
+     "name": "KINSKY",
+     "short_name": "KINSKY"
+    },
+    {
+     "id": "wc_cze_p13",
+     "name": "KOVÁC",
+     "short_name": "KOVAC"
+    },
+    {
+     "id": "wc_cze_p14",
+     "name": "JIRÁNEK",
+     "short_name": "JIRANEK"
+    },
+    {
+     "id": "wc_cze_p15",
+     "name": "PLASIL",
+     "short_name": "PLASIL"
+    },
+    {
+     "id": "wc_cze_p16",
+     "name": "LOKVENC",
+     "short_name": "LOKVENC"
+    }
+   ]
+  },
+  {
+   "id": "wc_bra",
+   "name": "BRASIL",
+   "short_name": "BRA",
+   "country": "BR",
+   "primary_color": "#f7d117",
+   "secondary_color": "#1d4fa0",
+   "kit_color3": "#009739",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "PARREIRÃO",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "wc_bra_p01",
+     "name": "DIDÃO",
+     "short_name": "DIDÃO"
+    },
+    {
+     "id": "wc_bra_p02",
+     "name": "CAFUZO",
+     "short_name": "CAFUZO"
+    },
+    {
+     "id": "wc_bra_p03",
+     "name": "LÚCIÃO",
+     "short_name": "LÚCIO"
+    },
+    {
+     "id": "wc_bra_p04",
+     "name": "JUANZÃO",
+     "short_name": "JUAN"
+    },
+    {
+     "id": "wc_bra_p05",
+     "name": "ROBERTO CARLÃO",
+     "short_name": "R. CARLÃO"
+    },
+    {
+     "id": "wc_bra_p06",
+     "name": "EMERSÃO",
+     "short_name": "EMERSON"
+    },
+    {
+     "id": "wc_bra_p07",
+     "name": "KAKAZINHO",
+     "short_name": "KAKÁ"
+    },
+    {
+     "id": "wc_bra_p08",
+     "name": "ZÉ ROBERTÃO",
+     "short_name": "ZÉ ROBERTO"
+    },
+    {
+     "id": "wc_bra_p09",
+     "name": "GAÚCHÃO",
+     "short_name": "GAÚCHÃO"
+    },
+    {
+     "id": "wc_bra_p10",
+     "name": "FENOMENÃO",
+     "short_name": "FENOMENÃO"
+    },
+    {
+     "id": "wc_bra_p11",
+     "name": "ADRIANÃO",
+     "short_name": "ADRIANO"
+    },
+    {
+     "id": "wc_bra_p12",
+     "name": "ROGÉRIO SENO",
+     "short_name": "R. SENO"
+    },
+    {
+     "id": "wc_bra_p13",
+     "name": "CICINHO",
+     "short_name": "CICINHO"
+    },
+    {
+     "id": "wc_bra_p14",
+     "name": "LUISÃOZINHO",
+     "short_name": "LUISÃO"
+    },
+    {
+     "id": "wc_bra_p15",
+     "name": "JUNINHO",
+     "short_name": "JUNINHO"
+    },
+    {
+     "id": "wc_bra_p16",
+     "name": "ROBINHO",
+     "short_name": "ROBINHO"
+    }
+   ]
+  },
+  {
+   "id": "wc_cro",
+   "name": "CROÁCIA",
+   "short_name": "CRO",
+   "country": "HR",
+   "primary_color": "#e3001b",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#171796",
+   "kit_pattern": "vertical",
+   "coach": {
+    "name": "KRANJCARI",
+    "nationality": "HR"
+   },
+   "players": [
+    {
+     "id": "wc_cro_p01",
+     "name": "PLETIKOSA",
+     "short_name": "PLETIKOSA"
+    },
+    {
+     "id": "wc_cro_p02",
+     "name": "SIMUNIC",
+     "short_name": "SIMUNIC"
+    },
+    {
+     "id": "wc_cro_p03",
+     "name": "ROBERT KOVAC",
+     "short_name": "R. KOVAC"
+    },
+    {
+     "id": "wc_cro_p04",
+     "name": "JOSIP SIMUNIC",
+     "short_name": "J. SIMUNIC"
+    },
+    {
+     "id": "wc_cro_p05",
+     "name": "SRNA",
+     "short_name": "SRNA"
+    },
+    {
+     "id": "wc_cro_p06",
+     "name": "NIKO KOVAC",
+     "short_name": "N. KOVAC"
+    },
+    {
+     "id": "wc_cro_p07",
+     "name": "NIKO KRANJCAR",
+     "short_name": "KRANJCAR"
+    },
+    {
+     "id": "wc_cro_p08",
+     "name": "BABICÃO",
+     "short_name": "BABIC"
+    },
+    {
+     "id": "wc_cro_p09",
+     "name": "MODRICINHO",
+     "short_name": "MODRIC"
+    },
+    {
+     "id": "wc_cro_p10",
+     "name": "DADO PRSÕ",
+     "short_name": "PRSO"
+    },
+    {
+     "id": "wc_cro_p11",
+     "name": "KLASNIC",
+     "short_name": "KLASNIC"
+    },
+    {
+     "id": "wc_cro_p12",
+     "name": "BUTINA",
+     "short_name": "BUTINA"
+    },
+    {
+     "id": "wc_cro_p13",
+     "name": "TOMAS",
+     "short_name": "TOMAS"
+    },
+    {
+     "id": "wc_cro_p14",
+     "name": "TUDOR",
+     "short_name": "TUDOR"
+    },
+    {
+     "id": "wc_cro_p15",
+     "name": "BALABANÃO",
+     "short_name": "BALABAN"
+    },
+    {
+     "id": "wc_cro_p16",
+     "name": "OLIC",
+     "short_name": "OLIC"
+    }
+   ]
+  },
+  {
+   "id": "wc_aus",
+   "name": "AUSTRÁLIA",
+   "short_name": "AUS",
+   "country": "AU",
+   "primary_color": "#ffcd00",
+   "secondary_color": "#00843d",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "HIDDINKO",
+    "nationality": "NL"
+   },
+   "players": [
+    {
+     "id": "wc_aus_p01",
+     "name": "SCHWARZERO",
+     "short_name": "SCHWARZER"
+    },
+    {
+     "id": "wc_aus_p02",
+     "name": "NEILLZÃO",
+     "short_name": "NEILL"
+    },
+    {
+     "id": "wc_aus_p03",
+     "name": "MOOREZÃO",
+     "short_name": "MOORE"
+    },
+    {
+     "id": "wc_aus_p04",
+     "name": "CHIPPERFIELD",
+     "short_name": "CHIPPERFLD"
+    },
+    {
+     "id": "wc_aus_p05",
+     "name": "CRAIG MOORE",
+     "short_name": "C. MOORE"
+    },
+    {
+     "id": "wc_aus_p06",
+     "name": "CULINA",
+     "short_name": "CULINA"
+    },
+    {
+     "id": "wc_aus_p07",
+     "name": "GRELLA",
+     "short_name": "GRELLA"
+    },
+    {
+     "id": "wc_aus_p08",
+     "name": "TIM CAHILLÃO",
+     "short_name": "CAHILL"
+    },
+    {
+     "id": "wc_aus_p09",
+     "name": "EMERTON",
+     "short_name": "EMERTON"
+    },
+    {
+     "id": "wc_aus_p10",
+     "name": "KEWELL",
+     "short_name": "KEWELL"
+    },
+    {
+     "id": "wc_aus_p11",
+     "name": "MARK VIDUKÃO",
+     "short_name": "VIDUKA"
+    },
+    {
+     "id": "wc_aus_p12",
+     "name": "KALAC",
+     "short_name": "KALAC"
+    },
+    {
+     "id": "wc_aus_p13",
+     "name": "POPOVIC",
+     "short_name": "POPOVIC"
+    },
+    {
+     "id": "wc_aus_p14",
+     "name": "MILLIGAN",
+     "short_name": "MILLIGAN"
+    },
+    {
+     "id": "wc_aus_p15",
+     "name": "BRESCIANO",
+     "short_name": "BRESCIANO"
+    },
+    {
+     "id": "wc_aus_p16",
+     "name": "ALOISI",
+     "short_name": "ALOISI"
+    }
+   ]
+  },
+  {
+   "id": "wc_jpn",
+   "name": "JAPÃO",
+   "short_name": "JAP",
+   "country": "JP",
+   "primary_color": "#1b2f86",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#d00000",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "GALINHO",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "wc_jpn_p01",
+     "name": "NARAZAKI",
+     "short_name": "NARAZAKI"
+    },
+    {
+     "id": "wc_jpn_p02",
+     "name": "KAJIZINHO",
+     "short_name": "KAJI"
+    },
+    {
+     "id": "wc_jpn_p03",
+     "name": "NAKAZAWÃO",
+     "short_name": "NAKAZAWA"
+    },
+    {
+     "id": "wc_jpn_p04",
+     "name": "TSUBOI",
+     "short_name": "TSUBOI"
+    },
+    {
+     "id": "wc_jpn_p05",
+     "name": "ALEX SANTOS",
+     "short_name": "ALEX"
+    },
+    {
+     "id": "wc_jpn_p06",
+     "name": "INAMOTOZINHO",
+     "short_name": "INAMOTO"
+    },
+    {
+     "id": "wc_jpn_p07",
+     "name": "FUKUNISHI",
+     "short_name": "FUKUNISHI"
+    },
+    {
+     "id": "wc_jpn_p08",
+     "name": "NAKAMURA",
+     "short_name": "NAKAMURA"
+    },
+    {
+     "id": "wc_jpn_p09",
+     "name": "NAKATÃO",
+     "short_name": "NAKATÃO"
+    },
+    {
+     "id": "wc_jpn_p10",
+     "name": "TAKAHARAZINHO",
+     "short_name": "TAKAHARA"
+    },
+    {
+     "id": "wc_jpn_p11",
+     "name": "YANAGISAWA",
+     "short_name": "YANAGISAWA"
+    },
+    {
+     "id": "wc_jpn_p12",
+     "name": "KAWAGUCHI",
+     "short_name": "KAWAGUCHI"
+    },
+    {
+     "id": "wc_jpn_p13",
+     "name": "KOMANO",
+     "short_name": "KOMANO"
+    },
+    {
+     "id": "wc_jpn_p14",
+     "name": "NAKATA KOJI",
+     "short_name": "K. NAKATA"
+    },
+    {
+     "id": "wc_jpn_p15",
+     "name": "OGASAWARA",
+     "short_name": "OGASAWARA"
+    },
+    {
+     "id": "wc_jpn_p16",
+     "name": "OGURO",
+     "short_name": "OGURO"
+    }
+   ]
+  },
+  {
+   "id": "wc_fra",
+   "name": "FRANÇA",
+   "short_name": "FRA",
+   "country": "FR",
+   "primary_color": "#1c3f94",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#d00000",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "DOMENÉCHE",
+    "nationality": "FR"
+   },
+   "players": [
+    {
+     "id": "wc_fra_p01",
+     "name": "BARTHEZÃO",
+     "short_name": "BARTHEZ"
+    },
+    {
+     "id": "wc_fra_p02",
+     "name": "SAGNOLÃO",
+     "short_name": "SAGNOL"
+    },
+    {
+     "id": "wc_fra_p03",
+     "name": "GALLASZÃO",
+     "short_name": "GALLAS"
+    },
+    {
+     "id": "wc_fra_p04",
+     "name": "LILIAN THURÃO",
+     "short_name": "THURÃO"
+    },
+    {
+     "id": "wc_fra_p05",
+     "name": "ABIDAL",
+     "short_name": "ABIDAL"
+    },
+    {
+     "id": "wc_fra_p06",
+     "name": "PATRICK VIEIRÃO",
+     "short_name": "VIEIRÃO"
+    },
+    {
+     "id": "wc_fra_p07",
+     "name": "MAKELELÊ",
+     "short_name": "MAKELELÊ"
+    },
+    {
+     "id": "wc_fra_p08",
+     "name": "RIBERYZINHO",
+     "short_name": "RIBERY"
+    },
+    {
+     "id": "wc_fra_p09",
+     "name": "MALOUDÃO",
+     "short_name": "MALOUDA"
+    },
+    {
+     "id": "wc_fra_p10",
+     "name": "ZIDANÃO",
+     "short_name": "ZIDANÃO"
+    },
+    {
+     "id": "wc_fra_p11",
+     "name": "THIERRY HENRÃO",
+     "short_name": "HENRÃO"
+    },
+    {
+     "id": "wc_fra_p12",
+     "name": "COUPETÃO",
+     "short_name": "COUPET"
+    },
+    {
+     "id": "wc_fra_p13",
+     "name": "BOUMSONG",
+     "short_name": "BOUMSONG"
+    },
+    {
+     "id": "wc_fra_p14",
+     "name": "SILVESTRE",
+     "short_name": "SILVESTRE"
+    },
+    {
+     "id": "wc_fra_p15",
+     "name": "WILTORDE",
+     "short_name": "WILTORD"
+    },
+    {
+     "id": "wc_fra_p16",
+     "name": "TREZEGOL",
+     "short_name": "TREZEGUET"
+    }
+   ]
+  },
+  {
+   "id": "wc_sui",
+   "name": "SUÍÇA",
+   "short_name": "SUI",
+   "country": "CH",
+   "primary_color": "#d52b1e",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "KOBI KUHNI",
+    "nationality": "CH"
+   },
+   "players": [
+    {
+     "id": "wc_sui_p01",
+     "name": "ZUBERBÜHLER",
+     "short_name": "ZUBERBUHL"
+    },
+    {
+     "id": "wc_sui_p02",
+     "name": "DEGEN",
+     "short_name": "DEGEN"
+    },
+    {
+     "id": "wc_sui_p03",
+     "name": "SENDEROS",
+     "short_name": "SENDEROS"
+    },
+    {
+     "id": "wc_sui_p04",
+     "name": "MÜLLERZÃO",
+     "short_name": "MÜLLER"
+    },
+    {
+     "id": "wc_sui_p05",
+     "name": "MAGNIN",
+     "short_name": "MAGNIN"
+    },
+    {
+     "id": "wc_sui_p06",
+     "name": "BARNETTA",
+     "short_name": "BARNETTA"
+    },
+    {
+     "id": "wc_sui_p07",
+     "name": "VOGEL",
+     "short_name": "VOGEL"
+    },
+    {
+     "id": "wc_sui_p08",
+     "name": "CABANAS",
+     "short_name": "CABANAS"
+    },
+    {
+     "id": "wc_sui_p09",
+     "name": "WICKY",
+     "short_name": "WICKY"
+    },
+    {
+     "id": "wc_sui_p10",
+     "name": "ALEX FREIZÃO",
+     "short_name": "FREI"
+    },
+    {
+     "id": "wc_sui_p11",
+     "name": "STRELLER",
+     "short_name": "STRELLER"
+    },
+    {
+     "id": "wc_sui_p12",
+     "name": "COLTORTI",
+     "short_name": "COLTORTI"
+    },
+    {
+     "id": "wc_sui_p13",
+     "name": "BEHRAMI",
+     "short_name": "BEHRAMI"
+    },
+    {
+     "id": "wc_sui_p14",
+     "name": "DJOUROU",
+     "short_name": "DJOUROU"
+    },
+    {
+     "id": "wc_sui_p15",
+     "name": "MARGAIRAZ",
+     "short_name": "MARGAIRAZ"
+    },
+    {
+     "id": "wc_sui_p16",
+     "name": "GYGAX",
+     "short_name": "GYGAX"
+    }
+   ]
+  },
+  {
+   "id": "wc_kor",
+   "name": "COREIA DO SUL",
+   "short_name": "COR",
+   "country": "KR",
+   "primary_color": "#e2001a",
+   "secondary_color": "#1a3a8f",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "ADVOCAATE",
+    "nationality": "NL"
+   },
+   "players": [
+    {
+     "id": "wc_kor_p01",
+     "name": "LEE WOON-JAE",
+     "short_name": "WOON-JAE"
+    },
+    {
+     "id": "wc_kor_p02",
+     "name": "SONG CHONG-GUG",
+     "short_name": "SONG"
+    },
+    {
+     "id": "wc_kor_p03",
+     "name": "CHOI JIN-CHEUL",
+     "short_name": "CHOI"
+    },
+    {
+     "id": "wc_kor_p04",
+     "name": "KIM JIN-KYU",
+     "short_name": "KIM"
+    },
+    {
+     "id": "wc_kor_p05",
+     "name": "KIM DONG-JIN",
+     "short_name": "DONG-JIN"
+    },
+    {
+     "id": "wc_kor_p06",
+     "name": "LEE EUL-YONG",
+     "short_name": "EUL-YONG"
+    },
+    {
+     "id": "wc_kor_p07",
+     "name": "LEE HO",
+     "short_name": "LEE HO"
+    },
+    {
+     "id": "wc_kor_p08",
+     "name": "PARK JI-SUNGZÃO",
+     "short_name": "PARK"
+    },
+    {
+     "id": "wc_kor_p09",
+     "name": "PARK CHU-YOUNG",
+     "short_name": "CHU-YOUNG"
+    },
+    {
+     "id": "wc_kor_p10",
+     "name": "AHN JUNG-HWAN",
+     "short_name": "AHN"
+    },
+    {
+     "id": "wc_kor_p11",
+     "name": "SEOL KI-HYEON",
+     "short_name": "SEOL"
+    },
+    {
+     "id": "wc_kor_p12",
+     "name": "KIM YONG-DAE",
+     "short_name": "YONG-DAE"
+    },
+    {
+     "id": "wc_kor_p13",
+     "name": "LEE YOUNG-PYO",
+     "short_name": "YOUNG-PYO"
+    },
+    {
+     "id": "wc_kor_p14",
+     "name": "KIM SANG-SIK",
+     "short_name": "SANG-SIK"
+    },
+    {
+     "id": "wc_kor_p15",
+     "name": "KIM DO-HEON",
+     "short_name": "DO-HEON"
+    },
+    {
+     "id": "wc_kor_p16",
+     "name": "LEE CHUN-SOO",
+     "short_name": "CHUN-SOO"
+    }
+   ]
+  },
+  {
+   "id": "wc_tog",
+   "name": "TOGO",
+   "short_name": "TOG",
+   "country": "TG",
+   "primary_color": "#ffcf00",
+   "secondary_color": "#006a4e",
+   "kit_color3": "#d21034",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "PFISTERO",
+    "nationality": "DE"
+   },
+   "players": [
+    {
+     "id": "wc_tog_p01",
+     "name": "AGASSA",
+     "short_name": "AGASSA"
+    },
+    {
+     "id": "wc_tog_p02",
+     "name": "ABALOZINHO",
+     "short_name": "ABALO"
+    },
+    {
+     "id": "wc_tog_p03",
+     "name": "NIBOMBÉ",
+     "short_name": "NIBOMBÉ"
+    },
+    {
+     "id": "wc_tog_p04",
+     "name": "TCHANGAI",
+     "short_name": "TCHANGAI"
+    },
+    {
+     "id": "wc_tog_p05",
+     "name": "ASSEMOASSA",
+     "short_name": "ASSEMOASSA"
+    },
+    {
+     "id": "wc_tog_p06",
+     "name": "SALIFOU",
+     "short_name": "SALIFOU"
+    },
+    {
+     "id": "wc_tog_p07",
+     "name": "AZIAWONOU",
+     "short_name": "AZIAWONOU"
+    },
+    {
+     "id": "wc_tog_p08",
+     "name": "MAMAM",
+     "short_name": "MAMAM"
+    },
+    {
+     "id": "wc_tog_p09",
+     "name": "SENAYA",
+     "short_name": "SENAYA"
+    },
+    {
+     "id": "wc_tog_p10",
+     "name": "ADEBAYOR",
+     "short_name": "ADEBAYOR"
+    },
+    {
+     "id": "wc_tog_p11",
+     "name": "MOHAMED KADER",
+     "short_name": "KADER"
+    },
+    {
+     "id": "wc_tog_p12",
+     "name": "TCHAGNIRÉ",
+     "short_name": "TCHAGNIRE"
+    },
+    {
+     "id": "wc_tog_p13",
+     "name": "AKOTO",
+     "short_name": "AKOTO"
+    },
+    {
+     "id": "wc_tog_p14",
+     "name": "ATSU",
+     "short_name": "ATSU"
+    },
+    {
+     "id": "wc_tog_p15",
+     "name": "KASSIM",
+     "short_name": "KASSIM"
+    },
+    {
+     "id": "wc_tog_p16",
+     "name": "TOURÉ",
+     "short_name": "TOURÉ"
+    }
+   ]
+  },
+  {
+   "id": "wc_esp",
+   "name": "ESPANHA",
+   "short_name": "ESP",
+   "country": "ES",
+   "primary_color": "#c60b1e",
+   "secondary_color": "#10215e",
+   "kit_color3": "#ffc400",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "ARAGONÊS",
+    "nationality": "ES"
+   },
+   "players": [
+    {
+     "id": "wc_esp_p01",
+     "name": "IKER CASILLÃO",
+     "short_name": "CASILLÃO"
+    },
+    {
+     "id": "wc_esp_p02",
+     "name": "MÍCHEL SALGADO",
+     "short_name": "SALGADO"
+    },
+    {
+     "id": "wc_esp_p03",
+     "name": "PUYOLÃO",
+     "short_name": "PUYOL"
+    },
+    {
+     "id": "wc_esp_p04",
+     "name": "PABLO IBÁÑEZ",
+     "short_name": "IBÁÑEZ"
+    },
+    {
+     "id": "wc_esp_p05",
+     "name": "PERNIA",
+     "short_name": "PERNIA"
+    },
+    {
+     "id": "wc_esp_p06",
+     "name": "CESC FABREGÃO",
+     "short_name": "FABREGAS"
+    },
+    {
+     "id": "wc_esp_p07",
+     "name": "XABI ALONSÃO",
+     "short_name": "XABI"
+    },
+    {
+     "id": "wc_esp_p08",
+     "name": "XAVIZINHO",
+     "short_name": "XAVI"
+    },
+    {
+     "id": "wc_esp_p09",
+     "name": "DAVID VILLÃO",
+     "short_name": "VILLÃO"
+    },
+    {
+     "id": "wc_esp_p10",
+     "name": "RAÚL GONZÁLEZ",
+     "short_name": "RAÚL"
+    },
+    {
+     "id": "wc_esp_p11",
+     "name": "TORRINHO",
+     "short_name": "TORRINHO"
+    },
+    {
+     "id": "wc_esp_p12",
+     "name": "CAÑIZARES",
+     "short_name": "CAÑIZARES"
+    },
+    {
+     "id": "wc_esp_p13",
+     "name": "S. RAMOS",
+     "short_name": "S. RAMOS"
+    },
+    {
+     "id": "wc_esp_p14",
+     "name": "JUANITO",
+     "short_name": "JUANITO"
+    },
+    {
+     "id": "wc_esp_p15",
+     "name": "LUIS GARCÍA",
+     "short_name": "L. GARCÍA"
+    },
+    {
+     "id": "wc_esp_p16",
+     "name": "JOAQUÍNZÃO",
+     "short_name": "JOAQUÍN"
+    }
+   ]
+  },
+  {
+   "id": "wc_ukr",
+   "name": "UCRÂNIA",
+   "short_name": "UCR",
+   "country": "UA",
+   "primary_color": "#ffd500",
+   "secondary_color": "#005bbb",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "BLOKHINE",
+    "nationality": "UA"
+   },
+   "players": [
+    {
+     "id": "wc_ukr_p01",
+     "name": "SHOVKOVSKYI",
+     "short_name": "SHOVKOVSK"
+    },
+    {
+     "id": "wc_ukr_p02",
+     "name": "NESMACHNYI",
+     "short_name": "NESMACHNYI"
+    },
+    {
+     "id": "wc_ukr_p03",
+     "name": "RUSOL",
+     "short_name": "RUSOL"
+    },
+    {
+     "id": "wc_ukr_p04",
+     "name": "VASHCHUK",
+     "short_name": "VASHCHUK"
+    },
+    {
+     "id": "wc_ukr_p05",
+     "name": "NESMACHNIY JR",
+     "short_name": "NESMACH JR"
+    },
+    {
+     "id": "wc_ukr_p06",
+     "name": "TYMOSHCHUK",
+     "short_name": "TYMOSHCHUK"
+    },
+    {
+     "id": "wc_ukr_p07",
+     "name": "HUSIEV",
+     "short_name": "HUSIEV"
+    },
+    {
+     "id": "wc_ukr_p08",
+     "name": "SHELAYEV",
+     "short_name": "SHELAYEV"
+    },
+    {
+     "id": "wc_ukr_p09",
+     "name": "GUSIN",
+     "short_name": "GUSIN"
+    },
+    {
+     "id": "wc_ukr_p10",
+     "name": "SHEVCHENKO",
+     "short_name": "SHEVCHENKO"
+    },
+    {
+     "id": "wc_ukr_p11",
+     "name": "VORONIN",
+     "short_name": "VORONIN"
+    },
+    {
+     "id": "wc_ukr_p12",
+     "name": "SHUST",
+     "short_name": "SHUST"
+    },
+    {
+     "id": "wc_ukr_p13",
+     "name": "SVIDERSKYI",
+     "short_name": "SVIDERSKYI"
+    },
+    {
+     "id": "wc_ukr_p14",
+     "name": "YEZERSKYI",
+     "short_name": "YEZERSKYI"
+    },
+    {
+     "id": "wc_ukr_p15",
+     "name": "ROTAN",
+     "short_name": "ROTAN"
+    },
+    {
+     "id": "wc_ukr_p16",
+     "name": "REBROV",
+     "short_name": "REBROV"
+    }
+   ]
+  },
+  {
+   "id": "wc_tun",
+   "name": "TUNÍSIA",
+   "short_name": "TUN",
+   "country": "TN",
+   "primary_color": "#e70013",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "LEMERRÉ",
+    "nationality": "FR"
+   },
+   "players": [
+    {
+     "id": "wc_tun_p01",
+     "name": "BOUMNIJEL",
+     "short_name": "BOUMNIJEL"
+    },
+    {
+     "id": "wc_tun_p02",
+     "name": "TRABELSI",
+     "short_name": "TRABELSI"
+    },
+    {
+     "id": "wc_tun_p03",
+     "name": "JAIDI",
+     "short_name": "JAIDI"
+    },
+    {
+     "id": "wc_tun_p04",
+     "name": "HAGGUI",
+     "short_name": "HAGGUI"
+    },
+    {
+     "id": "wc_tun_p05",
+     "name": "AYARI",
+     "short_name": "AYARI"
+    },
+    {
+     "id": "wc_tun_p06",
+     "name": "MNARI",
+     "short_name": "MNARI"
+    },
+    {
+     "id": "wc_tun_p07",
+     "name": "BOUAZIZI",
+     "short_name": "BOUAZIZI"
+    },
+    {
+     "id": "wc_tun_p08",
+     "name": "NAFTI",
+     "short_name": "NAFTI"
+    },
+    {
+     "id": "wc_tun_p09",
+     "name": "SANTOS ZINHO",
+     "short_name": "SANTOS"
+    },
+    {
+     "id": "wc_tun_p10",
+     "name": "JAZIRI",
+     "short_name": "JAZIRI"
+    },
+    {
+     "id": "wc_tun_p11",
+     "name": "JOMAA",
+     "short_name": "JOMAA"
+    },
+    {
+     "id": "wc_tun_p12",
+     "name": "KASRAOUI",
+     "short_name": "KASRAOUI"
+    },
+    {
+     "id": "wc_tun_p13",
+     "name": "ESSEDIRI",
+     "short_name": "ESSEDIRI"
+    },
+    {
+     "id": "wc_tun_p14",
+     "name": "YAHIA",
+     "short_name": "YAHIA"
+    },
+    {
+     "id": "wc_tun_p15",
+     "name": "GHODHBANE",
+     "short_name": "GHODHBANE"
+    },
+    {
+     "id": "wc_tun_p16",
+     "name": "CHEDLI",
+     "short_name": "CHEDLI"
+    }
+   ]
+  },
+  {
+   "id": "wc_ksa",
+   "name": "ARÁBIA SAUDITA",
+   "short_name": "ARS",
+   "country": "SA",
+   "primary_color": "#f4f4f4",
+   "secondary_color": "#006c35",
+   "kit_color3": "#006c35",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "PAQUETÁO",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "wc_ksa_p01",
+     "name": "ZAID",
+     "short_name": "ZAID"
+    },
+    {
+     "id": "wc_ksa_p02",
+     "name": "DOKHI",
+     "short_name": "DOKHI"
+    },
+    {
+     "id": "wc_ksa_p03",
+     "name": "AL-MONTASHARI",
+     "short_name": "MONTASHARI"
+    },
+    {
+     "id": "wc_ksa_p04",
+     "name": "TUKAR",
+     "short_name": "TUKAR"
+    },
+    {
+     "id": "wc_ksa_p05",
+     "name": "SULIMANI",
+     "short_name": "SULIMANI"
+    },
+    {
+     "id": "wc_ksa_p06",
+     "name": "KHARIRI",
+     "short_name": "KHARIRI"
+    },
+    {
+     "id": "wc_ksa_p07",
+     "name": "SAUD KARIRI",
+     "short_name": "KARIRI"
+    },
+    {
+     "id": "wc_ksa_p08",
+     "name": "NOOR",
+     "short_name": "NOOR"
+    },
+    {
+     "id": "wc_ksa_p09",
+     "name": "AL-JASSAM",
+     "short_name": "JASSAM"
+    },
+    {
+     "id": "wc_ksa_p10",
+     "name": "QAHTANI",
+     "short_name": "QAHTANI"
+    },
+    {
+     "id": "wc_ksa_p11",
+     "name": "AL-JABER",
+     "short_name": "AL-JABER"
+    },
+    {
+     "id": "wc_ksa_p12",
+     "name": "MASOUD",
+     "short_name": "MASOUD"
+    },
+    {
+     "id": "wc_ksa_p13",
+     "name": "AL-BAHRI",
+     "short_name": "BAHRI"
+    },
+    {
+     "id": "wc_ksa_p14",
+     "name": "AL-QADI",
+     "short_name": "QADI"
+    },
+    {
+     "id": "wc_ksa_p15",
+     "name": "AZIZ",
+     "short_name": "AZIZ"
+    },
+    {
+     "id": "wc_ksa_p16",
+     "name": "AL-HAWSAWI",
+     "short_name": "HAWSAWI"
+    }
+   ]
+  },
+  {
+   "id": "wc_uru",
+   "name": "URUGUAI",
+   "short_name": "URU",
+   "country": "UY",
+   "primary_color": "#5cbfeb",
+   "secondary_color": "#111111",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "MAESTRO TABARÉ",
+    "nationality": "UY"
+   },
+   "players": [
+    {
+     "id": "wc_uru_p01",
+     "name": "CARINIZÃO",
+     "short_name": "CARINI"
+    },
+    {
+     "id": "wc_uru_p02",
+     "name": "LUGANÃO",
+     "short_name": "LUGANO"
+    },
+    {
+     "id": "wc_uru_p03",
+     "name": "MONTEROZINHO",
+     "short_name": "MONTERO"
+    },
+    {
+     "id": "wc_uru_p04",
+     "name": "DIEGO GODÍNHO",
+     "short_name": "GODÍN"
+    },
+    {
+     "id": "wc_uru_p05",
+     "name": "SORONDO",
+     "short_name": "SORONDO"
+    },
+    {
+     "id": "wc_uru_p06",
+     "name": "PABLO GARCÍA",
+     "short_name": "P. GARCÍA"
+    },
+    {
+     "id": "wc_uru_p07",
+     "name": "DIEGO PÉREZÃO",
+     "short_name": "D. PÉREZ"
+    },
+    {
+     "id": "wc_uru_p08",
+     "name": "RECOBINHA",
+     "short_name": "RECOBA"
+    },
+    {
+     "id": "wc_uru_p09",
+     "name": "ÁLVARO RECOBITO",
+     "short_name": "ÁLVARO"
+    },
+    {
+     "id": "wc_uru_p10",
+     "name": "DIEGO FORLÃO",
+     "short_name": "FORLÃO"
+    },
+    {
+     "id": "wc_uru_p11",
+     "name": "SUAREZINHO",
+     "short_name": "SUAREZINHO"
+    },
+    {
+     "id": "wc_uru_p12",
+     "name": "VIERITA",
+     "short_name": "VIERA"
+    },
+    {
+     "id": "wc_uru_p13",
+     "name": "SCOTTI",
+     "short_name": "SCOTTI"
+    },
+    {
+     "id": "wc_uru_p14",
+     "name": "MAXI PEREIRÃO",
+     "short_name": "M. PEREIRA"
+    },
+    {
+     "id": "wc_uru_p15",
+     "name": "VARELA",
+     "short_name": "VARELA"
+    },
+    {
+     "id": "wc_uru_p16",
+     "name": "ABREU",
+     "short_name": "ABREU"
+    }
+   ]
+  },
+  {
+   "id": "wc_col",
+   "name": "COLÔMBIA",
+   "short_name": "COL",
+   "country": "CO",
+   "primary_color": "#fcd116",
+   "secondary_color": "#003893",
+   "kit_color3": "#ce1126",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "PACHO MATURANO",
+    "nationality": "CO"
+   },
+   "players": [
+    {
+     "id": "wc_col_p01",
+     "name": "ÓSCAR CÓRDOBITA",
+     "short_name": "CÓRDOBA"
+    },
+    {
+     "id": "wc_col_p02",
+     "name": "IVÁN CÓRDOBÃO",
+     "short_name": "I. CÓRDOBA"
+    },
+    {
+     "id": "wc_col_p03",
+     "name": "YEPESZÃO",
+     "short_name": "YEPES"
+    },
+    {
+     "id": "wc_col_p04",
+     "name": "PERÉA",
+     "short_name": "PERÉA"
+    },
+    {
+     "id": "wc_col_p05",
+     "name": "ARMERO",
+     "short_name": "ARMERO"
+    },
+    {
+     "id": "wc_col_p06",
+     "name": "RESTREPITO",
+     "short_name": "RESTREPO"
+    },
+    {
+     "id": "wc_col_p07",
+     "name": "LA ROCA SÁNCHEZ",
+     "short_name": "LA ROCA"
+    },
+    {
+     "id": "wc_col_p08",
+     "name": "VALDERRAMA",
+     "short_name": "VALDERRAMA"
+    },
+    {
+     "id": "wc_col_p09",
+     "name": "MACNELLY",
+     "short_name": "MACNELLY"
+    },
+    {
+     "id": "wc_col_p10",
+     "name": "HERNÁN CASTILLO",
+     "short_name": "CASTILLO"
+    },
+    {
+     "id": "wc_col_p11",
+     "name": "FALCÃO",
+     "short_name": "FALCÃO"
+    },
+    {
+     "id": "wc_col_p12",
+     "name": "CALERO",
+     "short_name": "CALERO"
+    },
+    {
+     "id": "wc_col_p13",
+     "name": "ZAPATÃO",
+     "short_name": "ZAPATA"
+    },
+    {
+     "id": "wc_col_p14",
+     "name": "VALLEJO",
+     "short_name": "VALLEJO"
+    },
+    {
+     "id": "wc_col_p15",
+     "name": "ALDO LEÃO",
+     "short_name": "ALDO LEÃO"
+    },
+    {
+     "id": "wc_col_p16",
+     "name": "JACKSON",
+     "short_name": "JACKSON"
+    }
+   ]
+  },
+  {
+   "id": "wc_nga",
+   "name": "NIGÉRIA",
+   "short_name": "NIG",
+   "country": "NG",
+   "primary_color": "#008751",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#008751",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "WESTERHOFE",
+    "nationality": "NL"
+   },
+   "players": [
+    {
+     "id": "wc_nga_p01",
+     "name": "ENYEAMÃO",
+     "short_name": "ENYEAMA"
+    },
+    {
+     "id": "wc_nga_p02",
+     "name": "YOBOZÃO",
+     "short_name": "YOBO"
+    },
+    {
+     "id": "wc_nga_p03",
+     "name": "ODIAHZINHO",
+     "short_name": "ODIAH"
+    },
+    {
+     "id": "wc_nga_p04",
+     "name": "OKORONKWO",
+     "short_name": "OKORONKWO"
+    },
+    {
+     "id": "wc_nga_p05",
+     "name": "TAIYE TAIWO",
+     "short_name": "TAIWO"
+    },
+    {
+     "id": "wc_nga_p06",
+     "name": "MIKEL OBIZÃO",
+     "short_name": "MIKEL"
+    },
+    {
+     "id": "wc_nga_p07",
+     "name": "NWANKWO KANUTÃO",
+     "short_name": "KANUTÃO"
+    },
+    {
+     "id": "wc_nga_p08",
+     "name": "JAY-JAY OKOCHÃO",
+     "short_name": "OKOCHÃO"
+    },
+    {
+     "id": "wc_nga_p09",
+     "name": "UTAKA",
+     "short_name": "UTAKA"
+    },
+    {
+     "id": "wc_nga_p10",
+     "name": "MARTINS",
+     "short_name": "MARTINS"
+    },
+    {
+     "id": "wc_nga_p11",
+     "name": "YAKUBU",
+     "short_name": "YAKUBU"
+    },
+    {
+     "id": "wc_nga_p12",
+     "name": "AIYENUGBA",
+     "short_name": "AIYENUGBA"
+    },
+    {
+     "id": "wc_nga_p13",
+     "name": "SHITTU",
+     "short_name": "SHITTU"
+    },
+    {
+     "id": "wc_nga_p14",
+     "name": "ENAKAHIRE",
+     "short_name": "ENAKAHIRE"
+    },
+    {
+     "id": "wc_nga_p15",
+     "name": "KALU UCHE",
+     "short_name": "K. UCHE"
+    },
+    {
+     "id": "wc_nga_p16",
+     "name": "IKECHUKWU UCHE",
+     "short_name": "I. UCHE"
+    }
+   ]
+  },
+  {
+   "id": "wc_cmr",
+   "name": "CAMARÕES",
+   "short_name": "CAM",
+   "country": "CM",
+   "primary_color": "#007a5e",
+   "secondary_color": "#ce1126",
+   "kit_color3": "#fcd116",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "WINFRIED SCHAFE",
+    "nationality": "DE"
+   },
+   "players": [
+    {
+     "id": "wc_cmr_p01",
+     "name": "KAMENIZÃO",
+     "short_name": "KAMENI"
+    },
+    {
+     "id": "wc_cmr_p02",
+     "name": "GEREMI",
+     "short_name": "GEREMI"
+    },
+    {
+     "id": "wc_cmr_p03",
+     "name": "RIGOBERT SONGÃO",
+     "short_name": "SONG"
+    },
+    {
+     "id": "wc_cmr_p04",
+     "name": "ATOUBA",
+     "short_name": "ATOUBA"
+    },
+    {
+     "id": "wc_cmr_p05",
+     "name": "WOMÉZINHO",
+     "short_name": "WOMÉ"
+    },
+    {
+     "id": "wc_cmr_p06",
+     "name": "MAKOUN",
+     "short_name": "MAKOUN"
+    },
+    {
+     "id": "wc_cmr_p07",
+     "name": "MBAMIZINHO",
+     "short_name": "MBAMI"
+    },
+    {
+     "id": "wc_cmr_p08",
+     "name": "DJEMBA DJEMBA",
+     "short_name": "DJEMBA"
+    },
+    {
+     "id": "wc_cmr_p09",
+     "name": "ACHILLE EMANA",
+     "short_name": "EMANA"
+    },
+    {
+     "id": "wc_cmr_p10",
+     "name": "SAMUEL ETOZÃO",
+     "short_name": "ETOZÃO"
+    },
+    {
+     "id": "wc_cmr_p11",
+     "name": "WEBÓZINHO",
+     "short_name": "WEBÓ"
+    },
+    {
+     "id": "wc_cmr_p12",
+     "name": "SOULEYMANOU",
+     "short_name": "SOULEYMANOU"
+    },
+    {
+     "id": "wc_cmr_p13",
+     "name": "BIKEY",
+     "short_name": "BIKEY"
+    },
+    {
+     "id": "wc_cmr_p14",
+     "name": "NKONGO",
+     "short_name": "NKONGO"
+    },
+    {
+     "id": "wc_cmr_p15",
+     "name": "MILLA JR",
+     "short_name": "MILLA JR"
+    },
+    {
+     "id": "wc_cmr_p16",
+     "name": "IDRISSOU",
+     "short_name": "IDRISSOU"
+    }
+   ]
+  },
+  {
+   "id": "wc_sen",
+   "name": "SENEGAL",
+   "short_name": "SEN",
+   "country": "SN",
+   "primary_color": "#f4f4f4",
+   "secondary_color": "#00853f",
+   "kit_color3": "#fdef42",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "BRUNO METSOU",
+    "nationality": "FR"
+   },
+   "players": [
+    {
+     "id": "wc_sen_p01",
+     "name": "TONY SYLVA",
+     "short_name": "SYLVA"
+    },
+    {
+     "id": "wc_sen_p02",
+     "name": "DAFZINHO",
+     "short_name": "DAF"
+    },
+    {
+     "id": "wc_sen_p03",
+     "name": "LAMINE DIATTA",
+     "short_name": "DIATTA"
+    },
+    {
+     "id": "wc_sen_p04",
+     "name": "P.M. DIOP",
+     "short_name": "P.M. DIOP"
+    },
+    {
+     "id": "wc_sen_p05",
+     "name": "FERDINAND COLY",
+     "short_name": "COLY"
+    },
+    {
+     "id": "wc_sen_p06",
+     "name": "BOUBA DIOP",
+     "short_name": "BOUBA DIOP"
+    },
+    {
+     "id": "wc_sen_p07",
+     "name": "AMDY FAYE",
+     "short_name": "FAYE"
+    },
+    {
+     "id": "wc_sen_p08",
+     "name": "HENRI CAMARA",
+     "short_name": "CAMARA"
+    },
+    {
+     "id": "wc_sen_p09",
+     "name": "KHALILOU FADIGA",
+     "short_name": "FADIGA"
+    },
+    {
+     "id": "wc_sen_p10",
+     "name": "DIOUF",
+     "short_name": "DIOUF"
+    },
+    {
+     "id": "wc_sen_p11",
+     "name": "NIANG",
+     "short_name": "NIANG"
+    },
+    {
+     "id": "wc_sen_p12",
+     "name": "OMAR DIALLO",
+     "short_name": "DIALLO"
+    },
+    {
+     "id": "wc_sen_p13",
+     "name": "BEYE",
+     "short_name": "BEYE"
+    },
+    {
+     "id": "wc_sen_p14",
+     "name": "CISSÉ",
+     "short_name": "CISSÉ"
+    },
+    {
+     "id": "wc_sen_p15",
+     "name": "SALIF DIAO",
+     "short_name": "DIAO"
+    },
+    {
+     "id": "wc_sen_p16",
+     "name": "DIOMANSY KAMARA",
+     "short_name": "KAMARA"
+    }
+   ]
+  },
+  {
+   "id": "wc_tur",
+   "name": "TURQUIA",
+   "short_name": "TUR",
+   "country": "TR",
+   "primary_color": "#e30a17",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "SENOL GUNESH",
+    "nationality": "TR"
+   },
+   "players": [
+    {
+     "id": "wc_tur_p01",
+     "name": "RÜSTÜ RECBERÃO",
+     "short_name": "RÜSTÜ"
+    },
+    {
+     "id": "wc_tur_p02",
+     "name": "FATIH AKYEL",
+     "short_name": "AKYEL"
+    },
+    {
+     "id": "wc_tur_p03",
+     "name": "BÜLENT KORKMAZ",
+     "short_name": "KORKMAZ"
+    },
+    {
+     "id": "wc_tur_p04",
+     "name": "ALPAY OZALAN",
+     "short_name": "ALPAY"
+    },
+    {
+     "id": "wc_tur_p05",
+     "name": "HAKAN ÜNSAL",
+     "short_name": "ÜNSAL"
+    },
+    {
+     "id": "wc_tur_p06",
+     "name": "TUGAY KERIMOGLU",
+     "short_name": "TUGAY"
+    },
+    {
+     "id": "wc_tur_p07",
+     "name": "BASTÜRK",
+     "short_name": "BASTÜRK"
+    },
+    {
+     "id": "wc_tur_p08",
+     "name": "EMRE BELOZOGLU",
+     "short_name": "EMRE"
+    },
+    {
+     "id": "wc_tur_p09",
+     "name": "HASAN SASZÃO",
+     "short_name": "HASAN SAS"
+    },
+    {
+     "id": "wc_tur_p10",
+     "name": "HAKAN SÜKÜRÃO",
+     "short_name": "HAKAN"
+    },
+    {
+     "id": "wc_tur_p11",
+     "name": "NIHAT KAHVECI",
+     "short_name": "NIHAT"
+    },
+    {
+     "id": "wc_tur_p12",
+     "name": "OMER ÇATKIÇ",
+     "short_name": "OMER"
+    },
+    {
+     "id": "wc_tur_p13",
+     "name": "ÜMIT DAVALA",
+     "short_name": "DAVALA"
+    },
+    {
+     "id": "wc_tur_p14",
+     "name": "OGÜN",
+     "short_name": "OGÜN"
+    },
+    {
+     "id": "wc_tur_p15",
+     "name": "TUNCAY SANLI",
+     "short_name": "TUNCAY"
+    },
+    {
+     "id": "wc_tur_p16",
+     "name": "ILHAN MANSIZ",
+     "short_name": "ILHAN"
+    }
+   ]
+  },
+  {
+   "id": "wc_den",
+   "name": "DINAMARCA",
+   "short_name": "DIN",
+   "country": "DK",
+   "primary_color": "#c60c30",
+   "secondary_color": "#ffffff",
+   "kit_color3": "#ffffff",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "MORTEN OLSSEN",
+    "nationality": "DK"
+   },
+   "players": [
+    {
+     "id": "wc_den_p01",
+     "name": "THOMAS SORENSEN",
+     "short_name": "SORENSEN"
+    },
+    {
+     "id": "wc_den_p02",
+     "name": "HELVEG",
+     "short_name": "HELVEG"
+    },
+    {
+     "id": "wc_den_p03",
+     "name": "MARTIN LAURSEN",
+     "short_name": "LAURSEN"
+    },
+    {
+     "id": "wc_den_p04",
+     "name": "RENÉ HENRIKSEN",
+     "short_name": "HENRIKSEN"
+    },
+    {
+     "id": "wc_den_p05",
+     "name": "JAN HEINTZE",
+     "short_name": "HEINTZE"
+    },
+    {
+     "id": "wc_den_p06",
+     "name": "GRAVESENZÃO",
+     "short_name": "GRAVESEN"
+    },
+    {
+     "id": "wc_den_p07",
+     "name": "JORGENSEN",
+     "short_name": "JORGENSEN"
+    },
+    {
+     "id": "wc_den_p08",
+     "name": "TOMASSONI",
+     "short_name": "TOMASSON"
+    },
+    {
+     "id": "wc_den_p09",
+     "name": "ROMMEDAHL",
+     "short_name": "ROMMEDAHL"
+    },
+    {
+     "id": "wc_den_p10",
+     "name": "EBBE SANDZÃO",
+     "short_name": "SAND"
+    },
+    {
+     "id": "wc_den_p11",
+     "name": "LAUDRUPZINHO",
+     "short_name": "LAUDRUP"
+    },
+    {
+     "id": "wc_den_p12",
+     "name": "SCHMEICHÃO",
+     "short_name": "SCHMEICHEL"
+    },
+    {
+     "id": "wc_den_p13",
+     "name": "POULSEN",
+     "short_name": "POULSEN"
+    },
+    {
+     "id": "wc_den_p14",
+     "name": "NIELSEN",
+     "short_name": "NIELSEN"
+    },
+    {
+     "id": "wc_den_p15",
+     "name": "PER KROLDRUP",
+     "short_name": "KROLDRUP"
+    },
+    {
+     "id": "wc_den_p16",
+     "name": "BENDTNERZINHO",
+     "short_name": "BENDTNER"
+    }
+   ]
+  },
+  {
+   "id": "wc_bel",
+   "name": "BÉLGICA",
+   "short_name": "BEL",
+   "country": "BE",
+   "primary_color": "#e30613",
+   "secondary_color": "#111111",
+   "kit_color3": "#fdda24",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "WASEIGEU",
+    "nationality": "BE"
+   },
+   "players": [
+    {
+     "id": "wc_bel_p01",
+     "name": "DE WILDEZÃO",
+     "short_name": "DE WILDE"
+    },
+    {
+     "id": "wc_bel_p02",
+     "name": "DEFLANDRE",
+     "short_name": "DEFLANDRE"
+    },
+    {
+     "id": "wc_bel_p03",
+     "name": "VAN BUYTENZÃO",
+     "short_name": "V. BUYTEN"
+    },
+    {
+     "id": "wc_bel_p04",
+     "name": "SIMONSZINHO",
+     "short_name": "SIMONS"
+    },
+    {
+     "id": "wc_bel_p05",
+     "name": "VAN KERCKHOVEN",
+     "short_name": "KERCKHOVEN"
+    },
+    {
+     "id": "wc_bel_p06",
+     "name": "VANDERHAEGHE",
+     "short_name": "VANDERHAEG"
+    },
+    {
+     "id": "wc_bel_p07",
+     "name": "GOOR",
+     "short_name": "GOOR"
+    },
+    {
+     "id": "wc_bel_p08",
+     "name": "WALEM",
+     "short_name": "WALEM"
+    },
+    {
+     "id": "wc_bel_p09",
+     "name": "MARC WILMOTSÃO",
+     "short_name": "WILMOTS"
+    },
+    {
+     "id": "wc_bel_p10",
+     "name": "MPENZÃO",
+     "short_name": "MPENZA"
+    },
+    {
+     "id": "wc_bel_p11",
+     "name": "SONCK",
+     "short_name": "SONCK"
+    },
+    {
+     "id": "wc_bel_p12",
+     "name": "PEERSZINHO",
+     "short_name": "PEERS"
+    },
+    {
+     "id": "wc_bel_p13",
+     "name": "PEETERS",
+     "short_name": "PEETERS"
+    },
+    {
+     "id": "wc_bel_p14",
+     "name": "DEBOECK",
+     "short_name": "DEBOECK"
+    },
+    {
+     "id": "wc_bel_p15",
+     "name": "VERHEYEN",
+     "short_name": "VERHEYEN"
+    },
+    {
+     "id": "wc_bel_p16",
+     "name": "STRUPAR",
+     "short_name": "STRUPAR"
+    }
+   ]
   }
  ]
 }
