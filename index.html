@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Semi+Condensed:wght@500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/styles2.css">
-<link rel="stylesheet" href="/styles3.css?v=3">
+<link rel="stylesheet" href="/styles3.css?v=6">
 </head>
 <body>
 
@@ -33,13 +33,13 @@
       <span class="mark__word">FUTIBA</span>
     </a>
     <nav class="nav" aria-label="Seções">
+      <a href="#copa" data-i18n="nav.copa">Copa do Mundo</a>
+      <a href="#champions" data-i18n="nav.champions">Champions</a>
+      <a href="#rua" data-i18n="nav.rua">Rua</a>
+      <a href="#areia" data-i18n="nav.areia">Areia</a>
       <a href="#desafio" data-i18n="nav.desafio">Desafio</a>
-      <a href="#brazuca" data-i18n="nav.brazuca">Copa Brazuca</a>
-      <a href="#campo" data-i18n="nav.campo">Em campo</a>
       <a href="#estadios" data-i18n="nav.estadios">Estádios</a>
-      <a href="#indoor" data-i18n="nav.indoor">Futsal &amp; Paredão</a>
       <a href="#equipes" data-i18n="nav.equipes">Equipes</a>
-      <a href="#bolso" data-i18n="nav.bolso">No bolso</a>
       <a href="#manual" data-i18n="nav.manual">Manual</a>
       <a class="nav__cta" href="#baixar" data-i18n="nav.baixar">Baixar</a>
     </nav>
@@ -67,7 +67,7 @@
     </div>
 
     <div class="cover__talk">
-      <p class="eyebrow" data-i18n="cover.eyebrow">Almanaque FUTIBA · Edição nº 3 · Versão demo</p>
+      <p class="eyebrow" data-i18n="cover.eyebrow">Almanaque FUTIBA · Edição nº 4 · Versão demo</p>
       <h1 class="title" data-i18n="cover.title">Futebol 16-bit,<br>do jeito que<br>era bom</h1>
       <p class="lede" data-i18n="cover.lede">Uma carta de amor ao futebol raiz dos videogames. Câmera de cima, chute de fora da área,
         grito de gol de tubo. <strong>320×240 pixels</strong> e nenhuma vergonha na cara.</p>
@@ -75,7 +75,9 @@
       <div class="cover__btns">
         <a class="btn btn--gold" href="#baixar" data-i18n="cover.cta">Baixar a demo</a>
         <a class="btn btn--ghost" href="#manual" data-i18n="cover.cta2">Manual do jogo</a>
+        <button type="button" class="btn btn--pix" data-pix="viscereamonet@gmail.com" data-i18n="pix.btn">Apoie</button>
       </div>
+      <p class="cover__note" data-i18n="demo.note"><strong>Atenção:</strong> a maioria das novidades desta página ainda não está na demo. Elas chegam na versão da Steam, em breve.</p>
 
       <ul class="ticker" aria-label="Resumo do jogo" data-i18n-aria="cover.ticker_label">
         <li data-i18n="tk.1">150+ equipes</li>
@@ -150,6 +152,187 @@
     </div>
   </div>
   <span class="pagenum" aria-hidden="true" data-i18n="pg.1b">Pág. 1½</span>
+</section>
+
+<!-- ======= COPA DO MUNDO (edição 4) ======= -->
+<section class="sec sec--green" id="copa">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light" data-i18n="wc.eyebrow">Modo novo · Copas</p>
+    <h2 class="head" data-i18n="wc.head">Copa do Mundo</h2>
+    <p class="deck deck--light" data-i18n="wc.deck">32 seleções, 8 grupos e mata-mata até a final. Escolha a sua e traga a taça.</p>
+
+    <div class="dz">
+      <div class="dz__col">
+      <figure class="shot panel dz__big">
+        <img src="/assets/v4/copa_maracana.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="wc.s1.alt" alt="Captura real da Copa do Mundo no FUTIBA: Brasil x Argentina no Maracanã, com placas da Copa e torcida verde e amarela.">
+        <figcaption data-i18n="wc.s1">Brasil x Argentina no Maracanã, com as placas da Copa.</figcaption>
+      </figure>
+      <div class="panel panel--tint dz__facts">
+        <h3 class="sub" data-i18n="wc.facts">Na Copa</h3>
+        <ul class="checks">
+          <li data-i18n="wc.f1">40 seleções só desse modo, cada uma com técnico e elenco próprios</li>
+          <li data-i18n="wc.f2">Sorteio fixo, com os grupos clássicos, ou sorteio aleatório</li>
+          <li data-i18n="wc.f3">Fase de grupos, oitavas, quartas, semi, disputa de 3º e final</li>
+          <li data-i18n="wc.f4">Jornal antes e depois de cada jogo, com artilharia e notícias</li>
+        </ul>
+      </div>
+      </div>
+      <div class="dz__col">
+      <figure class="shot panel">
+        <img src="/assets/v4/copa_grupos_pt.jpg" data-src-lang="/assets/v4/copa_grupos_{lang}.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="wc.s2.alt" alt="Tela da fase de grupos da Copa do Mundo no FUTIBA: oito grupos com pontos e o próximo jogo.">
+        <figcaption data-i18n="wc.s2">Os 8 grupos e o próximo jogo.</figcaption>
+      </figure>
+      <figure class="shot panel">
+        <img src="/assets/v4/copa_final_pt.jpg" data-src-lang="/assets/v4/copa_final_{lang}.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="wc.s3.alt" alt="Jornal da Copa do FUTIBA na final: a taça na capa e a manchete do campeão.">
+        <figcaption data-i18n="wc.s3">Campeão? Sai na capa do jornal.</figcaption>
+      </figure>
+      </div>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true" data-i18n="pg.x3">Encarte C</span>
+</section>
+
+<!-- ======= CHAMPIONS (edição 4) ======= -->
+<section class="sec sec--ink" id="champions">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light" data-i18n="ch.eyebrow">Modo novo · Copas</p>
+    <h2 class="head" data-i18n="ch.head">Champions FUTIBA</h2>
+    <p class="deck deck--light" data-i18n="ch.deck">Os gigantes da Europa num mata-mata de 16. Estádio cheio e jogo grande.</p>
+
+    <div class="indoor">
+      <article class="indoor__mode panel">
+        <img src="/assets/v4/champions_jogo.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="ch.s1.alt" alt="Captura real da Champions FUTIBA: Madrid x Bayern em Istambul, com o goleiro na área.">
+        <div class="indoor__txt">
+          <span class="card__tag" data-i18n="ch.tag">Champions</span>
+          <h3 data-i18n="ch.h">10 fixos + 6 sorteados</h3>
+          <ul class="checks">
+            <li data-i18n="ch.f1">Mata-mata de 16, do primeiro jogo até a final</li>
+            <li data-i18n="ch.f2">Os clubes grandes de sempre, com elenco e uniforme</li>
+            <li data-i18n="ch.f3">Fica em COPAS, ao lado da copa de 8 e de 16</li>
+          </ul>
+        </div>
+      </article>
+      <article class="indoor__mode panel">
+        <img src="/assets/v4/ml_hub_pt.jpg" data-src-lang="/assets/v4/ml_hub_{lang}.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="ml.s1.alt" alt="Tela da Master Liga no FUTIBA: clube na Série D, caixa, folha, próximo jogo e o menu da carreira.">
+        <div class="indoor__txt">
+          <span class="card__tag" data-i18n="ml.tag">Modo carreira</span>
+          <h3 data-i18n="ml.h">Master Liga</h3>
+          <ul class="checks">
+            <li data-i18n="ml.f1">Comece na Série D e suba de divisão</li>
+            <li data-i18n="ml.f2">Mercado, olheiro, patrocínio e jornal da semana</li>
+            <li data-i18n="ml.f3">Seja campeão do mundo e libere o Super Mundial</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true" data-i18n="pg.x4">Encarte D</span>
+</section>
+
+<!-- ======= RUA (edição 4) ======= -->
+<section class="sec sec--red" id="rua">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light" data-i18n="rua.eyebrow">Modo novo · Menu principal</p>
+    <h2 class="head" data-i18n="rua.head">Futebol de rua</h2>
+    <p class="deck deck--light" data-i18n="rua.deck">Rua de cima contra rua de baixo. Gol de chinelo e a vizinhança toda na calçada.</p>
+
+    <div class="dz">
+      <div class="dz__col">
+      <figure class="shot panel dz__big">
+        <img src="/assets/v4/rua_favela.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="rua.s1.alt" alt="Captura real do modo Rua do FUTIBA: pelada no asfalto da favela no fim de tarde, com a vizinhança assistindo.">
+        <figcaption data-i18n="rua.s1">Fim de tarde na favela.</figcaption>
+      </figure>
+      <div class="panel panel--tint dz__facts">
+        <h3 class="sub" data-i18n="rua.facts">Regra da rua</h3>
+        <ul class="checks">
+          <li data-i18n="rua.f1">2 contra 2, 3 minutos</li>
+          <li data-i18n="rua.f2">Gol de chinelo: só vale de dentro da área</li>
+          <li data-i18n="rua.f3">9 lugares: favela, centro, roça, praia, noite, Amazônia, escola, laje e vila</li>
+          <li data-i18n="rua.f4">O lugar é sorteado a cada jogo</li>
+        </ul>
+      </div>
+      </div>
+      <div class="dz__col">
+      <figure class="shot panel">
+        <img src="/assets/v4/rua_laje.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="rua.s2.alt" alt="Gol no modo Rua do FUTIBA, na laje, com o morro e o pôr do sol ao fundo.">
+        <figcaption data-i18n="rua.s2">Gol na laje, com o pôr do sol.</figcaption>
+      </figure>
+      <figure class="shot panel">
+        <img src="/assets/v4/rua_noite.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="rua.s3.alt" alt="Modo Rua do FUTIBA à noite, sob os postes, com o churrasquinho na calçada.">
+        <figcaption data-i18n="rua.s3">À noite, debaixo do poste.</figcaption>
+      </figure>
+      </div>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true" data-i18n="pg.x5">Encarte E</span>
+</section>
+
+<!-- ======= AREIA (edição 4) ======= -->
+<section class="sec sec--blue" id="areia">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light" data-i18n="ar.eyebrow">Modo novo · Indoor</p>
+    <h2 class="head" data-i18n="ar.head">Futebol de areia</h2>
+    <p class="deck deck--light" data-i18n="ar.deck">Pé descalço, bola quicando e torcida de chinelo. Três períodos de 12 minutos.</p>
+
+    <div class="dz">
+      <div class="dz__col">
+      <figure class="shot panel dz__big">
+        <img src="/assets/v4/areia_jogo.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="ar.s1.alt" alt="Captura real do Modo Praia do FUTIBA: Seleção Carioca x Seleção Paulista na areia, com placas de praia.">
+        <figcaption data-i18n="ar.s1">Seleção Carioca x Seleção Paulista.</figcaption>
+      </figure>
+      <div class="panel panel--tint dz__facts">
+        <h3 class="sub" data-i18n="ar.facts">Na areia</h3>
+        <ul class="checks">
+          <li data-i18n="ar.f1">11 times só de praia, cada um com técnico e história</li>
+          <li data-i18n="ar.f2">Morrinhos na areia desviam a bola</li>
+          <li data-i18n="ar.f3">Lateral com o pé e falta sem barreira</li>
+          <li data-i18n="ar.f4">Desafio Praia: vença a Seleção da areia e ela joga com você</li>
+        </ul>
+      </div>
+      </div>
+      <div class="dz__col">
+      <figure class="shot panel">
+        <img src="/assets/v4/areia_times.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="ar.s2.alt" alt="Escolha de time no Modo Praia do FUTIBA: técnico, jogadores numerados e atributos.">
+        <figcaption data-i18n="ar.s2">Cada time com o seu técnico.</figcaption>
+      </figure>
+      <figure class="shot panel">
+        <img src="/assets/v4/areia_info.jpg" width="960" height="720" loading="lazy" class="zoomable"
+             data-i18n-alt="ar.s3.alt" alt="Ficha de um time de praia no FUTIBA, com um texto curto sobre a sua história.">
+        <figcaption data-i18n="ar.s3">E uma ficha contando quem é quem.</figcaption>
+      </figure>
+      </div>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true" data-i18n="pg.x6">Encarte F</span>
+</section>
+
+<!-- ======= TEM MAIS (edição 4) ======= -->
+<section class="sec" id="mais">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="mais.eyebrow">E não acabou</p>
+    <h2 class="head head--ink" data-i18n="mais.head">Tem mais</h2>
+    <div class="panel panel--tint mais">
+      <ul class="checks">
+        <li data-i18n="mais.f1">2 jogadores: 1P x 2P, cada um no seu controle</li>
+        <li data-i18n="mais.f2">EXTRAS: Treino, Pênaltis e 12 Scenarios, jogos históricos que começam no 2º tempo</li>
+        <li data-i18n="mais.f3">EDITOR: importe mods, times e estádios feitos no <a href="/mod">MOD STUDIO</a></li>
+        <li data-i18n="mais.f4">Impedimento, número nas costas e jogador parado que não fica estátua</li>
+        <li data-i18n="mais.f5">Balões de fala do técnico e dos jogadores, com opção FALAS para desligar</li>
+      </ul>
+      <p class="mais__note" data-i18n="demo.note"><strong>Atenção:</strong> a maioria das novidades desta página ainda não está na demo. Elas chegam na versão da Steam, em breve.</p>
+    </div>
+  </div>
+  <span class="pagenum" aria-hidden="true" data-i18n="pg.x7">Encarte G</span>
 </section>
 
 <!-- ======= DESAFIO (edição 3) ======= -->
@@ -545,7 +728,7 @@
       <p class="eyebrow eyebrow--light" data-i18n="man.eyebrow">Leia antes do apito</p>
       <h2 class="head" data-i18n="man.head">Manual do jogo</h2>
       <p class="deck deck--light" data-i18n="man.deck">Todos os comandos, tela por tela: teclado e controle no PC, toque e controle no Android.
-        Os modos, o Desafio, a Copa Brazuca, as regras do futsal e do paredão, e o que cada botão faz.</p>
+        Copa do Mundo, Champions, Master Liga, Rua, Areia, o Desafio, o EDITOR e o que cada botão faz.</p>
       <div class="cover__btns">
         <a class="btn btn--gold" href="/manual/pt" data-href-lang="/manual/{lang}" data-i18n="man.read">Ler o manual</a>
         <a class="btn btn--paper" href="/manual/FUTIBA_MANUAL_PT.pdf" data-href-lang="/manual/FUTIBA_MANUAL_{LANG}.pdf" download data-i18n="man.pdf">Baixar PDF</a>
@@ -591,6 +774,8 @@
 
     </div>
 
+    <p class="platnote" data-i18n="demo.note"><strong>Atenção:</strong> a maioria das novidades desta página ainda não está na demo. Elas chegam na versão da Steam, em breve.</p>
+
     <p class="platnote" data-i18n="dl.note"><strong>Nota de versão:</strong> o FUTIBA é desenvolvido primeiro no PC e só depois adaptado
       para Android. Por isso a melhor experiência hoje é a versão de Windows. As versões de Android estão jogáveis,
       mas nem sempre acompanham as atualizações mais recentes.</p>
@@ -628,12 +813,15 @@
 </footer>
 
 <!-- Lightbox -->
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<span id="pix-toast-text" data-i18n="pix.toast" hidden>chave pix copiada</span>
+
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox__close" id="lightbox-close" aria-label="Fechar imagem" data-i18n-aria="lb.close">✕</button>
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<script src="/i18n3.js"></script>
-<script src="/script.js" defer></script>
+<script src="/i18n3.js?v=5"></script>
+<script src="/script.js?v=5" defer></script>
 </body>
 </html>

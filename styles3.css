@@ -18,3 +18,30 @@
 @media (max-width:900px){
   .dz{grid-template-columns:1fr}
 }
+
+/* ============================================================
+   Edição 4: Copa do Mundo, Champions, Rua, Areia, Pix
+   ============================================================ */
+.btn--pix{background:var(--green);color:var(--paper-lt);cursor:pointer}
+.cover__note{max-width:46ch;margin:-12px 0 26px;font:600 15px/1.4 "Barlow Semi Condensed",sans-serif}
+.mais{padding:24px 28px;margin-top:26px}
+.mais .checks a{color:var(--blue);font-weight:700}
+.mais__note{margin:0;padding-top:14px;border-top:3px dashed var(--ink);font:600 16px/1.4 "Barlow Semi Condensed",sans-serif}
+.toast{
+  position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:90;
+  background:var(--ink);color:var(--gold-lt);
+  border:var(--line) solid var(--gold);box-shadow:var(--shadow-sm);
+  padding:12px 22px 9px;
+  font-family:"Bangers",Impact,sans-serif;font-size:24px;letter-spacing:.05em;
+}
+.toast[hidden]{display:none}
+
+/* Capa: baixar, manual e Pix na mesma linha. No celular só quebram se não couberem. */
+.cover .cover__btns{gap:10px}
+.cover .cover__btns .btn{font-size:clamp(16px,1.2vw,20px);padding:10px 14px 7px;white-space:nowrap}
+@media (min-width:901px){
+  .cover .cover__btns{flex-wrap:nowrap}
+}
+@media (max-width:640px){
+  .cover .cover__btns .btn{width:auto;flex:1 1 auto;padding:10px 10px 7px}
+}

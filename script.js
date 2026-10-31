@@ -115,4 +115,45 @@
 
     Array.prototype.forEach.call(targets, function (el) { io.observe(el); });
   }
+
+  /* ---------- 5. Pix: copia a chave e avisa --------------- */
+  var toast = document.getElementById("toast");
+  var toastTimer = 0;
+
+  function showToast(text) {
+    if (!toast) return;
+    toast.textContent = text;
+    toast.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.hidden = true; }, 2200);
+  }
+
+  function copyFallback(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) { /* ok */ }
+    document.body.removeChild(ta);
+  }
+
+  // Cópia síncrona primeiro (vale dentro do clique em qualquer navegador);
+  // a API nova reforça quando existe. O aviso não espera a promessa.
+  function copyText(text) {
+    copyFallback(text);
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).catch(function () { /* já copiou acima */ });
+    }
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-pix]"), function (btn) {
+    btn.addEventListener("click", function () {
+      var msg = document.getElementById("pix-toast-text");
+      copyText(btn.getAttribute("data-pix"));
+      showToast(msg ? msg.textContent : "chave pix copiada");
+    });
+  });
 })();
