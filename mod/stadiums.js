@@ -55,11 +55,11 @@
       t_concreto: "CONCRETO", t_saibro: "SAIBRO", t_cinza: "CINZA", t_terra: "TERRA", t_grama: "GRAMA",
       l_sky: "1. CÉU", l_stand: "2. ESTÁDIO", l_crowd: "3. TORCIDA", l_boards: "4. PLACAS", l_backs: "5. TORCIDA DE COSTAS", l_thumb: "6. MINIATURA",
       d_sky: "O QUE FICA LÁ NO ALTO, ATRÁS DE TUDO. UMA IMAGEM INTEIRA, SEM PARTES VAZIAS. UMA ARTE SÓ: DE TARDE E DE NOITE O JOGO ESCURECE SOZINHO.",
-      d_stand: "A ARQUIBANCADA, OS PRÉDIOS, AS ÁRVORES E OS REFLETORES. ONDE FOR CÉU, A IMAGEM TEM QUE SER ROSA-CHOQUE (#FF00FF): O ESTÚDIO APAGA ESSA COR E O CÉU APARECE ALI. SE QUISER, PODE DESENHAR A TORCIDA E AS PLACAS AQUI MESMO.",
-      d_crowd: "SÓ AS PESSOAS, COM TUDO EM VOLTA EM ROSA-CHOQUE. SE NÃO ENVIAR, ENTRA A TORCIDA DO JOGO NUMA FAIXA NO MEIO DA ARQUIBANCADA (VEJA NA PRÉVIA). SE VOCÊ JÁ DESENHOU A TORCIDA NO ESTÁDIO, ESCOLHA \"JÁ ESTÁ NO DESENHO\".",
-      d_boards: "UMA FILEIRA DE PLACAS DE PROPAGANDA EMBAIXO, O RESTO ROSA-CHOQUE. SE NÃO ENVIAR, ENTRAM AS PLACAS DO JOGO. JÁ DESENHOU NO ESTÁDIO? ESCOLHA \"JÁ ESTÁ NO DESENHO\".",
+      d_stand: "A ARQUIBANCADA, OS PRÉDIOS, AS ÁRVORES E OS REFLETORES. ONDE FOR CÉU, A IMAGEM TEM QUE SER TRANSPARENTE (PNG RECORTADO) OU ROSA-CHOQUE (#FF00FF): O ESTÚDIO APAGA ESSA COR E O CÉU APARECE ALI. SE QUISER, PODE DESENHAR A TORCIDA E AS PLACAS AQUI MESMO. NADA CORTADO NO ALTO: PRÉDIOS, ÁRVORES E REFLETORES INTEIROS, COM CONTORNO.",
+      d_crowd: "SÓ AS PESSOAS, COM TUDO EM VOLTA TRANSPARENTE (PNG RECORTADO) OU EM ROSA-CHOQUE. A FILEIRA DE CIMA TEM QUE TER AS CABEÇAS INTEIRAS (NADA CORTADO), COM UM CONTORNO ESCURO NO TOPO. SE NÃO ENVIAR, ENTRA A TORCIDA DO JOGO NUMA FAIXA NO MEIO DA ARQUIBANCADA, COM BEIRADA (VEJA NA PRÉVIA). SE VOCÊ JÁ DESENHOU A TORCIDA NO ESTÁDIO, ESCOLHA \"JÁ ESTÁ NO DESENHO\".",
+      d_boards: "UMA FILEIRA DE PLACAS DE PROPAGANDA EMBAIXO, O RESTO TRANSPARENTE OU ROSA-CHOQUE. SE NÃO ENVIAR, ENTRAM AS PLACAS DO JOGO. JÁ DESENHOU NO ESTÁDIO? ESCOLHA \"JÁ ESTÁ NO DESENHO\".",
       d_backs: "A TORCIDA DO LADO DE CÁ, DE COSTAS PARA VOCÊ. APARECE EMBAIXO DA TELA QUANDO A BOLA DESCE. A IMAGEM INTEIRA É GENTE DE COSTAS. SE NÃO ENVIAR, ENTRA A DO JOGO. (ELA NÃO APARECE NA PRÉVIA, QUE MOSTRA O ALTO DO CAMPO.)",
-      d_thumb: "O DESENHO PEQUENO QUE APARECE NA TELA DO PRÉ-JOGO (ONDE VOCÊ ESCOLHE MANDANTE, ESTÁDIO E HORÁRIO): O ESTÁDIO INTEIRO VISTO DO ALTO, DE LADO, IGUAL AOS DO JOGO (VEJA O EXEMPLO). FUNDO ROSA-CHOQUE. NÃO É FOTO. SE NÃO ENVIAR, ENTRA UMA MINIATURA PADRÃO.",
+      d_thumb: "O DESENHO PEQUENO QUE APARECE NA TELA DO PRÉ-JOGO (ONDE VOCÊ ESCOLHE MANDANTE, ESTÁDIO E HORÁRIO): O ESTÁDIO INTEIRO VISTO DO ALTO, DE LADO, IGUAL AOS DO JOGO (VEJA O EXEMPLO). FUNDO TRANSPARENTE OU ROSA-CHOQUE. NÃO É FOTO. SE NÃO ENVIAR, ENTRA UMA MINIATURA PADRÃO.",
       m_gen: "DO JOGO", m_own: "MINHA (ENVIAR)", m_none: "JÁ ESTÁ NO DESENHO",
       up: "ENVIAR IMAGEM", rm: "TIRAR", copy: "COPIAR PROMPT", ex: "VER EXEMPLO", copied: "PROMPT COPIADO. COLE NA SUA IA (MANDE O EXEMPLO JUNTO).",
       ok: "OK: {w}X{h}, {c} CORES.", none_up: "NADA ENVIADO.",
@@ -67,9 +67,9 @@
       e_ratio: "FORMATO ERRADO: ESTA PARTE É {want} (LARGURA X ALTURA) E A SUA IMAGEM É {got}. PEÇA À IA UMA IMAGEM DESTE FORMATO E REVISE AS MEDIDAS.",
       e_sky_holes: "O CÉU TEM PARTES TRANSPARENTES. ELE PRECISA SER UMA IMAGEM INTEIRA.",
       w_stand_nosky: "AVISO: NENHUMA PARTE ROSA-CHOQUE. O CÉU NÃO VAI APARECER (TUDO BEM SE VOCÊ DESENHOU O CÉU AQUI).",
-      e_cover: "ESTA IMAGEM COBRE O ESTÁDIO TODO. PINTE DE ROSA-CHOQUE (#FF00FF) TUDO QUE NÃO FOR {what}.",
+      e_cover: "ESTA IMAGEM COBRE O ESTÁDIO TODO. DEIXE TRANSPARENTE (OU PINTE DE ROSA-CHOQUE #FF00FF) TUDO QUE NÃO FOR {what}.",
       w_crowd: "TORCIDA", w_boards: "PLACA",
-      e_thumb_bg: "A MINIATURA PRECISA DO FUNDO ROSA-CHOQUE (#FF00FF) EM VOLTA DO ESTÁDIO. NÃO É FOTO: É O DESENHO DO ESTÁDIO VISTO DO ALTO.",
+      e_thumb_bg: "A MINIATURA PRECISA DE FUNDO TRANSPARENTE OU ROSA-CHOQUE (#FF00FF) EM VOLTA DO ESTÁDIO. NÃO É FOTO: É O DESENHO DO ESTÁDIO VISTO DO ALTO.",
       e_big: "A IMAGEM FICOU PESADA DEMAIS (MAIS DE 1 MB). USE MENOS DETALHES OU MENOS CORES.",
       prev: "PRÉVIA (COMO FICA NO JOGO, TELA 320X240)", gif: "BAIXAR GIF DA PRÉVIA",
       p_missing: "FALTA O CÉU OU O ESTÁDIO: NO JOGO ELE USA O ESTÁDIO PADRÃO ATÉ VOCÊ ENVIAR OS DOIS.",
@@ -88,11 +88,11 @@
       t_concreto: "CONCRETE", t_saibro: "CLAY", t_cinza: "GRAY", t_terra: "DIRT", t_grama: "GRASS",
       l_sky: "1. SKY", l_stand: "2. STADIUM", l_crowd: "3. CROWD", l_boards: "4. BOARDS", l_backs: "5. CROWD FROM BEHIND", l_thumb: "6. THUMBNAIL",
       d_sky: "WHAT IS UP HIGH, BEHIND EVERYTHING. ONE FULL IMAGE, NO EMPTY PARTS. ONE ART ONLY: IN THE AFTERNOON AND AT NIGHT THE GAME MAKES IT DARKER BY ITSELF.",
-      d_stand: "THE STANDS, BUILDINGS, TREES AND FLOODLIGHTS. WHERE THE SKY GOES, THE IMAGE MUST BE HOT PINK (#FF00FF): THE STUDIO ERASES THAT COLOR AND THE SKY SHOWS THERE. IF YOU WANT, YOU CAN DRAW THE CROWD AND THE BOARDS HERE TOO.",
-      d_crowd: "ONLY THE PEOPLE, WITH EVERYTHING AROUND THEM IN HOT PINK. IF YOU DON'T UPLOAD IT, THE GAME'S CROWD FILLS A BAND IN THE MIDDLE OF THE STANDS (SEE THE PREVIEW). ALREADY DREW THE CROWD IN THE STADIUM? PICK \"ALREADY IN THE DRAWING\".",
-      d_boards: "ONE ROW OF ADVERTISING BOARDS AT THE BOTTOM, THE REST HOT PINK. IF YOU DON'T UPLOAD IT, THE GAME'S BOARDS ARE USED. ALREADY DREW THEM IN THE STADIUM? PICK \"ALREADY IN THE DRAWING\".",
+      d_stand: "THE STANDS, BUILDINGS, TREES AND FLOODLIGHTS. WHERE THE SKY GOES, THE IMAGE MUST BE TRANSPARENT (CUT-OUT PNG) OR HOT PINK (#FF00FF): THE STUDIO ERASES THAT COLOR AND THE SKY SHOWS THERE. IF YOU WANT, YOU CAN DRAW THE CROWD AND THE BOARDS HERE TOO. NOTHING CUT AT THE TOP: BUILDINGS, TREES AND FLOODLIGHTS WHOLE, WITH AN OUTLINE.",
+      d_crowd: "ONLY THE PEOPLE, WITH EVERYTHING AROUND THEM TRANSPARENT (CUT-OUT PNG) OR HOT PINK. THE TOP ROW MUST HAVE WHOLE HEADS (NOTHING CUT), WITH A DARK OUTLINE ON TOP. IF YOU DON'T UPLOAD IT, THE GAME'S CROWD FILLS A BAND IN THE MIDDLE OF THE STANDS, WITH A RIM (SEE THE PREVIEW). ALREADY DREW THE CROWD IN THE STADIUM? PICK \"ALREADY IN THE DRAWING\".",
+      d_boards: "ONE ROW OF ADVERTISING BOARDS AT THE BOTTOM, THE REST TRANSPARENT OR HOT PINK. IF YOU DON'T UPLOAD IT, THE GAME'S BOARDS ARE USED. ALREADY DREW THEM IN THE STADIUM? PICK \"ALREADY IN THE DRAWING\".",
       d_backs: "THE CROWD ON THIS SIDE, WITH THEIR BACKS TO YOU. IT SHOWS AT THE BOTTOM OF THE SCREEN WHEN THE BALL GOES DOWN. THE WHOLE IMAGE IS PEOPLE FROM BEHIND. IF YOU DON'T UPLOAD IT, THE GAME'S ONE IS USED. (IT IS NOT IN THE PREVIEW, WHICH SHOWS THE TOP OF THE PITCH.)",
-      d_thumb: "THE SMALL DRAWING SHOWN ON THE PRE-MATCH SCREEN (WHERE YOU PICK HOME/AWAY, STADIUM AND TIME): THE WHOLE STADIUM SEEN FROM ABOVE, AT AN ANGLE, LIKE THE GAME'S ONES (SEE THE EXAMPLE). HOT PINK BACKGROUND. NOT A PHOTO. IF YOU DON'T UPLOAD IT, A DEFAULT ONE IS USED.",
+      d_thumb: "THE SMALL DRAWING SHOWN ON THE PRE-MATCH SCREEN (WHERE YOU PICK HOME/AWAY, STADIUM AND TIME): THE WHOLE STADIUM SEEN FROM ABOVE, AT AN ANGLE, LIKE THE GAME'S ONES (SEE THE EXAMPLE). TRANSPARENT OR HOT PINK BACKGROUND. NOT A PHOTO. IF YOU DON'T UPLOAD IT, A DEFAULT ONE IS USED.",
       m_gen: "FROM THE GAME", m_own: "MINE (UPLOAD)", m_none: "ALREADY IN THE DRAWING",
       up: "UPLOAD IMAGE", rm: "REMOVE", copy: "COPY PROMPT", ex: "SEE EXAMPLE", copied: "PROMPT COPIED. PASTE IT IN YOUR AI (SEND THE EXAMPLE WITH IT).",
       ok: "OK: {w}X{h}, {c} COLORS.", none_up: "NOTHING UPLOADED.",
@@ -100,9 +100,9 @@
       e_ratio: "WRONG SHAPE: THIS PART IS {want} (WIDTH X HEIGHT) AND YOUR IMAGE IS {got}. ASK YOUR AI FOR AN IMAGE WITH THIS SHAPE AND CHECK THE SIZES.",
       e_sky_holes: "THE SKY HAS SEE-THROUGH PARTS. IT MUST BE ONE FULL IMAGE.",
       w_stand_nosky: "HEADS UP: NO HOT PINK PART. THE SKY WON'T SHOW (FINE IF YOU DREW THE SKY HERE).",
-      e_cover: "THIS IMAGE COVERS THE WHOLE STADIUM. PAINT EVERYTHING THAT IS NOT {what} HOT PINK (#FF00FF).",
+      e_cover: "THIS IMAGE COVERS THE WHOLE STADIUM. MAKE EVERYTHING THAT IS NOT {what} TRANSPARENT (OR HOT PINK #FF00FF).",
       w_crowd: "CROWD", w_boards: "A BOARD",
-      e_thumb_bg: "THE THUMBNAIL NEEDS THE HOT PINK BACKGROUND (#FF00FF) AROUND THE STADIUM. IT IS NOT A PHOTO: IT IS A DRAWING OF THE STADIUM SEEN FROM ABOVE.",
+      e_thumb_bg: "THE THUMBNAIL NEEDS A TRANSPARENT OR HOT PINK BACKGROUND (#FF00FF) AROUND THE STADIUM. IT IS NOT A PHOTO: IT IS A DRAWING OF THE STADIUM SEEN FROM ABOVE.",
       e_big: "THE IMAGE GOT TOO HEAVY (OVER 1 MB). USE LESS DETAIL OR FEWER COLORS.",
       prev: "PREVIEW (HOW IT LOOKS IN THE GAME, 320X240 SCREEN)", gif: "DOWNLOAD PREVIEW GIF",
       p_missing: "THE SKY OR THE STADIUM IS MISSING: IN THE GAME IT USES THE DEFAULT STADIUM UNTIL YOU UPLOAD BOTH.",
@@ -121,11 +121,11 @@
       t_concreto: "CEMENTO", t_saibro: "ARCILLA", t_cinza: "GRIS", t_terra: "TIERRA", t_grama: "CÉSPED",
       l_sky: "1. CIELO", l_stand: "2. ESTADIO", l_crowd: "3. HINCHADA", l_boards: "4. VALLAS", l_backs: "5. HINCHADA DE ESPALDAS", l_thumb: "6. MINIATURA",
       d_sky: "LO QUE ESTÁ ARRIBA, DETRÁS DE TODO. UNA IMAGEN ENTERA, SIN PARTES VACÍAS. UN SOLO ARTE: DE TARDE Y DE NOCHE EL JUEGO LO OSCURECE SOLO.",
-      d_stand: "LA TRIBUNA, LOS EDIFICIOS, LOS ÁRBOLES Y LOS FOCOS. DONDE VA EL CIELO, LA IMAGEN TIENE QUE SER ROSA FUERTE (#FF00FF): EL ESTUDIO BORRA ESE COLOR Y AHÍ APARECE EL CIELO. SI QUIERES, PUEDES DIBUJAR LA HINCHADA Y LAS VALLAS AQUÍ MISMO.",
-      d_crowd: "SOLO LAS PERSONAS, CON TODO ALREDEDOR EN ROSA FUERTE. SI NO LA SUBES, ENTRA LA HINCHADA DEL JUEGO EN UNA FRANJA EN EL MEDIO DE LA TRIBUNA (MIRA LA VISTA PREVIA). ¿YA LA DIBUJASTE EN EL ESTADIO? ELIGE \"YA ESTÁ EN EL DIBUJO\".",
-      d_boards: "UNA FILA DE VALLAS PUBLICITARIAS ABAJO, EL RESTO EN ROSA FUERTE. SI NO LAS SUBES, ENTRAN LAS DEL JUEGO. ¿YA LAS DIBUJASTE EN EL ESTADIO? ELIGE \"YA ESTÁ EN EL DIBUJO\".",
+      d_stand: "LA TRIBUNA, LOS EDIFICIOS, LOS ÁRBOLES Y LOS FOCOS. DONDE VA EL CIELO, LA IMAGEN TIENE QUE SER TRANSPARENTE (PNG RECORTADO) O ROSA FUERTE (#FF00FF): EL ESTUDIO BORRA ESE COLOR Y AHÍ APARECE EL CIELO. SI QUIERES, PUEDES DIBUJAR LA HINCHADA Y LAS VALLAS AQUÍ MISMO. NADA CORTADO ARRIBA: EDIFICIOS, ÁRBOLES Y FOCOS ENTEROS, CON CONTORNO.",
+      d_crowd: "SOLO LAS PERSONAS, CON TODO ALREDEDOR TRANSPARENTE (PNG RECORTADO) O EN ROSA FUERTE. LA FILA DE ARRIBA TIENE QUE TENER LAS CABEZAS ENTERAS (NADA CORTADO), CON UN CONTORNO OSCURO ARRIBA. SI NO LA SUBES, ENTRA LA HINCHADA DEL JUEGO EN UNA FRANJA EN EL MEDIO DE LA TRIBUNA, CON BORDE (MIRA LA VISTA PREVIA). ¿YA LA DIBUJASTE EN EL ESTADIO? ELIGE \"YA ESTÁ EN EL DIBUJO\".",
+      d_boards: "UNA FILA DE VALLAS PUBLICITARIAS ABAJO, EL RESTO TRANSPARENTE O EN ROSA FUERTE. SI NO LAS SUBES, ENTRAN LAS DEL JUEGO. ¿YA LAS DIBUJASTE EN EL ESTADIO? ELIGE \"YA ESTÁ EN EL DIBUJO\".",
       d_backs: "LA HINCHADA DE ESTE LADO, DE ESPALDAS A TI. APARECE ABAJO EN LA PANTALLA CUANDO EL BALÓN BAJA. LA IMAGEN ENTERA ES GENTE DE ESPALDAS. SI NO LA SUBES, ENTRA LA DEL JUEGO. (NO APARECE EN LA VISTA PREVIA, QUE MUESTRA LA PARTE DE ARRIBA DEL CAMPO.)",
-      d_thumb: "EL DIBUJO PEQUEÑO QUE APARECE EN LA PANTALLA DEL PREVIO (DONDE ELIGES LOCAL/VISITANTE, ESTADIO Y HORARIO): EL ESTADIO ENTERO VISTO DESDE ARRIBA, EN DIAGONAL, COMO LOS DEL JUEGO (MIRA EL EJEMPLO). FONDO ROSA FUERTE. NO ES UNA FOTO. SI NO LO SUBES, ENTRA UNA MINIATURA ESTÁNDAR.",
+      d_thumb: "EL DIBUJO PEQUEÑO QUE APARECE EN LA PANTALLA DEL PREVIO (DONDE ELIGES LOCAL/VISITANTE, ESTADIO Y HORARIO): EL ESTADIO ENTERO VISTO DESDE ARRIBA, EN DIAGONAL, COMO LOS DEL JUEGO (MIRA EL EJEMPLO). FONDO TRANSPARENTE O ROSA FUERTE. NO ES UNA FOTO. SI NO LO SUBES, ENTRA UNA MINIATURA ESTÁNDAR.",
       m_gen: "DEL JUEGO", m_own: "MÍA (SUBIR)", m_none: "YA ESTÁ EN EL DIBUJO",
       up: "SUBIR IMAGEN", rm: "QUITAR", copy: "COPIAR PROMPT", ex: "VER EJEMPLO", copied: "PROMPT COPIADO. PÉGALO EN TU IA (MANDA EL EJEMPLO JUNTO).",
       ok: "OK: {w}X{h}, {c} COLORES.", none_up: "NADA SUBIDO.",
@@ -133,9 +133,9 @@
       e_ratio: "FORMATO EQUIVOCADO: ESTA PARTE ES {want} (ANCHO X ALTO) Y TU IMAGEN ES {got}. PIDE A LA IA UNA IMAGEN DE ESTE FORMATO Y REVISA LAS MEDIDAS.",
       e_sky_holes: "EL CIELO TIENE PARTES TRANSPARENTES. TIENE QUE SER UNA IMAGEN ENTERA.",
       w_stand_nosky: "AVISO: NINGUNA PARTE EN ROSA FUERTE. EL CIELO NO VA A APARECER (ESTÁ BIEN SI DIBUJASTE EL CIELO AQUÍ).",
-      e_cover: "ESTA IMAGEN TAPA TODO EL ESTADIO. PINTA DE ROSA FUERTE (#FF00FF) TODO LO QUE NO SEA {what}.",
+      e_cover: "ESTA IMAGEN TAPA TODO EL ESTADIO. DEJA TRANSPARENTE (O PINTA DE ROSA FUERTE #FF00FF) TODO LO QUE NO SEA {what}.",
       w_crowd: "HINCHADA", w_boards: "VALLA",
-      e_thumb_bg: "LA MINIATURA NECESITA EL FONDO ROSA FUERTE (#FF00FF) ALREDEDOR DEL ESTADIO. NO ES UNA FOTO: ES EL DIBUJO DEL ESTADIO VISTO DESDE ARRIBA.",
+      e_thumb_bg: "LA MINIATURA NECESITA FONDO TRANSPARENTE O ROSA FUERTE (#FF00FF) ALREDEDOR DEL ESTADIO. NO ES UNA FOTO: ES EL DIBUJO DEL ESTADIO VISTO DESDE ARRIBA.",
       e_big: "LA IMAGEN QUEDÓ MUY PESADA (MÁS DE 1 MB). USA MENOS DETALLES O MENOS COLORES.",
       prev: "VISTA PREVIA (CÓMO QUEDA EN EL JUEGO, PANTALLA 320X240)", gif: "BAJAR GIF DE LA VISTA PREVIA",
       p_missing: "FALTA EL CIELO O EL ESTADIO: EN EL JUEGO USA EL ESTADIO ESTÁNDAR HASTA QUE SUBAS LOS DOS.",
@@ -149,28 +149,47 @@
   }
 
   // ---------- prompts para a IA (em inglês, como os outros do /mod) ----------
-  var EXACT = function (w, h) { return "FINAL SIZE MUST BE EXACTLY " + w + "x" + h + " PIXELS (width x height), or a bigger image with exactly the same proportion. "; };
-  var STYLE = "16-bit retro arcade pixel art, like Neo Geo and Super Nintendo football games (use the attached example only as a style reference): " +
-    "square crisp pixels, dark outlines, flat colors with block shading, at most 64 colors, no gradients, no blur, no photo textures. ";
-  var P = {
-    sky: EXACT(920, 482) + "Draw the SKY behind a football stadium, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
-      "Only sky: clouds, sun or stars, and far away landscape at the very bottom if you want (city skyline, hills, sea). No stadium, no people. " +
-      "The whole image must be filled, no transparent parts. Daytime light: the game darkens it by itself for the afternoon and the night.",
-    stand: EXACT(920, 482) + "Draw the long side of a football stadium seen from the pitch, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
-      "Stands, roof or terraces, buildings, trees and floodlights. The bottom of the stands must touch the bottom edge of the image. " +
-      "Everything that would be SKY must be ONE flat solid hot pink color #FF00FF (it will be cut out). Leave the stands empty if you will send a separate crowd image. " +
-      "Keep the bottom 10% of the image simple (a wall or a fence): the advertising boards go there.",
-    crowd: EXACT(920, 482) + "Draw a wide band of football fans standing shoulder to shoulder in many rows, seen from the pitch, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
-      "The fans fill the whole width, between 55% and 90% of the image height (from the top). Arms up, flags and scarves in the club colors: [CLUB COLORS]. " +
-      "Everything that is not a person must be ONE flat solid hot pink color #FF00FF (it will be cut out).",
-    boards: EXACT(920, 482) + "Draw one row of pitchside advertising boards, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
-      "6 to 8 boards side by side, filling the whole width, in the bottom 10% of the image only (from 90% to 100% of the height). Bold colors, a simple pictogram and at most 2 short words on each: [YOUR BRANDS OR WORDS]. " +
-      "Everything above the boards must be ONE flat solid hot pink color #FF00FF (it will be cut out).",
-    backs: EXACT(490, 470) + "Draw football fans seen FROM BEHIND (backs of heads and shoulders), many rows, filling the whole image, with exactly 490x470 proportions (almost square). " + STYLE +
-      "Seen from above and behind, looking at the pitch. Shirts and scarves in the club colors: [CLUB COLORS]. The whole image is people, no empty parts.",
-    thumb: EXACT(50, 34) + "Draw a small icon of a WHOLE football stadium seen from above at a 3/4 angle (isometric-like), like the attached examples: the oval or rectangular stands around a green pitch, a few floodlight towers. " + STYLE +
-      "The stadium fills the image, about 1.5:1 (wider than tall). Background: ONE flat solid hot pink color #FF00FF (it will be cut out). No sky, no ground around it, no text. It will be shrunk to 50x34 pixels, so keep it bold and simple."
+  // Prompts para a IA, na língua do site. Medida exata sempre no começo; fundo
+  // transparente (PNG recortado) ou, se a IA não fizer, rosa-choque #FF00FF.
+  var PT = {
+    exact: "TAMANHO FINAL EXATO: {w}x{h} PIXELS (LARGURA x ALTURA), OU UMA IMAGEM MAIOR COM A MESMA PROPORÇÃO. ",
+    style: "Pixel art retrô de 16 bits, como os jogos de futebol de Neo Geo e Super Nintendo (use o exemplo anexo só como referência de estilo): pixels quadrados e nítidos, contorno escuro, cores chapadas com sombra em blocos, sem degradê, sem desfoque, sem textura de foto. ",
+    cut: "Entregue em PNG com fundo TRANSPARENTE (recortado). Se você não conseguir transparência, pinte o fundo de UMA cor rosa-choque lisa #FF00FF (ela será recortada). ",
+    sky: "Desenhe o CÉU atrás de um estádio de futebol, imagem larga na proporção exata de 920x482 (cerca de 1,9:1). Só céu: nuvens, sol ou estrelas e, se quiser, uma paisagem bem longe na parte de baixo (cidade, morros, mar). Sem estádio, sem pessoas. A imagem inteira preenchida, sem partes transparentes. Luz de dia: o jogo escurece sozinho para a tarde e a noite.",
+    stand: "Desenhe o lado comprido de um estádio de futebol visto do campo, imagem larga na proporção exata de 920x482 (cerca de 1,9:1). Arquibancada, cobertura ou degraus, prédios, árvores e refletores; a base da arquibancada encosta na borda de baixo. Nada cortado no alto: prédios, árvores e refletores inteiros, cada um com contorno escuro. O CÉU fica transparente (ou rosa-choque). Deixe a arquibancada vazia se for mandar a torcida separada. Os 10% de baixo simples (muro ou alambrado): ali entram as placas.",
+    crowd: "Desenhe uma faixa larga de torcedores lado a lado em várias fileiras, vista do campo, imagem larga na proporção exata de 920x482 (cerca de 1,9:1). A torcida ocupa toda a largura, entre 55% e 90% da altura (de cima para baixo). Braços para cima, bandeiras e cachecóis nas cores do clube: [CORES DO CLUBE]. A FILEIRA DE CIMA com as cabeças INTEIRAS (nada cortado) e um contorno escuro ou uma mureta no topo. Tudo que não for pessoa fica transparente (ou rosa-choque).",
+    boards: "Desenhe uma fileira de placas de propaganda à beira do campo, imagem larga na proporção exata de 920x482 (cerca de 1,9:1). De 6 a 8 placas lado a lado, ocupando toda a largura, só nos 10% de baixo (de 90% a 100% da altura). Cores fortes, um pictograma simples e no máximo 2 palavras curtas em cada: [SUAS MARCAS OU PALAVRAS]. Tudo acima das placas fica transparente (ou rosa-choque).",
+    backs: "Desenhe torcedores vistos DE COSTAS (nuca e ombros), várias fileiras, preenchendo a imagem inteira, na proporção exata de 490x470 (quase quadrada). Vistos de cima e de trás, olhando para o campo. Camisas e cachecóis nas cores do clube: [CORES DO CLUBE]. A fileira de cima com cabeças e ombros inteiros (nada cortado), com contorno escuro. A imagem inteira é gente, sem partes vazias.",
+    thumb: "Desenhe um ícone pequeno de um estádio de futebol INTEIRO visto do alto, de lado (quase isométrico), como os exemplos anexos: arquibancada oval ou retangular em volta de um campo verde e alguns refletores. O estádio ocupa a imagem, cerca de 1,5:1 (mais largo que alto). Sem céu, sem chão em volta, sem texto. Ele será reduzido para 50x34 pixels: forte e simples."
   };
+  var EN = {
+    exact: "EXACT FINAL SIZE: {w}x{h} PIXELS (WIDTH x HEIGHT), OR A BIGGER IMAGE WITH EXACTLY THE SAME PROPORTION. ",
+    style: "16-bit retro arcade pixel art, like Neo Geo and Super Nintendo football games (use the attached example only as a style reference): square crisp pixels, dark outlines, flat colors with block shading, no gradients, no blur, no photo textures. ",
+    cut: "Deliver a PNG with a TRANSPARENT background (cut out). If you can't do transparency, paint the background ONE flat solid hot pink color #FF00FF (it will be cut out). ",
+    sky: "Draw the SKY behind a football stadium, a wide image with exactly 920x482 proportions (about 1.9:1). Only sky: clouds, sun or stars and, if you want, a far away landscape at the very bottom (city, hills, sea). No stadium, no people. The whole image filled, no transparent parts. Daytime light: the game darkens it by itself for the afternoon and the night.",
+    stand: "Draw the long side of a football stadium seen from the pitch, a wide image with exactly 920x482 proportions (about 1.9:1). Stands, roof or terraces, buildings, trees and floodlights; the bottom of the stands touches the bottom edge. Nothing cut at the top: buildings, trees and floodlights complete, each with a dark outline. The SKY is transparent (or hot pink). Leave the stands empty if you will send a separate crowd. Keep the bottom 10% simple (a wall or a fence): the boards go there.",
+    crowd: "Draw a wide band of football fans standing shoulder to shoulder in many rows, seen from the pitch, a wide image with exactly 920x482 proportions (about 1.9:1). The fans fill the whole width, between 55% and 90% of the height (from the top). Arms up, flags and scarves in the club colors: [CLUB COLORS]. The TOP ROW with WHOLE heads (nothing cut) and a dark outline or a railing along the top. Everything that is not a person is transparent (or hot pink).",
+    boards: "Draw one row of pitchside advertising boards, a wide image with exactly 920x482 proportions (about 1.9:1). 6 to 8 boards side by side, filling the whole width, only in the bottom 10% (from 90% to 100% of the height). Bold colors, a simple pictogram and at most 2 short words on each: [YOUR BRANDS OR WORDS]. Everything above the boards is transparent (or hot pink).",
+    backs: "Draw football fans seen FROM BEHIND (backs of heads and shoulders), many rows, filling the whole image, with exactly 490x470 proportions (almost square). Seen from above and behind, looking at the pitch. Shirts and scarves in the club colors: [CLUB COLORS]. The top row with whole heads and shoulders (nothing cut), with a dark outline. The whole image is people, no empty parts.",
+    thumb: "Draw a small icon of a WHOLE football stadium seen from above at a 3/4 angle (isometric-like), like the attached examples: oval or rectangular stands around a green pitch and a few floodlights. The stadium fills the image, about 1.5:1 (wider than tall). No sky, no ground around it, no text. It will be shrunk to 50x34 pixels: bold and simple."
+  };
+  var ES = {
+    exact: "TAMAÑO FINAL EXACTO: {w}x{h} PÍXELES (ANCHO x ALTO), O UNA IMAGEN MÁS GRANDE CON LA MISMA PROPORCIÓN. ",
+    style: "Pixel art retro de 16 bits, como los juegos de fútbol de Neo Geo y Super Nintendo (usa el ejemplo adjunto solo como referencia de estilo): píxeles cuadrados y nítidos, contorno oscuro, colores planos con sombra en bloques, sin degradados, sin desenfoque, sin texturas de foto. ",
+    cut: "Entrégalo en PNG con fondo TRANSPARENTE (recortado). Si no puedes hacer transparencia, pinta el fondo de UN color rosa fuerte liso #FF00FF (se recortará). ",
+    sky: "Dibuja el CIELO detrás de un estadio de fútbol, imagen ancha en la proporción exacta de 920x482 (cerca de 1,9:1). Solo cielo: nubes, sol o estrellas y, si quieres, un paisaje muy lejano en la parte de abajo (ciudad, cerros, mar). Sin estadio, sin personas. La imagen entera llena, sin partes transparentes. Luz de día: el juego la oscurece solo para la tarde y la noche.",
+    stand: "Dibuja el lado largo de un estadio de fútbol visto desde el campo, imagen ancha en la proporción exacta de 920x482 (cerca de 1,9:1). Tribuna, techo o gradas, edificios, árboles y focos; la base de la tribuna toca el borde de abajo. Nada cortado arriba: edificios, árboles y focos enteros, cada uno con contorno oscuro. El CIELO queda transparente (o rosa fuerte). Deja la tribuna vacía si vas a mandar la hinchada aparte. El 10% de abajo simple (muro o alambrado): ahí van las vallas.",
+    crowd: "Dibuja una franja ancha de hinchas uno al lado del otro en varias filas, vista desde el campo, imagen ancha en la proporción exacta de 920x482 (cerca de 1,9:1). La hinchada ocupa todo el ancho, entre el 55% y el 90% de la altura (de arriba hacia abajo). Brazos arriba, banderas y bufandas con los colores del club: [COLORES DEL CLUB]. La FILA DE ARRIBA con las cabezas ENTERAS (nada cortado) y un contorno oscuro o un murito arriba. Todo lo que no sea persona queda transparente (o rosa fuerte).",
+    boards: "Dibuja una fila de vallas publicitarias junto al campo, imagen ancha en la proporción exacta de 920x482 (cerca de 1,9:1). De 6 a 8 vallas una al lado de la otra, ocupando todo el ancho, solo en el 10% de abajo (del 90% al 100% de la altura). Colores fuertes, un pictograma simple y como máximo 2 palabras cortas en cada una: [TUS MARCAS O PALABRAS]. Todo lo que está arriba de las vallas queda transparente (o rosa fuerte).",
+    backs: "Dibuja hinchas vistos DE ESPALDAS (nuca y hombros), varias filas, llenando la imagen entera, en la proporción exacta de 490x470 (casi cuadrada). Vistos desde arriba y desde atrás, mirando al campo. Camisetas y bufandas con los colores del club: [COLORES DEL CLUB]. La fila de arriba con cabezas y hombros enteros (nada cortado), con contorno oscuro. La imagen entera es gente, sin partes vacías.",
+    thumb: "Dibuja un ícono pequeño de un estadio de fútbol ENTERO visto desde arriba, en diagonal (casi isométrico), como los ejemplos adjuntos: tribuna ovalada o rectangular alrededor de un campo verde y algunos focos. El estadio ocupa la imagen, cerca de 1,5:1 (más ancho que alto). Sin cielo, sin suelo alrededor, sin texto. Se reducirá a 50x34 píxeles: fuerte y simple."
+  };
+  var SIZE = { sky: [920, 482], stand: [920, 482], crowd: [920, 482], boards: [920, 482], backs: [490, 470], thumb: [50, 34] };
+  function promptFor(k) {
+    var T = { pt: PT, en: EN, es: ES }[M.lang()] || PT;
+    var cut = (k === "sky" || k === "backs") ? "" : T.cut;
+    return T.exact.replace("{w}", SIZE[k][0]).replace("{h}", SIZE[k][1]) + T[k] + " " + T.style + cut;
+  }
 
   // ---------- estado (vai no mesmo rascunho do estúdio) ----------
   var cur = 0;
@@ -203,25 +222,39 @@
       if (Math.abs(r / rw - 1) > 0.30) {
         throw { msg: tx("e_ratio", { want: want[0] + "X" + want[1], got: bm.width + "X" + bm.height }) };
       }
-      // corta o excesso no centro e reduz para o tamanho certo
-      var sw = bm.width, sh = bm.height;
-      if (r > rw) sw = Math.round(bm.height * rw); else sh = Math.round(bm.width / rw);
+      // 31/out (Daniel: "faixas na torcida e no cenário"): nada de reduzir
+      // cores (a redução fazia degraus no céu e tirava o tom de pele da
+      // torcida). 1) apaga o rosa-choque NA IMAGEM ORIGINAL (sem borda rosada);
+      // 2) na medida exata a imagem entra intacta, pixel por pixel; maior, só
+      // reduz (mesma proporção, corte no centro), sem mexer nas cores.
+      var src = document.createElement("canvas"); src.width = bm.width; src.height = bm.height;
+      var gs = src.getContext("2d"); gs.drawImage(bm, 0, 0);
+      if (L[layer].key) {
+        var sd = gs.getImageData(0, 0, bm.width, bm.height), sp = sd.data;
+        for (var i = 0; i < sp.length; i += 4) {
+          if (sp[i] > 190 && sp[i + 1] < 90 && sp[i + 2] > 190) sp[i + 3] = 0;
+        }
+        gs.putImageData(sd, 0, 0);
+      }
       var c = document.createElement("canvas"); c.width = want[0]; c.height = want[1];
       var g = c.getContext("2d");
-      g.imageSmoothingEnabled = true; g.imageSmoothingQuality = "high";
-      g.drawImage(bm, (bm.width - sw) / 2, (bm.height - sh) / 2, sw, sh, 0, 0, want[0], want[1]);
+      if (bm.width === want[0] && bm.height === want[1]) {
+        g.drawImage(src, 0, 0);
+      } else {
+        var sw = bm.width, sh = bm.height;
+        if (r > rw) sw = Math.round(bm.height * rw); else sh = Math.round(bm.width / rw);
+        g.imageSmoothingEnabled = true; g.imageSmoothingQuality = "high";
+        g.drawImage(src, (bm.width - sw) / 2, (bm.height - sh) / 2, sw, sh, 0, 0, want[0], want[1]);
+      }
       var d = g.getImageData(0, 0, want[0], want[1]);
-      var px = d.data, n = want[0] * want[1], clear = 0;
-      if (L[layer].key) {
-        for (var i = 0; i < n; i++) {   // rosa-choque (com a margem da IA) vira transparente
-          var q = i * 4;
-          if (px[q] > 190 && px[q + 1] < 90 && px[q + 2] > 190) px[q + 3] = 0;
-        }
+      var px = d.data, n = want[0] * want[1], clear = 0, seen = {}, colors = 0;
+      for (var j2 = 0; j2 < n; j2++) {
+        var q2 = j2 * 4;
+        if (px[q2 + 3] < 128) { px[q2] = px[q2 + 1] = px[q2 + 2] = px[q2 + 3] = 0; clear++; continue; }
+        px[q2 + 3] = 255;
+        var key = px[q2] << 16 | px[q2 + 1] << 8 | px[q2 + 2];
+        if (!seen[key]) { seen[key] = 1; colors++; }
       }
-      for (var j = 0; j < n; j++) {
-        if (px[j * 4 + 3] < 128) { px[j * 4 + 3] = 0; clear++; } else px[j * 4 + 3] = 255;
-      }
-      var colors = quantize(px, n, 64);
       g.putImageData(d, 0, 0);
       var frac = clear / n, warn = "";
       if (layer === "sky" && frac > 0.02) throw { msg: tx("e_sky_holes") };
@@ -252,7 +285,8 @@
     g.drawImage(a, x0, y0, bw, bh, Math.round((want[0] - w) / 2), want[1] - h, w, h);
     var dd = g.getImageData(0, 0, want[0], want[1]), pp = dd.data, n = want[0] * want[1];
     for (var j = 0; j < n; j++) pp[j * 4 + 3] = pp[j * 4 + 3] < 128 ? 0 : 255;
-    var colors = quantize(pp, n, 32);
+    var colors = 0, seen = {};
+    for (var k2 = 0; k2 < n; k2++) { if (!pp[k2 * 4 + 3]) continue; var kk = pp[k2 * 4] << 16 | pp[k2 * 4 + 1] << 8 | pp[k2 * 4 + 2]; if (!seen[kk]) { seen[kk] = 1; colors++; } }
     g.putImageData(dd, 0, 0);
     return { url: c.toDataURL("image/png"), note: tx("ok", { w: want[0], h: want[1], c: colors }) };
   }
@@ -300,7 +334,12 @@
     var g = c.getContext("2d"); g.imageSmoothingEnabled = false;
     g.drawImage(ly.stand, 0, 0);
     if (ly.crowd) g.drawImage(ly.crowd, 0, 0);
-    else if (d.crowd === "gen" && ly.genCrowd) for (var x = 0; x < LAYER[0]; x += ly.genCrowd.width) g.drawImage(ly.genCrowd, x, GEN_CROWD_Y);
+    else if (d.crowd === "gen" && ly.genCrowd) {
+      for (var x = 0; x < LAYER[0]; x += ly.genCrowd.width) g.drawImage(ly.genCrowd, x, GEN_CROWD_Y);
+      // beirada no topo da torcida (igual ao jogo): mureta clara + contorno escuro
+      g.fillStyle = "rgb(107,112,128)"; g.fillRect(0, GEN_CROWD_Y - 3, LAYER[0], 1);
+      g.fillStyle = "rgb(20,23,31)"; g.fillRect(0, GEN_CROWD_Y - 2, LAYER[0], 2);
+    }
     if (ly.boards) g.drawImage(ly.boards, 0, 0);
     else if (d.boards === "gen" && ly.genBoards) g.drawImage(ly.genBoards, 0, 0);
     return c;
@@ -510,7 +549,7 @@
     if ((el = e.target.closest("[data-smode]"))) { var p = el.dataset.smode.split("|"); d[p[0]] = p[1]; changed(); render(); return; }
     if ((el = e.target.closest("[data-srm]"))) { var k = el.dataset.srm; delete d.img[k]; delete errs[SLOTS[cur] + "|" + k]; delete notes[SLOTS[cur] + "|" + k]; changed(); render(); return; }
     if ((el = e.target.closest("[data-scopy]"))) {
-      var txt = P[el.dataset.scopy];
+      var txt = promptFor(el.dataset.scopy);
       (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () { M.toast(tx("copied")); }, function () { window.prompt("", txt); });
       return;
     }
