@@ -55,6 +55,7 @@
       "fac.0": "SEM BARBA", "fac.1": "BIGODE", "fac.2": "BARBA CURTA", "fac.3": "BARBA E BIGODE",
       "body.standard": "PADRÃO", "body.short": "BAIXO", "body.tall": "ALTO", "body.slim": "MAGRO", "body.robust": "FORTE",
       "hair.n": "ESTILO {n}", "hair.6": "ONDULADO", "hair.7": "BLACK POWER", "hair.8": "CHEIO",
+      "hair.ref": "REFERÊNCIA DOS CABELOS (COMO SAI NO JOGO, FRENTE E COSTAS)", "hair.note": "DESENHADO PELO PRÓPRIO JOGO. HOJE OS ESTILOS 0 A 8 SAEM COM O MESMO FORMATO NA PARTIDA: MUDA SÓ O BRILHO. CLIQUE PARA ESCOLHER.",
       "a.pace": "VELOCIDADE", "a.shooting": "CHUTE", "a.passing": "PASSE", "a.dribbling": "DRIBLE",
       "a.defense": "DEFESA", "a.heading": "CABECEIO", "a.goalkeeping": "GOLEIRO", "a.stamina": "FÔLEGO", "a.strength": "FORÇA",
       "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "PRAIA",
@@ -125,6 +126,7 @@
       "fac.0": "CLEAN", "fac.1": "MOUSTACHE", "fac.2": "SHORT BEARD", "fac.3": "BEARD AND MOUSTACHE",
       "body.standard": "STANDARD", "body.short": "SHORT", "body.tall": "TALL", "body.slim": "SLIM", "body.robust": "STRONG",
       "hair.n": "STYLE {n}", "hair.6": "WAVY", "hair.7": "AFRO", "hair.8": "FULL",
+      "hair.ref": "HAIR REFERENCE (AS IT LOOKS IN THE GAME, FRONT AND BACK)", "hair.note": "DRAWN BY THE GAME ITSELF. TODAY STYLES 0 TO 8 HAVE THE SAME SHAPE IN THE MATCH: ONLY THE SHINE CHANGES. CLICK TO PICK.",
       "a.pace": "PACE", "a.shooting": "SHOOTING", "a.passing": "PASSING", "a.dribbling": "DRIBBLING",
       "a.defense": "DEFENSE", "a.heading": "HEADING", "a.goalkeeping": "KEEPER", "a.stamina": "STAMINA", "a.strength": "STRENGTH",
       "g.field": "FIELD", "g.ml": "MASTER LEAGUE", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "BEACH",
@@ -195,6 +197,7 @@
       "fac.0": "SIN BARBA", "fac.1": "BIGOTE", "fac.2": "BARBA CORTA", "fac.3": "BARBA Y BIGOTE",
       "body.standard": "NORMAL", "body.short": "BAJO", "body.tall": "ALTO", "body.slim": "DELGADO", "body.robust": "FUERTE",
       "hair.n": "ESTILO {n}", "hair.6": "ONDULADO", "hair.7": "AFRO", "hair.8": "ABUNDANTE",
+      "hair.ref": "REFERENCIA DE PEINADOS (COMO SALE EN EL JUEGO, FRENTE Y ESPALDA)", "hair.note": "DIBUJADO POR EL PROPIO JUEGO. HOY LOS ESTILOS 0 A 8 SALEN CON LA MISMA FORMA EN EL PARTIDO: SOLO CAMBIA EL BRILLO. HAZ CLIC PARA ELEGIR.",
       "a.pace": "VELOCIDAD", "a.shooting": "TIRO", "a.passing": "PASE", "a.dribbling": "REGATE",
       "a.defense": "DEFENSA", "a.heading": "CABEZAZO", "a.goalkeeping": "PORTERO", "a.stamina": "RESISTENCIA", "a.strength": "FUERZA",
       "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FÚTSAL (BRAZUCA)", "g.beach": "PLAYA",
@@ -656,6 +659,7 @@
           '<label class="f"><span>' + esc(t("p.facial")) + '</span><select data-k="p.ap.facial">' + opts([0, 1, 2, 3], ap.facial, function (v) { return t("fac." + v); }) + "</select></label>" +
           '<label class="f"><span>' + esc(t("p.body")) + '</span><select data-k="p.ap.body_type">' + opts(BODIES, ap.body_type, function (v) { return t("body." + v); }) + "</select></label>" +
         "</div>" +
+        hairRef(ap.hair_style) +
         '<div class="attrs" style="margin-top:14px">' + ATTRS.map(function (k) {
           return '<div class="attr"><span>' + esc(t("a." + k)) + '</span><input type="range" min="1" max="99" data-k="p.attr.' + k + '" value="' + p.attributes[k] + '"><b data-bind="a' + k + '">' + p.attributes[k] + "</b></div>";
         }).join("") + "</div>" +
@@ -729,6 +733,16 @@
     if (j && Array.isArray(j.teams)) return j.teams;
     if (j && typeof j === "object") return [j];
     throw new Error("bad");
+  }
+
+  // 31/out: referência visual de cada estilo de cabelo (miniaturas desenhadas
+  // pelo motor do jogo: tests/_probe_311hairref no projeto do jogo)
+  function hairRef(cur) {
+    return '<div class="hairref"><span class="dim">' + esc(t("hair.ref")) + "</span><div class=\"hairref__grid\">" +
+      [0, 1, 2, 3, 4, 5, 6, 7, 8].map(function (v) {
+        return '<button type="button" class="hairref__c' + (v === cur ? " on" : "") + '" data-hair="' + v + '"><img src="img/hair/hair_' + v + '.png" alt="">' +
+          "<b>ID " + v + "</b></button>";
+      }).join("") + '</div><p class="dim" style="font-size:7px;margin:6px 0 0">' + esc(t("hair.note")) + "</p></div>";
   }
 
   // ---------- ZIP ----------
@@ -1052,6 +1066,13 @@
     ed.addEventListener("change", function (e) { if (e.target.dataset.k) setField(e.target, true); });
     ed.addEventListener("focusout", function (e) { if (e.target.dataset && e.target.dataset.k && e.target.type === "text") setField(e.target, true); });
     ed.addEventListener("click", function (e) {
+      var hb = e.target.closest("[data-hair]");
+      if (hb) {
+        var sel = ed.querySelector('[data-k="p.ap.hair_style"]');
+        if (sel) { sel.value = hb.dataset.hair; sel.dispatchEvent(new Event("change", { bubbles: true })); }
+        $$(".hairref__c", ed).forEach(function (b) { b.classList.toggle("on", b === hb); });
+        return;
+      }
       var pc = e.target.closest("[data-p]");
       if (pc) { curP = +pc.dataset.p; renderStudio(); var ped = $(".ped"); if (ped && window.innerWidth < 860) ped.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
       var im = e.target.closest("[data-img]"); if (im) { askImage(im.dataset.img, cur, curP); return; }

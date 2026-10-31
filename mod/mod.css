@@ -213,3 +213,11 @@ input[type=color]{width:44px;height:36px;padding:0;border:2px solid #39405a;back
   .grid3{grid-template-columns:1fr 1fr}
   .bar{grid-template-columns:1fr}
 }
+
+/* 31/out: referência dos cabelos */
+.hairref{margin-top:12px}
+.hairref__grid{display:grid;grid-template-columns:repeat(9,1fr);gap:6px;margin-top:6px}
+.hairref__c{background:#141018;border:2px solid #3a3040;padding:4px 2px;cursor:pointer;color:#fff;font:inherit;font-size:7px}
+.hairref__c img{width:100%;image-rendering:pixelated;display:block;margin-bottom:3px}
+.hairref__c.on{border-color:#ffd60a}
+@media (max-width:700px){.hairref__grid{grid-template-columns:repeat(5,1fr)}}
