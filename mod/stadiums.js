@@ -8,7 +8,9 @@
  * arquivo do mod. Nada é enviado para servidor nenhum (só lê as imagens fixas
  * de /mod/img/stadium/, como qualquer imagem da página).
  *
- * No jogo: 5 vagas (ghost1..ghost5) que só aparecem quando ganham nome aqui.
+ * No jogo: 5 vagas (ghost1..ghost5). O botão BAIXAR ESTÁDIOS gera um .json
+ * ("futiba-stadiums", imagens dentro) que o jogador importa em EDITOR >
+ * IMPORTAR ESTÁDIOS; só as vagas com nome viram estádio.
  * Arte no tamanho dos estádios do jogo: céu, estádio, torcida e placas em
  * 920x482 (aparecem a 1/3 na tela 320x240), torcida de costas 490x470,
  * miniatura 50x34. Ver scripts/core/ghost_stadiums.gd no projeto do jogo.
@@ -42,8 +44,12 @@
   var TX = {
     pt: {
       menu: "ESTÁDIOS", title: "ESTÁDIOS (TESTE)",
-      intro: "CRIE ATÉ 5 ESTÁDIOS NOVOS. CADA UM SÓ APARECE NO JOGO DEPOIS QUE GANHA UM NOME AQUI E O MOD É INSTALADO. A ARTE VOCÊ GERA NA SUA IA: COPIE O PROMPT DE CADA PARTE, PEÇA A IMAGEM E ENVIE AQUI. O ESTÚDIO ACERTA O TAMANHO SOZINHO E TE AVISA SE ALGO NÃO SERVIR.",
-      slot: "ESTÁDIO {n}", name: "NOME DO ESTÁDIO", noname: "SEM NOME: ESTE ESTÁDIO NÃO VAI PARA O JOGO.",
+      intro: "O JOGO TEM SÓ 5 VAGAS PARA ESTÁDIOS NOVOS (VAGA 1 A VAGA 5). CADA VAGA SÓ VIRA ESTÁDIO NO JOGO SE TIVER NOME. A ARTE VOCÊ GERA NA SUA IA: COPIE O PROMPT DE CADA PARTE, PEÇA A IMAGEM E ENVIE AQUI. O ESTÚDIO ACERTA O TAMANHO SOZINHO E TE AVISA SE ALGO NÃO SERVIR.",
+      how: "COMO LEVAR PARA O JOGO: 1) APERTE \"BAIXAR ESTÁDIOS\" (SAI UM ARQUIVO .ZIP COM AS 5 VAGAS; NÃO PRECISA ABRIR). 2) PC: PONHA O ARQUIVO NA PASTA ESTADIOS, AO LADO DO JOGO (CRIE A PASTA SE NÃO EXISTIR). ANDROID: DEIXE O ARQUIVO NO CELULAR. 3) NO JOGO: EDITOR > IMPORTAR ESTÁDIOS, ESCOLHA O ARQUIVO (NO ANDROID, ESCOLHER ARQUIVO) E APERTE A. O JOGO DIZ QUANTOS ESTÁDIOS ENTRARAM E EM QUAIS VAGAS. IMPORTAR DE NOVO TROCA TODOS; \"SEM ESTÁDIOS NOVOS\" TIRA TODOS.",
+      sizes_t: "MEDIDAS EXATAS (EM PIXELS)", sizes: "CÉU, ESTÁDIO, TORCIDA E PLACAS: 920 X 482 (LARGURA X ALTURA). TORCIDA DE COSTAS: 490 X 470. MINIATURA: 50 X 34. O ESTÚDIO REDUZ IMAGENS MAIORES DESDE QUE TENHAM O MESMO FORMATO (A MESMA PROPORÇÃO). SE DER ERRO, REVISE AS MEDIDAS.",
+      samples_t: "EXEMPLOS PARA BAIXAR", samples: "UM ESTÁDIO DE EXEMPLO PRONTO PARA IMPORTAR NO JOGO, COM CADA CAMADA SEPARADA NAS MEDIDAS EXATAS E A VERSÃO EM ROSA-CHOQUE (COMO A IA DEVE ENTREGAR). USE COMO MOLDE.", samples_dl: "BAIXAR EXEMPLO (.ZIP)",
+      dl: "BAIXAR ESTÁDIOS (.ZIP)", dl_none: "DÊ NOME A PELO MENOS UMA VAGA ANTES DE BAIXAR.", dl_ok: "ARQUIVO {f} BAIXADO COM {n} ESTÁDIO(S).",
+      slot: "VAGA {n}", name: "NOME DO ESTÁDIO (NESTA VAGA)", noname: "VAGA SEM NOME: ELA NÃO VIRA ESTÁDIO NO JOGO.",
       grass: "GRAMADO", track: "PISTA (ENTRE AS PLACAS E O CAMPO)",
       g_padrao: "PADRÃO", g_africa: "ÁFRICA", g_barcelona: "BARCELONA", g_manchester: "MANCHESTER", g_milao: "MILÃO", g_terrao: "TERRÃO", g_tokio: "TÓQUIO",
       t_concreto: "CONCRETO", t_saibro: "SAIBRO", t_cinza: "CINZA", t_terra: "TERRA", t_grama: "GRAMA",
@@ -58,7 +64,7 @@
       up: "ENVIAR IMAGEM", rm: "TIRAR", copy: "COPIAR PROMPT", ex: "VER EXEMPLO", copied: "PROMPT COPIADO. COLE NA SUA IA (MANDE O EXEMPLO JUNTO).",
       ok: "OK: {w}X{h}, {c} CORES.", none_up: "NADA ENVIADO.",
       e_read: "NÃO CONSEGUI ABRIR ESTA IMAGEM. ENVIE PNG, JPG OU WEBP.",
-      e_ratio: "FORMATO ERRADO: ESTA PARTE É {want} (LARGURA X ALTURA) E A SUA IMAGEM É {got}. PEÇA À IA UMA IMAGEM DESTE FORMATO.",
+      e_ratio: "FORMATO ERRADO: ESTA PARTE É {want} (LARGURA X ALTURA) E A SUA IMAGEM É {got}. PEÇA À IA UMA IMAGEM DESTE FORMATO E REVISE AS MEDIDAS.",
       e_sky_holes: "O CÉU TEM PARTES TRANSPARENTES. ELE PRECISA SER UMA IMAGEM INTEIRA.",
       w_stand_nosky: "AVISO: NENHUMA PARTE ROSA-CHOQUE. O CÉU NÃO VAI APARECER (TUDO BEM SE VOCÊ DESENHOU O CÉU AQUI).",
       e_cover: "ESTA IMAGEM COBRE O ESTÁDIO TODO. PINTE DE ROSA-CHOQUE (#FF00FF) TUDO QUE NÃO FOR {what}.",
@@ -67,13 +73,16 @@
       e_big: "A IMAGEM FICOU PESADA DEMAIS (MAIS DE 1 MB). USE MENOS DETALHES OU MENOS CORES.",
       prev: "PRÉVIA (COMO FICA NO JOGO, TELA 320X240)", gif: "BAIXAR GIF DA PRÉVIA",
       p_missing: "FALTA O CÉU OU O ESTÁDIO: NO JOGO ELE USA O ESTÁDIO PADRÃO ATÉ VOCÊ ENVIAR OS DOIS.",
-      export_hint: "PRONTO? SALVE O MOD NO BOTÃO \"BAIXAR MOD\" (OS TIMES DO RASCUNHO VÃO JUNTO).",
       e_export: "O ESTÁDIO {n} TEM UMA IMAGEM QUE NÃO SERVE. CORRIJA OU TIRE ANTES DE BAIXAR."
     },
     en: {
       menu: "STADIUMS", title: "STADIUMS (TEST)",
-      intro: "CREATE UP TO 5 NEW STADIUMS. EACH ONE ONLY SHOWS UP IN THE GAME AFTER IT GETS A NAME HERE AND THE MOD IS INSTALLED. YOU MAKE THE ART WITH YOUR AI: COPY THE PROMPT OF EACH PART, ASK FOR THE IMAGE AND UPLOAD IT HERE. THE STUDIO FIXES THE SIZE BY ITSELF AND TELLS YOU IF SOMETHING DOESN'T WORK.",
-      slot: "STADIUM {n}", name: "STADIUM NAME", noname: "NO NAME: THIS STADIUM WON'T GO INTO THE GAME.",
+      intro: "THE GAME HAS ONLY 5 SLOTS FOR NEW STADIUMS (SLOT 1 TO SLOT 5). A SLOT ONLY BECOMES A STADIUM IN THE GAME IF IT HAS A NAME. YOU MAKE THE ART WITH YOUR AI: COPY THE PROMPT OF EACH PART, ASK FOR THE IMAGE AND UPLOAD IT HERE. THE STUDIO FIXES THE SIZE BY ITSELF AND TELLS YOU IF SOMETHING DOESN'T WORK.",
+      how: "HOW TO TAKE IT TO THE GAME: 1) PRESS \"DOWNLOAD STADIUMS\" (YOU GET ONE .ZIP FILE WITH THE 5 SLOTS; NO NEED TO OPEN IT). 2) PC: PUT THE FILE IN THE ESTADIOS FOLDER, NEXT TO THE GAME (CREATE THE FOLDER IF IT ISN'T THERE). ANDROID: KEEP THE FILE ON THE PHONE. 3) IN THE GAME: EDITOR > IMPORT STADIUMS, PICK THE FILE (ON ANDROID, CHOOSE FILE) AND PRESS A. THE GAME TELLS YOU HOW MANY STADIUMS CAME IN AND IN WHICH SLOTS. IMPORTING AGAIN REPLACES ALL OF THEM; \"NO NEW STADIUMS\" REMOVES THEM ALL.",
+      sizes_t: "EXACT SIZES (IN PIXELS)", sizes: "SKY, STADIUM, CROWD AND BOARDS: 920 X 482 (WIDTH X HEIGHT). CROWD FROM BEHIND: 490 X 470. THUMBNAIL: 50 X 34. THE STUDIO SHRINKS BIGGER IMAGES AS LONG AS THEY HAVE THE SAME SHAPE (THE SAME PROPORTION). IF YOU GET AN ERROR, CHECK THE SIZES.",
+      samples_t: "SAMPLES TO DOWNLOAD", samples: "A SAMPLE STADIUM READY TO IMPORT IN THE GAME, WITH EACH LAYER SEPARATED IN THE EXACT SIZES AND THE HOT PINK VERSION (HOW YOUR AI SHOULD DELIVER IT). USE IT AS A TEMPLATE.", samples_dl: "DOWNLOAD SAMPLE (.ZIP)",
+      dl: "DOWNLOAD STADIUMS (.ZIP)", dl_none: "GIVE A NAME TO AT LEAST ONE SLOT BEFORE DOWNLOADING.", dl_ok: "FILE {f} DOWNLOADED WITH {n} STADIUM(S).",
+      slot: "SLOT {n}", name: "STADIUM NAME (IN THIS SLOT)", noname: "SLOT WITHOUT A NAME: IT WON'T BECOME A STADIUM IN THE GAME.",
       grass: "PITCH GRASS", track: "TRACK (BETWEEN THE BOARDS AND THE PITCH)",
       g_padrao: "DEFAULT", g_africa: "AFRICA", g_barcelona: "BARCELONA", g_manchester: "MANCHESTER", g_milao: "MILAN", g_terrao: "DIRT", g_tokio: "TOKYO",
       t_concreto: "CONCRETE", t_saibro: "CLAY", t_cinza: "GRAY", t_terra: "DIRT", t_grama: "GRASS",
@@ -88,7 +97,7 @@
       up: "UPLOAD IMAGE", rm: "REMOVE", copy: "COPY PROMPT", ex: "SEE EXAMPLE", copied: "PROMPT COPIED. PASTE IT IN YOUR AI (SEND THE EXAMPLE WITH IT).",
       ok: "OK: {w}X{h}, {c} COLORS.", none_up: "NOTHING UPLOADED.",
       e_read: "I COULDN'T OPEN THIS IMAGE. UPLOAD PNG, JPG OR WEBP.",
-      e_ratio: "WRONG SHAPE: THIS PART IS {want} (WIDTH X HEIGHT) AND YOUR IMAGE IS {got}. ASK YOUR AI FOR AN IMAGE WITH THIS SHAPE.",
+      e_ratio: "WRONG SHAPE: THIS PART IS {want} (WIDTH X HEIGHT) AND YOUR IMAGE IS {got}. ASK YOUR AI FOR AN IMAGE WITH THIS SHAPE AND CHECK THE SIZES.",
       e_sky_holes: "THE SKY HAS SEE-THROUGH PARTS. IT MUST BE ONE FULL IMAGE.",
       w_stand_nosky: "HEADS UP: NO HOT PINK PART. THE SKY WON'T SHOW (FINE IF YOU DREW THE SKY HERE).",
       e_cover: "THIS IMAGE COVERS THE WHOLE STADIUM. PAINT EVERYTHING THAT IS NOT {what} HOT PINK (#FF00FF).",
@@ -97,13 +106,16 @@
       e_big: "THE IMAGE GOT TOO HEAVY (OVER 1 MB). USE LESS DETAIL OR FEWER COLORS.",
       prev: "PREVIEW (HOW IT LOOKS IN THE GAME, 320X240 SCREEN)", gif: "DOWNLOAD PREVIEW GIF",
       p_missing: "THE SKY OR THE STADIUM IS MISSING: IN THE GAME IT USES THE DEFAULT STADIUM UNTIL YOU UPLOAD BOTH.",
-      export_hint: "DONE? SAVE THE MOD WITH \"DOWNLOAD MOD\" (THE TEAMS IN YOUR DRAFT GO WITH IT).",
       e_export: "STADIUM {n} HAS AN IMAGE THAT DOESN'T WORK. FIX IT OR REMOVE IT BEFORE DOWNLOADING."
     },
     es: {
       menu: "ESTADIOS", title: "ESTADIOS (PRUEBA)",
-      intro: "CREA HASTA 5 ESTADIOS NUEVOS. CADA UNO SOLO APARECE EN EL JUEGO DESPUÉS DE TENER UN NOMBRE AQUÍ Y DE INSTALAR EL MOD. EL ARTE LO HACES CON TU IA: COPIA EL PROMPT DE CADA PARTE, PIDE LA IMAGEN Y SÚBELA AQUÍ. EL ESTUDIO AJUSTA EL TAMAÑO SOLO Y TE AVISA SI ALGO NO SIRVE.",
-      slot: "ESTADIO {n}", name: "NOMBRE DEL ESTADIO", noname: "SIN NOMBRE: ESTE ESTADIO NO VA AL JUEGO.",
+      intro: "EL JUEGO TIENE SOLO 5 PLAZAS PARA ESTADIOS NUEVOS (PLAZA 1 A PLAZA 5). UNA PLAZA SOLO SE VUELVE ESTADIO EN EL JUEGO SI TIENE NOMBRE. EL ARTE LO HACES CON TU IA: COPIA EL PROMPT DE CADA PARTE, PIDE LA IMAGEN Y SÚBELA AQUÍ. EL ESTUDIO AJUSTA EL TAMAÑO SOLO Y TE AVISA SI ALGO NO SIRVE.",
+      how: "CÓMO LLEVARLO AL JUEGO: 1) PULSA \"BAJAR ESTADIOS\" (SALE UN ARCHIVO .ZIP CON LAS 5 PLAZAS; NO HACE FALTA ABRIRLO). 2) PC: PON EL ARCHIVO EN LA CARPETA ESTADIOS, AL LADO DEL JUEGO (CREA LA CARPETA SI NO EXISTE). ANDROID: DEJA EL ARCHIVO EN EL CELULAR. 3) EN EL JUEGO: EDITOR > IMPORTAR ESTADIOS, ELIGE EL ARCHIVO (EN ANDROID, ELEGIR ARCHIVO) Y PULSA A. EL JUEGO DICE CUÁNTOS ESTADIOS ENTRARON Y EN QUÉ PLAZAS. IMPORTAR DE NUEVO LOS CAMBIA TODOS; \"SIN ESTADIOS NUEVOS\" LOS QUITA TODOS.",
+      sizes_t: "MEDIDAS EXACTAS (EN PÍXELES)", sizes: "CIELO, ESTADIO, HINCHADA Y VALLAS: 920 X 482 (ANCHO X ALTO). HINCHADA DE ESPALDAS: 490 X 470. MINIATURA: 50 X 34. EL ESTUDIO REDUCE IMÁGENES MÁS GRANDES SIEMPRE QUE TENGAN EL MISMO FORMATO (LA MISMA PROPORCIÓN). SI HAY UN ERROR, REVISA LAS MEDIDAS.",
+      samples_t: "EJEMPLOS PARA BAJAR", samples: "UN ESTADIO DE EJEMPLO LISTO PARA IMPORTAR EN EL JUEGO, CON CADA CAPA SEPARADA EN LAS MEDIDAS EXACTAS Y LA VERSIÓN EN ROSA FUERTE (CÓMO DEBE ENTREGARLO TU IA). ÚSALO COMO MOLDE.", samples_dl: "BAJAR EJEMPLO (.ZIP)",
+      dl: "BAJAR ESTADIOS (.ZIP)", dl_none: "PONLE NOMBRE A POR LO MENOS UNA PLAZA ANTES DE BAJAR.", dl_ok: "ARCHIVO {f} BAJADO CON {n} ESTADIO(S).",
+      slot: "PLAZA {n}", name: "NOMBRE DEL ESTADIO (EN ESTA PLAZA)", noname: "PLAZA SIN NOMBRE: NO SE VUELVE ESTADIO EN EL JUEGO.",
       grass: "CÉSPED", track: "PISTA (ENTRE LAS VALLAS Y EL CAMPO)",
       g_padrao: "ESTÁNDAR", g_africa: "ÁFRICA", g_barcelona: "BARCELONA", g_manchester: "MÁNCHESTER", g_milao: "MILÁN", g_terrao: "TIERRA", g_tokio: "TOKIO",
       t_concreto: "CEMENTO", t_saibro: "ARCILLA", t_cinza: "GRIS", t_terra: "TIERRA", t_grama: "CÉSPED",
@@ -118,7 +130,7 @@
       up: "SUBIR IMAGEN", rm: "QUITAR", copy: "COPIAR PROMPT", ex: "VER EJEMPLO", copied: "PROMPT COPIADO. PÉGALO EN TU IA (MANDA EL EJEMPLO JUNTO).",
       ok: "OK: {w}X{h}, {c} COLORES.", none_up: "NADA SUBIDO.",
       e_read: "NO PUDE ABRIR ESTA IMAGEN. SUBE PNG, JPG O WEBP.",
-      e_ratio: "FORMATO EQUIVOCADO: ESTA PARTE ES {want} (ANCHO X ALTO) Y TU IMAGEN ES {got}. PIDE A LA IA UNA IMAGEN DE ESTE FORMATO.",
+      e_ratio: "FORMATO EQUIVOCADO: ESTA PARTE ES {want} (ANCHO X ALTO) Y TU IMAGEN ES {got}. PIDE A LA IA UNA IMAGEN DE ESTE FORMATO Y REVISA LAS MEDIDAS.",
       e_sky_holes: "EL CIELO TIENE PARTES TRANSPARENTES. TIENE QUE SER UNA IMAGEN ENTERA.",
       w_stand_nosky: "AVISO: NINGUNA PARTE EN ROSA FUERTE. EL CIELO NO VA A APARECER (ESTÁ BIEN SI DIBUJASTE EL CIELO AQUÍ).",
       e_cover: "ESTA IMAGEN TAPA TODO EL ESTADIO. PINTA DE ROSA FUERTE (#FF00FF) TODO LO QUE NO SEA {what}.",
@@ -127,7 +139,6 @@
       e_big: "LA IMAGEN QUEDÓ MUY PESADA (MÁS DE 1 MB). USA MENOS DETALLES O MENOS COLORES.",
       prev: "VISTA PREVIA (CÓMO QUEDA EN EL JUEGO, PANTALLA 320X240)", gif: "BAJAR GIF DE LA VISTA PREVIA",
       p_missing: "FALTA EL CIELO O EL ESTADIO: EN EL JUEGO USA EL ESTADIO ESTÁNDAR HASTA QUE SUBAS LOS DOS.",
-      export_hint: "¿LISTO? GUARDA EL MOD CON \"BAJAR MOD\" (LOS EQUIPOS DEL BORRADOR VAN JUNTOS).",
       e_export: "EL ESTADIO {n} TIENE UNA IMAGEN QUE NO SIRVE. CORRÍGELA O QUÍTALA ANTES DE BAJAR."
     }
   };
@@ -138,25 +149,26 @@
   }
 
   // ---------- prompts para a IA (em inglês, como os outros do /mod) ----------
+  var EXACT = function (w, h) { return "FINAL SIZE MUST BE EXACTLY " + w + "x" + h + " PIXELS (width x height), or a bigger image with exactly the same proportion. "; };
   var STYLE = "16-bit retro arcade pixel art, like Neo Geo and Super Nintendo football games (use the attached example only as a style reference): " +
     "square crisp pixels, dark outlines, flat colors with block shading, at most 64 colors, no gradients, no blur, no photo textures. ";
   var P = {
-    sky: "Draw the SKY behind a football stadium, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
+    sky: EXACT(920, 482) + "Draw the SKY behind a football stadium, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
       "Only sky: clouds, sun or stars, and far away landscape at the very bottom if you want (city skyline, hills, sea). No stadium, no people. " +
       "The whole image must be filled, no transparent parts. Daytime light: the game darkens it by itself for the afternoon and the night.",
-    stand: "Draw the long side of a football stadium seen from the pitch, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
+    stand: EXACT(920, 482) + "Draw the long side of a football stadium seen from the pitch, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
       "Stands, roof or terraces, buildings, trees and floodlights. The bottom of the stands must touch the bottom edge of the image. " +
       "Everything that would be SKY must be ONE flat solid hot pink color #FF00FF (it will be cut out). Leave the stands empty if you will send a separate crowd image. " +
       "Keep the bottom 10% of the image simple (a wall or a fence): the advertising boards go there.",
-    crowd: "Draw a wide band of football fans standing shoulder to shoulder in many rows, seen from the pitch, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
+    crowd: EXACT(920, 482) + "Draw a wide band of football fans standing shoulder to shoulder in many rows, seen from the pitch, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
       "The fans fill the whole width, between 55% and 90% of the image height (from the top). Arms up, flags and scarves in the club colors: [CLUB COLORS]. " +
       "Everything that is not a person must be ONE flat solid hot pink color #FF00FF (it will be cut out).",
-    boards: "Draw one row of pitchside advertising boards, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
+    boards: EXACT(920, 482) + "Draw one row of pitchside advertising boards, as a wide image with exactly 920x482 proportions (width x height, about 1.9:1). " + STYLE +
       "6 to 8 boards side by side, filling the whole width, in the bottom 10% of the image only (from 90% to 100% of the height). Bold colors, a simple pictogram and at most 2 short words on each: [YOUR BRANDS OR WORDS]. " +
       "Everything above the boards must be ONE flat solid hot pink color #FF00FF (it will be cut out).",
-    backs: "Draw football fans seen FROM BEHIND (backs of heads and shoulders), many rows, filling the whole image, with exactly 490x470 proportions (almost square). " + STYLE +
+    backs: EXACT(490, 470) + "Draw football fans seen FROM BEHIND (backs of heads and shoulders), many rows, filling the whole image, with exactly 490x470 proportions (almost square). " + STYLE +
       "Seen from above and behind, looking at the pitch. Shirts and scarves in the club colors: [CLUB COLORS]. The whole image is people, no empty parts.",
-    thumb: "Draw a small icon of a WHOLE football stadium seen from above at a 3/4 angle (isometric-like), like the attached examples: the oval or rectangular stands around a green pitch, a few floodlight towers. " + STYLE +
+    thumb: EXACT(50, 34) + "Draw a small icon of a WHOLE football stadium seen from above at a 3/4 angle (isometric-like), like the attached examples: the oval or rectangular stands around a green pitch, a few floodlight towers. " + STYLE +
       "The stadium fills the image, about 1.5:1 (wider than tall). Background: ONE flat solid hot pink color #FF00FF (it will be cut out). No sky, no ground around it, no text. It will be shrunk to 50x34 pixels, so keep it bold and simple."
   };
 
@@ -315,8 +327,11 @@
     if (li) { li.hidden = false; li.querySelector("button").textContent = tx("menu"); }
     var all = st(), slot = SLOTS[cur], d = all[slot];
     var h = '<div class="banner">' + esc(tx("title")) + "</div><p>" + esc(tx("intro")) + "</p>";
+    h += '<div class="cards"><div class="card"><h2>' + esc(tx("sizes_t")) + '</h2><p style="font-size:8px">' + esc(tx("sizes")) + "</p></div>" +
+      '<div class="card"><h2>' + esc(tx("samples_t")) + '</h2><p style="font-size:8px">' + esc(tx("samples")) + '</p><div class="row">' +
+      '<a class="btn btn--gold" href="/mod/samples/FUTIBA_ESTADIOS_EXEMPLO.zip" download>' + esc(tx("samples_dl")) + "</a></div></div></div>";
     h += '<div class="chips">' + SLOTS.map(function (s, i) {
-      return '<button type="button" class="chip' + (i === cur ? " on" : "") + '" data-sslot="' + i + '">' + esc(all[s].name || tx("slot", { n: i + 1 })) + "</button>";
+      return '<button type="button" class="chip' + (i === cur ? " on" : "") + '" data-sslot="' + i + '">' + esc(tx("slot", { n: i + 1 }) + (all[s].name ? ": " + all[s].name : "")) + "</button>";
     }).join("") + "</div>";
     h += '<label class="f" style="margin-top:10px"><span>' + esc(tx("name")) + ' <span class="c">' + d.name.length + "/" + NAME_MAX + '</span></span><input type="text" maxlength="' + NAME_MAX + '" data-sname value="' + esc(d.name) + '"></label>';
     if (!d.name) h += '<p class="dim" style="font-size:8px">' + esc(tx("noname")) + "</p>";
@@ -325,7 +340,8 @@
     h += '<div class="cards stad-cards">' + ORDER.map(function (k) { return card(slot, d, k); }).join("") + "</div>";
     h += '<div class="card"><h2>' + esc(tx("prev")) + '</h2><canvas id="stad-prev" width="320" height="240" class="stad-prev"></canvas>' +
       '<p class="dim" id="stad-prev-note" style="font-size:8px"></p><div class="row"><button type="button" class="btn btn--gold" data-sgif>' + esc(tx("gif")) + "</button></div>" +
-      '<p class="dim" style="font-size:8px;margin-top:8px">' + esc(tx("export_hint")) + "</p></div>";
+      "</div>" +
+      '<div class="card"><p style="font-size:8px">' + esc(tx("how")) + '</p><div class="row"><button type="button" class="btn btn--gold" data-sdl>' + esc(tx("dl")) + "</button></div></div>";
     box.innerHTML = h;
     preview();
   }
@@ -336,7 +352,7 @@
   }
   function card(slot, d, k) {
     var key = slot + "|" + k, has = !!d.img[k];
-    var h = '<div class="card stad-card"><h2>' + esc(tx("l_" + k)) + '</h2><p style="font-size:8px">' + esc(tx("d_" + k)) + "</p>";
+    var h = '<div class="card stad-card"><h2>' + esc(tx("l_" + k)) + " (" + L[k].size[0] + "X" + L[k].size[1] + ')</h2><p style="font-size:8px">' + esc(tx("d_" + k)) + "</p>";
     if (L[k].modes) {
       h += '<div class="row stad-modes">' + ["gen", "own", "none"].map(function (m) {
         return '<button type="button" class="btn btn--small' + (d[k] === m ? " btn--gold" : "") + '" data-smode="' + k + '|' + m + '">' + esc(tx("m_" + m)) + "</button>";
@@ -447,10 +463,10 @@
     out.push(0);
   }
 
-  // ---------- exportação (chamada pelo BAIXAR MOD do estúdio) ----------
-  function addToMod(zip, root) {
-    var all = st(), list = [], images = 0, error = "";
-    zip.folder(root + "img/stadiums/");
+  // ---------- arquivo de estádios (EDITOR > IMPORTAR ESTÁDIOS no jogo) ----------
+  // Um .json só, imagens dentro (data:image/png), formato "futiba-stadiums".
+  function buildFile() {
+    var all = st(), list = [], error = "";
     SLOTS.forEach(function (s, i) {
       var d = all[s]; if (!d.name || error) return;
       if (ORDER.some(function (k) { return errs[s + "|" + k]; })) { error = tx("e_export", { n: i + 1 }); return; }
@@ -460,15 +476,29 @@
         if (L[k].modes && d[k] !== "own") return;   // do jogo: o jogo põe a genérica
         var url = d.img[k];
         if (!url) return;
-        var b64 = url.split(",")[1] || "";
-        if (b64.length * 0.75 > MAX_PNG) { error = tx("e_export", { n: i + 1 }); return; }
-        var path = "img/stadiums/" + s + "_" + k + ".png";
-        zip.file(root + path, b64, { base64: true }); images++; e[k] = path;
+        if ((url.length - 22) * 0.75 > MAX_PNG) { error = tx("e_export", { n: i + 1 }); return; }
+        e[k] = url;
       });
       list.push(e);
     });
-    return { list: list, images: images, error: error };
+    return { file: { format: "futiba-stadiums", version: 1, name: list.map(function (e) { return e.name; }).join(" / ").slice(0, 24),
+      created: new Date().toISOString().slice(0, 10), stadiums: list }, error: error };
   }
+  function download() {
+    if (!count()) { M.msg(tx("dl_none"), "err"); M.toast(tx("dl_none")); return; }
+    var b = buildFile();
+    if (b.error) { M.msg(b.error, "err"); M.toast(b.error); return; }
+    var fname = "FUTIBA_ESTADIOS.zip";
+    var zip = new JSZip();
+    zip.file("FUTIBA_ESTADIOS.json", JSON.stringify(b.file));
+    zip.generateAsync({ type: "blob", compression: "DEFLATE" }).then(function (blob) {
+      var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fname;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+      M.msg(tx("dl_ok", { f: fname, n: b.file.stadiums.length }), "ok");
+    });
+  }
+
   // ---------- eventos ----------
   function changed() { M.save(); }
   document.addEventListener("click", function (e) {
@@ -485,12 +515,13 @@
       return;
     }
     if (e.target.closest("[data-sgif]")) { gif(); return; }
+    if (e.target.closest("[data-sdl]")) { download(); return; }
   });
   document.addEventListener("input", function (e) {
     if (!e.target.matches || !e.target.matches("[data-sname]")) return;
     var d = st()[SLOTS[cur]];
     var v = M.clean(e.target.value, NAME_MAX); d.name = v;
-    var chip = document.querySelector('[data-sslot="' + cur + '"]'); if (chip) chip.textContent = v || tx("slot", { n: cur + 1 });
+    var chip = document.querySelector('[data-sslot="' + cur + '"]'); if (chip) chip.textContent = tx("slot", { n: cur + 1 }) + (v ? ": " + v : "");
     M.save();
   });
   document.addEventListener("change", function (e) {
@@ -506,6 +537,6 @@
     });
   });
 
-  window.FutibaStadiums = { count: count, addToMod: addToMod, render: render, _gif: encodeGif };
+  window.FutibaStadiums = { count: count, buildFile: buildFile, render: render, _gif: encodeGif };
   var li = document.getElementById("menu-stadiums"); if (li) li.hidden = false;
 })();

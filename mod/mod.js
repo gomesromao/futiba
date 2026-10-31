@@ -803,8 +803,7 @@
   }
 
   function exportMod() {
-    var FS = window.FutibaStadiums;   // 31/out: editor de estádios (stadiums.js, opcional)
-    if (!S.teams.length && !(FS && FS.count())) { msg(t("msg.noteams"), "err"); return; }
+    if (!S.teams.length) { msg(t("msg.noteams"), "err"); return; }
     var id = cleanId(S.mod.id) || "MEU_MOD"; if (id.length < 3) id = (id + "_MOD").slice(0, 24);
     var root = "mod/" + id + "/";
     var zip = new JSZip();
@@ -838,11 +837,6 @@
         return tm.base ? onlyChanged(full, BASE_BY_ID[tm.id]) : full;
       })
     };
-    if (FS && FS.count()) {
-      var st = FS.addToMod(zip, root);
-      if (st.error) { msg(st.error, "err"); return; }
-      mod.stadiums = st.list; nimg += st.images;
-    }
     var json = JSON.stringify(mod, null, 1);
     if (json.length > LIM.JSON || big) { msg(t("msg.big"), "err"); return; }
     // sem nenhuma imagem: o mod é um .json solto (vai direto em mod/), como o FUTIBA_ORIGINAL
