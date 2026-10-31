@@ -261,6 +261,12 @@
     out = out.replace(/ {2,}/g, " ").replace(/^ +/, "");
     return live ? out : out.trim();
   }
+  // nome curto a partir do nome: inteiro se couber, senão a 1ª palavra
+  function shortFrom(name) {
+    if (name.length <= LIM.PSHORT) return name;
+    var first = name.split(" ")[0];
+    return (first.length >= 2 ? first : name).slice(0, LIM.PSHORT).trim();
+  }
   function cleanShort(s) { return String(s || "").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, LIM.SHORT); }
   function cleanId(s) { return String(s || "").toUpperCase().replace(/[^A-Z0-9_]/g, "_").replace(/_+/g, "_").slice(0, 24); }
   function cleanCountry(s) { return String(s || "").toUpperCase().replace(/[^A-Z]/g, "").slice(0, 2); }
@@ -284,10 +290,18 @@
     var attrs = {};
     ATTRS.forEach(function (k) { attrs[k] = clampInt(a[k] != null ? a[k] : fa[k], 1, 99, 60); });
     var name = clean(raw.name != null ? raw.name : fallback.name, LIM.PNAME) || ("JOGADOR " + (idx + 1));
+    // 31/out: o nome que aparece na partida é o short_name. Se a IA (ou o JSON)
+    // troca só o name de um jogador do jogo, o short_name antigo ficava e o
+    // nome "não mudava" no jogo. Sem short_name novo, ele sai do nome novo.
+    var short = clean(raw.short_name, LIM.PSHORT);
+    if (!short) {
+      var renamed = raw.name != null && fallback.name != null && name !== clean(fallback.name, LIM.PNAME);
+      short = renamed || fallback.short_name == null ? shortFrom(name) : clean(fallback.short_name, LIM.PSHORT);
+    }
     return {
       id: fallback.id || (teamId + "_p" + (idx < 9 ? "0" : "") + (idx + 1)),
       name: name,
-      short_name: clean(raw.short_name != null ? raw.short_name : fallback.short_name, LIM.PSHORT) || name.slice(0, LIM.PSHORT).trim(),
+      short_name: short || shortFrom(name),
       shirt_number: clampInt(raw.shirt_number != null ? raw.shirt_number : fallback.shirt_number, 1, 99, idx + 1),
       position: pick(raw.position || fallback.position, POS, NEW_POS[idx] || "MF"),
       foot: pick(raw.foot || fallback.foot, ["R", "L"], "R"),
@@ -307,6 +321,8 @@
   // Time no rascunho. base=true: override de um time do jogo (casado por ID).
   function normTeam(raw, forceNewId) {
     raw = raw || {};
+    // 31/out: a IA às vezes devolve os IDs em maiúsculas ("FLA", "FLA_P01")
+    if (raw.id && !BASE_BY_ID[raw.id] && BASE_BY_ID[String(raw.id).toLowerCase()]) raw.id = String(raw.id).toLowerCase();
     var b = !forceNewId && raw.id && BASE_BY_ID[raw.id] ? BASE_BY_ID[raw.id] : null;
     var id = b ? b.id : (forceNewId || newTeamId(raw.short_name || raw.name));
     var fb = b || {};
@@ -333,9 +349,11 @@
     var rawPlayers = Array.isArray(raw.players) ? raw.players : [];
     if (b) {
       var byId = {};
-      rawPlayers.forEach(function (p) { if (p && p.id) byId[p.id] = p; });
+      rawPlayers.forEach(function (p) { if (p && p.id) byId[String(p.id).toLowerCase()] = p; });
+      // nenhum ID casou (ou a IA não mandou IDs): casa pela ordem da escalação
+      var byIdHits = b.players.some(function (bp) { return byId[bp.id]; });
       b.players.forEach(function (bp, i) {
-        tm.players.push(normPlayer(byId[bp.id] || (rawPlayers.length && !rawPlayers[0].id ? rawPlayers[i] : null), bp, i, id));
+        tm.players.push(normPlayer(byId[bp.id] || (rawPlayers.length && !byIdHits ? rawPlayers[i] : null), bp, i, id));
       });
     } else {
       for (var i = 0; i < LIM.SQUAD; i++) tm.players.push(normPlayer(rawPlayers[i], null, i, id));
@@ -919,7 +937,9 @@
       '"appearance":{"skin":2,"hair_style":1,"hair_color":0,"facial":0,"body_type":"standard"}}]}]}\n\n' +
       "Rules (follow all of them):\n" +
       "- id: leave it EMPTY to create a new team. To EDIT a team that already exists in the game, use its exact id from the FUTIBA ID MAP " +
-      "(for example \"fla\"); then each player also needs \"id\": \"<team id>_p01\" to \"<team id>_p16\", in the same lineup order.\n" +
+      "(for example \"fla\"); then each player also needs \"id\": \"<team id>_p01\" to \"<team id>_p16\", in the same lineup order. " +
+      "Ids stay in lowercase exactly as in the map (the only text that is not uppercase).\n" +
+      "- When you rename a player, ALWAYS send the new short_name too: it is the name shown during the match.\n" +
       "- Every text in UPPERCASE. Allowed characters: A-Z, 0-9, space, . - ' and ÁÀÂÃÉÊÍÓÔÕÚÇÜÑ. No emoji.\n" +
       "- name: max " + LIM.TEAM + " characters. short_name of the team: max " + LIM.SHORT + " letters or digits.\n" +
       "- coach.name: max " + LIM.COACH + " characters. country and nationality: 2 letter code (BR, AR, ES, US...).\n" +
@@ -1009,7 +1029,7 @@
       var n = 0;
       for (var i = 0; i < list.length; i++) {
         var raw = list[i] || {};
-        var tm = BASE_BY_ID[raw.id] ? normTeam(raw) : normTeam(raw, newTeamId(raw.short_name || raw.name));
+        var tm = (BASE_BY_ID[raw.id] || BASE_BY_ID[String(raw.id || "").toLowerCase()]) ? normTeam(raw) : normTeam(raw, newTeamId(raw.short_name || raw.name));
         if (!addTeam(tm)) break;
         n++;
       }
