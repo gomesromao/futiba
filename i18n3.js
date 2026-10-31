@@ -12,18 +12,18 @@
   var META = {
     pt: {
       html: "pt-BR",
-      title: "FUTIBA — futebol 16-bit, do jeito que era bom",
-      desc: "FUTIBA é uma carta de amor ao futebol raiz dos videogames. Pixel art 320×240, 32 equipes, 12 estádios, copa, campeonato, pênaltis, futsal e paredão. Demo grátis para PC e Android."
+      title: "FUTIBA: futebol 16-bit, do jeito que era bom",
+      desc: "FUTIBA é uma carta de amor ao futebol raiz dos videogames. Pixel art 320×240, mais de 150 equipes, 18 estádios, Copa do Mundo, Champions, Master Liga, futsal, areia, rua e paredão. Demo grátis para PC e Android."
     },
     en: {
       html: "en",
-      title: "FUTIBA — 16-bit football, the way it used to be",
-      desc: "FUTIBA is a love letter to old-school videogame football. 320×240 pixel art, 32 teams, 12 stadiums, cup, championship, penalties, futsal and wall mode. Free demo for PC and Android."
+      title: "FUTIBA: 16-bit football, the way it used to be",
+      desc: "FUTIBA is a love letter to old-school videogame football. 320×240 pixel art, over 150 teams, 18 stadiums, World Cup, Champions, Master League, futsal, beach, street and wall mode. Free demo for PC and Android."
     },
     es: {
       html: "es",
-      title: "FUTIBA — fútbol 16-bit, como era antes",
-      desc: "FUTIBA es una carta de amor al fútbol de los videojuegos de antes. Pixel art 320×240, 32 equipos, 12 estadios, copa, campeonato, penales, fútsal y paredón. Demo gratis para PC y Android."
+      title: "FUTIBA: fútbol 16-bit, como era antes",
+      desc: "FUTIBA es una carta de amor al fútbol de los videojuegos de antes. Pixel art 320×240, más de 150 equipos, 18 estadios, Copa del Mundo, Champions, Master Liga, fútsal, playa, calle y paredón. Demo gratis para PC y Android."
     }
   };
 
@@ -94,7 +94,7 @@
       "cover.lede": "A love letter to old-school videogame football. Top-down camera, shots from outside the box, a goal scream straight out of a tube TV. <strong>320×240 pixels</strong> and no shame at all.",
       "cover.cta": "Download the demo", "cover.cta2": "Game manual",
       "cover.ticker_label": "Game summary",
-      "tk.1": "32 teams", "tk.2": "12 stadiums", "tk.3": "Cup", "tk.4": "Championship", "tk.5": "Penalties", "tk.6": "Futsal", "tk.7": "Wall mode",
+      "tk.1": "150+ teams", "tk.2": "18 stadiums", "tk.wc": "World Cup", "tk.ch": "Champions", "tk.ml": "Master League", "tk.rua": "Street", "tk.areia": "Beach", "tk.3": "Cup", "tk.4": "Championship", "tk.5": "Penalties", "tk.6": "Futsal", "tk.7": "Wall mode",
       "pg.1": "P. 1", "pg.1b": "P. 1½", "pg.2": "P. 2", "pg.3": "P. 3", "pg.4": "P. 4", "pg.5": "P. 5", "pg.6": "P. 6",
       "pg.7": "P. 7", "pg.8": "P. 8", "pg.9": "P. 9", "pg.10": "P. 10", "pg.11": "P. 11",
       "alb.eyebrow": "Straight from the tube", "alb.head": "The sticker album",
@@ -141,9 +141,16 @@
       "cam.s1.alt": "Real FUTIBA capture: Barcelona vs Real Madrid on a sunny day, with the boards and the colourful stand at the top.",
       "cam.s2": "Coin toss in the centre circle, before kick-off.",
       "cam.s2.alt": "Real capture of the FUTIBA coin toss: two golden coins over the centre circle, with the captains and the referee.",
-      "est.eyebrow": "Home ground", "est.head": "Twelve stadiums",
+      "est.eyebrow": "Home ground", "est.head": "Eighteen stadiums",
       "est.deck": "Each one with its own crowd, its own boards and its own sky.",
       "est.tokio": "Tokyo", "est.terrao": "Dirt pitch",
+      "est.istambul": "Istanbul", "est.londres": "London", "est.novayork": "New York", "est.cidmexico": "Mexico City",
+      "est.istambul.alt": "Istanbul stadium in FUTIBA, at night, with the Bosphorus behind.",
+      "est.londres.alt": "London stadium in FUTIBA, with Big Ben and Tower Bridge behind.",
+      "est.novayork.alt": "New York stadium in FUTIBA, with the Manhattan skyline behind.",
+      "est.cidmexico.alt": "Mexico City stadium in FUTIBA, with papel picado and a Mexican crowd.",
+      "est.portoalegre.alt": "Porto Alegre stadium in FUTIBA, with the Guaíba behind.",
+      "est.salvador.alt": "Salvador stadium in FUTIBA, with the Barra lighthouse and colorful houses.",
       "est.more": "Plus Olímpico, Mooca, Milan and Africa. SPECIAL only opens in the Challenge.",
       "ind.eyebrow": "Indoor mode", "ind.head": "Futsal &amp; Wall",
       "ind.deck": "When the pitch feels too big, the kickabout moves to the court.",
@@ -156,7 +163,7 @@
       "ind.p.3": "Rolling substitutions, with the ball in play",
       "ind.p.alt": "Real capture of FUTIBA wall mode: the bar's night court, with the FUTIBA logo in the centre circle.",
       "eq.eyebrow": "Pick the team", "eq.head": "The teams",
-      "eq.deck": "32 playable teams, each with a full squad, formation, playing style and a hand-drawn portrait for every player. No generic silhouettes.",
+      "eq.deck": "Over 150 teams: 50 on the pitch, 40 World Cup national teams, 45 Master League clubs, plus the futsal and beach teams. Each one with a full squad, formation, playing style and a hand-drawn portrait for every player. No generic silhouettes.",
       "eq.s1": "Team select: coach, the starting eleven, ratings and formation.",
       "eq.s1.alt": "Real capture of FUTIBA team select: coach, the eleven in numbered portraits, ratings and formation.",
       "eq.s2": "Line-up: change the formation and swap in the bench.",
@@ -262,7 +269,7 @@
       "cover.lede": "Una carta de amor al fútbol de los videojuegos de antes. Cámara desde arriba, remate de fuera del área, grito de gol de televisor de tubo. <strong>320×240 píxeles</strong> y cero vergüenza.",
       "cover.cta": "Descargar la demo", "cover.cta2": "Manual del juego",
       "cover.ticker_label": "Resumen del juego",
-      "tk.1": "32 equipos", "tk.2": "12 estadios", "tk.3": "Copa", "tk.4": "Campeonato", "tk.5": "Penales", "tk.6": "Fútsal", "tk.7": "Paredón",
+      "tk.1": "150+ equipos", "tk.2": "18 estadios", "tk.wc": "Copa del Mundo", "tk.ch": "Champions", "tk.ml": "Master Liga", "tk.rua": "Calle", "tk.areia": "Playa", "tk.3": "Copa", "tk.4": "Campeonato", "tk.5": "Penales", "tk.6": "Fútsal", "tk.7": "Paredón",
       "pg.1": "Pág. 1", "pg.1b": "Pág. 1½", "pg.2": "Pág. 2", "pg.3": "Pág. 3", "pg.4": "Pág. 4", "pg.5": "Pág. 5", "pg.6": "Pág. 6",
       "pg.7": "Pág. 7", "pg.8": "Pág. 8", "pg.9": "Pág. 9", "pg.10": "Pág. 10", "pg.11": "Pág. 11",
       "alb.eyebrow": "Directo del tubo", "alb.head": "El álbum de figuritas",
@@ -309,9 +316,16 @@
       "cam.s1.alt": "Captura real de FUTIBA: Barcelona vs Real Madrid en un día de sol, con los carteles y la tribuna de colores arriba.",
       "cam.s2": "Cara o cruz en el círculo central, antes de que ruede la pelota.",
       "cam.s2.alt": "Captura real del cara o cruz de FUTIBA: dos monedas doradas sobre el círculo central, con los capitanes y el árbitro.",
-      "est.eyebrow": "De local", "est.head": "Doce estadios",
+      "est.eyebrow": "De local", "est.head": "Dieciocho estadios",
       "est.deck": "Cada uno con su hinchada, sus carteles y su cielo.",
       "est.tokio": "Tokio", "est.terrao": "Cancha de tierra",
+      "est.istambul": "Estambul", "est.londres": "Londres", "est.novayork": "Nueva York", "est.cidmexico": "Ciudad de México",
+      "est.istambul.alt": "Estadio de Estambul en FUTIBA, de noche, con el Bósforo al fondo.",
+      "est.londres.alt": "Estadio de Londres en FUTIBA, con el Big Ben y el Tower Bridge al fondo.",
+      "est.novayork.alt": "Estadio de Nueva York en FUTIBA, con los edificios de Manhattan al fondo.",
+      "est.cidmexico.alt": "Estadio de Ciudad de México en FUTIBA, con banderitas y la hinchada mexicana.",
+      "est.portoalegre.alt": "Estadio de Porto Alegre en FUTIBA, con el Guaíba al fondo.",
+      "est.salvador.alt": "Estadio de Salvador en FUTIBA, con el faro de Barra y las casas de colores.",
       "est.more": "Y además Olímpico, Mooca, Milán y África. El SPECIAL solo abre en el Desafío.",
       "ind.eyebrow": "Modo indoor", "ind.head": "Fútsal y Paredón",
       "ind.deck": "Cuando la cancha queda grande, el picado se muda al piso.",
@@ -324,7 +338,7 @@
       "ind.p.3": "Cambios con la pelota en juego",
       "ind.p.alt": "Captura real del paredón de FUTIBA: la cancha nocturna del bar, con el logo de FUTIBA en el círculo central.",
       "eq.eyebrow": "Armá el equipo", "eq.head": "Los equipos",
-      "eq.deck": "32 equipos jugables, cada uno con plantel completo, formación, estilo de juego y un retrato dibujado para cada jugador. Nada de siluetas genéricas.",
+      "eq.deck": "Más de 150 equipos: 50 de cancha, 40 selecciones de la Copa del Mundo, 45 clubes de la Master Liga, y los equipos de fútsal y de playa. Cada uno con plantel completo, formación, estilo de juego y un retrato dibujado para cada jugador. Nada de siluetas genéricas.",
       "eq.s1": "Selección de equipo: técnico, los once, atributos y esquema.",
       "eq.s1.alt": "Captura real de la selección de equipo de FUTIBA: técnico, los once en retratos numerados, atributos y formación.",
       "eq.s2": "Alineación: cambiá el esquema y meté a los del banco.",
