@@ -20,6 +20,10 @@
   var SKINS = ["#f1c27d", "#e0ac69", "#c68642", "#8d5524", "#5c3a1e"];
   var HAIRS = ["#17110b", "#3a2415", "#7a4a1e", "#c9a227", "#6e6e6e"];
   // 31/out: cor da chuteira (só no /mod; "" = a chuteira de sempre)
+  // 31/out: estilos de cabelo válidos (10 = careca) e cores do boné do goleiro
+  var HAIR_IDS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10];
+  var CAPS = ["", "none", "#1c1c1c", "#f2f2f2", "#c81e1e", "#1f5fe0", "#f2d21a", "#ff6a00", "#1aa04a", "#7a3cc8"];
+  function hairOk(v, d) { v = clampInt(v, 0, 10, d); return HAIR_IDS.indexOf(v) >= 0 ? v : Math.min(v, 8); }
   var BOOTS = ["", "#141416", "#f2f2f2", "#c81e1e", "#1f5fe0", "#f2d21a", "#ff6a00", "#1aa04a", "#e0249a", "#7a3cc8"];
   var GROUPS = ["field", "ml", "wc", "futsal", "beach", "secret", "desafio"];
   var NEW_POS = ["GK", "DF", "DF", "DF", "DF", "MF", "MF", "MF", "MF", "FW", "FW", "GK", "DF", "MF", "MF", "FW"];
@@ -56,8 +60,9 @@
       "foot.R": "DIREITO", "foot.L": "ESQUERDO",
       "fac.0": "SEM BARBA", "fac.1": "BIGODE", "fac.2": "BARBA CURTA", "fac.3": "BARBA E BIGODE",
       "body.standard": "PADRÃO", "body.short": "BAIXO", "body.tall": "ALTO", "body.slim": "MAGRO", "body.robust": "FORTE",
-      "hair.n": "ESTILO {n}", "hair.6": "ONDULADO", "hair.7": "BLACK POWER", "hair.8": "CHEIO",
-      "hair.ref": "REFERÊNCIA DOS CABELOS (COMO SAI NO JOGO, FRENTE E COSTAS)", "hair.note": "DESENHADO PELO PRÓPRIO JOGO. HOJE OS ESTILOS 0 A 8 SAEM COM O MESMO FORMATO NA PARTIDA: MUDA SÓ O BRILHO. CLIQUE PARA ESCOLHER.",
+      "hair.n": "ESTILO {n}", "hair.6": "ONDULADO", "hair.7": "BLACK POWER", "hair.8": "CHEIO", "hair.10": "CARECA",
+      "p.cap": "BONÉ (SÓ GOLEIRO)", "p.capdef": "O DO JOGO", "p.capnone": "SEM BONÉ",
+      "hair.ref": "REFERÊNCIA DOS CABELOS (COMO SAI NO JOGO, FRENTE E COSTAS)", "hair.note": "DESENHADO PELO PRÓPRIO JOGO. HOJE OS ESTILOS 0 A 8 SAEM COM O MESMO FORMATO NA PARTIDA: MUDA SÓ O BRILHO. O ID 10 É CARECA (GOLEIRO NÃO FICA CARECA). CLIQUE PARA ESCOLHER.",
       "a.pace": "VELOCIDADE", "a.shooting": "CHUTE", "a.passing": "PASSE", "a.dribbling": "DRIBLE",
       "a.defense": "DEFESA", "a.heading": "CABECEIO", "a.goalkeeping": "GOLEIRO", "a.stamina": "FÔLEGO", "a.strength": "FORÇA",
       "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "PRAIA",
@@ -127,8 +132,9 @@
       "foot.R": "RIGHT", "foot.L": "LEFT",
       "fac.0": "CLEAN", "fac.1": "MOUSTACHE", "fac.2": "SHORT BEARD", "fac.3": "BEARD AND MOUSTACHE",
       "body.standard": "STANDARD", "body.short": "SHORT", "body.tall": "TALL", "body.slim": "SLIM", "body.robust": "STRONG",
-      "hair.n": "STYLE {n}", "hair.6": "WAVY", "hair.7": "AFRO", "hair.8": "FULL",
-      "hair.ref": "HAIR REFERENCE (AS IT LOOKS IN THE GAME, FRONT AND BACK)", "hair.note": "DRAWN BY THE GAME ITSELF. TODAY STYLES 0 TO 8 HAVE THE SAME SHAPE IN THE MATCH: ONLY THE SHINE CHANGES. CLICK TO PICK.",
+      "hair.n": "STYLE {n}", "hair.6": "WAVY", "hair.7": "AFRO", "hair.8": "FULL", "hair.10": "BALD",
+      "p.cap": "CAP (GOALKEEPER ONLY)", "p.capdef": "GAME DEFAULT", "p.capnone": "NO CAP",
+      "hair.ref": "HAIR REFERENCE (AS IT LOOKS IN THE GAME, FRONT AND BACK)", "hair.note": "DRAWN BY THE GAME ITSELF. TODAY STYLES 0 TO 8 HAVE THE SAME SHAPE IN THE MATCH: ONLY THE SHINE CHANGES. ID 10 IS BALD (GOALKEEPERS ARE NEVER BALD). CLICK TO PICK.",
       "a.pace": "PACE", "a.shooting": "SHOOTING", "a.passing": "PASSING", "a.dribbling": "DRIBBLING",
       "a.defense": "DEFENSE", "a.heading": "HEADING", "a.goalkeeping": "KEEPER", "a.stamina": "STAMINA", "a.strength": "STRENGTH",
       "g.field": "FIELD", "g.ml": "MASTER LEAGUE", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "BEACH",
@@ -198,8 +204,9 @@
       "foot.R": "DERECHO", "foot.L": "IZQUIERDO",
       "fac.0": "SIN BARBA", "fac.1": "BIGOTE", "fac.2": "BARBA CORTA", "fac.3": "BARBA Y BIGOTE",
       "body.standard": "NORMAL", "body.short": "BAJO", "body.tall": "ALTO", "body.slim": "DELGADO", "body.robust": "FUERTE",
-      "hair.n": "ESTILO {n}", "hair.6": "ONDULADO", "hair.7": "AFRO", "hair.8": "ABUNDANTE",
-      "hair.ref": "REFERENCIA DE PEINADOS (COMO SALE EN EL JUEGO, FRENTE Y ESPALDA)", "hair.note": "DIBUJADO POR EL PROPIO JUEGO. HOY LOS ESTILOS 0 A 8 SALEN CON LA MISMA FORMA EN EL PARTIDO: SOLO CAMBIA EL BRILLO. HAZ CLIC PARA ELEGIR.",
+      "hair.n": "ESTILO {n}", "hair.6": "ONDULADO", "hair.7": "AFRO", "hair.8": "ABUNDANTE", "hair.10": "CALVO",
+      "p.cap": "GORRA (SOLO PORTERO)", "p.capdef": "LA DEL JUEGO", "p.capnone": "SIN GORRA",
+      "hair.ref": "REFERENCIA DE PEINADOS (COMO SALE EN EL JUEGO, FRENTE Y ESPALDA)", "hair.note": "DIBUJADO POR EL PROPIO JUEGO. HOY LOS ESTILOS 0 A 8 SALEN CON LA MISMA FORMA EN EL PARTIDO: SOLO CAMBIA EL BRILLO. EL ID 10 ES CALVO (EL PORTERO NUNCA SALE CALVO). HAZ CLIC PARA ELEGIR.",
       "a.pace": "VELOCIDAD", "a.shooting": "TIRO", "a.passing": "PASE", "a.dribbling": "REGATE",
       "a.defense": "DEFENSA", "a.heading": "CABEZAZO", "a.goalkeeping": "PORTERO", "a.stamina": "RESISTENCIA", "a.strength": "FUERZA",
       "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FÚTSAL (BRAZUCA)", "g.beach": "PLAYA",
@@ -322,11 +329,12 @@
       attributes: attrs,
       appearance: {
         skin: clampInt(ap.skin != null ? ap.skin : fap.skin, 0, 4, 2),
-        hair_style: clampInt(ap.hair_style != null ? ap.hair_style : fap.hair_style, 0, 8, 1),
+        hair_style: hairOk(ap.hair_style != null ? ap.hair_style : fap.hair_style, 1),
         hair_color: clampInt(ap.hair_color != null ? ap.hair_color : fap.hair_color, 0, 4, 0),
         facial: clampInt(ap.facial != null ? ap.facial : fap.facial, 0, 3, 0),
         body_type: pickLower(ap.body_type || fap.body_type, BODIES, "standard"),
-        boot_color: /^#[0-9a-f]{6}$/i.test(String(ap.boot_color || "")) ? String(ap.boot_color).toLowerCase() : (fap.boot_color || undefined)
+        boot_color: /^#[0-9a-f]{6}$/i.test(String(ap.boot_color || "")) ? String(ap.boot_color).toLowerCase() : (fap.boot_color || undefined),
+        cap_color: /^(#[0-9a-f]{6}|none)$/i.test(String(ap.cap_color || "")) ? String(ap.cap_color).toLowerCase() : (fap.cap_color || undefined)
       },
       photo: typeof raw.photo === "string" && raw.photo.indexOf("data:image/png") === 0 ? raw.photo : ""
     };
@@ -661,6 +669,7 @@
       '<label class="f" style="width:100%"><span>' + esc(t("p.skin")) + "</span>" + swatch(SKINS, "skin", ap.skin) + "</label>" +
       '<label class="f" style="width:100%"><span>' + esc(t("p.haircol")) + "</span>" + swatch(HAIRS, "hair_color", ap.hair_color) + "</label>" +
       bootPick(tm, ap) +
+      capPick(p, ap) +
       "</div>" +
       "<div>" +
         '<div class="grid2">' + field("p.name", "p.name", p.name, LIM.PNAME) + field("p.short", "p.short_name", p.short_name, LIM.PSHORT) + "</div>" +
@@ -669,11 +678,11 @@
           '<label class="f"><span>' + esc(t("p.pos")) + '</span><select data-k="p.position">' + opts(POS, p.position, function (v) { return v; }) + "</select></label>" +
           '<label class="f"><span>' + esc(t("p.foot")) + '</span><select data-k="p.foot">' + opts(["R", "L"], p.foot, function (v) { return t("foot." + v); }) + "</select></label>" +
           '<label class="f"><span>' + esc(t("p.trait")) + '</span><select data-k="p.trait">' + opts(TRAITS, p.trait, function (v) { return v || t("p.none"); }) + "</select></label>" +
-          '<label class="f"><span>' + esc(t("p.hair")) + '</span><select data-k="p.ap.hair_style">' + opts([0, 1, 2, 3, 4, 5, 6, 7, 8], ap.hair_style, function (v) { return v >= 6 ? t("hair." + v) : t("hair.n", { n: v + 1 }); }) + "</select></label>" +
+          '<label class="f"><span>' + esc(t("p.hair")) + '</span><select data-k="p.ap.hair_style">' + opts(p.position === "GK" ? HAIR_IDS.slice(0, 9) : HAIR_IDS, ap.hair_style, function (v) { return v >= 6 ? t("hair." + v) : t("hair.n", { n: v + 1 }); }) + "</select></label>" +
           '<label class="f"><span>' + esc(t("p.facial")) + '</span><select data-k="p.ap.facial">' + opts([0, 1, 2, 3], ap.facial, function (v) { return t("fac." + v); }) + "</select></label>" +
           '<label class="f"><span>' + esc(t("p.body")) + '</span><select data-k="p.ap.body_type">' + opts(BODIES, ap.body_type, function (v) { return t("body." + v); }) + "</select></label>" +
         "</div>" +
-        hairRef(ap.hair_style) +
+        hairRef(ap.hair_style, p.position === "GK") +
         '<div class="attrs" style="margin-top:14px">' + ATTRS.map(function (k) {
           return '<div class="attr"><span>' + esc(t("a." + k)) + '</span><input type="range" min="1" max="99" data-k="p.attr.' + k + '" value="' + p.attributes[k] + '"><b data-bind="a' + k + '">' + p.attributes[k] + "</b></div>";
         }).join("") + "</div>" +
@@ -704,7 +713,7 @@
       case "p.position": p.position = pick(v, POS, "MF"); break;
       case "p.foot": p.foot = pick(v, ["R", "L"], "R"); break;
       case "p.trait": p.trait = pick(v, TRAITS, ""); break;
-      case "p.ap.hair_style": p.appearance.hair_style = clampInt(v, 0, 8, 1); break;
+      case "p.ap.hair_style": p.appearance.hair_style = hairOk(v, 1); break;
       case "p.ap.facial": p.appearance.facial = clampInt(v, 0, 3, 0); break;
       case "p.ap.body_type": p.appearance.body_type = pickLower(v, BODIES, "standard"); break;
       default:
@@ -761,11 +770,23 @@
     }).join("") + "</div></label>";
   }
 
+  // 31/out: boné do goleiro (arte desenhada por pose no jogo). "" = o que o jogo
+  // já usa (poucos goleiros), "none" = tira, cor = boné nessa cor.
+  function capPick(p, ap) {
+    if (p.position !== "GK") return "";
+    var cur = String(ap.cap_color || "");
+    return '<label class="f" style="width:100%"><span>' + esc(t("p.cap")) + '</span><div class="sw">' + CAPS.map(function (c) {
+      var on = c === cur;
+      var bg = c === "" ? "repeating-linear-gradient(45deg,#3a3a3a 0 4px,#222 4px 8px)" : c === "none" ? "linear-gradient(135deg,#222 45%,#c81e1e 45% 55%,#222 55%)" : c;
+      return '<button type="button" data-cap="' + c + '" aria-pressed="' + on + '" title="' + (c === "" ? t("p.capdef") : c === "none" ? t("p.capnone") : c) + '" style="background:' + bg + '"></button>';
+    }).join("") + "</div></label>";
+  }
+
   // 31/out: referência visual de cada estilo de cabelo (miniaturas desenhadas
   // pelo motor do jogo: tests/_probe_311hairref no projeto do jogo)
-  function hairRef(cur) {
+  function hairRef(cur, gk) {
     return '<div class="hairref"><span class="dim">' + esc(t("hair.ref")) + "</span><div class=\"hairref__grid\">" +
-      [0, 1, 2, 3, 4, 5, 6, 7, 8].map(function (v) {
+      (gk ? HAIR_IDS.slice(0, 9) : HAIR_IDS).map(function (v) {
         return '<button type="button" class="hairref__c' + (v === cur ? " on" : "") + '" data-hair="' + v + '"><img src="img/hair/hair_' + v + '.png" alt="">' +
           "<b>ID " + v + "</b></button>";
       }).join("") + '</div><p class="dim" style="font-size:7px;margin:6px 0 0">' + esc(t("hair.note")) + "</p></div>";
@@ -988,9 +1009,10 @@
       "- shirt_number 1 to 99, no repeats in the same team. position: GK, DF, MF or FW. foot: R or L.\n" +
       "- attributes: integers 1 to 99. Only goalkeepers have goalkeeping above 40. Make the numbers fit each player.\n" +
       "- trait: empty or one of " + TRAITS.slice(1).join(", ") + ". Use few traits.\n" +
-      "- skin and hair_color: 0 (lightest) to 4 (darkest). hair_style: 0 to 8 (6 wavy, 7 afro, 8 full). facial: 0 none, 1 moustache, 2 short beard, 3 beard and moustache.\n" +
+      "- skin and hair_color: 0 (lightest) to 4 (darkest). hair_style: 0 to 8 (6 wavy, 7 afro, 8 full) or 10 (bald, never for goalkeepers). facial: 0 none, 1 moustache, 2 short beard, 3 beard and moustache.\n" +
       "- body_type: standard, short, tall, slim or robust.\n" +
       "- boot_color (optional, inside appearance): #rrggbb for colored boots; leave it out for the usual black boots.\n" +
+      "- cap_color (optional, inside appearance, goalkeepers only): #rrggbb for a cap of that color, or none; leave it out to keep the game's choice.\n" +
       "- kit_pattern: solid, vertical, hoops, chestband, chestband3 or band. Colors as #rrggbb.";
   }
   // 29/out: mapa geral de IDs (todos os times editáveis), para edição em massa
@@ -1104,6 +1126,8 @@
       if (pc) { curP = +pc.dataset.p; renderStudio(); var ped = $(".ped"); if (ped && window.innerWidth < 860) ped.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
       var im = e.target.closest("[data-img]"); if (im) { askImage(im.dataset.img, cur, curP); return; }
       if (e.target.closest("[data-teamdl]")) { exportTeam(); return; }
+      var cp = e.target.closest("[data-cap]");
+      if (cp) { S.teams[cur].players[curP].appearance.cap_color = cp.dataset.cap || undefined; renderStudio(); saveDraft(); return; }
       var bt = e.target.closest("[data-boot]");
       if (bt) { S.teams[cur].players[curP].appearance.boot_color = bt.dataset.boot || undefined; renderStudio(); saveDraft(); return; }
       var sw = e.target.closest("[data-sw]");
