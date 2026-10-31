@@ -344,7 +344,7 @@
       "mais.eyebrow": "Y no se termina",
       "mais.head": "Hay más",
       "mais.f1": "2 jugadores: 1P vs. 2P, cada uno con su control",
-      "mais.f2": "EXTRAS: Entrenamiento, Penales y 12 Scenarios, partidos históricos que arrancan en el segundo tiempo",
+      "mais.f2": "EXTRAS: Entrenamiento, Penales y 12 Escenarios, partidos históricos que arrancan en el segundo tiempo",
       "mais.f3": "EDITOR: importá mods, equipos y estadios hechos en el <a href=\"/mod\">MOD STUDIO</a>",
       "mais.f4": "Offside, números en la espalda y jugadores quietos que no parecen estatuas",
       "mais.f5": "Globos de diálogo del técnico y de los jugadores, con la opción DIÁLOGOS para apagarlos",

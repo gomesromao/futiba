@@ -4,7 +4,7 @@ Mesmo layout para as três línguas; muda só o texto e as telas com texto
 (assets/v2/menu/*-<lang>.png). Os PDFs saem do próprio HTML:
     python tools/build_manual.py            # só HTML
     python tools/build_manual.py --pdf      # HTML + PDF (Microsoft Edge headless)
-Referência de comandos: build 52.9 (levantada no código do jogo).
+Referência de comandos: build 52.9; edição 4 (31/out/2026) conferida no código do jogo.
 """
 import os, sys, subprocess
 
@@ -507,6 +507,306 @@ L["es"] = dict(
 )
 
 
+# ---------------------------------------------------------------- edição 4 (31/out/2026)
+# Atualização sobre os textos acima, conferida no código do jogo (build 31/out):
+# menus de main_menu.gd / indoor_select.gd / options.gd, botões pela tabela BTN
+# do training_flow.gd (a mesma que o TREINO mostra) e regras dos modos novos.
+RT, LT, BACK, R3 = b("RT", "b-sh"), b("LT", "b-sh"), b("BACK", "b-start"), b("R3", "b-sh")
+TR2, TL2 = b("R2", "b-l1"), b("L2", "b-l1")
+
+V4 = {}
+V4["pt"] = dict(
+    title="FUTIBA: Manual de jogo",
+    nav=[("#comece", "Começo"), ("#partida", "Partida"), ("#modos", "Modos"), ("#copas", "Copas"), ("#rua", "Rua e praia"), ("#mais", "Extras"), ("#teclado", "PC"), ("#toque", "Android")],
+    modes="AMISTOSO • CAMPEONATO • COPA FUTIBA • CHAMPIONS • COPA DO MUNDO • MASTER LIGA • FUTSAL • PAREDÃO • PRAIA • RUA • DESAFIO • COPA BRAZUCA",
+    ref="PC (teclado e controle) • Android (toque e controle) • referência: versão de 31/10/2026",
+    steps=[("ESCOLHA O MODO", "Amistoso para ir direto ao jogo, Campeonato, Copa e Modo Carreira para campanha, Indoor para futsal, paredão, praia e rua."),
+           ("ESCOLHA O TIME", "Mais de 150 equipes, cada uma com elenco, atributos, formação e retrato de cada jogador."),
+           ("MONTE O TIME", "Ajuste a escalação e o esquema. No futsal, no paredão e na praia, marque quem joga na linha."),
+           ("JOGUE", "Leia o campo, toque a bola e escolha a hora do chute.")],
+    menu=[("AMISTOSO", "partida avulsa, com estádio, horário e clima à sua escolha. Dá para jogar em 2."),
+          ("CAMPEONATO", "16 clubes, 15 rodadas, pontos corridos."),
+          ("COPA", "COPA FUTIBA (mata-mata de 8 ou 16), CHAMPIONS FUTIBA e COPA DO MUNDO."),
+          ("EXTRAS", "PÊNALTIS, TREINO e SCENARIOS."),
+          ("INDOOR", "futsal, paredão, COPA BRAZUCA, DESAFIO FUTSAL, MODO PRAIA, DESAFIO PRAIA e RUA."),
+          ("DESAFIO", "você contra um super time. Venceu, ele passa a jogar com você."),
+          ("MODO CARREIRA", "a MASTER LIGA."),
+          ("SUPER MUNDIAL", "aparece quando você é campeão do mundo na Master Liga."),
+          ("EDITOR", "importar mod, time e estádios, e PERSONALIZAR."),
+          ("CONQUISTAS", "12 conquistas e o álbum de figurinhas."),
+          ("OPÇÕES", "idioma, volume, moldura, filtro, duração do tempo, dificuldade e FALAS.")],
+    cup1="COPA > COPA FUTIBA. Chave de 8 ou 16, jogo único.",
+    pen0="Fica em EXTRAS. Monte a ordem dos 10 batedores de cada time.",
+    gl="<b>SELECT</b> troca o goleiro-linha sem pausar: <kbd>TAB</kbd> no teclado, " + BACK + " no controle.",
+    page_ref=("página 9", "página 12"),
+    key_through="<b>Toque em profundidade</b> (todos os modos): <kbd>SHIFT</kbd> + <kbd>Z</kbd>. O companheiro corre na frente.",
+    key_rows=[(k("S"), "Cruzamento manual: segure, mire com as setas e solte. Quanto mais segura, mais longe e mais alto", "·"),
+              (k("CTRL"), "Pivô: segure para proteger a bola", "<kbd>CTRL</kbd> + <kbd>A</kbd>: o goleiro sai na bola"),
+              (k("TAB"), "Futsal, Brazuca e paredão: troca o goleiro-linha sem pausar", "Troca o goleiro-linha")],
+    pad_through="<b>Toque em profundidade</b> (todos os modos): " + LB + " + " + A + ".",
+    pad_rows=[(RT + " + " + Y, "Cruzamento manual: segure, mire e solte", "·"),
+              (LT, "Pivô: segure para proteger a bola", LT + " + " + Y + ": o goleiro sai na bola"),
+              (BACK, "Futsal, Brazuca e paredão: troca o goleiro-linha", "Troca o goleiro-linha"),
+              (R3, "Lambreta (o mesmo que " + LB + " + " + Y + ")", "·")],
+    touch_rows=[(TR2, TR2 + " + " + TC + ": cruzamento manual (segure, mire e solte)", "·"),
+                (TL2, "Pivô: segure para proteger a bola · " + TL2 + " + " + TC + ": o goleiro sai na bola", "·")],
+    falas=("FALAS", "liga ou desliga os balões do técnico e dos jogadores."),
+    pc=dict(hd="COPAS E CARREIRA", big="TAÇA, JORNAL E CARREIRA.",
+            wc_h="COPA DO MUNDO", wc_tag="32 SELEÇÕES",
+            wc=["COPA > COPA DO MUNDO. Escolha a seleção primeiro: são 40, só desse modo, cada uma com técnico e elenco.",
+                "SORTEIO FIXO: os grupos clássicos. Se a sua seleção não está entre as 32, ela entra no lugar da Austrália. SORTEIO ALEATÓRIO: 32 das 40, com as 8 mais fortes como cabeças de chave.",
+                "8 grupos, oitavas, quartas, semi, disputa de 3º lugar e final.",
+                "Antes e depois de cada jogo sai o jornal: <b>←/→</b> trocam a página, confirmar avança e voltar fecha.",
+                "Os estádios ganham placas da Copa. CONTINUAR COPA retoma a campanha."],
+            ch_h="CHAMPIONS FUTIBA", ch_tag="MATA-MATA DE 16",
+            ch=["COPA > CHAMPIONS FUTIBA.", "Os gigantes da Europa: 10 fixos + 6 sorteados.", "Mata-mata de 16 até a final."],
+            ml_h="MASTER LIGA", ml_tag="MODO CARREIRA",
+            ml=["MODO CARREIRA > NOVA CARREIRA ou CARREGAR.",
+                "4 divisões de 12 clubes, da Série A à Série D.",
+                "No menu do clube: jogar ou simular, amistoso, calendário, tabelas, copas, elenco, mercado, patrocínio, jornal, troféus, treinador, exportar time e salvar.",
+                "EXPORTAR TIME guarda o seu time em até 5 vagas (ML1 a ML5).",
+                "Seja campeão do mundo e o SUPER MUNDIAL aparece no menu principal: mata-mata de 16."]),
+    pr=dict(hd="RUA E PRAIA", big="SEM GRAMADO.",
+            rua_h="RUA", rua_tag="2 CONTRA 2",
+            rua=["INDOOR > RUA. Rua de cima contra rua de baixo, 3 minutos.",
+                 "Gol de chinelo: só vale gol de dentro da área.",
+                 "O lugar é sorteado: favela, centro, roça, praia, noite, Amazônia, escola, laje ou vila.",
+                 "Sem a bola os botões mudam: passe troca de jogador, chute dá o bote e cruzamento é carrinho.",
+                 "Dá para jogar em 2. Na rua não tem número nas costas."],
+            ar_h="MODO PRAIA", ar_tag="FUTEBOL DE AREIA",
+            ar=["INDOOR > MODO PRAIA. 11 times só de praia.",
+                "3 períodos de 12 minutos (2 minutos reais cada). Empate vale: sem prorrogação e sem pênaltis.",
+                "Pé descalço, lateral com o pé e falta sem barreira.",
+                "Morrinhos na areia desviam a bola.",
+                "DESAFIO PRAIA: vença a seleção da areia e ela passa a jogar com você nos outros modos (menos na Copa Brazuca)."],
+            dfs="<b>DESAFIO FUTSAL</b> (Indoor): o rival te espera na quadra laranja. Venceu, ele passa a jogar com você."),
+    px=dict(hd="2 JOGADORES, EXTRAS E EDITOR", big="E TEM MAIS.",
+            two_h="2 JOGADORES",
+            two=["Em AMISTOSO, FUTSAL, PAREDÃO, MODO PRAIA e RUA, escolha 1 JOGADOR ou 2 JOGADORES.",
+                 "Cada um aperta um botão no próprio aparelho para entrar (teclado ou controle). O 1P é o mandante e o 2P o visitante.",
+                 "Com menos de dois aparelhos, 2 JOGADORES fica cinza."],
+            ex_h="EXTRAS",
+            ex=["<b>PÊNALTIS:</b> direto para a marca da cal.",
+                "<b>TREINO:</b> lições curtas em 5 categorias (BÁSICO, AVANÇADO, DEFESA, BOLA AÉREA, BOLA PARADA). O passo a passo mostra o botão do aparelho que você está usando. Tem também o MODO LIVRE, titulares x reservas.",
+                "<b>SCENARIOS:</b> 12 jogos históricos. Você entra no 2º tempo, com o placar e o minuto da época, e tem uma missão. Perdeu? Tente de novo."],
+            ed_h="EDITOR",
+            ed=["<b>IMPORTAR MOD:</b> mods feitos no MOD STUDIO do site (futiba.vercel.app/mod). No PC, a pasta <b>mod</b> fica ao lado do jogo.",
+                "<b>IMPORTAR TIME:</b> um time avulso, exportado no PERSONALIZAR. No PC, a pasta <b>times</b> fica ao lado do jogo.",
+                "<b>IMPORTAR ESTÁDIOS:</b> até 5 estádios feitos no MOD STUDIO. No PC, a pasta <b>estadios</b> fica ao lado do jogo. A arquibancada desses estádios é parada.",
+                "<b>PERSONALIZAR:</b> edite times e jogadores."],
+            rg_h="NA PARTIDA",
+            rg=["<b>Impedimento:</b> no campo, o juiz marca e a tela mostra IMPEDIMENTO.",
+                "<b>Números nas costas</b> em todos os modos, menos na rua.",
+                "<b>FALAS</b> (em OPÇÕES): liga ou desliga os balões do técnico e dos jogadores.",
+                "Jogador parado não fica estátua: cada um tem o seu jeito de esperar."]),
+)
+
+V4["en"] = dict(
+    title="FUTIBA: Game manual",
+    nav=[("#comece", "Start"), ("#partida", "Match"), ("#modos", "Modes"), ("#copas", "Cups"), ("#rua", "Street and beach"), ("#mais", "Extras"), ("#teclado", "PC"), ("#toque", "Android")],
+    modes="FRIENDLY • CHAMPIONSHIP • FUTIBA CUP • CHAMPIONS • WORLD CUP • MASTER LEAGUE • FUTSAL • WALL MODE • BEACH • STREET • CHALLENGE • BRAZUCA CUP",
+    ref="PC (keyboard and controller) • Android (touch and controller) • reference: version of 31/10/2026",
+    steps=[("PICK A MODE", "Friendly to go straight to a match, Championship, Cup and Career Mode for a campaign, Indoor for futsal, wall mode, beach and street."),
+           ("PICK A TEAM", "Over 150 teams, each with a squad, ratings, formation and a portrait for every player."),
+           ("SET UP THE TEAM", "Adjust the line-up and the formation. In futsal, wall mode and beach, pick who plays outfield."),
+           ("PLAY", "Read the pitch, move the ball and choose the moment to shoot.")],
+    menu=[("FRIENDLY", "a one-off match, with the stadium, time of day and weather you want. Two players can play."),
+          ("CHAMPIONSHIP", "16 clubs, 15 rounds, round robin."),
+          ("CUP", "FUTIBA CUP (knockout of 8 or 16), CHAMPIONS FUTIBA and WORLD CUP."),
+          ("EXTRAS", "PENALTIES, TRAINING and SCENARIOS."),
+          ("INDOOR", "futsal, wall mode, BRAZUCA CUP, FUTSAL CHALLENGE, BEACH MODE, BEACH CHALLENGE and STREET."),
+          ("CHALLENGE", "you against a super team. Beat them and they play for you."),
+          ("CAREER MODE", "the MASTER LEAGUE."),
+          ("SUPER WORLD CUP", "shows up when you become world champion in the Master League."),
+          ("EDITOR", "import mod, team and stadiums, and CUSTOMIZE."),
+          ("ACHIEVEMENTS", "12 achievements and the sticker album."),
+          ("OPTIONS", "language, volume, frame, filter, half length, difficulty and SPEECH.")],
+    cup1="CUP > FUTIBA CUP. Bracket of 8 or 16, single match.",
+    pen0="It lives in EXTRAS. Set the order of the 10 takers for each team.",
+    gl="<b>SELECT</b> swaps the flying keeper without pausing: <kbd>TAB</kbd> on the keyboard, " + BACK + " on the controller.",
+    page_ref=("page 9", "page 12"),
+    key_through="<b>Through ball</b> (every mode): <kbd>SHIFT</kbd> + <kbd>Z</kbd>. The teammate runs in behind.",
+    key_rows=[(k("S"), "Manual cross: hold, aim with the arrows and release. The longer you hold, the longer and higher", "·"),
+              (k("CTRL"), "Pivot: hold to shield the ball", "<kbd>CTRL</kbd> + <kbd>A</kbd>: the keeper rushes out"),
+              (k("TAB"), "Futsal, Brazuca and wall mode: swaps the flying keeper without pausing", "Swaps the flying keeper")],
+    pad_through="<b>Through ball</b> (every mode): " + LB + " + " + A + ".",
+    pad_rows=[(RT + " + " + Y, "Manual cross: hold, aim and release", "·"),
+              (LT, "Pivot: hold to shield the ball", LT + " + " + Y + ": the keeper rushes out"),
+              (BACK, "Futsal, Brazuca and wall mode: swaps the flying keeper", "Swaps the flying keeper"),
+              (R3, "Rainbow flick (same as " + LB + " + " + Y + ")", "·")],
+    touch_rows=[(TR2, TR2 + " + " + TC + ": manual cross (hold, aim and release)", "·"),
+                (TL2, "Pivot: hold to shield the ball · " + TL2 + " + " + TC + ": the keeper rushes out", "·")],
+    falas=("SPEECH", "turns the coach and player speech bubbles on or off."),
+    pc=dict(hd="CUPS AND CAREER", big="TROPHIES, NEWSPAPERS AND A CAREER.",
+            wc_h="WORLD CUP", wc_tag="32 NATIONAL TEAMS",
+            wc=["CUP > WORLD CUP. Pick your team first: there are 40, just for this mode, each with its own coach and squad.",
+                "FIXED DRAW: the classic groups. If your team is not among the 32, it takes Australia's place. RANDOM DRAW: 32 of the 40, with the 8 strongest seeded.",
+                "8 groups, round of 16, quarters, semis, third place match and final.",
+                "Before and after every match the newspaper comes out: <b>←/→</b> turn the page, confirm moves on and back closes it.",
+                "Stadiums get World Cup boards. CONTINUE CUP picks the run back up."],
+            ch_h="CHAMPIONS FUTIBA", ch_tag="16 TEAM KNOCKOUT",
+            ch=["CUP > CHAMPIONS FUTIBA.", "Europe's giants: 10 fixed + 6 drawn.", "16 team knockout to the final."],
+            ml_h="MASTER LEAGUE", ml_tag="CAREER MODE",
+            ml=["CAREER MODE > NEW CAREER or LOAD.",
+                "4 divisions of 12 clubs, Serie A to Serie D.",
+                "In the club menu: play or simulate, friendly, calendar, tables, cups, squad, market, sponsorship, newspaper, trophies, coach, export team and save.",
+                "EXPORT TEAM keeps your team in up to 5 slots (ML1 to ML5).",
+                "Become world champion and the SUPER WORLD CUP shows up in the main menu: a 16 team knockout."]),
+    pr=dict(hd="STREET AND BEACH", big="NO GRASS.",
+            rua_h="STREET", rua_tag="2 AGAINST 2",
+            rua=["INDOOR > STREET. Upper street against lower street, 3 minutes.",
+                 "Flip flop goals: a goal only counts from inside the box.",
+                 "The place is drawn: favela, downtown, countryside, beach, night, Amazon, school, rooftop or village.",
+                 "Without the ball the buttons change: pass switches player, shoot tackles and cross is a slide.",
+                 "Two players can play. There are no shirt numbers in the street."],
+            ar_h="BEACH MODE", ar_tag="BEACH SOCCER",
+            ar=["INDOOR > BEACH MODE. 11 beach only teams.",
+                "3 periods of 12 minutes (2 real minutes each). A draw stands: no extra time and no penalties.",
+                "Bare feet, kick-ins and free kicks with no wall.",
+                "Little mounds in the sand knock the ball off course.",
+                "BEACH CHALLENGE: beat the sand national team and it plays for you in the other modes (except the Brazuca Cup)."],
+            dfs="<b>FUTSAL CHALLENGE</b> (Indoor): the rival waits on the orange court. Beat them and they play for you."),
+    px=dict(hd="2 PLAYERS, EXTRAS AND EDITOR", big="THERE'S MORE.",
+            two_h="2 PLAYERS",
+            two=["In FRIENDLY, FUTSAL, WALL MODE, BEACH MODE and STREET, pick 1 PLAYER or 2 PLAYERS.",
+                 "Each player presses a button on their own device to join (keyboard or controller). 1P is home and 2P is away.",
+                 "With fewer than two devices, 2 PLAYERS is greyed out."],
+            ex_h="EXTRAS",
+            ex=["<b>PENALTIES:</b> straight to the spot.",
+                "<b>TRAINING:</b> short lessons in 5 categories (BASICS, ADVANCED, DEFENDING, AERIAL BALL, SET PIECES). Each step shows the button of the device you are using. There is also FREE MODE, starters vs reserves.",
+                "<b>SCENARIOS:</b> 12 historic matches. You come in for the second half, with the score and the minute of the day, and a mission. Lost? Try again."],
+            ed_h="EDITOR",
+            ed=["<b>IMPORT MOD:</b> mods made in the site's MOD STUDIO (futiba.vercel.app/mod). On PC, the <b>mod</b> folder sits next to the game.",
+                "<b>IMPORT TEAM:</b> a single team, exported from CUSTOMIZE. On PC, the <b>times</b> folder sits next to the game.",
+                "<b>IMPORT STADIUMS:</b> up to 5 stadiums made in the MOD STUDIO. On PC, the <b>estadios</b> folder sits next to the game. The stands in these stadiums don't move.",
+                "<b>CUSTOMIZE:</b> edit teams and players."],
+            rg_h="IN THE MATCH",
+            rg=["<b>Offside:</b> on the pitch, the referee calls it and the screen shows OFFSIDE.",
+                "<b>Shirt numbers</b> in every mode except the street.",
+                "<b>SPEECH</b> (in OPTIONS): turns the coach and player speech bubbles on or off.",
+                "Idle players don't stand like statues: each one has its own way of waiting."]),
+)
+
+V4["es"] = dict(
+    title="FUTIBA: Manual del juego",
+    nav=[("#comece", "Inicio"), ("#partida", "Partido"), ("#modos", "Modos"), ("#copas", "Copas"), ("#rua", "Calle y playa"), ("#mais", "Extras"), ("#teclado", "PC"), ("#toque", "Android")],
+    modes="AMISTOSO • CAMPEONATO • COPA FUTIBA • CHAMPIONS • COPA DEL MUNDO • MASTER LIGA • FÚTSAL • PAREDÓN • PLAYA • CALLE • DESAFÍO • COPA BRAZUCA",
+    ref="PC (teclado y control) • Android (táctil y control) • referencia: versión del 31/10/2026",
+    steps=[("ELEGÍ EL MODO", "Amistoso para ir directo al partido, Campeonato, Copa y Modo Carrera para campaña, Indoor para fútsal, paredón, playa y calle."),
+           ("ELEGÍ EL EQUIPO", "Más de 150 equipos, cada uno con plantel, atributos, formación y retrato de cada jugador."),
+           ("ARMÁ EL EQUIPO", "Ajustá la alineación y el esquema. En fútsal, paredón y playa, marcá quién juega de campo."),
+           ("JUGÁ", "Leé la cancha, mové la pelota y elegí el momento del remate.")],
+    menu=[("AMISTOSO", "partido suelto, con el estadio, la hora y el clima que quieras. Se puede jugar de a 2."),
+          ("CAMPEONATO", "16 clubes, 15 fechas, todos contra todos."),
+          ("COPA", "COPA FUTIBA (eliminación de 8 o 16), CHAMPIONS FUTIBA y COPA DEL MUNDO."),
+          ("EXTRAS", "PENALES, ENTRENAMIENTO y ESCENARIOS."),
+          ("INDOOR", "fútsal, paredón, COPA BRAZUCA, DESAFÍO FÚTSAL, MODO PLAYA, DESAFÍO PLAYA y CALLE."),
+          ("DESAFÍO", "vos contra un súper equipo. Si ganás, juega con vos."),
+          ("MODO CARRERA", "la MASTER LIGA."),
+          ("SUPER MUNDIAL", "aparece cuando salís campeón del mundo en la Master Liga."),
+          ("EDITOR", "importar mod, equipo y estadios, y PERSONALIZAR."),
+          ("LOGROS", "12 logros y el álbum de figuritas."),
+          ("OPCIONES", "idioma, volumen, marco, filtro, duración del tiempo, dificultad y DIÁLOGOS.")],
+    cup1="COPA > COPA FUTIBA. Llave de 8 o 16, partido único.",
+    pen0="Está en EXTRAS. Armá el orden de los 10 pateadores de cada equipo.",
+    gl="<b>SELECT</b> cambia el arquero-jugador sin pausar: <kbd>TAB</kbd> en el teclado, " + BACK + " en el control.",
+    page_ref=("página 9", "página 12"),
+    key_through="<b>Pase en profundidad</b> (todos los modos): <kbd>SHIFT</kbd> + <kbd>Z</kbd>. El compañero corre adelante.",
+    key_rows=[(k("S"), "Centro manual: mantené, apuntá con las flechas y soltá. Cuanto más mantenés, más lejos y más alto", "·"),
+              (k("CTRL"), "Pivote: mantené para proteger la pelota", "<kbd>CTRL</kbd> + <kbd>A</kbd>: el arquero sale a la pelota"),
+              (k("TAB"), "Fútsal, Brazuca y paredón: cambia el arquero-jugador sin pausar", "Cambia el arquero-jugador")],
+    pad_through="<b>Pase en profundidad</b> (todos los modos): " + LB + " + " + A + ".",
+    pad_rows=[(RT + " + " + Y, "Centro manual: mantené, apuntá y soltá", "·"),
+              (LT, "Pivote: mantené para proteger la pelota", LT + " + " + Y + ": el arquero sale a la pelota"),
+              (BACK, "Fútsal, Brazuca y paredón: cambia el arquero-jugador", "Cambia el arquero-jugador"),
+              (R3, "Lambretta (igual que " + LB + " + " + Y + ")", "·")],
+    touch_rows=[(TR2, TR2 + " + " + TC + ": centro manual (mantené, apuntá y soltá)", "·"),
+                (TL2, "Pivote: mantené para proteger la pelota · " + TL2 + " + " + TC + ": el arquero sale a la pelota", "·")],
+    falas=("DIÁLOGOS", "prende o apaga los globos de diálogo del técnico y de los jugadores."),
+    pc=dict(hd="COPAS Y CARRERA", big="COPAS, DIARIOS Y CARRERA.",
+            wc_h="COPA DEL MUNDO", wc_tag="32 SELECCIONES",
+            wc=["COPA > COPA DEL MUNDO. Primero elegí la selección: son 40, solo de este modo, cada una con técnico y plantel.",
+                "SORTEO FIJO: los grupos clásicos. Si tu selección no está entre las 32, entra en el lugar de Australia. SORTEO ALEATORIO: 32 de las 40, con las 8 más fuertes como cabezas de serie.",
+                "8 grupos, octavos, cuartos, semi, tercer puesto y final.",
+                "Antes y después de cada partido sale el diario: <b>←/→</b> cambian la página, confirmar avanza y volver cierra.",
+                "Los estadios tienen carteles de la Copa. CONTINUAR COPA retoma la campaña."],
+            ch_h="CHAMPIONS FUTIBA", ch_tag="ELIMINACIÓN DE 16",
+            ch=["COPA > CHAMPIONS FUTIBA.", "Los gigantes de Europa: 10 fijos + 6 sorteados.", "Eliminación directa de 16 hasta la final."],
+            ml_h="MASTER LIGA", ml_tag="MODO CARRERA",
+            ml=["MODO CARRERA > NUEVA CARRERA o CARGAR.",
+                "4 divisiones de 12 clubes, de la Serie A a la Serie D.",
+                "En el menú del club: jugar o simular, amistoso, calendario, tablas, copas, plantel, mercado, patrocinio, diario, trofeos, técnico, exportar equipo y guardar.",
+                "EXPORTAR EQUIPO guarda tu equipo en hasta 5 lugares (ML1 a ML5).",
+                "Salí campeón del mundo y el SUPER MUNDIAL aparece en el menú principal: eliminación de 16."]),
+    pr=dict(hd="CALLE Y PLAYA", big="SIN CÉSPED.",
+            rua_h="CALLE", rua_tag="2 CONTRA 2",
+            rua=["INDOOR > CALLE. La calle de arriba contra la de abajo, 3 minutos.",
+                 "Arco de chancletas: solo vale el gol desde adentro del área.",
+                 "El lugar se sortea: favela, centro, campo, playa, noche, Amazonia, escuela, terraza o villa.",
+                 "Sin la pelota los botones cambian: pase cambia de jugador, remate quita y centro es barrida.",
+                 "Se puede jugar de a 2. En la calle no hay números en la espalda."],
+            ar_h="MODO PLAYA", ar_tag="FÚTBOL PLAYA",
+            ar=["INDOOR > MODO PLAYA. 11 equipos solo de playa.",
+                "3 períodos de 12 minutos (2 minutos reales cada uno). El empate vale: sin alargue y sin penales.",
+                "Pies descalzos, lateral con el pie y tiro libre sin barrera.",
+                "Los montículos de arena desvían la pelota.",
+                "DESAFÍO PLAYA: ganale a la selección de la arena y juega con vos en los otros modos (menos en la Copa Brazuca)."],
+            dfs="<b>DESAFÍO FÚTSAL</b> (Indoor): el rival te espera en la cancha naranja. Si ganás, juega con vos."),
+    px=dict(hd="2 JUGADORES, EXTRAS Y EDITOR", big="HAY MÁS.",
+            two_h="2 JUGADORES",
+            two=["En AMISTOSO, FÚTSAL, PAREDÓN, MODO PLAYA y CALLE, elegí 1 JUGADOR o 2 JUGADORES.",
+                 "Cada uno aprieta un botón en su propio aparato para entrar (teclado o control). El 1P es local y el 2P visitante.",
+                 "Con menos de dos aparatos, 2 JUGADORES queda en gris."],
+            ex_h="EXTRAS",
+            ex=["<b>PENALES:</b> directo al punto del penal.",
+                "<b>ENTRENAMIENTO:</b> lecciones cortas en 5 categorías (BÁSICO, AVANZADO, DEFENSA, JUEGO AÉREO, BALÓN PARADO). Cada paso muestra el botón del aparato que estás usando. También está el MODO LIBRE, titulares vs suplentes.",
+                "<b>ESCENARIOS:</b> 12 partidos históricos. Entrás en el segundo tiempo, con el resultado y el minuto de la época, y tenés una misión. ¿Perdiste? Probá de nuevo."],
+            ed_h="EDITOR",
+            ed=["<b>IMPORTAR MOD:</b> mods hechos en el MOD STUDIO del sitio (futiba.vercel.app/mod). En PC, la carpeta <b>mod</b> va al lado del juego.",
+                "<b>IMPORTAR EQUIPO:</b> un equipo suelto, exportado en PERSONALIZAR. En PC, la carpeta <b>times</b> va al lado del juego.",
+                "<b>IMPORTAR ESTADIOS:</b> hasta 5 estadios hechos en el MOD STUDIO. En PC, la carpeta <b>estadios</b> va al lado del juego. La tribuna de estos estadios es fija.",
+                "<b>PERSONALIZAR:</b> editá equipos y jugadores."],
+            rg_h="EN EL PARTIDO",
+            rg=["<b>Offside:</b> en la cancha, el árbitro lo cobra y la pantalla muestra OFFSIDE.",
+                "<b>Números en la espalda</b> en todos los modos, menos en la calle.",
+                "<b>DIÁLOGOS</b> (en OPCIONES): prende o apaga los globos del técnico y de los jugadores.",
+                "Los jugadores quietos no parecen estatuas: cada uno tiene su forma de esperar."]),
+)
+
+
+def _apply_v4():
+    for lang, u in V4.items():
+        t = L[lang]
+        t["title"] = u["title"]
+        t["nav"] = u["nav"]
+        t["cover"]["modes"] = u["modes"]
+        t["cover"]["ref"] = u["ref"]
+        t["p2"]["steps"] = u["steps"]
+        t["p2"]["menu"] = u["menu"]
+        h, d = t["p3"]["s"][1]
+        t["p3"]["s"][1] = (h, d.replace("(12)", "(18)"))
+        for i, (h, tag, cls, items) in enumerate(t["p5"]["m"]):
+            if cls == "blue":
+                items[0] = u["cup1"]
+            if cls == "purple":
+                items[0] = u["pen0"]
+        t["p6"]["setup"].append(u["gl"])
+        t["p7"]["futsal"] = u["key_through"]
+        t["p7"]["rows"] += u["key_rows"]
+        t["p8"]["futsal"] = u["pad_through"]
+        t["p8"]["rows"] += u["pad_rows"]
+        t["p9"]["rows"] += u["touch_rows"]
+        t["p10"]["opt"].append(u["falas"])
+        a, b_ = u["page_ref"]
+        t["p10"]["pad"] = t["p10"]["pad"].replace(a, b_)
+        for key in ("p7", "p8", "p9"):
+            t[key]["rows"] = [tuple("·" if c == "—" else c for c in r) for r in t[key]["rows"]]
+        t["pc"], t["pr"], t["px"] = u["pc"], u["pr"], u["px"]
+
+
+_apply_v4()
+
+
 # ---------------------------------------------------------------- páginas
 def page(t, pid, hd, n, body, cls=""):
     return f'''<section class="page {cls}" id="{pid}">
@@ -530,6 +830,7 @@ def build(lang):
     t = L[lang]
     m = lambda name: f"../assets/v2/menu/{name}-{lang}.png"
     v = lambda name: f"../assets/v2/{name}.jpg"
+    v4 = lambda name: f"../assets/v4/{name}.jpg"
     out = []
     c = t["cover"]
     out.append(f'''<section class="page cover" id="capa"><div class="cover__in">
@@ -542,13 +843,13 @@ def build(lang):
     menu = "".join(f"<li><b>{a}</b>: {d}</li>" for a, d in p["menu"])
     out.append(page(t, "comece", p["hd"], 2, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
   <div class="grid g2">{steps}</div>
-  <div class="grid g2" style="margin-top:16px;align-items:center">{shot(f"../assets/v3/menu-{lang}.png", "Menu", True)}<div class="box box--gold"><h3>{p["menu_h"]}</h3><ul>{menu}</ul></div></div>'''))
+  <div class="grid g2" style="margin-top:16px;align-items:center">{shot(v4(f"menu_{lang}"), "Menu", True)}<div class="box box--gold"><h3>{p["menu_h"]}</h3><ul>{menu}</ul></div></div>'''))
 
     p = t["p3"]
-    imgs = [m("times"), None, m("escalacao"), v("est-maracana"), v("moeda"), v("lado")]
+    imgs = [v4(f"times_{lang}"), None, m("escalacao"), v4("est2_maracana"), v4("moeda"), v("lado")]
     cells = []
     for i, (h, d) in enumerate(p["s"]):
-        img = shot(imgs[i], h, imgs[i].endswith(".png")) if imgs[i] else ""
+        img = shot(imgs[i], h, imgs[i].endswith(".png") or "/v4/times_" in imgs[i]) if imgs[i] else ""
         cells.append(f'<div class="box"><h3>{h}</h3>{img}<p style="margin-top:10px">{d}</p></div>')
     out.append(page(t, "apito", p["hd"], 3, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p><div class="grid g3">{"".join(cells)}</div>'''))
 
@@ -556,7 +857,7 @@ def build(lang):
     hud = "".join(f"<li><b>{a}</b>: {d}</li>" for a, d in p["hud"])
     cards = "".join(f'<div class="box"><span class="tag {cls}">{h}</span><p>{d}</p></div>' for h, d, cls in p["cards"])
     out.append(page(t, "partida", p["hd"], 4, f'''<p class="big">{p["big"]}</p>
-  <div class="grid g2" style="align-items:center">{shot(v("jogo-barcelona"), p["big"])}<div class="box box--gold"><ul>{hud}</ul></div></div>
+  <div class="grid g2" style="align-items:center">{shot(v4("barcelona_jogo"), p["big"])}<div class="box box--gold"><ul>{hud}</ul></div></div>
   <div class="grid g3" style="margin-top:16px">{cards}</div>'''))
 
     p = t["p5"]
@@ -571,8 +872,8 @@ def build(lang):
     out.append(page(t, "indoor", p["hd"], 6, f'''<p class="big">{p["big"]}</p>
   <div class="grid g2" style="align-items:center">{shot(m("futsal-setup"), p["setup_h"], True)}<div class="box box--gold"><h3>{p["setup_h"]}</h3><ul>{setup}</ul></div></div>
   <div class="grid g2" style="margin-top:16px">
-    <div class="box"><span class="tag red">{p["fut_tag"]}</span><h3>{p["fut_h"]}</h3>{shot(v("futsal-1"), p["fut_h"])}<ul style="margin-top:10px">{fut}</ul></div>
-    <div class="box"><span class="tag blue">{p["par_tag"]}</span><h3>{p["par_h"]}</h3>{shot(v("paredao-1"), p["par_h"])}<ul style="margin-top:10px">{par}</ul></div>
+    <div class="box"><span class="tag red">{p["fut_tag"]}</span><h3>{p["fut_h"]}</h3>{shot(v4("futsal_jogo"), p["fut_h"])}<ul style="margin-top:10px">{fut}</ul></div>
+    <div class="box"><span class="tag blue">{p["par_tag"]}</span><h3>{p["par_h"]}</h3>{shot(v4("paredao_jogo"), p["par_h"])}<ul style="margin-top:10px">{par}</ul></div>
   </div>'''))
 
     p = t["p6b"]
@@ -584,33 +885,59 @@ def build(lang):
     out.append(page(t, "novos", p["hd"], 7, f'''<p class="big">{p["big"]}</p>
   <div class="grid g2">
     <div class="box"><span class="tag red">{p["dz_tag"]}</span><h3>{p["dz_h"]}</h3>{shot(n3("desafio1-cut"), p["dz_h"], True)}<ul style="margin-top:10px">{dz}</ul></div>
-    <div class="box"><span class="tag purple">{p["bz_tag"]}</span><h3>{p["bz_h"]}</h3>{shot(j3("brazuca-quadra"), p["bz_h"])}<ul style="margin-top:10px">{bz}</ul></div>
+    <div class="box"><span class="tag purple">{p["bz_tag"]}</span><h3>{p["bz_h"]}</h3>{shot(v4("brazuca_area"), p["bz_h"])}<ul style="margin-top:10px">{bz}</ul></div>
   </div>
   <div class="box box--gold" style="margin-top:16px"><h3>{p["tips_h"]}</h3><ul>{tips}</ul></div>'''))
 
+    p = t["pc"]
+    li = lambda xs: "".join(f"<li>{x}</li>" for x in xs)
+    out.append(page(t, "copas", p["hd"], 8, f'''<p class="big">{p["big"]}</p>
+  <div class="grid g2">
+    <div class="box"><span class="tag green">{p["wc_tag"]}</span><h3>{p["wc_h"]}</h3>{shot(v4(f"copa_grupos_{lang}"), p["wc_h"], True)}<ul style="margin-top:10px">{li(p["wc"])}</ul></div>
+    <div class="box"><span class="tag blue">{p["ch_tag"]}</span><h3>{p["ch_h"]}</h3>{shot(v4("champions_jogo"), p["ch_h"])}<ul style="margin-top:10px">{li(p["ch"])}</ul>
+      <span class="tag purple" style="margin-top:14px">{p["ml_tag"]}</span><h3>{p["ml_h"]}</h3><ul>{li(p["ml"])}</ul></div>
+  </div>'''))
+
+    p = t["pr"]
+    out.append(page(t, "rua", p["hd"], 9, f'''<p class="big">{p["big"]}</p>
+  <div class="grid g2">
+    <div class="box"><span class="tag red">{p["rua_tag"]}</span><h3>{p["rua_h"]}</h3>{shot(v4("rua_favela"), p["rua_h"])}<ul style="margin-top:10px">{li(p["rua"])}</ul></div>
+    <div class="box"><span class="tag orange">{p["ar_tag"]}</span><h3>{p["ar_h"]}</h3>{shot(v4("areia_jogo"), p["ar_h"])}<ul style="margin-top:10px">{li(p["ar"])}</ul></div>
+  </div>
+  <p class="box box--gold" style="margin-top:16px">{p["dfs"]}</p>'''))
+
+    p = t["px"]
+    out.append(page(t, "mais", p["hd"], 10, f'''<p class="big">{p["big"]}</p>
+  <div class="grid g2">
+    <div class="box"><h3>{p["two_h"]}</h3><ul>{li(p["two"])}</ul></div>
+    <div class="box"><h3>{p["ex_h"]}</h3><ul>{li(p["ex"])}</ul></div>
+    <div class="box"><h3>{p["ed_h"]}</h3><ul>{li(p["ed"])}</ul></div>
+    <div class="box box--gold"><h3>{p["rg_h"]}</h3><ul>{li(p["rg"])}</ul></div>
+  </div>'''))
+
     p = t["p7"]
     sets = "".join(f"<li>{x}</li>" for x in p["sets"])
-    out.append(page(t, "teclado", p["hd"], 8, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
+    out.append(page(t, "teclado", p["hd"], 11, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
   {keys_table(p["th"], p["rows"])}
   <p class="box box--gold" style="margin-top:10px">{p["futsal"]}</p>
   <div class="grid g2" style="margin-top:12px"><div class="box"><h3>{p["set_h"]}</h3><ul>{sets}</ul></div><div class="box"><h3>{p["menu_h"]}</h3><p>{p["menu"]}</p></div></div>'''))
 
     p = t["p8"]
-    out.append(page(t, "controle", p["hd"], 9, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
+    out.append(page(t, "controle", p["hd"], 12, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
   {keys_table(p["th"], p["rows"])}
   <p class="box box--gold" style="margin-top:10px">{p["futsal"]}</p>
   <div class="grid g2" style="margin-top:12px"><div class="box"><p>{p["extra"]}</p></div><div class="box"><h3>{p["menu_h"]}</h3><p>{p["menu"]}</p></div></div>'''))
 
     p = t["p9"]
     tips = "".join(f"<li>{x}</li>" for x in p["tips"])
-    out.append(page(t, "toque", p["hd"], 10, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
+    out.append(page(t, "toque", p["hd"], 13, f'''<p class="big">{p["big"]}</p><p class="lead">{p["lead"]}</p>
   <div class="grid g2" style="align-items:center">{phone_svg(p["svg"])}<div class="box box--gold"><h3>{p["glow_h"]}</h3><p>{p["glow"]}</p></div></div>
   {keys_table(p["th"], p["rows"])}
   <div class="box" style="margin-top:10px"><h3>{p["tips_h"]}</h3><ul>{tips}</ul></div>'''))
 
     p = t["p10"]
     opt = "".join(f"<li><b>{a}</b>: {d}</li>" for a, d in p["opt"])
-    out.append(page(t, "gamepad", p["hd"], 11, f'''<p class="big">{p["big"]}</p><p class="lead">{p["pad"]}</p>
+    out.append(page(t, "gamepad", p["hd"], 14, f'''<p class="big">{p["big"]}</p><p class="lead">{p["pad"]}</p>
   <div class="grid g2" style="align-items:start">{shot(m("opcoes"), p["opt_h"], True)}<div class="box"><h3>{p["opt_h"]}</h3><ul>{opt}</ul></div></div>
   <div class="grid g2" style="margin-top:16px"><div class="box box--gold"><h3>{p["sec_h"]}</h3><p>{p["sec"]}</p></div><div class="box"><h3>{p["ach_h"]}</h3><p>{p["ach"]}</p></div></div>'''))
 
