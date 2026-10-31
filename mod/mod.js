@@ -286,6 +286,14 @@
   var S = freshState();
   var cur = -1, curP = 0;
 
+  // 31/out: o editor de estádios (stadiums.js) usa o mesmo rascunho e os mesmos
+  // utilitários; sem o script nada disto é chamado.
+  window.FutibaMod = {
+    state: function () { return S; }, save: function () { saveDraft(); }, lang: function () { return lang; },
+    clean: function (v, n) { return clean(v, n); }, esc: function (v) { return esc(v); },
+    msg: function (a, b) { msg(a, b); }, toast: function (a) { toast(a); }
+  };
+
   function freshState() { return { mod: { id: "MEU_MOD", name: "MEU MOD", author: "" }, teams: [] }; }
 
   function normPlayer(raw, fallback, idx, teamId) {
@@ -444,6 +452,7 @@
     $$(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false"); });
     $$("[data-t]").forEach(function (el) { el.innerHTML = t(el.dataset.t); });
     renderCount(); renderPick(); renderPrompts(); renderLimits(); renderStudio();
+    if (window.FutibaStadiums) window.FutibaStadiums.render();
   }
 
   // ---------- telas (menu estilo jogo) ----------
@@ -452,7 +461,8 @@
     screen = name;
     $$("#menu button").forEach(function (b) { b.setAttribute("aria-current", b.dataset.go === name ? "true" : "false"); });
     $$("[data-screen]").forEach(function (s) { s.hidden = s.id !== "s-" + name; });
-    $("#status").hidden = name !== "studio";
+    $("#status").hidden = name !== "studio" && name !== "stadiums";
+    if (name === "stadiums" && window.FutibaStadiums) window.FutibaStadiums.render();
     if (name === "studio") ensureBase().then(renderStudio);
     if (name === "ai") ensureBase();   // 29/out: o mapa de IDs vem da base
     if (scroll) $("#s-" + name).scrollIntoView({ behavior: "smooth", block: "start" });
@@ -793,7 +803,8 @@
   }
 
   function exportMod() {
-    if (!S.teams.length) { msg(t("msg.noteams"), "err"); return; }
+    var FS = window.FutibaStadiums;   // 31/out: editor de estádios (stadiums.js, opcional)
+    if (!S.teams.length && !(FS && FS.count())) { msg(t("msg.noteams"), "err"); return; }
     var id = cleanId(S.mod.id) || "MEU_MOD"; if (id.length < 3) id = (id + "_MOD").slice(0, 24);
     var root = "mod/" + id + "/";
     var zip = new JSZip();
@@ -827,6 +838,11 @@
         return tm.base ? onlyChanged(full, BASE_BY_ID[tm.id]) : full;
       })
     };
+    if (FS && FS.count()) {
+      var st = FS.addToMod(zip, root);
+      if (st.error) { msg(st.error, "err"); return; }
+      mod.stadiums = st.list; nimg += st.images;
+    }
     var json = JSON.stringify(mod, null, 1);
     if (json.length > LIM.JSON || big) { msg(t("msg.big"), "err"); return; }
     // sem nenhuma imagem: o mod é um .json solto (vai direto em mod/), como o FUTIBA_ORIGINAL
@@ -1131,13 +1147,15 @@
     wire();
     setLang(q || saved || "pt");
     var hash = (location.hash || "").replace("#", "");
-    go(["get", "studio", "ai", "install", "limits"].indexOf(hash) >= 0 ? hash : "get", false);
+    go(["get", "studio", "ai", "install", "limits"].concat(window.FutibaStadiums ? ["stadiums"] : []).indexOf(hash) >= 0 ? hash : "get", false);
     ensureBase();
     idb().then(loadDraft).then(function (d) {
       if (d && d.teams) {
         ensureBase().then(function () {
           S = { mod: d.mod || freshState().mod, teams: d.teams };
+          if (d.stadiums) S.stadiums = d.stadiums;   // 31/out: estádios do rascunho
           cur = S.teams.length ? 0 : -1; renderStudio();
+          if (window.FutibaStadiums && screen === "stadiums") window.FutibaStadiums.render();
         });
       }
     });
