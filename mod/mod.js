@@ -19,6 +19,8 @@
     "MATADOR", "MESTRE", "MURALHA", "REI", "SAMURAI", "VELOCISTA", "XERIFE"];
   var SKINS = ["#f1c27d", "#e0ac69", "#c68642", "#8d5524", "#5c3a1e"];
   var HAIRS = ["#17110b", "#3a2415", "#7a4a1e", "#c9a227", "#6e6e6e"];
+  // 31/out: cor da chuteira (só no /mod; "" = a chuteira de sempre)
+  var BOOTS = ["", "#141416", "#f2f2f2", "#c81e1e", "#1f5fe0", "#f2d21a", "#ff6a00", "#1aa04a", "#e0249a", "#7a3cc8"];
   var GROUPS = ["field", "ml", "wc", "futsal", "beach", "secret", "desafio"];
   var NEW_POS = ["GK", "DF", "DF", "DF", "DF", "MF", "MF", "MF", "MF", "FW", "FW", "GK", "DF", "MF", "MF", "FW"];
 
@@ -49,7 +51,7 @@
       "pat.chestband3": "FAIXA 3 CORES", "pat.band": "FAIXA DIAGONAL",
       "sq.start": "TITULARES", "sq.res": "RESERVAS",
       "p.name": "NOME", "p.short": "NOME CURTO", "p.num": "Nº", "p.pos": "POSIÇÃO", "p.foot": "PÉ", "p.trait": "TRAÇO",
-      "p.none": "NENHUM", "p.skin": "PELE", "p.hair": "CABELO", "p.haircol": "COR DO CABELO", "p.facial": "ROSTO",
+      "p.none": "NENHUM", "p.skin": "PELE", "p.hair": "CABELO", "p.haircol": "COR DO CABELO", "p.boot": "COR DA CHUTEIRA", "p.bootdef": "PADRÃO", "p.facial": "ROSTO",
       "p.body": "CORPO", "p.photo": "FOTO",
       "foot.R": "DIREITO", "foot.L": "ESQUERDO",
       "fac.0": "SEM BARBA", "fac.1": "BIGODE", "fac.2": "BARBA CURTA", "fac.3": "BARBA E BIGODE",
@@ -120,7 +122,7 @@
       "pat.chestband3": "3 COLOR BAND", "pat.band": "SASH",
       "sq.start": "STARTERS", "sq.res": "BENCH",
       "p.name": "NAME", "p.short": "SHORT NAME", "p.num": "NO.", "p.pos": "POSITION", "p.foot": "FOOT", "p.trait": "TRAIT",
-      "p.none": "NONE", "p.skin": "SKIN", "p.hair": "HAIR", "p.haircol": "HAIR COLOR", "p.facial": "FACE",
+      "p.none": "NONE", "p.skin": "SKIN", "p.hair": "HAIR", "p.haircol": "HAIR COLOR", "p.boot": "BOOT COLOR", "p.bootdef": "DEFAULT", "p.facial": "FACE",
       "p.body": "BODY", "p.photo": "PHOTO",
       "foot.R": "RIGHT", "foot.L": "LEFT",
       "fac.0": "CLEAN", "fac.1": "MOUSTACHE", "fac.2": "SHORT BEARD", "fac.3": "BEARD AND MOUSTACHE",
@@ -191,7 +193,7 @@
       "pat.chestband3": "FRANJA 3 COLORES", "pat.band": "BANDA DIAGONAL",
       "sq.start": "TITULARES", "sq.res": "SUPLENTES",
       "p.name": "NOMBRE", "p.short": "NOMBRE CORTO", "p.num": "Nº", "p.pos": "POSICIÓN", "p.foot": "PIE", "p.trait": "RASGO",
-      "p.none": "NINGUNO", "p.skin": "PIEL", "p.hair": "PELO", "p.haircol": "COLOR DEL PELO", "p.facial": "CARA",
+      "p.none": "NINGUNO", "p.skin": "PIEL", "p.hair": "PELO", "p.haircol": "COLOR DEL PELO", "p.boot": "COLOR DE LAS BOTAS", "p.bootdef": "ESTÁNDAR", "p.facial": "CARA",
       "p.body": "CUERPO", "p.photo": "FOTO",
       "foot.R": "DERECHO", "foot.L": "IZQUIERDO",
       "fac.0": "SIN BARBA", "fac.1": "BIGOTE", "fac.2": "BARBA CORTA", "fac.3": "BARBA Y BIGOTE",
@@ -315,7 +317,8 @@
         hair_style: clampInt(ap.hair_style != null ? ap.hair_style : fap.hair_style, 0, 8, 1),
         hair_color: clampInt(ap.hair_color != null ? ap.hair_color : fap.hair_color, 0, 4, 0),
         facial: clampInt(ap.facial != null ? ap.facial : fap.facial, 0, 3, 0),
-        body_type: pickLower(ap.body_type || fap.body_type, BODIES, "standard")
+        body_type: pickLower(ap.body_type || fap.body_type, BODIES, "standard"),
+        boot_color: /^#[0-9a-f]{6}$/i.test(String(ap.boot_color || "")) ? String(ap.boot_color).toLowerCase() : (fap.boot_color || undefined)
       },
       photo: typeof raw.photo === "string" && raw.photo.indexOf("data:image/png") === 0 ? raw.photo : ""
     };
@@ -647,6 +650,7 @@
       '<button type="button" class="btn btn--small" data-prompt="player">' + esc(t("st.copyprompt")) + "</button>" +
       '<label class="f" style="width:100%"><span>' + esc(t("p.skin")) + "</span>" + swatch(SKINS, "skin", ap.skin) + "</label>" +
       '<label class="f" style="width:100%"><span>' + esc(t("p.haircol")) + "</span>" + swatch(HAIRS, "hair_color", ap.hair_color) + "</label>" +
+      bootPick(tm, ap) +
       "</div>" +
       "<div>" +
         '<div class="grid2">' + field("p.name", "p.name", p.name, LIM.PNAME) + field("p.short", "p.short_name", p.short_name, LIM.PSHORT) + "</div>" +
@@ -733,6 +737,18 @@
     if (j && Array.isArray(j.teams)) return j.teams;
     if (j && typeof j === "object") return [j];
     throw new Error("bad");
+  }
+
+  // 31/out: cor da chuteira. Times de areia jogam descalços: sem a opção.
+  function bootPick(tm, ap) {
+    var b = BASE_BY_ID[tm.id];
+    if (b && b.group === "beach") return "";
+    var cur = String(ap.boot_color || "");
+    return '<label class="f" style="width:100%"><span>' + esc(t("p.boot")) + '</span><div class="sw">' + BOOTS.map(function (c) {
+      var on = c === cur;
+      return '<button type="button" data-boot="' + c + '" aria-pressed="' + on + '" title="' + (c || t("p.bootdef")) + '" style="background:' +
+        (c || "repeating-linear-gradient(45deg,#3a3a3a 0 4px,#222 4px 8px)") + '"></button>';
+    }).join("") + "</div></label>";
   }
 
   // 31/out: referência visual de cada estilo de cabelo (miniaturas desenhadas
@@ -964,6 +980,7 @@
       "- trait: empty or one of " + TRAITS.slice(1).join(", ") + ". Use few traits.\n" +
       "- skin and hair_color: 0 (lightest) to 4 (darkest). hair_style: 0 to 8 (6 wavy, 7 afro, 8 full). facial: 0 none, 1 moustache, 2 short beard, 3 beard and moustache.\n" +
       "- body_type: standard, short, tall, slim or robust.\n" +
+      "- boot_color (optional, inside appearance): #rrggbb for colored boots; leave it out for the usual black boots.\n" +
       "- kit_pattern: solid, vertical, hoops, chestband, chestband3 or band. Colors as #rrggbb.";
   }
   // 29/out: mapa geral de IDs (todos os times editáveis), para edição em massa
@@ -1077,6 +1094,8 @@
       if (pc) { curP = +pc.dataset.p; renderStudio(); var ped = $(".ped"); if (ped && window.innerWidth < 860) ped.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
       var im = e.target.closest("[data-img]"); if (im) { askImage(im.dataset.img, cur, curP); return; }
       if (e.target.closest("[data-teamdl]")) { exportTeam(); return; }
+      var bt = e.target.closest("[data-boot]");
+      if (bt) { S.teams[cur].players[curP].appearance.boot_color = bt.dataset.boot || undefined; renderStudio(); saveDraft(); return; }
       var sw = e.target.closest("[data-sw]");
       if (sw) { S.teams[cur].players[curP].appearance[sw.dataset.sw] = +sw.dataset.v; renderStudio(); saveDraft(); return; }
     });
