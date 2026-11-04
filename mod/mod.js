@@ -1177,7 +1177,7 @@
     wire();
     setLang(q || saved || "pt");
     var hash = (location.hash || "").replace("#", "");
-    go(["get", "studio", "ai", "install", "limits"].concat(window.FutibaStadiums ? ["stadiums", "cups", "help"] : []).indexOf(hash) >= 0 ? hash : "get", false);
+    go(["get", "studio", "ai", "install", "limits", "stadiums", "cups", "help"].indexOf(hash) >= 0 ? hash : "get", false);
     ensureBase();
     idb().then(loadDraft).then(function (d) {
       if (d && d.teams) {
