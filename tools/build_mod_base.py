@@ -1,9 +1,9 @@
-"""Gera o PACOTE ORIGINAL do MOD STUDIO (/mod) a partir do projeto do jogo.
+"""Gera o PACOTE DA COMUNIDADE do MOD STUDIO (/mod) a partir do projeto do jogo.
 
 Só LÊ o projeto do FUTIBA. Escreve em mod/base/:
   base.json               dados do site (+ "group" e caminhos das imagens, para o estúdio mostrar)
   img/crests|coaches|players/*.png
-  FUTIBA_ORIGINAL.json    o PACOTE ORIGINAL: um JSON solto, sem imagens (vai em mod/ ao lado do exe)
+  FUTIBA_COMUNIDADE.json    o PACOTE DA COMUNIDADE: um JSON solto, sem imagens (vai em mod/ ao lado do exe)
 
 Uso: python tools/build_mod_base.py [caminho do projeto FUTIBA_ML]
 """
@@ -19,7 +19,7 @@ GAME = sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser(
     "~/Downloads/futiba/projeto/FUTIBA_ML")
 SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(SITE, "mod", "base")
-MOD_ID = "FUTIBA_ORIGINAL"
+MOD_ID = "FUTIBA_COMUNIDADE"
 SIZES = {"crests": (24, 24), "coaches": (48, 64), "players": (32, 32)}
 ATTRS = ["pace", "shooting", "passing", "dribbling", "defense", "heading",
          "goalkeeping", "stamina", "strength"]
@@ -126,9 +126,9 @@ def main():
         s = jload("data/stadiums/%s.json" % sid)
         if not s.get("desafio_only"):
             stadiums.append({"id": sid, "name": s.get("name", "")})
-    mod = {"format": "futiba-mod", "version": 1, "id": MOD_ID, "name": "FUTIBA ORIGINAL",
-           "author": "FUTIBA", "created": "2026-10-26", "teams": teams,
-           # 4/nov: nomes dos estádios (o PACOTE ORIGINAL também os devolve)
+    mod = {"format": "futiba-mod", "version": 1, "id": MOD_ID, "name": "PACOTE DA COMUNIDADE",
+           "author": "COMUNIDADE", "created": "2026-10-26", "teams": teams,
+           # 4/nov: nomes dos estádios (o PACOTE DA COMUNIDADE também os devolve)
            "stadiums": stadiums}
 
     if os.path.isdir(OUT):
@@ -142,7 +142,7 @@ def main():
     with open(os.path.join(OUT, "base.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump(mod, f, ensure_ascii=False, separators=(",", ":"))
 
-    # PACOTE ORIGINAL = um JSON solto, sem pasta e sem imagens: o jogo usa
+    # PACOTE DA COMUNIDADE = um JSON solto, sem pasta e sem imagens: o jogo usa
     # as imagens que já tem e só troca nomes, siglas, cores e técnicos.
     # Atributos e aparência ficam de fora: override só mexe no que vem, então
     # nada de gameplay ou sprite (barbas fixas por ID) muda ao importar.
