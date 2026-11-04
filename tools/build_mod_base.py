@@ -153,6 +153,10 @@ def main():
         t["coach"].pop("photo", None)
         t["players"] = [{"id": p["id"], "name": p["name"], "short_name": p["short_name"]}
                         for p in t["players"]]
+    # 4/nov: frases originais devolvidas à build genérica ({genérica: original})
+    if len(sys.argv) > 2 and os.path.isfile(sys.argv[2]):
+        with open(sys.argv[2], encoding="utf-8") as f:
+            game_mod["text_map"] = json.load(f)
     jpath = os.path.join(OUT, MOD_ID + ".json")
     with open(jpath, "w", encoding="utf-8", newline="\n") as f:
         json.dump(game_mod, f, ensure_ascii=False, indent=1)

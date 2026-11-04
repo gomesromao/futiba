@@ -203,5 +203,5 @@
   });
 
   window.FutibaCups = { render: render };
-  var li = document.getElementById("menu-cups"); if (li) li.hidden = false;
+  var li = document.getElementById("menu-cups"); if (li) { li.hidden = false; li.querySelector("button").textContent = tx("menu"); }
 })();

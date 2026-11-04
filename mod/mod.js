@@ -7,7 +7,7 @@
 
   // ---------- regras do formato (iguais às que o jogo vai cortar) ----------
   var LIM = { TEAM: 17, SHORT: 4, COACH: 18, PNAME: 15, PSHORT: 13, MOD: 24,
-    NEW_TEAMS: 64, TEAMS: 160, PNG: 65536, JSON: 2 * 1024 * 1024, SQUAD: 16 };
+    NEW_TEAMS: 64, TEAMS: 400, PNG: 65536, JSON: 2 * 1024 * 1024, SQUAD: 16 };
   var CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .-'ÁÀÂÃÉÊÍÓÔÕÚÇÜÑ";
   var SIZES = { crest: [24, 24], crest_hd: [48, 48], coach: [48, 64], player: [32, 32] };
   var ATTRS = ["pace", "shooting", "passing", "dribbling", "defense", "heading", "goalkeeping", "stamina", "strength"];
@@ -73,6 +73,8 @@
       "ai.note": "O PROMPT É EM INGLÊS DE PROPÓSITO: FUNCIONA EM QUALQUER IA.",
       "ai.teams": "TIMES EM MASSA (JSON)", "ai.player": "FOTO DE JOGADOR", "ai.coach": "FOTO DE TÉCNICO (3X4)", "ai.crest": "ESCUDO",
       "ai.copy": "COPIAR",
+      "in.cups": "COPAS", "in.cup1": "NA ENTRADA COPAS, ESCOLHA O NOME, A MODALIDADE (CAMPO, FUTSAL, AREIA OU SOCIETY), O NÚMERO DE TIMES (4, 8, 16 OU 32) E QUAIS TIMES JOGAM. NO CAMPO, ESCOLHA TAMBÉM OS ESTÁDIOS. LOGO E TAÇA SÃO OPCIONAIS.", "in.cup2": "APERTE BAIXAR COPA E COLOQUE O ARQUIVO DENTRO DE <code>mod</code>, AO LADO DO FUTIBA.EXE. NO ANDROID, DEIXE O ARQUIVO NO CELULAR.", "in.cup3": "NO JOGO: EDITOR, IMPORTAR COPA. ESCOLHA A COPA E APERTE A. ELA APARECE EM COPA, MINHAS COPAS. O JOGO TEM 2 VAGAS; PARA LIBERAR UMA, ESCOLHA A COPA NA MESMA TELA E APERTE A.",
+      "lim.cupteams": "NÚMERO DE TIMES DA COPA", "lim.cupslots": "VAGAS DE COPA", "lim.cupname": "NOME DA COPA", "lim.squadv": "16 (11 + 5); SOCIETY: 12 (7 + 5)",
       "in.title": "COMO CRIAR E INSTALAR", "in.create": "CRIAR", "in.install": "INSTALAR", "in.kinds": "DOIS TIPOS DE MOD",
       "in.c1": "ABRA \"CRIAR MOD\", DÊ UM NOME AO MOD E COLOQUE SEU NOME DE AUTOR.",
       "in.c2": "ESCOLHA UM TIME DO JOGO E APERTE EDITAR, OU CRIE UM TIME NOVO. PARA CRIAR VÁRIOS DE UMA VEZ, USE O PROMPT DE TIMES EM MASSA E COLE O JSON DA IA.",
@@ -145,6 +147,8 @@
       "ai.note": "THE PROMPT IS IN ENGLISH ON PURPOSE: IT WORKS WITH ANY AI.",
       "ai.teams": "TEAMS IN BULK (JSON)", "ai.player": "PLAYER PHOTO", "ai.coach": "COACH PHOTO (3X4)", "ai.crest": "CREST",
       "ai.copy": "COPY",
+      "in.cups": "CUPS", "in.cup1": "IN THE CUPS ENTRY, PICK THE NAME, THE MODE (FIELD, FUTSAL, SAND OR SOCIETY), THE NUMBER OF TEAMS (4, 8, 16 OR 32) AND WHICH TEAMS PLAY. FOR FIELD CUPS, PICK THE STADIUMS TOO. LOGO AND TROPHY ARE OPTIONAL.", "in.cup2": "PRESS DOWNLOAD CUP AND PUT THE FILE INSIDE <code>mod</code>, NEXT TO FUTIBA.EXE. ON ANDROID, KEEP THE FILE ON THE PHONE.", "in.cup3": "IN THE GAME: EDITOR, IMPORT CUP. PICK THE CUP AND PRESS A. IT SHOWS UP IN CUP, MY CUPS. THE GAME HAS 2 SLOTS; TO FREE ONE, PICK THE CUP ON THE SAME SCREEN AND PRESS A.",
+      "lim.cupteams": "TEAMS IN A CUP", "lim.cupslots": "CUP SLOTS", "lim.cupname": "CUP NAME", "lim.squadv": "16 (11 + 5); SOCIETY: 12 (7 + 5)",
       "in.title": "HOW TO CREATE AND INSTALL", "in.create": "CREATE", "in.install": "INSTALL", "in.kinds": "TWO KINDS OF MOD",
       "in.c1": "OPEN \"CREATE MOD\", NAME THE MOD AND TYPE YOUR AUTHOR NAME.",
       "in.c2": "PICK A GAME TEAM AND PRESS EDIT, OR CREATE A NEW TEAM. TO MAKE MANY AT ONCE, USE THE BULK TEAMS PROMPT AND PASTE THE AI JSON.",
@@ -217,6 +221,8 @@
       "ai.note": "EL PROMPT ESTÁ EN INGLÉS A PROPÓSITO: FUNCIONA EN CUALQUIER IA.",
       "ai.teams": "EQUIPOS EN MASA (JSON)", "ai.player": "FOTO DE JUGADOR", "ai.coach": "FOTO DE TÉCNICO (3X4)", "ai.crest": "ESCUDO",
       "ai.copy": "COPIAR",
+      "in.cups": "COPAS", "in.cup1": "EN LA ENTRADA COPAS, ELIGE EL NOMBRE, LA MODALIDAD (CAMPO, FUTSAL, ARENA O SOCIETY), EL NÚMERO DE EQUIPOS (4, 8, 16 O 32) Y QUÉ EQUIPOS JUEGAN. EN CAMPO, ELIGE TAMBIÉN LOS ESTADIOS. EL LOGO Y EL TROFEO SON OPCIONALES.", "in.cup2": "PULSA DESCARGAR COPA Y PON EL ARCHIVO DENTRO DE <code>mod</code>, AL LADO DE FUTIBA.EXE. EN ANDROID, DEJA EL ARCHIVO EN EL TELÉFONO.", "in.cup3": "EN EL JUEGO: EDITOR, IMPORTAR COPA. ELIGE LA COPA Y PULSA A. APARECE EN COPA, MIS COPAS. EL JUEGO TIENE 2 CUPOS; PARA LIBERAR UNO, ELIGE LA COPA EN LA MISMA PANTALLA Y PULSA A.",
+      "lim.cupteams": "EQUIPOS POR COPA", "lim.cupslots": "CUPOS DE COPA", "lim.cupname": "NOMBRE DE LA COPA", "lim.squadv": "16 (11 + 5); SOCIETY: 12 (7 + 5)",
       "in.title": "CÓMO CREAR E INSTALAR", "in.create": "CREAR", "in.install": "INSTALAR", "in.kinds": "DOS TIPOS DE MOD",
       "in.c1": "ABRE \"CREAR MOD\", PONLE NOMBRE AL MOD Y ESCRIBE TU NOMBRE DE AUTOR.",
       "in.c2": "ELIGE UN EQUIPO DEL JUEGO Y PULSA EDITAR, O CREA UNO NUEVO. PARA CREAR MUCHOS DE UNA VEZ, USA EL PROMPT DE EQUIPOS EN MASA Y PEGA EL JSON DE LA IA.",
@@ -1046,8 +1052,9 @@
     var rows = [
       ["lim.team", LIM.TEAM + c], ["lim.short", LIM.SHORT + c], ["lim.coach", LIM.COACH + c],
       ["lim.pname", LIM.PNAME + c], ["lim.pshort", LIM.PSHORT + c], ["lim.mod", LIM.MOD + c],
-      ["lim.chars", "A-Z 0-9 . - ' ÁÃÇ..."], ["lim.squad", "16 (11 + 5)"], ["lim.num", "1-99"], ["lim.attr", "1-99"],
+      ["lim.chars", "A-Z 0-9 . - ' ÁÃÇ..."], ["lim.squad", t("lim.squadv")], ["lim.num", "1-99"], ["lim.attr", "1-99"],
       ["lim.new", String(LIM.NEW_TEAMS)], ["lim.teams", String(LIM.TEAMS)],
+      ["lim.cupslots", "2"], ["lim.cupteams", "4 / 8 / 16 / 32"], ["lim.cupname", 24 + c],
       ["lim.crest", "24X24 + 48X48 PNG"], ["lim.coachimg", "48X64 PNG"], ["lim.player", "32X32 PNG"],
       ["lim.png", "64 KB"], ["lim.json", "2 MB"], ["lim.any", "JPG PNG WEBP"]
     ];
