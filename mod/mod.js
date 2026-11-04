@@ -1187,6 +1187,7 @@
           if (d.cups) S.cups = d.cups;               // 4/nov: copas do rascunho
           cur = S.teams.length ? 0 : -1; renderStudio();
           if (window.FutibaStadiums && screen === "stadiums") window.FutibaStadiums.render();
+          if (window.FutibaCups && screen === "cups") window.FutibaCups.render();
         });
       }
     });

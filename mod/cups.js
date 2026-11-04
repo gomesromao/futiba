@@ -16,8 +16,8 @@
   var GROUPS = {
     campo: ["field", "secret", "desafio", "ml", "wc"],
     futsal: ["futsal", "field"],
-    praia: ["beach"],
-    society: ["society"]
+    praia: ["beach", "field"],
+    society: ["society", "field"]
   };
   var NAME_MAX = 24, LOGO = 48, TROPHY = [32, 40];
   var BASE = null, cur = 0, filter = "";
