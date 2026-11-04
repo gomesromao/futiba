@@ -36,6 +36,7 @@
       <li><button type="button" data-go="studio" data-t="menu.studio">CRIAR MOD</button></li>
       <li id="menu-stadiums" hidden><button type="button" data-go="stadiums">ESTÁDIOS</button></li>
       <li id="menu-cups" hidden><button type="button" data-go="cups">COPAS</button></li>
+      <li><button type="button" data-go="help" data-t="menu.help">TUTORIAL</button></li>
       <li><button type="button" data-go="ai" data-t="menu.ai">PROMPTS PARA IA</button></li>
       <li><button type="button" data-go="install" data-t="menu.install">COMO CRIAR E INSTALAR</button></li>
       <li><button type="button" data-go="limits" data-t="menu.limits">LIMITES</button></li>
@@ -104,6 +105,19 @@
     <div id="cups-ed"></div>
   </section>
 
+  <!-- TUTORIAL (4/nov) ------------------------------------------- -->
+  <section class="screen" id="s-help" data-screen hidden>
+    <div class="banner" data-t="menu.help">TUTORIAL</div>
+    <p data-t="help.p"></p>
+    <div class="cards">
+      <div class="card"><h2 data-t="help.t1"></h2><p data-t="help.b1"></p></div>
+      <div class="card"><h2 data-t="help.t2"></h2><p data-t="help.b2"></p></div>
+      <div class="card"><h2 data-t="help.t3"></h2><p data-t="help.b3"></p></div>
+      <div class="card"><h2 data-t="help.t5"></h2><p data-t="help.b5"></p></div>
+      <div class="card"><h2 data-t="help.t4"></h2><p data-t="help.b4"></p></div>
+    </div>
+  </section>
+
   <!-- PROMPTS --------------------------------------------------- -->
   <section class="screen" id="s-ai" data-screen>
     <div class="banner" data-t="ai.title">PROMPTS PARA IA</div>
@@ -151,7 +165,7 @@
     <pre class="card mono" style="font-size:8px;overflow:auto;margin:0">FUTIBA.exe
 mod/
   FUTIBA_ORIGINAL.json           .json
-  FUTIBA_COPA_MINHA_COPA.json    COPA
+  FUTIBA_COPA_MINHA_COPA.zip     COPA
   MEU_MOD/                       .zip
     mod.json
     img/crests/mod_vila.png      24x24
