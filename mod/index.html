@@ -35,6 +35,7 @@
       <li><button type="button" data-go="get" aria-current="true" data-t="menu.get">PACOTE ORIGINAL</button></li>
       <li><button type="button" data-go="studio" data-t="menu.studio">CRIAR MOD</button></li>
       <li id="menu-stadiums" hidden><button type="button" data-go="stadiums">ESTÁDIOS</button></li>
+      <li id="menu-cups" hidden><button type="button" data-go="cups">COPAS</button></li>
       <li><button type="button" data-go="ai" data-t="menu.ai">PROMPTS PARA IA</button></li>
       <li><button type="button" data-go="install" data-t="menu.install">COMO CRIAR E INSTALAR</button></li>
       <li><button type="button" data-go="limits" data-t="menu.limits">LIMITES</button></li>
@@ -96,6 +97,11 @@
   <!-- ESTÁDIOS (31/out, teste isolado: stadiums.js; flag ENABLED lá dentro) -->
   <section class="screen" id="s-stadiums" data-screen hidden>
     <div id="stadium-ed"></div>
+  </section>
+
+  <!-- COPAS (4/nov: cups.js; flag ENABLED lá dentro) -->
+  <section class="screen" id="s-cups" data-screen hidden>
+    <div id="cups-ed"></div>
   </section>
 
   <!-- PROMPTS --------------------------------------------------- -->
@@ -170,5 +176,6 @@ times/
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="/mod/mod.js"></script>
 <script src="/mod/stadiums.js"></script>
+<script src="/mod/cups.js"></script>
 </body>
 </html>

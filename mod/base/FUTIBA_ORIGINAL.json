@@ -15653,6 +15653,688 @@
      "short_name": "STRUPAR"
     }
    ]
+  },
+  {
+   "id": "soc_ram",
+   "name": "RAMUNDOS",
+   "short_name": "RAM",
+   "country": "BR",
+   "primary_color": "#f2c500",
+   "secondary_color": "#101010",
+   "kit_color3": "#141416",
+   "kit_pattern": "vertical",
+   "coach": {
+    "name": "TIO ZECA",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "soc_ram_p01",
+     "name": "PEDAL",
+     "short_name": "PEDAL"
+    },
+    {
+     "id": "soc_ram_p02",
+     "name": "FUZUE",
+     "short_name": "FUZUE"
+    },
+    {
+     "id": "soc_ram_p03",
+     "name": "FALSETE",
+     "short_name": "FALSETE"
+    },
+    {
+     "id": "soc_ram_p04",
+     "name": "DEMO",
+     "short_name": "DEMO"
+    },
+    {
+     "id": "soc_ram_p05",
+     "name": "CABELUDO",
+     "short_name": "CABELUDO"
+    },
+    {
+     "id": "soc_ram_p06",
+     "name": "METRONOMO",
+     "short_name": "METRONOMO"
+    },
+    {
+     "id": "soc_ram_p07",
+     "name": "TROVAO",
+     "short_name": "TROVAO"
+    },
+    {
+     "id": "soc_ram_p08",
+     "name": "GARAGEM",
+     "short_name": "GARAGEM"
+    },
+    {
+     "id": "soc_ram_p09",
+     "name": "SURDO",
+     "short_name": "SURDO"
+    },
+    {
+     "id": "soc_ram_p10",
+     "name": "MALUCO",
+     "short_name": "MALUCO"
+    },
+    {
+     "id": "soc_ram_p11",
+     "name": "BERMUDA",
+     "short_name": "BERMUDA"
+    },
+    {
+     "id": "soc_ram_p12",
+     "name": "MC",
+     "short_name": "MC"
+    }
+   ]
+  },
+  {
+   "id": "soc_cha",
+   "name": "CHARLES BRAUM",
+   "short_name": "CHA",
+   "country": "BR",
+   "primary_color": "#1e2a78",
+   "secondary_color": "#f5f5f0",
+   "kit_color3": "#141416",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "SEU DUDU",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "soc_cha_p01",
+     "name": "BAQUETA",
+     "short_name": "BAQUETA"
+    },
+    {
+     "id": "soc_cha_p02",
+     "name": "TAMBORIM",
+     "short_name": "TAMBORIM"
+    },
+    {
+     "id": "soc_cha_p03",
+     "name": "RELAMPAGO",
+     "short_name": "RELAMPAGO"
+    },
+    {
+     "id": "soc_cha_p04",
+     "name": "BAGUNCA",
+     "short_name": "BAGUNCA"
+    },
+    {
+     "id": "soc_cha_p05",
+     "name": "CORDA",
+     "short_name": "CORDA"
+    },
+    {
+     "id": "soc_cha_p06",
+     "name": "CHINELO",
+     "short_name": "CHINELO"
+    },
+    {
+     "id": "soc_cha_p07",
+     "name": "BARULHO",
+     "short_name": "BARULHO"
+    },
+    {
+     "id": "soc_cha_p08",
+     "name": "GRAVE",
+     "short_name": "GRAVE"
+    },
+    {
+     "id": "soc_cha_p09",
+     "name": "CAPOTRASTE",
+     "short_name": "CAPOTRASTE"
+    },
+    {
+     "id": "soc_cha_p10",
+     "name": "CHUMBO",
+     "short_name": "CHUMBO"
+    },
+    {
+     "id": "soc_cha_p11",
+     "name": "ZOEIRA",
+     "short_name": "ZOEIRA"
+    },
+    {
+     "id": "soc_cha_p12",
+     "name": "FAISCA",
+     "short_name": "FAISCA"
+    }
+   ]
+  },
+  {
+   "id": "soc_cpf",
+   "name": "CPF 22",
+   "short_name": "CPF",
+   "country": "BR",
+   "primary_color": "#d11a2a",
+   "secondary_color": "#101010",
+   "kit_color3": "#141416",
+   "kit_pattern": "chestband",
+   "coach": {
+    "name": "MESTRE BETO",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "soc_cpf_p01",
+     "name": "BUMBO",
+     "short_name": "BUMBO"
+    },
+    {
+     "id": "soc_cpf_p02",
+     "name": "SKATISTA",
+     "short_name": "SKATISTA"
+    },
+    {
+     "id": "soc_cpf_p03",
+     "name": "MEGAFONE",
+     "short_name": "MEGAFONE"
+    },
+    {
+     "id": "soc_cpf_p04",
+     "name": "MICO",
+     "short_name": "MICO"
+    },
+    {
+     "id": "soc_cpf_p05",
+     "name": "GRUNGE",
+     "short_name": "GRUNGE"
+    },
+    {
+     "id": "soc_cpf_p06",
+     "name": "SAMPLER",
+     "short_name": "SAMPLER"
+    },
+    {
+     "id": "soc_cpf_p07",
+     "name": "ACORDE",
+     "short_name": "ACORDE"
+    },
+    {
+     "id": "soc_cpf_p08",
+     "name": "DETONA",
+     "short_name": "DETONA"
+    },
+    {
+     "id": "soc_cpf_p09",
+     "name": "AGUDO",
+     "short_name": "AGUDO"
+    },
+    {
+     "id": "soc_cpf_p10",
+     "name": "FARRA",
+     "short_name": "FARRA"
+    },
+    {
+     "id": "soc_cpf_p11",
+     "name": "APITO",
+     "short_name": "APITO"
+    },
+    {
+     "id": "soc_cpf_p12",
+     "name": "CORINGA",
+     "short_name": "CORINGA"
+    }
+   ]
+  },
+  {
+   "id": "soc_cap",
+   "name": "CAPITAL FINAL",
+   "short_name": "CAP",
+   "country": "BR",
+   "primary_color": "#f5f5f0",
+   "secondary_color": "#1565c0",
+   "kit_color3": "#141416",
+   "kit_pattern": "hoops",
+   "coach": {
+    "name": "PROF. NENO",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "soc_cap_p01",
+     "name": "CHOCALHO",
+     "short_name": "CHOCALHO"
+    },
+    {
+     "id": "soc_cap_p02",
+     "name": "MICROFONE",
+     "short_name": "MICROFONE"
+    },
+    {
+     "id": "soc_cap_p03",
+     "name": "VINIL",
+     "short_name": "VINIL"
+    },
+    {
+     "id": "soc_cap_p04",
+     "name": "TROCO",
+     "short_name": "TROCO"
+    },
+    {
+     "id": "soc_cap_p05",
+     "name": "PUNK",
+     "short_name": "PUNK"
+    },
+    {
+     "id": "soc_cap_p06",
+     "name": "BATERA",
+     "short_name": "BATERA"
+    },
+    {
+     "id": "soc_cap_p07",
+     "name": "MARRETA",
+     "short_name": "MARRETA"
+    },
+    {
+     "id": "soc_cap_p08",
+     "name": "CUICA",
+     "short_name": "CUICA"
+    },
+    {
+     "id": "soc_cap_p09",
+     "name": "BALADEIRO",
+     "short_name": "BALADEIRO"
+    },
+    {
+     "id": "soc_cap_p10",
+     "name": "ZUMBI",
+     "short_name": "ZUMBI"
+    },
+    {
+     "id": "soc_cap_p11",
+     "name": "PANCADA",
+     "short_name": "PANCADA"
+    },
+    {
+     "id": "soc_cap_p12",
+     "name": "CAIXA",
+     "short_name": "CAIXA"
+    }
+   ]
+  },
+  {
+   "id": "soc_ult",
+   "name": "ULTRAJADOS",
+   "short_name": "ULT",
+   "country": "BR",
+   "primary_color": "#101010",
+   "secondary_color": "#e8e030",
+   "kit_color3": "#141416",
+   "kit_pattern": "vertical",
+   "coach": {
+    "name": "VOVO RUI",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "soc_ult_p01",
+     "name": "VAGALUME",
+     "short_name": "VAGALUME"
+    },
+    {
+     "id": "soc_ult_p02",
+     "name": "AMPLI",
+     "short_name": "AMPLI"
+    },
+    {
+     "id": "soc_ult_p03",
+     "name": "RASTA",
+     "short_name": "RASTA"
+    },
+    {
+     "id": "soc_ult_p04",
+     "name": "PIRATA",
+     "short_name": "PIRATA"
+    },
+    {
+     "id": "soc_ult_p05",
+     "name": "PANDEIRO",
+     "short_name": "PANDEIRO"
+    },
+    {
+     "id": "soc_ult_p06",
+     "name": "LAMBADA",
+     "short_name": "LAMBADA"
+    },
+    {
+     "id": "soc_ult_p07",
+     "name": "DISTORCE",
+     "short_name": "DISTORCE"
+    },
+    {
+     "id": "soc_ult_p08",
+     "name": "PESADAO",
+     "short_name": "PESADAO"
+    },
+    {
+     "id": "soc_ult_p09",
+     "name": "ZUADA",
+     "short_name": "ZUADA"
+    },
+    {
+     "id": "soc_ult_p10",
+     "name": "FORROZIN",
+     "short_name": "FORROZIN"
+    },
+    {
+     "id": "soc_ult_p11",
+     "name": "ROCKNHOL",
+     "short_name": "ROCKNHOL"
+    },
+    {
+     "id": "soc_ult_p12",
+     "name": "VJ",
+     "short_name": "VJ"
+    }
+   ]
+  },
+  {
+   "id": "soc_det",
+   "name": "DETONAUTOS",
+   "short_name": "DET",
+   "country": "BR",
+   "primary_color": "#7a1fa2",
+   "secondary_color": "#f5f5f0",
+   "kit_color3": "#141416",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "DOUTOR LELO",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "soc_det_p01",
+     "name": "BAIXINHO",
+     "short_name": "BAIXINHO"
+    },
+    {
+     "id": "soc_det_p02",
+     "name": "BIRUTA",
+     "short_name": "BIRUTA"
+    },
+    {
+     "id": "soc_det_p03",
+     "name": "RIFFEIRO",
+     "short_name": "RIFFEIRO"
+    },
+    {
+     "id": "soc_det_p04",
+     "name": "ENSAIO",
+     "short_name": "ENSAIO"
+    },
+    {
+     "id": "soc_det_p05",
+     "name": "TURNE",
+     "short_name": "TURNE"
+    },
+    {
+     "id": "soc_det_p06",
+     "name": "GROOVE",
+     "short_name": "GROOVE"
+    },
+    {
+     "id": "soc_det_p07",
+     "name": "PALHETA",
+     "short_name": "PALHETA"
+    },
+    {
+     "id": "soc_det_p08",
+     "name": "PRATO",
+     "short_name": "PRATO"
+    },
+    {
+     "id": "soc_det_p09",
+     "name": "SONZEIRA",
+     "short_name": "SONZEIRA"
+    },
+    {
+     "id": "soc_det_p10",
+     "name": "GUITA",
+     "short_name": "GUITA"
+    },
+    {
+     "id": "soc_det_p11",
+     "name": "TUMULTO",
+     "short_name": "TUMULTO"
+    },
+    {
+     "id": "soc_det_p12",
+     "name": "REFRAO",
+     "short_name": "REFRAO"
+    }
+   ]
+  },
+  {
+   "id": "soc_zum",
+   "name": "NAÇÃO ZUMBA",
+   "short_name": "ZUM",
+   "country": "BR",
+   "primary_color": "#0a7d3c",
+   "secondary_color": "#f2c500",
+   "kit_color3": "#141416",
+   "kit_pattern": "chestband",
+   "coach": {
+    "name": "PAI JOCA",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "soc_zum_p01",
+     "name": "AGOGO",
+     "short_name": "AGOGO"
+    },
+    {
+     "id": "soc_zum_p02",
+     "name": "SURFISTA",
+     "short_name": "SURFISTA"
+    },
+    {
+     "id": "soc_zum_p03",
+     "name": "BIS",
+     "short_name": "BIS"
+    },
+    {
+     "id": "soc_zum_p04",
+     "name": "DJ",
+     "short_name": "DJ"
+    },
+    {
+     "id": "soc_zum_p05",
+     "name": "PAULEIRA",
+     "short_name": "PAULEIRA"
+    },
+    {
+     "id": "soc_zum_p06",
+     "name": "AFINADOR",
+     "short_name": "AFINADOR"
+    },
+    {
+     "id": "soc_zum_p07",
+     "name": "MANGUE",
+     "short_name": "MANGUE"
+    },
+    {
+     "id": "soc_zum_p08",
+     "name": "ROADIE",
+     "short_name": "ROADIE"
+    },
+    {
+     "id": "soc_zum_p09",
+     "name": "CANECA",
+     "short_name": "CANECA"
+    },
+    {
+     "id": "soc_zum_p10",
+     "name": "CAPITAO",
+     "short_name": "CAPITAO"
+    },
+    {
+     "id": "soc_zum_p11",
+     "name": "FITA",
+     "short_name": "FITA"
+    },
+    {
+     "id": "soc_zum_p12",
+     "name": "MARTELO",
+     "short_name": "MARTELO"
+    }
+   ]
+  },
+  {
+   "id": "soc_ska",
+   "name": "SKANQUE",
+   "short_name": "SKA",
+   "country": "BR",
+   "primary_color": "#f07818",
+   "secondary_color": "#1a1a1a",
+   "kit_color3": "#141416",
+   "kit_pattern": "solid",
+   "coach": {
+    "name": "SEU TAVINHO",
+    "nationality": "BR"
+   },
+   "players": [
+    {
+     "id": "soc_ska_p01",
+     "name": "PALCO",
+     "short_name": "PALCO"
+    },
+    {
+     "id": "soc_ska_p02",
+     "name": "TECLA",
+     "short_name": "TECLA"
+    },
+    {
+     "id": "soc_ska_p03",
+     "name": "REGGAE",
+     "short_name": "REGGAE"
+    },
+    {
+     "id": "soc_ska_p04",
+     "name": "TATUADO",
+     "short_name": "TATUADO"
+    },
+    {
+     "id": "soc_ska_p05",
+     "name": "MOICANO",
+     "short_name": "MOICANO"
+    },
+    {
+     "id": "soc_ska_p06",
+     "name": "SOLINHO",
+     "short_name": "SOLINHO"
+    },
+    {
+     "id": "soc_ska_p07",
+     "name": "FERRUGEM",
+     "short_name": "FERRUGEM"
+    },
+    {
+     "id": "soc_ska_p08",
+     "name": "ROQUEIRO",
+     "short_name": "ROQUEIRO"
+    },
+    {
+     "id": "soc_ska_p09",
+     "name": "LOUCURA",
+     "short_name": "LOUCURA"
+    },
+    {
+     "id": "soc_ska_p10",
+     "name": "BALBURDIA",
+     "short_name": "BALBURDIA"
+    },
+    {
+     "id": "soc_ska_p11",
+     "name": "ALVOROCO",
+     "short_name": "ALVOROCO"
+    },
+    {
+     "id": "soc_ska_p12",
+     "name": "BIGORNA",
+     "short_name": "BIGORNA"
+    }
+   ]
+  }
+ ],
+ "stadiums": [
+  {
+   "id": "morumbi",
+   "name": "MORUMBI"
+  },
+  {
+   "id": "maracana",
+   "name": "MARACANÃ"
+  },
+  {
+   "id": "bombonera",
+   "name": "BOMBONERA"
+  },
+  {
+   "id": "olimpico",
+   "name": "OLÍMPICO"
+  },
+  {
+   "id": "mooca",
+   "name": "MOOCA"
+  },
+  {
+   "id": "moca_bonita",
+   "name": "MOÇA BONITA"
+  },
+  {
+   "id": "milao",
+   "name": "MILÃO"
+  },
+  {
+   "id": "barcelona",
+   "name": "BARCELONA"
+  },
+  {
+   "id": "tokio",
+   "name": "TOKIO"
+  },
+  {
+   "id": "manchester",
+   "name": "MANCHESTER"
+  },
+  {
+   "id": "africa",
+   "name": "ÁFRICA"
+  },
+  {
+   "id": "terrao",
+   "name": "TERRÃO"
+  },
+  {
+   "id": "portoalegre",
+   "name": "PORTO ALEGRE"
+  },
+  {
+   "id": "salvador",
+   "name": "SALVADOR"
+  },
+  {
+   "id": "londres",
+   "name": "LONDRES"
+  },
+  {
+   "id": "istambul",
+   "name": "ISTAMBUL"
+  },
+  {
+   "id": "novayork",
+   "name": "NOVA YORK"
+  },
+  {
+   "id": "cidmexico",
+   "name": "MÉXICO"
   }
  ]
 }

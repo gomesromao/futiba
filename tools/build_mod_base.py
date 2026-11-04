@@ -33,6 +33,8 @@ def jload(rel):
 def group_of(t):
     if t.get("wc_only"):
         return "wc"
+    if t.get("society"):
+        return "society"
     if t.get("ml_only"):
         return "ml"
     if t.get("brazuca"):
@@ -68,6 +70,9 @@ def main():
     # 29/out: as 40 seleções da COPA DO MUNDO (só existem nesse modo do jogo)
     if os.path.isfile(os.path.join(GAME, "data/teams/_wc_index.json")):
         index += jload("data/teams/_wc_index.json")
+    # 4/nov: os 8 times do SOCIETY (só existem nesse modo do jogo)
+    if os.path.isfile(os.path.join(GAME, "data/teams/_soc_index.json")):
+        index += jload("data/teams/_soc_index.json")
     files = {}
     teams = []
     for tid in index:
@@ -116,8 +121,15 @@ def main():
             "players": players,
         })
 
+    stadiums = []
+    for sid in jload("data/stadiums/_index.json"):
+        s = jload("data/stadiums/%s.json" % sid)
+        if not s.get("desafio_only"):
+            stadiums.append({"id": sid, "name": s.get("name", "")})
     mod = {"format": "futiba-mod", "version": 1, "id": MOD_ID, "name": "FUTIBA ORIGINAL",
-           "author": "FUTIBA", "created": "2026-10-26", "teams": teams}
+           "author": "FUTIBA", "created": "2026-10-26", "teams": teams,
+           # 4/nov: nomes dos estádios (o PACOTE ORIGINAL também os devolve)
+           "stadiums": stadiums}
 
     if os.path.isdir(OUT):
         shutil.rmtree(OUT)

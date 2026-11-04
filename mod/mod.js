@@ -25,7 +25,7 @@
   var CAPS = ["", "none", "#1c1c1c", "#f2f2f2", "#c81e1e", "#1f5fe0", "#f2d21a", "#ff6a00", "#1aa04a", "#7a3cc8"];
   function hairOk(v, d) { v = clampInt(v, 0, 10, d); return HAIR_IDS.indexOf(v) >= 0 ? v : Math.min(v, 8); }
   var BOOTS = ["", "#141416", "#f2f2f2", "#c81e1e", "#1f5fe0", "#f2d21a", "#ff6a00", "#1aa04a", "#e0249a", "#7a3cc8"];
-  var GROUPS = ["field", "ml", "wc", "futsal", "beach", "secret", "desafio"];
+  var GROUPS = ["field", "ml", "wc", "futsal", "beach", "society", "secret", "desafio"];
   var NEW_POS = ["GK", "DF", "DF", "DF", "DF", "MF", "MF", "MF", "MF", "FW", "FW", "GK", "DF", "MF", "MF", "FW"];
 
   // ---------- textos ----------
@@ -65,7 +65,7 @@
       "hair.ref": "REFERÊNCIA DOS CABELOS (COMO SAI NO JOGO, FRENTE E COSTAS)", "hair.note": "DESENHADO PELO PRÓPRIO JOGO. HOJE OS ESTILOS 0 A 8 SAEM COM O MESMO FORMATO NA PARTIDA: MUDA SÓ O BRILHO. O ID 10 É CARECA (GOLEIRO NÃO FICA CARECA). CLIQUE PARA ESCOLHER.",
       "a.pace": "VELOCIDADE", "a.shooting": "CHUTE", "a.passing": "PASSE", "a.dribbling": "DRIBLE",
       "a.defense": "DEFESA", "a.heading": "CABECEIO", "a.goalkeeping": "GOLEIRO", "a.stamina": "FÔLEGO", "a.strength": "FORÇA",
-      "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "PRAIA",
+      "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "PRAIA", "g.society": "SOCIETY",
       "g.secret": "SECRETOS", "g.desafio": "DESAFIO",
       "g.wc": "COPA DO MUNDO", "ai.ids": "MAPA DE IDS (EDIÇÃO EM MASSA)",
       "ai.title": "PROMPTS PARA IA",
@@ -137,7 +137,7 @@
       "hair.ref": "HAIR REFERENCE (AS IT LOOKS IN THE GAME, FRONT AND BACK)", "hair.note": "DRAWN BY THE GAME ITSELF. TODAY STYLES 0 TO 8 HAVE THE SAME SHAPE IN THE MATCH: ONLY THE SHINE CHANGES. ID 10 IS BALD (GOALKEEPERS ARE NEVER BALD). CLICK TO PICK.",
       "a.pace": "PACE", "a.shooting": "SHOOTING", "a.passing": "PASSING", "a.dribbling": "DRIBBLING",
       "a.defense": "DEFENSE", "a.heading": "HEADING", "a.goalkeeping": "KEEPER", "a.stamina": "STAMINA", "a.strength": "STRENGTH",
-      "g.field": "FIELD", "g.ml": "MASTER LEAGUE", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "BEACH",
+      "g.field": "FIELD", "g.ml": "MASTER LEAGUE", "g.futsal": "FUTSAL (BRAZUCA)", "g.beach": "BEACH", "g.society": "SOCIETY",
       "g.secret": "SECRET", "g.desafio": "CHALLENGE",
       "g.wc": "WORLD CUP", "ai.ids": "ID MAP (BULK EDITING)",
       "ai.title": "AI PROMPTS",
@@ -209,7 +209,7 @@
       "hair.ref": "REFERENCIA DE PEINADOS (COMO SALE EN EL JUEGO, FRENTE Y ESPALDA)", "hair.note": "DIBUJADO POR EL PROPIO JUEGO. HOY LOS ESTILOS 0 A 8 SALEN CON LA MISMA FORMA EN EL PARTIDO: SOLO CAMBIA EL BRILLO. EL ID 10 ES CALVO (EL PORTERO NUNCA SALE CALVO). HAZ CLIC PARA ELEGIR.",
       "a.pace": "VELOCIDAD", "a.shooting": "TIRO", "a.passing": "PASE", "a.dribbling": "REGATE",
       "a.defense": "DEFENSA", "a.heading": "CABEZAZO", "a.goalkeeping": "PORTERO", "a.stamina": "RESISTENCIA", "a.strength": "FUERZA",
-      "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FÚTSAL (BRAZUCA)", "g.beach": "PLAYA",
+      "g.field": "CAMPO", "g.ml": "MASTER LIGA", "g.futsal": "FÚTSAL (BRAZUCA)", "g.beach": "PLAYA", "g.society": "SOCIETY",
       "g.secret": "SECRETOS", "g.desafio": "DESAFÍO",
       "g.wc": "COPA DEL MUNDO", "ai.ids": "MAPA DE IDS (EDICIÓN EN MASA)",
       "ai.title": "PROMPTS PARA IA",
@@ -461,6 +461,7 @@
     $$("[data-t]").forEach(function (el) { el.innerHTML = t(el.dataset.t); });
     renderCount(); renderPick(); renderPrompts(); renderLimits(); renderStudio();
     if (window.FutibaStadiums) window.FutibaStadiums.render();
+    if (window.FutibaCups) window.FutibaCups.render();
   }
 
   // ---------- telas (menu estilo jogo) ----------
@@ -471,6 +472,7 @@
     $$("[data-screen]").forEach(function (s) { s.hidden = s.id !== "s-" + name; });
     $("#status").hidden = name !== "studio" && name !== "stadiums";
     if (name === "stadiums" && window.FutibaStadiums) window.FutibaStadiums.render();
+    if (name === "cups" && window.FutibaCups) window.FutibaCups.render();
     if (name === "studio") ensureBase().then(renderStudio);
     if (name === "ai") ensureBase();   // 29/out: o mapa de IDs vem da base
     if (scroll) $("#s-" + name).scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1165,13 +1167,14 @@
     wire();
     setLang(q || saved || "pt");
     var hash = (location.hash || "").replace("#", "");
-    go(["get", "studio", "ai", "install", "limits"].concat(window.FutibaStadiums ? ["stadiums"] : []).indexOf(hash) >= 0 ? hash : "get", false);
+    go(["get", "studio", "ai", "install", "limits"].concat(window.FutibaStadiums ? ["stadiums", "cups"] : []).indexOf(hash) >= 0 ? hash : "get", false);
     ensureBase();
     idb().then(loadDraft).then(function (d) {
       if (d && d.teams) {
         ensureBase().then(function () {
           S = { mod: d.mod || freshState().mod, teams: d.teams };
           if (d.stadiums) S.stadiums = d.stadiums;   // 31/out: estádios do rascunho
+          if (d.cups) S.cups = d.cups;               // 4/nov: copas do rascunho
           cur = S.teams.length ? 0 : -1; renderStudio();
           if (window.FutibaStadiums && screen === "stadiums") window.FutibaStadiums.render();
         });
