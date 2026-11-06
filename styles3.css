@@ -36,6 +36,13 @@
 }
 .toast[hidden]{display:none}
 
+/* Popup dos cards da demo: "em breve na Steam" */
+.soon{background:rgba(20,16,13,.8)}
+.soon__box{
+  margin:0;padding:30px 40px 24px;text-align:center;
+  font-family:"Bangers",Impact,sans-serif;font-size:clamp(34px,6vw,60px);line-height:1.05;letter-spacing:.04em;
+}
+
 /* Capa: baixar, manual e Pix na mesma linha. No celular só quebram se não couberem. */
 .cover .cover__btns{gap:10px}
 .cover .cover__btns .btn{font-size:clamp(16px,1.2vw,20px);padding:10px 14px 7px;white-space:nowrap}

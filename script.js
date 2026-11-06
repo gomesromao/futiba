@@ -156,4 +156,33 @@
       showToast(msg ? msg.textContent : "chave pix copiada");
     });
   });
+
+  /* ---------- 6. Demo: aviso de lançamento na Steam -------- */
+  var soon = document.getElementById("soon");
+  var soonClose = document.getElementById("soon-close");
+  var soonFocus = null;
+
+  function closeSoon() {
+    if (!soon || soon.hidden) return;
+    soon.hidden = true;
+    document.body.style.overflow = "";
+    if (soonFocus) soonFocus.focus();
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-soon]"), function (el) {
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (!soon) return;
+      soonFocus = el;
+      soon.hidden = false;
+      document.body.style.overflow = "hidden";
+      soonClose.focus();
+    });
+  });
+
+  if (soonClose) soonClose.addEventListener("click", closeSoon);
+  if (soon) soon.addEventListener("click", function (e) { if (e.target === soon) closeSoon(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeSoon();
+  });
 })();

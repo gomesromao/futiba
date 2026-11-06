@@ -30,6 +30,7 @@
   var T = {
     en: {
       "pix.btn": "Support", "pix.toast": "pix key copied",
+      "soon.text": "Coming soon to Steam", "soon.close": "Close",
       "nav.copa": "World Cup",
       "nav.champions": "Champions",
       "nav.rua": "Street",
@@ -280,6 +281,7 @@
     },
     es: {
       "pix.btn": "Apoya", "pix.toast": "clave pix copiada",
+      "soon.text": "Próximamente en Steam", "soon.close": "Cerrar",
       "nav.copa": "Copa del Mundo",
       "nav.champions": "Champions",
       "nav.rua": "Calle",

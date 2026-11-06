@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Semi+Condensed:wght@500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/styles2.css">
-<link rel="stylesheet" href="/styles3.css?v=6">
+<link rel="stylesheet" href="/styles3.css?v=7">
 </head>
 <body>
 
@@ -751,21 +751,21 @@
       que ela está aqui.</p>
 
     <div class="downloads">
-      <a class="dl panel" href="https://drive.google.com/file/d/1j1fvsRRjTYI5lMMWWTdwtrDFMCtxT3R9/view?usp=sharing" target="_blank" rel="noopener">
+      <a class="dl panel" href="#baixar" role="button" aria-haspopup="dialog" data-soon>
         <span class="dl__plat">PC</span>
         <strong class="dl__name">Windows</strong>
         <span class="dl__meta" data-i18n="dl.pc">Arquivo .exe · baixe e abra. Teclado ou controle.</span>
         <span class="dl__go" data-i18n="dl.go">Baixar →</span>
       </a>
 
-   <a class="dl panel" href="https://drive.google.com/file/d/1ibVFlGIS7VX2pw4yi_188vFnSpKHpYMd/view?usp=sharing" target="_blank" rel="noopener">
+   <a class="dl panel" href="#baixar" role="button" aria-haspopup="dialog" data-soon>
         <span class="dl__plat" data-i18n="dl.phone">Celular</span>
         <strong class="dl__name" data-i18n="dl.touch">Android por toque</strong>
         <span class="dl__meta" data-i18n="dl.touch_meta">Arquivo .apk · controles na tela, sem precisar de controle.</span>
         <span class="dl__go" data-i18n="dl.go">Baixar →</span>
       </a>
 
-      <a class="dl panel" href="https://drive.google.com/file/d/103YJ_Tn6e3tPl78N_NDVAJOb2YLAtezM/view?usp=sharing" target="_blank" rel="noopener">
+      <a class="dl panel" href="#baixar" role="button" aria-haspopup="dialog" data-soon>
         <span class="dl__plat" data-i18n="dl.handheld">Portátil</span>
         <strong class="dl__name" data-i18n="dl.pad">Android com controle</strong>
         <span class="dl__meta" data-i18n="dl.pad_meta">Arquivo .apk · para portáteis retrô com botão físico, tipo R36S, Anbernic, Retroid...</span>
@@ -816,12 +816,17 @@
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <span id="pix-toast-text" data-i18n="pix.toast" hidden>chave pix copiada</span>
 
+<div class="lightbox soon" id="soon" role="dialog" aria-modal="true" aria-labelledby="soon-title" hidden>
+  <button class="lightbox__close" id="soon-close" aria-label="Fechar" data-i18n-aria="soon.close">✕</button>
+  <p class="soon__box panel" id="soon-title" data-i18n="soon.text">Em breve na Steam</p>
+</div>
+
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox__close" id="lightbox-close" aria-label="Fechar imagem" data-i18n-aria="lb.close">✕</button>
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<script src="/i18n3.js?v=6"></script>
-<script src="/script.js?v=5" defer></script>
+<script src="/i18n3.js?v=7"></script>
+<script src="/script.js?v=6" defer></script>
 </body>
 </html>
